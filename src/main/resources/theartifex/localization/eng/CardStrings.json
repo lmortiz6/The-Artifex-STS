@@ -16,5 +16,14 @@
   "${modID}:Defend_Artifex": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block."
+  },
+  "${modID}:Sprint": {
+    "NAME": "Sprint",
+    "DESCRIPTION": "Draw !M! cards. Discard 1 card. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Discard 1 card."
+  },
+  "${modID}:WitchwoodBark": {
+    "NAME": "Witchwood Bark",
+    "DESCRIPTION": "Gain !M! Regen. Exhaust."
   }
 }
