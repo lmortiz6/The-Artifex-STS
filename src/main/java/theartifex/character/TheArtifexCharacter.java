@@ -22,6 +22,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import theartifex.cards.attacks.Strike_Artifex;
+import theartifex.cards.skills.Defend_Artifex;
 
 import java.util.ArrayList;
 
@@ -139,11 +141,16 @@ public class TheArtifexCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
+        retVal.add(Strike_Artifex.ID);
+        retVal.add(Strike_Artifex.ID);
+        retVal.add(Strike_Artifex.ID);
+        retVal.add(Strike_Artifex.ID);
+        retVal.add(Strike_Artifex.ID);
+        retVal.add(Defend_Artifex.ID);
+        retVal.add(Defend_Artifex.ID);
+        retVal.add(Defend_Artifex.ID);
+        retVal.add(Defend_Artifex.ID);
+        retVal.add(Defend_Artifex.ID);
 
         return retVal;
     }
