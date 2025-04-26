@@ -1,10 +1,9 @@
 package theartifex;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
+import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.GeneralUtils;
 import theartifex.util.KeywordInfo;
@@ -31,6 +30,7 @@ import java.util.*;
 
 @SpireInitializer
 public class TheArtifexMod implements
+        EditCardsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
@@ -228,5 +228,13 @@ public class TheArtifexMod implements
     @Override
     public void receiveEditCharacters() {
         TheArtifexCharacter.Meta.registerCharacter();
+    }
+
+    @Override
+    public void receiveEditCards() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
     }
 }
