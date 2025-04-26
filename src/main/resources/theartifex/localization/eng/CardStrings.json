@@ -12,5 +12,9 @@
   "${modID}:Strike_Artifex": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend_Artifex": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
   }
 }
