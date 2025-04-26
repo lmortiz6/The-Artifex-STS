@@ -1,9 +1,11 @@
 package theartifex;
 
 import basemod.BaseMod;
+import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import theartifex.character.TheArtifexCharacter;
 import theartifex.util.GeneralUtils;
 import theartifex.util.KeywordInfo;
 import theartifex.util.TextureLoader;
@@ -29,6 +31,7 @@ import java.util.*;
 
 @SpireInitializer
 public class TheArtifexMod implements
+        EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
@@ -47,6 +50,8 @@ public class TheArtifexMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new TheArtifexMod();
+
+        TheArtifexCharacter.Meta.registerColor();
     }
 
     public TheArtifexMod() {
@@ -162,7 +167,7 @@ public class TheArtifexMod implements
         return resourcesFolder + "/images/" + file;
     }
     public static String characterPath(String file) {
-        return resourcesFolder + "/images/character/" + file;
+        return resourcesFolder + "/images/" + file;
     }
     public static String powerPath(String file) {
         return resourcesFolder + "/images/powers/" + file;
@@ -218,5 +223,10 @@ public class TheArtifexMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        TheArtifexCharacter.Meta.registerCharacter();
     }
 }
