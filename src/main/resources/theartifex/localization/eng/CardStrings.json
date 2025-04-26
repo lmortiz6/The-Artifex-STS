@@ -19,11 +19,19 @@
   },
   "${modID}:Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! cards. Discard 1 card. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. Discard 1 card."
+    "DESCRIPTION": "Draw !M! cards. NL Discard 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
   },
   "${modID}:WitchwoodBark": {
     "NAME": "Witchwood Bark",
-    "DESCRIPTION": "Gain !M! Regen. Exhaust."
+    "DESCRIPTION": "Gain !M! Regen. NL Exhaust."
+  },
+  "${modID}:CleaveArmor": {
+    "NAME": "Cleave Armor",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "${modID}:PenetratingStrike": {
+    "NAME": "Penetrating Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Strength affects this card !M! times."
   }
 }
