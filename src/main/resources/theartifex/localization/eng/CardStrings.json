@@ -33,5 +33,17 @@
   "${modID}:PenetratingStrike": {
     "NAME": "Penetrating Strike",
     "DESCRIPTION": "Deal !D! damage. NL Strength affects this card !M! times."
+  },
+  "${modID}:Rejoinder": {
+    "NAME": "Rejoinder",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, deal !D! damage again."
+  },
+  "${modID}:Shank": {
+    "NAME": "Shank",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each of the enemy's debuffs."
+  },
+  "${modID}:Conk": {
+    "NAME": "Conk",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has 2 or more Weak, stun them and remove all Weak. NL Otherwise, apply !M! Weak."
   }
 }
