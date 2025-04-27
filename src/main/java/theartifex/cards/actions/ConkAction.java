@@ -4,14 +4,9 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 public class ConkAction extends AbstractGameAction {
 
