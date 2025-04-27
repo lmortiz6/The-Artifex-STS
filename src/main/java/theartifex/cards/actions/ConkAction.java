@@ -12,9 +12,9 @@ public class ConkAction extends AbstractGameAction {
 
     private static final float DURATION = 0.1F;
 
-    private AbstractMonster m;
-    private AbstractCreature p;
-    private int magicNumber;
+    private final AbstractMonster m;
+    private final AbstractCreature p;
+    private final int magicNumber;
 
     public ConkAction(AbstractMonster target, AbstractCreature source, int weakAmount) {
         this.m = target;
