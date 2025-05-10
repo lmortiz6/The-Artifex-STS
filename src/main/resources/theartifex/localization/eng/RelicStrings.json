@@ -5,5 +5,33 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:CarbideHandBonesRelic": {
+    "NAME": "Carbide Hand Bones",
+    "FLAVOR": "Blue carbide merely dents where weak collagen would be smashed to bits.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. NL ALL Strikes deal 1.5x damage."
+    ]
+  },
+  "${modID}:ForceModulatorRelic": {
+    "NAME": "Force Modulator",
+    "FLAVOR": "The emitted frequencies of your tiniest bits are synchronized with the standardized band for force emission.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. NL Your first attack each turn deals damage regardless of the enemy's block."
+    ]
+  },
+  "${modID}:InflatableAxonsRelic": {
+    "NAME": "Inflatable Axons",
+    "FLAVOR": "Nanoscopic stents inflate the gossamer brain-threads that restrict the conduction of the will.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. NL On odd turns, draw 2 additional cards. NL On even turns, draw 1 less card."
+    ]
+  },
+  "${modID}:StabilizerArmLocksRelic": {
+    "NAME": "Stabilizer Arm Locks",
+    "FLAVOR": "Chrome clasps fasten arm joints to emulate the stillness of unlife.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. NL ALL ${modID}:Gun cards deal 2 additional damage."
+    ]
   }
 }
