@@ -1,13 +1,17 @@
 package theartifex.cards.skills;
 
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DescriptionLine;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
 public class Sprint extends BaseCard {
 
@@ -18,7 +22,7 @@ public class Sprint extends BaseCard {
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.NONE,
-            0
+            1
     );
     private static final int DRAW = 2;
     private static final int DISCARD = 1;
@@ -26,22 +30,29 @@ public class Sprint extends BaseCard {
     public Sprint() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
-        this.baseMagicNumber = DRAW;
-        this.magicNumber = baseMagicNumber;
+        this.setMagic(DRAW);
         this.setExhaust(true);
+        this.setCostUpgrade(0);
+        this.tags.add(CustomCardTags.SPRINT);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, DRAW));
+        addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new DiscardAction(p, p, DISCARD, false));
     }
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            upgradeName();
-            this.setExhaust(false);
+    public void initializeDescription() {
+        super.initializeDescription();
+        String exhaustString = "*Exhaust.";
+        GlyphLayout gl = new GlyphLayout();
+        gl.setText(FontHelper.cardDescFont_N, exhaustString);
+        if (this.exhaust) {
+            description.add(new DescriptionLine(exhaustString, gl.width));
+            if (!this.keywords.contains("exhaust"))
+                this.keywords.add("exhaust");
+        } else {
+            this.keywords.remove("exhaust");
         }
     }
 

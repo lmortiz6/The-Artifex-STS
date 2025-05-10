@@ -28,6 +28,8 @@ public class WitchwoodBark extends BaseCard {
         this.baseMagicNumber = REGEN;
         this.magicNumber = baseMagicNumber;
         this.setExhaust(true);
+
+        tags.add(CardTags.HEALING);
     }
 
     @Override

@@ -15,12 +15,11 @@
   },
   "${modID}:Defend_Artifex": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "${modID}:Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! cards. NL Discard 1 card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
+    "DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
   },
   "${modID}:WitchwoodBark": {
     "NAME": "Witchwood Bark",
@@ -45,5 +44,266 @@
   "${modID}:Conk": {
     "NAME": "Conk",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy has 2 or more Weak, stun them and remove all Weak. NL Otherwise, apply !M! Weak."
+  },
+  "${modID}:DefensiveLunge": {
+    "NAME": "Defensive Lunge",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! Block."
+  },
+  "${modID}:Flurry": {
+    "NAME": "Flurry",
+    "DESCRIPTION": "Deal !D! damage and apply 1 Weak to a random enemy X times. NL Exhaust 1 card at random.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1 Weak to a random enemy X+1 times. NL Exhaust 1 card."
+  },
+  "${modID}:ShieldBash": {
+    "NAME": "Shield Bash",
+    "DESCRIPTION": "Gain !B! Block. Deal damage equal to your Block. NL (Deals !D! damage.) NL Exhaust."
+  },
+  "${modID}:CeremonialVibrokhopesh": {
+    "NAME": "Ceremonial Vibrokhopesh",
+    "DESCRIPTION": "Remove all Block from the enemy. Deal !D! damage. Reduce this card's cost !M!. This card is unaffected by strength."
+  },
+  "${modID}:Dismember": {
+    "NAME": "Dismember",
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! strength. NL Exhaust."
+  },
+  "${modID}:HookAndDrag": {
+    "NAME": "Hook and Drag",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you draw a card this turn, the enemy loses !M! HP."
+  },
+  "${modID}:IssacharRifle": {
+    "NAME": "Issachar Rifle",
+    "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage."
+  },
+  "${modID}:ChromeRevolver": {
+    "NAME": "Chrome Revolver",
+    "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Draw !M! card."
+  },
+  "${modID}:GrapplingGun": {
+    "NAME": "Grappling Gun",
+    "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Apply !M! Vulnerable. NL Draw !${modID}:draw! card."
+  },
+  "${modID}:ChainPistol": {
+    "NAME": "Chain Pistol",
+    "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage to a random enemy !M! times."
+  },
+  "${modID}:BloodGradientHandVacuum": {
+    "NAME": "Blood-Gradient Hand Vacuum",
+    "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Heal HP equal to unblocked damage. NL Exhaust."
+  },
+  "${modID}:PhaseCannon": {
+    "NAME": "Phase Cannon",
+    "DESCRIPTION": "${modID}:Gun. NL Exhaust 2 cards to deal !D! damage to ALL enemies."
+  },
+  "${modID}:HighExplosiveGrenade": {
+    "NAME": "High Explosive Grenade",
+    "DESCRIPTION": "At the end of your next turn, deal !M! damage to ALL enemies."
+  },
+  "${modID}:PoisonGasGrenade": {
+    "NAME": "Poison Gas Grenade",
+    "DESCRIPTION": "At the end of your next turn, apply !M! Poison to ALL enemies."
+  },
+  "${modID}:ResonanceGrenade": {
+    "NAME": "Resonance Grenade",
+    "DESCRIPTION": "At the end of your next turn, deal !M! damage and apply !${modID}:vuln! to ALL enemies."
+  },
+  "${modID}:StunGasGrenade": {
+    "NAME": "Stun Gas Grenade",
+    "DESCRIPTION": "At the end of your next turn, stun ALL enemies. NL Exhaust."
+  },
+  "${modID}:HandENuke": {
+    "NAME": "Hand-E-Nuke",
+    "DESCRIPTION": "At the end of your next turn, deal !M! damage to EVERYONE."
+  },
+  "${modID}:FreezeGrenade": {
+    "NAME": "Freeze Grenade",
+    "DESCRIPTION": "At the end of your next turn, gain !B! Block and deal !M! damage to ALL enemies."
+  },
+  "${modID}:TimeDilationGrenade": {
+    "NAME": "Time Dilation Grenade",
+    "DESCRIPTION": "At the start of your next turn, draw !M! cards."
+  },
+  "${modID}:StrengthUp": {
+    "NAME": "Strength",
+    "DESCRIPTION": "Gain !M! Strength."
+  },
+  "${modID}:AgilityUp": {
+    "NAME": "Agility",
+    "DESCRIPTION": "Gain !M! Dexterity."
+  },
+  "${modID}:ToughnessUp": {
+    "NAME": "Toughness",
+    "DESCRIPTION": "Gain !M! Regen."
+  },
+  "${modID}:WillpowerUp": {
+    "NAME": "Willpower",
+    "DESCRIPTION": "At the start of your next !M! turns, gain [E]."
+  },
+  "${modID}:IntelligenceUp": {
+    "NAME": "Intelligence",
+    "DESCRIPTION": "Add !M! random Colorless cards to your hand. They cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Add !M! random Colorless cards to your hand. They cost 0 this turn."
+  },
+  "${modID}:EgoUp": {
+    "NAME": "Ego",
+    "DESCRIPTION": "Gain !M! Gold."
+  },
+  "${modID}:EatersNectarInjector": {
+    "NAME": "Eater's Nectar Injector",
+    "DESCRIPTION": "Choose an attribute to increase. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose an attribute to greatly increase. NL Exhaust."
+  },
+  "${modID}:HulkHoneyInjector": {
+    "NAME": "Hulk Honey Injector",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain 2 Frail. NL Exhaust."
+  },
+  "${modID}:Akimbo": {
+    "NAME": "Akimbo",
+    "DESCRIPTION": "The first time you play a ${modID}:Gun each turn, draw !M! card.",
+    "UPGRADE_DESCRIPTION": "The first time you play a ${modID}:Gun each turn, draw !M! cards."
+  },
+  "${modID}:RubbergumInjector": {
+    "NAME": "Rubbergum Injector",
+    "DESCRIPTION": "Whenever you lose HP this turn, gain !M! Block next turn. NL Exhaust."
+  },
+  "${modID}:SalveInjector": {
+    "NAME": "Salve Injector",
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
+  },
+  "${modID}:ShadeOilInjector": {
+    "NAME": "Shade Oil Injector",
+    "DESCRIPTION": "Gain 1 Intangible. NL Gain !M! Vulnerable. NL Exhaust."
+  },
+  "${modID}:SphynxSaltInjector": {
+    "NAME": "Sphynx Salt Injector",
+    "DESCRIPTION": "Scry !M!. Draw !${modID}:draw! card. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Scry !M!. Draw !${modID}:draw! cards. Exhaust."
+  },
+  "${modID}:RifleThroughTrash": {
+    "NAME": "Rifle Through Trash",
+    "DESCRIPTION": "Ethereal. NL Put !M! random card from your exhaust pile into your hand. Increase this card’s cost by 1 this combat.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Put !M! random cards from your exhaust pile into your hand. Increase this card’s cost by 1 this combat."
+  },
+  "${modID}:Calloused": {
+    "NAME": "Calloused",
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL When Retained, decrease its Block by 1 this combat."
+  },
+  "${modID}:IronBuckler": {
+    "NAME": "Iron Buckler",
+    "DESCRIPTION": "Gain !B! Block for every 2 cards in your hand. NL Boosted by Dexterity. NL (Gain !${modID}:total! Block.)"
+  },
+  "${modID}:Meditate": {
+    "NAME": "Meditate",
+    "DESCRIPTION": "Gain !B! Block and draw a card. NL Retain a card. NL End your turn."
+  },
+  "${modID}:FulleriteAegis": {
+    "NAME": "Fullerite Aegis",
+    "DESCRIPTION": "Exhaust a card to gain !B! Block."
+  },
+  "${modID}:ForceBracelet": {
+    "NAME": "Force Bracelet",
+    "DESCRIPTION": "Gain !B! Block. If your energy is reduced to 0 this turn, lose 9 Block."
+  },
+  "${modID}:Juke": {
+    "NAME": "Juke",
+    "DESCRIPTION": "Gain !B! Block. NL Discard 1 card. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Discard 1 card. NL Draw !M! cards."
+  },
+  "${modID}:MagnetizedChassisPlate": {
+    "NAME": "Magnetized Chassis Plate",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 2 less cards next turn."
+  },
+  "${modID}:PointDefenseDrone": {
+    "NAME": "Point-Defense Drone",
+    "DESCRIPTION": "If the enemy intends to attack, gain !M! Dexterity."
+  },
+  "${modID}:VaamsLens": {
+    "NAME": "Va'am's Lens",
+    "DESCRIPTION": "Gain !B! Block. NL Gain 1 Artifact. NL Exhaust."
+  },
+  "${modID}:ChemCell": {
+    "NAME": "Chem Cell",
+    "DESCRIPTION": "If this card is exhausted, gain [E][E] and draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL If this card is exhausted, gain [E][E] and draw 1 card."
+  },
+  "${modID}:Disassemble": {
+    "NAME": "Disassemble",
+    "DESCRIPTION": "Exhaust a skill to gain !M! Gold. NL Exhaust."
+  },
+  "${modID}:Jump": {
+    "NAME": "Jump",
+    "DESCRIPTION": "If you have !M! or less cards in your hand, draw 4 cards."
+  },
+  "${modID}:MetamorphicPolygel": {
+    "NAME": "Metamorphic Polygel",
+    "DESCRIPTION": "Choose a card. NL Add a copy of that card into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card. NL Add a copy of that card into your hand. NL Exhaust."
+  },
+  "${modID}:DeftThrowing": {
+    "NAME": "Deft Throwing",
+    "DESCRIPTION": "At the start of your turn, gain !M! temporary Dexterity for each active grenade."
+  },
+  "${modID}:ZetachromeLune": {
+    "NAME": "Zetachrome Lune",
+    "DESCRIPTION": "Gain !M! Metallicize. At the start of each turn, lose 2 Metallicize."
+  },
+  "${modID}:FlumeFlier": {
+    "NAME": "Flume Flier",
+    "DESCRIPTION": "At the start of your turn, add a *Flume *Dash into your hand."
+  },
+  "${modID}:FlumeDash": {
+    "NAME": "Flume Dash",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards. NL Add a *Burn into your discard pile. NL Exhaust."
+  },
+  "${modID}:CarbideHandBones": {
+    "NAME": "Carbide Hand Bones",
+    "DESCRIPTION": "${modID}:Cybernetic. NL ALL *Strikes deal 1.5x damage."
+  },
+  "${modID}:ForceModulator": {
+    "NAME": "Carbide Hand Bones",
+    "DESCRIPTION": "${modID}:Cybernetic. NL Your first attack each turn deals damage regardless of the enemy's block."
+  },
+  "${modID}:InflatableAxons": {
+    "NAME": "Inflatable Axons",
+    "DESCRIPTION": "${modID}:Cybernetic. NL On odd turns, draw 2 additional cards. NL On even turns, draw 1 less card."
+  },
+  "${modID}:StabilizerArmLocks": {
+    "NAME": "Stabilizer Arm Locks",
+    "DESCRIPTION": "${modID}:Cybernetic. NL ALL ${modID}:Gun cards deal 2 additional damage."
+  },
+  "${modID}:HyperElasticAnkleTendons": {
+    "NAME": "Hyper Elastic Ankle Tendons",
+    "DESCRIPTION": "${modID}:Cybernetic. NL Your *Sprints draw 1 additional card and don't Exhaust."
+  },
+  "${modID}:MedassistModule": {
+    "NAME": "Medassist Module",
+    "DESCRIPTION": "${modID}:Cybernetic. NL Your first played *Injector card each turn costs 0."
+  },
+  "${modID}:ForceKnife": {
+    "NAME": "Force Knife",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Add a *Force *Knife to your hand. NL Exhaust."
+  },
+  "${modID}:PrecisionForceLathe": {
+    "NAME": "Precision Force Lathe",
+    "DESCRIPTION": "${modID}:Cybernetic. NL At the start of your turn, add a *Force *Knife+ to your hand."
+  },
+  "${modID}:GiantHands": {
+    "NAME": "Giant Hands",
+    "DESCRIPTION": "${modID}:Cybernetic. NL At the start of your turn, reduce the cost of a random attack in your hand to 1."
+  },
+  "${modID}:MotorizedTreads": {
+    "NAME": "Motorized Treads",
+    "DESCRIPTION": "${modID}:Cybernetic. NL Draw 3 additional cards at the start of each turn. NL You cannot draw additional cards after."
+  },
+  "${modID}:HolographicVisage": {
+    "NAME": "Holographic Visage",
+    "DESCRIPTION": "${modID}:Cybernetic. NL The next 2 times you end your turn without playing any attacks, gain 1 Buffer."
+  },
+  "${modID}:CathedraWithRubyTracery": {
+    "NAME": "Cathedra with Ruby Tracery",
+    "DESCRIPTION": "${modID}:Cybernetic. NL At the start of your turn, gain [E]. NL Shuffle a *Pyrokinesis *Field into your draw pile."
+  },
+  "${modID}:PyrokinesisField": {
+    "NAME": "Pyrokinesis Field",
+    "DESCRIPTION": "${modID}:Cybernetic. NL Deal !D! damage to ALL enemies. NL Add a *Void into your discard pile."
   }
 }

@@ -1,4 +1,4 @@
-package theartifex.cards.actions;
+package theartifex.actions;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -30,7 +30,7 @@ public class ConkAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        if (this.m.hasPower("Weakened") && this.m.getPower("Weakened").amount > 1) {
+        if (this.m.hasPower("Weakened") && this.m.getPower("Weakened").amount >= 2) {
             addToBot(new StunMonsterAction(m, p));
             addToBot(new RemoveSpecificPowerAction(m, p, "Weakened"));
         } else {

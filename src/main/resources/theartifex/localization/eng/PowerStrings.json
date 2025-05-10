@@ -4,5 +4,203 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:HookAndDragPower": {
+    "NAME": "Hooked",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, loses #b",
+      " HP."
+    ]
+  },
+  "${modID}:HookedPower": {
+    "NAME": "Hooked",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, loses #b",
+      " HP."
+    ]
+  },
+  "${modID}:HighExplosiveGrenadePower": {
+    "NAME": "High Explosive Grenade",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, deal #b%2$s damage to ALL enemies.",
+      "At the end of this turn, deal #b%1$s damage to ALL enemies."
+    ]
+  },
+  "${modID}:PoisonGasGrenadePower": {
+    "NAME": "Poison Gas Grenade",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, apply #b%2$s Poison to ALL enemies.",
+      "At the end of this turn, apply #b%1$s Poison to ALL enemies."
+    ]
+  },
+  "${modID}:ResonanceGrenadePower": {
+    "NAME": "Resonance Grenade",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, deal #b%2$s damage and apply #b%3$s Vulnerable to ALL enemies.",
+      "At the end of this turn, deal #b%1$s damage and apply #b%2$s Vulnerable to ALL enemies."
+    ]
+  },
+  "${modID}:StunGasGrenadePower": {
+    "NAME": "Stun Gas Grenade",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, stun ALL enemies.",
+      "At the end of this turn, stun ALL enemies."
+    ]
+  },
+  "${modID}:HandENukePower": {
+    "NAME": "Hand-E-Nuke",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, deal #b%2$s damage to EVERYONE.",
+      "At the end of this turn, deal #b%1$s damage to EVERYONE."
+    ]
+  },
+  "${modID}:FreezeGrenadePower": {
+    "NAME": "Freeze Grenade",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, gain #b%2$s block and deal #b%3$s damage to ALL enemies.",
+      "At the end of this turn, gain #b%1$s block and deal #b%2$s damage to ALL enemies."
+    ]
+  },
+  "${modID}:TimeDilationGrenadePower": {
+    "NAME": "Time Dilation Grenade",
+    "DESCRIPTIONS": [
+      "At the end of #b%1$s turns, draw #b%2$s cards.",
+      "At the start of your next turn, draw #b%1$s cards."
+    ]
+  },
+  "${modID}:WillpowerUpPower": {
+    "NAME": "Willpower Bonus",
+    "DESCRIPTIONS": [
+      "At the start of your next #b%1$s turns, gain ",
+      "At the start of your next turn, gain "
+    ]
+  },
+  "${modID}:AkimboPower": {
+    "NAME": "Akimbo",
+    "DESCRIPTIONS": [
+      "The first time you play a Gun each turn, draw #b%1$s cards.",
+      "The first time you play a Gun each turn, draw #b1 card."
+    ]
+  },
+  "${modID}:RubbergumPower": {
+    "NAME": "Rubbergum",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP this turn, gain #b%1$s block next turn."
+    ]
+  },
+  "${modID}:ForceBraceletPower": {
+    "NAME": "Force Bracelet",
+    "DESCRIPTIONS": [
+      "If your energy is reduced to 0 this turn, lose #b%1$s block."
+    ]
+  },
+  "${modID}:NextTurnDrawReductionPower": {
+    "NAME": "Draw Reduction",
+    "DESCRIPTIONS": [
+      "Draw #b%1$s fewer cards next turn.",
+      "Draw 1 less card next turn."
+    ]
+  },
+  "${modID}:NextTurnDrawPower": {
+    "NAME": "Draw Next Turn",
+    "DESCRIPTIONS": [
+      "Draw #b%1$s more cards next turn.",
+      "Draw 1 more card next turn."
+    ]
+  },
+  "${modID}:DeftThrowingPower": {
+    "NAME": "Draw Reduction",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%1$s temporary Dexterity for each active grenade."
+    ]
+  },
+  "${modID}:LoseMetallicizePower": {
+    "NAME": "Lose Metallicize",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b%1$s Metallicize."
+    ]
+  },
+  "${modID}:FlumeFlierPower": {
+    "NAME": "Flume Flier",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " #yFlume #yDashes into your hand.",
+      " #yFlume #yDash into your hand."
+    ]
+  },
+  "${modID}:CarbideHandBonesPower": {
+    "NAME": "Carbide Hand Bones",
+    "DESCRIPTIONS": [
+      "ALL Strikes deal #b%1$sx damage.",
+      "ALL Strikes deal #b1.5x damage."
+    ]
+  },
+  "${modID}:ForceModulatorPower": {
+    "NAME": "Force Modulator",
+    "DESCRIPTIONS": [
+      "Your first #b%1$s attacks each turn deal damage regardless of the enemy's block.",
+      "Your first attack each turn deals damage regardless of the enemy's block."
+    ]
+  },
+  "${modID}:InflatableAxonsPower": {
+    "NAME": "Inflatable Axons",
+    "DESCRIPTIONS": [
+      "At the start of each odd turn, draw #b%1$s additional cards. At the start of each even turn, draw #b%2$s fewer cards.",
+      "At the start of each odd turn, draw 2 additional cards. At the start of each even turn, draw 1 less card."
+    ]
+  },
+  "${modID}:StabilizerArmLocksPower": {
+    "NAME": "Stabilizer Arm Locks",
+    "DESCRIPTIONS": [
+      "ALL #yGun cards deal #b%1$s additional damage."
+    ]
+  },
+  "${modID}:HyperElasticAnkleTendonsPower": {
+    "NAME": "Hyper Elastic Ankle Tendons",
+    "DESCRIPTIONS": [
+      "Your #ySprints draw #b%1$s additional cards and don't Exhaust.",
+      "Your #ySprints draw #b%1$s additional card and don't Exhaust."
+    ]
+  },
+  "${modID}:MedassistModulePower": {
+    "NAME": "Medassist Module",
+    "DESCRIPTIONS": [
+      "Your next #b%1$s played #yInjector cards cost 0.",
+      "Your next played #yInjector card costs 0."
+    ]
+  },
+  "${modID}:PrecisionForceLathePower": {
+    "NAME": "Precision Force Lathe",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " #yForce #yKnife into your hand.",
+      " #yForce #yKnives into your hand."
+    ]
+  },
+  "${modID}:GiantHandsPower": {
+    "NAME": "Giant Hands",
+    "DESCRIPTIONS": [
+      "At the start of your turn, reduce the cost of #b%1$s random attacks in your hand to 1.",
+      "At the start of your turn, reduce the cost of a random attack in your hand to 1."
+    ]
+  },
+  "${modID}:MotorizedTreadsPower": {
+    "NAME": "Motorized Treads",
+    "DESCRIPTIONS": [
+      "Draw 3 additional cards at the start of each turn. You cannot draw additional cards after."
+    ]
+  },
+  "${modID}:HolographicVisagePower": {
+    "NAME": "Holographic Visage",
+    "DESCRIPTIONS": [
+      "The next #b%1$s times you end your turn without playing any attacks, gain 1 #yBuffer.",
+      "The next time you end your turn without playing any attacks, gain 1 #yBuffer."
+    ]
+  },
+  "${modID}:CathedraWithRubyTraceryPower": {
+    "NAME": "Cathedra with Ruby Tracery",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, gain "
+    ]
   }
 }
