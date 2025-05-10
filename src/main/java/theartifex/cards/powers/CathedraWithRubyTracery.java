@@ -6,9 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.cards.attacks.PyrokinesisField;
-import theartifex.cards.attacks.Strike_Artifex;
 import theartifex.character.TheArtifexCharacter;
-import theartifex.powers.CarbideHandBonesPower;
 import theartifex.powers.CathedraWithRubyTraceryPower;
 import theartifex.util.CardStats;
 
