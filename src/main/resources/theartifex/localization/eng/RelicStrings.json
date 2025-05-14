@@ -33,5 +33,12 @@
     "DESCRIPTIONS": [
       "#yCybernetic. NL ALL ${modID}:Gun cards deal 2 additional damage."
     ]
+  },
+  "${modID}:StartingCredits": {
+    "NAME": "Cybernetic Credits Wedge 5¢",
+    "FLAVOR": "A tiny wedge of plastic.",
+    "DESCRIPTIONS": [
+      "Grants 5¢ towards installing #yCybernetic cards."
+    ]
   }
 }

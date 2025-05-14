@@ -14,15 +14,22 @@ import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
+import theartifex.abstracts.AbstractCreditRelic;
+import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.relics.BaseRelic;
+import theartifex.util.CustomCardTags;
 import theartifex.util.GeneralUtils;
 import theartifex.util.KeywordInfo;
 import theartifex.util.TextureLoader;
@@ -257,5 +264,61 @@ public class TheArtifexMod implements
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
 
+    }
+
+    public static int getMaxCredits() {
+        int maxCredits = 0;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p != null) {
+            for (AbstractRelic r : p.relics) {
+                if (r instanceof AbstractCreditRelic) {
+                    AbstractCreditRelic cr = (AbstractCreditRelic) r;
+                    maxCredits += cr.getAmount();
+                }
+            }
+        }
+        return maxCredits;
+    }
+
+    public static int getAvailableCredits() {
+        int availableCredits = getMaxCredits();
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p != null) {
+            for (AbstractRelic r : p.relics) {
+                if (r instanceof AbstractCyberneticRelic) {
+                    AbstractCyberneticRelic cy = (AbstractCyberneticRelic) r;
+                    availableCredits -= cy.getCost();
+                }
+            }
+        }
+        return availableCredits;
+    }
+
+    public static boolean hasCyberneticRelic() {
+        boolean hasRelic = false;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p != null) {
+            for (AbstractRelic r : p.relics) {
+                if (r instanceof AbstractCyberneticRelic) {
+                    hasRelic = true;
+                    break;
+                }
+            }
+        }
+        return hasRelic;
+    }
+
+    public static boolean hasCyberneticCard() {
+        boolean hasCard = false;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p != null) {
+            for (AbstractCard c : p.masterDeck.group) {
+                if (c.hasTag(CustomCardTags.CYBERNETIC)) {
+                    hasCard = true;
+                    break;
+                }
+            }
+        }
+        return hasCard;
     }
 }

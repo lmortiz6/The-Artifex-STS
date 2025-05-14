@@ -18,11 +18,13 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
+import com.megacrit.cardcrawl.relics.DataDisk;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theartifex.cards.attacks.Strike_Artifex;
 import theartifex.cards.skills.Defend_Artifex;
 import theartifex.cards.skills.Sprint;
 import theartifex.cards.skills.WitchwoodBark;
+import theartifex.relics.StartingCredits;
 
 import java.util.ArrayList;
 
@@ -160,7 +162,7 @@ public class TheArtifexCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(StartingCredits.ID);
 
         return retVal;
     }

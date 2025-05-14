@@ -1,22 +1,28 @@
 package theartifex.relics;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.abstracts.AbstractCyberneticRelic;
+import theartifex.cards.powers.CarbideHandBones;
+import theartifex.cards.powers.ForceModulator;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class ForceModulatorRelic extends BaseRelic{
+public class ForceModulatorRelic extends AbstractCyberneticRelic {
     private static final String NAME = ForceModulatorRelic.class.getSimpleName();
     public static final String ID = makeID(NAME);
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.SPECIAL;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
+    private static final AbstractCard card = new ForceModulator();
+    private static final int creditCost = card.cost;
 
     private int used = 1;
 
     public ForceModulatorRelic() {
-        super(ID, NAME, RARITY, SOUND);
+        super(ID, NAME, RARITY, SOUND, creditCost);
         this.tips.add(new PowerTip(TipHelper.capitalize("cybernetic"), "Cybernetic relics can be unimplanted at #yRest #ySites to gain their respective card."));
     }
 
