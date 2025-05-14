@@ -2,6 +2,7 @@ package theartifex.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.abstracts.AbstractInjector;
@@ -30,10 +31,13 @@ public class SalveInjector extends AbstractInjector {
         this.setExhaust(true);
         tags.add(CustomCardTags.INJECTOR);
         tags.add(CardTags.HEALING);
+        this.reaction = new Dazed();
+        this.cardsToPreview = this.reaction;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p, m);
         addToBot(new HealAction(p, p, magicNumber));
     }
 

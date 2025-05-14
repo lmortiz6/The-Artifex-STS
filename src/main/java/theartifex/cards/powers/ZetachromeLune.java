@@ -29,6 +29,7 @@ public class ZetachromeLune extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         this.setMagic(BUFF, UPG_BUFF);
+        this.setEthereal(true);
     }
 
     @Override

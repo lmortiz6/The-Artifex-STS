@@ -18,15 +18,16 @@ public class Akimbo extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
     private static final int DRAW = 1;
-    private static final int UPG_DRAW = 1;
+    private static final int UPG_DRAW = 0;
 
     public Akimbo() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         this.setMagic(DRAW, UPG_DRAW);
+        this.setCostUpgrade(1);
     }
 
     @Override

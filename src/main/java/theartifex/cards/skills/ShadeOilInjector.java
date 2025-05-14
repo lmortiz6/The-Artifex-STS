@@ -2,6 +2,7 @@ package theartifex.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
@@ -32,10 +33,14 @@ public class ShadeOilInjector extends AbstractInjector {
         this.setMagic(DEBUFF, UPG_DEBUFF);
         this.setExhaust(true);
         tags.add(CustomCardTags.INJECTOR);
+        this.reaction = new Burn();
+        this.reaction.upgrade();
+        this.cardsToPreview = this.reaction;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p, m);
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, BUFF)));
         addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, true)));
     }

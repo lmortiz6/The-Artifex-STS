@@ -149,34 +149,33 @@
   },
   "${modID}:EatersNectarInjector": {
     "NAME": "Eater's Nectar Injector",
-    "DESCRIPTION": "Choose an attribute to increase. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Choose an attribute to greatly increase. NL Exhaust."
+    "DESCRIPTION": "Choose an attribute to increase. NL 25%: Add a *Void to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose an attribute to greatly increase. NL 25%: Add a *Void to your hand. NL Exhaust."
   },
   "${modID}:HulkHoneyInjector": {
     "NAME": "Hulk Honey Injector",
-    "DESCRIPTION": "Gain !M! Strength. NL Gain 2 Frail. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Strength. NL Gain 2 Frail. NL 25%: Add a *Burn to your hand. NL Exhaust."
   },
   "${modID}:Akimbo": {
     "NAME": "Akimbo",
-    "DESCRIPTION": "The first time you play a ${modID}:Gun each turn, draw !M! card.",
-    "UPGRADE_DESCRIPTION": "The first time you play a ${modID}:Gun each turn, draw !M! cards."
+    "DESCRIPTION": "The first time you play a ${modID}:Gun each turn, draw !M! card."
   },
   "${modID}:RubbergumInjector": {
     "NAME": "Rubbergum Injector",
-    "DESCRIPTION": "Whenever you lose HP this turn, gain !M! Block next turn. NL Exhaust."
+    "DESCRIPTION": "Whenever you lose HP this turn, gain !M! Block next turn. NL 25%: Add a *Slimed to your hand. NL Exhaust."
   },
   "${modID}:SalveInjector": {
     "NAME": "Salve Injector",
-    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
+    "DESCRIPTION": "Heal !M! HP. NL 25%: Add a *Dazed to your hand. NL Exhaust."
   },
   "${modID}:ShadeOilInjector": {
     "NAME": "Shade Oil Injector",
-    "DESCRIPTION": "Gain 1 Intangible. NL Gain !M! Vulnerable. NL Exhaust."
+    "DESCRIPTION": "Gain 1 Intangible. NL Gain !M! Vulnerable. NL 25%: Add a *Burn+ to your hand. NL Exhaust."
   },
   "${modID}:SphynxSaltInjector": {
     "NAME": "Sphynx Salt Injector",
-    "DESCRIPTION": "Scry !M!. Draw !${modID}:draw! card. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Scry !M!. Draw !${modID}:draw! cards. Exhaust."
+    "DESCRIPTION": "Scry !M!. Draw !${modID}:draw! card. NL 25%: Add a *Dazed to your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Scry !M!. Draw !${modID}:draw! cards. NL 25%: Add a *Dazed to your hand. Exhaust."
   },
   "${modID}:RifleThroughTrash": {
     "NAME": "Rifle Through Trash",
@@ -222,8 +221,8 @@
   },
   "${modID}:ChemCell": {
     "NAME": "Chem Cell",
-    "DESCRIPTION": "If this card is exhausted, gain [E][E] and draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL If this card is exhausted, gain [E][E] and draw 1 card."
+    "DESCRIPTION": "If this card is exhausted, gain [E] [E] and draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL If this card is exhausted, gain [E] [E] and draw 1 card."
   },
   "${modID}:Disassemble": {
     "NAME": "Disassemble",
@@ -244,7 +243,7 @@
   },
   "${modID}:ZetachromeLune": {
     "NAME": "Zetachrome Lune",
-    "DESCRIPTION": "Gain !M! Metallicize. At the start of each turn, lose 2 Metallicize."
+    "DESCRIPTION": "Ethereal. NL Gain !M! Metallicize. NL At the start of each turn, lose 2 Metallicize."
   },
   "${modID}:FlumeFlier": {
     "NAME": "Flume Flier",
@@ -252,14 +251,14 @@
   },
   "${modID}:FlumeDash": {
     "NAME": "Flume Dash",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards. NL Add a *Burn into your discard pile. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards. NL Add a #yBurn into your discard pile. NL Exhaust."
   },
   "${modID}:CarbideHandBones": {
     "NAME": "Carbide Hand Bones",
     "DESCRIPTION": "${modID}:Cybernetic. NL ALL *Strikes deal 1.5x damage."
   },
   "${modID}:ForceModulator": {
-    "NAME": "Carbide Hand Bones",
+    "NAME": "Force Modulator",
     "DESCRIPTION": "${modID}:Cybernetic. NL Your first attack each turn deals damage regardless of the enemy's block."
   },
   "${modID}:InflatableAxons": {

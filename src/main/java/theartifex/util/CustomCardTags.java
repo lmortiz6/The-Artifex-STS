@@ -10,4 +10,5 @@ public class CustomCardTags {
     @SpireEnum public static AbstractCard.CardTags GUN;
     @SpireEnum public static AbstractCard.CardTags CANNOTPOLYGEL;
     @SpireEnum public static AbstractCard.CardTags SPRINT;
+    @SpireEnum public static AbstractCard.CardTags CYBERNETIC;
 }

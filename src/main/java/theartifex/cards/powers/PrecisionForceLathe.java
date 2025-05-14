@@ -4,13 +4,17 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.abstracts.AbstractCyberneticCard;
 import theartifex.cards.BaseCard;
 import theartifex.cards.attacks.ForceKnife;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.PrecisionForceLathePower;
+import theartifex.relics.CarbideHandBonesRelic;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
-public class PrecisionForceLathe extends BaseCard {
+public class PrecisionForceLathe extends AbstractCyberneticCard {
 
     public static final String ID = makeID(PrecisionForceLathe.class.getSimpleName());
 
@@ -22,13 +26,15 @@ public class PrecisionForceLathe extends BaseCard {
             3
     );
     private static final int BUFF = 1;
+    private static final AbstractRelic cyberneticRelic = new CarbideHandBonesRelic();
 
     public PrecisionForceLathe() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
 
         AbstractCard card = new ForceKnife();
         card.upgrade();
         this.cardsToPreview = card;
+        this.tags.add(CustomCardTags.CYBERNETIC);
 
     }
 

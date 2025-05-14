@@ -4,12 +4,17 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.abstracts.AbstractCyberneticCard;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.StabilizerArmLocksPower;
+import theartifex.relics.CarbideHandBonesRelic;
+import theartifex.relics.StabilizerArmLocksRelic;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
-public class StabilizerArmLocks extends BaseCard {
+public class StabilizerArmLocks extends AbstractCyberneticCard {
 
     public static final String ID = makeID(StabilizerArmLocks.class.getSimpleName());
 
@@ -21,9 +26,11 @@ public class StabilizerArmLocks extends BaseCard {
             2
     );
     private static final int BUFF = 1;
+    private static final AbstractRelic cyberneticRelic = new StabilizerArmLocksRelic();
 
     public StabilizerArmLocks() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
+        this.tags.add(CustomCardTags.CYBERNETIC);
     }
 
     @Override

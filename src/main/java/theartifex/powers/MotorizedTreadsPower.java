@@ -14,12 +14,13 @@ public class MotorizedTreadsPower extends BasePower implements InvisiblePower {
     public static final String POWER_ID = makeID(MotorizedTreadsPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
+    private static final int DRAW = 2;
     private static int drawnCards;
 
     public MotorizedTreadsPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
         updateDescription();
-        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, 3*amount)));
+        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, 2*amount)));
     }
 
     public void atStartOfTurn() {

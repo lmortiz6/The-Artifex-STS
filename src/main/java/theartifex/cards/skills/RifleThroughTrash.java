@@ -17,7 +17,7 @@ public class RifleThroughTrash extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
-            0
+            1
     );
     private static final int DRAW = 1;
     private static final int UPG_DRAW = 1;

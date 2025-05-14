@@ -4,12 +4,16 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.abstracts.AbstractCyberneticCard;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.GiantHandsPower;
+import theartifex.relics.CarbideHandBonesRelic;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
-public class GiantHands extends BaseCard {
+public class GiantHands extends AbstractCyberneticCard {
 
     public static final String ID = makeID(GiantHands.class.getSimpleName());
 
@@ -21,9 +25,11 @@ public class GiantHands extends BaseCard {
             3
     );
     private static final int BUFF = 1;
+    private static final AbstractRelic cyberneticRelic = new CarbideHandBonesRelic();
 
     public GiantHands() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
+        this.tags.add(CustomCardTags.CYBERNETIC);
     }
 
     @Override

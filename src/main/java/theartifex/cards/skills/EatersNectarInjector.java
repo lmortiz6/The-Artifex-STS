@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,10 +34,13 @@ public class EatersNectarInjector extends AbstractInjector {
         this.setExhaust(true);
         tags.add(CardTags.HEALING);
         tags.add(CustomCardTags.INJECTOR);
+        this.reaction = new VoidCard();
+        this.cardsToPreview = this.reaction;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p, m);
         ArrayList<AbstractCard> stanceChoices = getList();
         if (this.upgraded)
             for (AbstractCard c : stanceChoices)

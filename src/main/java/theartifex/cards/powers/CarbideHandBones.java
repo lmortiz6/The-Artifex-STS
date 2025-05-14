@@ -4,13 +4,17 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.abstracts.AbstractCyberneticCard;
 import theartifex.cards.BaseCard;
 import theartifex.cards.attacks.Strike_Artifex;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.CarbideHandBonesPower;
+import theartifex.relics.CarbideHandBonesRelic;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
-public class CarbideHandBones extends BaseCard {
+public class CarbideHandBones extends AbstractCyberneticCard {
 
     public static final String ID = makeID(CarbideHandBones.class.getSimpleName());
 
@@ -22,11 +26,13 @@ public class CarbideHandBones extends BaseCard {
             2
     );
     private static final int BUFF = 1;
+    private static final AbstractRelic cyberneticRelic = new CarbideHandBonesRelic();
 
     public CarbideHandBones() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
 
         this.cardsToPreview = new Strike_Artifex();
+        this.tags.add(CustomCardTags.CYBERNETIC);
     }
 
     @Override

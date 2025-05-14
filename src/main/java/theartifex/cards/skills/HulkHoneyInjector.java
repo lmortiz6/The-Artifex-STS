@@ -2,6 +2,7 @@ package theartifex.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
@@ -22,7 +23,7 @@ public class HulkHoneyInjector extends AbstractInjector {
             CardTarget.SELF,
             1
     );
-    private static final int BUFF = 3;
+    private static final int BUFF = 2;
     private static final int UPG_BUFF = 1;
     private static final int DEBUFF = 2;
 
@@ -32,10 +33,13 @@ public class HulkHoneyInjector extends AbstractInjector {
         this.setMagic(BUFF, UPG_BUFF);
         this.setExhaust(true);
         tags.add(CustomCardTags.INJECTOR);
+        this.reaction = new Burn();
+        this.cardsToPreview = this.reaction;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p, m);
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new FrailPower(p, DEBUFF, true)));
     }

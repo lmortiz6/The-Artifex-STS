@@ -15,6 +15,7 @@ public class ForceBraceletPower extends BasePower{
     public static final String POWER_ID = makeID(ForceBraceletPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
+    private boolean justApplied = true;
 
     public ForceBraceletPower(AbstractCreature owner, AbstractCreature source, int amount){
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
@@ -32,6 +33,20 @@ public class ForceBraceletPower extends BasePower{
         if (EnergyPanel.getCurrentEnergy() <= 0) {
             flash();
             addToBot(new LoseBlockAction(owner, owner, amount));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+        }
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        super.atEndOfTurn(isPlayer);
+        justApplied = false;
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        super.atStartOfTurn();
+        if (!justApplied) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }

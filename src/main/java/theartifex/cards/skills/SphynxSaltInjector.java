@@ -3,6 +3,7 @@ package theartifex.cards.skills;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.abstracts.AbstractInjector;
@@ -21,7 +22,7 @@ public class SphynxSaltInjector extends AbstractInjector {
             CardTarget.NONE,
             1
     );
-    private static final int SCRY = 4;
+    private static final int SCRY = 3;
     private static final int UPG_SCRY = 2;
     private static final int DRAW = 1;
     private static final int UPG_DRAW = 1;
@@ -33,10 +34,13 @@ public class SphynxSaltInjector extends AbstractInjector {
         this.setCustomVar("draw", DRAW, UPG_DRAW);
         this.setExhaust(true);
         tags.add(CustomCardTags.INJECTOR);
+        this.reaction = new Dazed();
+        this.cardsToPreview = this.reaction;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p, m);
         addToBot(new ScryAction(this.magicNumber));
         addToBot(new DrawCardAction(p, this.customVar("draw")));
     }
