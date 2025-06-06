@@ -18,15 +18,15 @@ public class WitchwoodBark extends BaseCard {
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
-            1
+            0
     );
-    private static final int REGEN = 3;
+    private static final int REGEN = 2;
+    private static final int UPG_REGEN = 1;
 
     public WitchwoodBark() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
-        this.baseMagicNumber = REGEN;
-        this.magicNumber = baseMagicNumber;
+        this.setMagic(REGEN, UPG_REGEN);
         this.setExhaust(true);
 
         tags.add(CardTags.HEALING);
@@ -35,14 +35,6 @@ public class WitchwoodBark extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            upgradeName();
-            upgradeBaseCost(0);
-        }
     }
 
     @Override

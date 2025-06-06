@@ -4,12 +4,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticCard;
-import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.ForceModulatorPower;
-import theartifex.relics.CarbideHandBonesRelic;
 import theartifex.relics.ForceModulatorRelic;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
@@ -25,8 +22,9 @@ public class ForceModulator extends AbstractCyberneticCard {
             CardTarget.SELF,
             3
     );
+    public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;
-    private static final AbstractRelic cyberneticRelic = new ForceModulatorRelic();
+    private static final String cyberneticRelic = makeID(ForceModulatorRelic.class.getSimpleName());
 
     public ForceModulator() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.

@@ -22,10 +22,12 @@ public class AbstractGun extends BaseCard {
 
     @Override
     public void applyPowers() {
+
         AbstractPower strength = AbstractDungeon.player.getPower("Strength");
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower armLocksPower = AbstractDungeon.player.getPower(makeID(StabilizerArmLocksPower.class.getSimpleName()));
-        AbstractRelic armLocksRelic = AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
+        StabilizerArmLocksRelic armLocksRelic = (StabilizerArmLocksRelic) AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
+
         int originalStrength = 0;
         if (strength != null) {
             originalStrength = strength.amount;
@@ -34,10 +36,12 @@ public class AbstractGun extends BaseCard {
         if (dex != null)
             this.baseDamage += dex.amount;
         if (armLocksPower != null)
-            this.baseDamage += 2 * armLocksPower.amount;
+            this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
-            this.baseDamage += 2;
+            this.baseDamage += 2 * armLocksRelic.amount;
+
         super.applyPowers();
+
         if (strength != null)
             strength.amount += originalStrength;
         if (dex != null) {
@@ -46,19 +50,21 @@ public class AbstractGun extends BaseCard {
         }
         if (armLocksPower != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 2 * armLocksPower.amount;
+            this.baseDamage -= armLocksPower.amount;
         }
         if (armLocksRelic != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 2;
+            this.baseDamage -= 2 * armLocksRelic.amount;
         }
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
+
         AbstractPower strength = AbstractDungeon.player.getPower("Strength");
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower armLocksPower = AbstractDungeon.player.getPower(makeID(StabilizerArmLocksPower.class.getSimpleName()));
-        AbstractRelic armLocksRelic = AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
+        StabilizerArmLocksRelic armLocksRelic = (StabilizerArmLocksRelic) AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
+
         int originalStrength = 0;
         if (strength != null) {
             originalStrength = strength.amount;
@@ -67,10 +73,12 @@ public class AbstractGun extends BaseCard {
         if (dex != null)
             this.baseDamage += dex.amount;
         if (armLocksPower != null)
-            this.baseDamage += 2 * armLocksPower.amount;
+            this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
-            this.baseDamage += 2;
+            this.baseDamage += 2 * armLocksRelic.amount;
+
         super.calculateCardDamage(mo);
+
         if (strength != null)
             strength.amount += originalStrength;
         if (dex != null) {
@@ -79,11 +87,11 @@ public class AbstractGun extends BaseCard {
         }
         if (armLocksPower != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 2 * armLocksPower.amount;
+            this.baseDamage -= armLocksPower.amount;
         }
         if (armLocksRelic != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 2;
+            this.baseDamage -= 2 * armLocksRelic.amount;
         }
     }
 }

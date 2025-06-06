@@ -32,7 +32,7 @@ public class TimeDilationGrenade extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new TimeDilationGrenadePower(p, p, TURNS, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new TimeDilationGrenadePower(p, p, this.magicNumber)));
     }
 
     @Override

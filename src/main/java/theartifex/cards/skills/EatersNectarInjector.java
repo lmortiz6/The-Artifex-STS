@@ -56,7 +56,18 @@ public class EatersNectarInjector extends AbstractInjector {
         stanceChoices.add(new WillpowerUp());
         stanceChoices.add(new IntelligenceUp());
         stanceChoices.add(new EgoUp());
+        if (upgraded) {
+            for (AbstractCard c : stanceChoices) {
+                c.upgrade();
+            }
+        }
         return stanceChoices;
+    }
+
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        dupeListForPrev.clear();
     }
 
     private float rotationTimer;

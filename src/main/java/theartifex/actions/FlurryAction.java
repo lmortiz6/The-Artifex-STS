@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import theartifex.TheArtifexMod;
 
 public class FlurryAction extends AbstractGameAction {
 
@@ -39,7 +40,7 @@ public class FlurryAction extends AbstractGameAction {
     }
 
     public void update() {
-        int effect = EnergyPanel.totalCount;
+        /*int effect = EnergyPanel.totalCount;
         if (this.energyOnUse != -1)
             effect = this.energyOnUse;
         if (this.p.hasRelic("Chemical X")) {
@@ -50,14 +51,14 @@ public class FlurryAction extends AbstractGameAction {
             effect++;
         }
         if (effect > 0) {
-            for (int i = 0; i < effect; i++){
+            for (int i = 0; i < effect; i++){*/
                 AbstractCreature m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-                addToBot(new DamageAction(m, new DamageInfo(this.p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                addToBot(new ApplyPowerAction(m, p, new WeakPower(m, WEAK, false)));
-            }
+                addToTop(new DamageAction(m, new DamageInfo(this.p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                addToTop(new ApplyPowerAction(m, p, new WeakPower(m, WEAK, false)));
+            /*}
             if (!this.freeToPlayOnce)
                 this.p.energy.use(EnergyPanel.totalCount);
-        }
+        }*/
         this.isDone = true;
     }
 }

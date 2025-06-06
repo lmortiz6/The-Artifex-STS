@@ -19,13 +19,13 @@ public class Juke extends BaseCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
-            0
+            1
     );
     private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 2;
     private static final int DISCARD = 1;
     private static final int DRAW = 1;
-    private static final int UPG_DRAW = 1;
+    private static final int UPG_DRAW = 0;
 
     public Juke() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

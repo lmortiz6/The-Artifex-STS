@@ -2,8 +2,6 @@ package theartifex.relics;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.cards.powers.CarbideHandBones;
@@ -14,13 +12,12 @@ public class CarbideHandBonesRelic extends AbstractCyberneticRelic {
     private static final String NAME = CarbideHandBonesRelic.class.getSimpleName();
     public static final String ID = makeID(NAME);
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.SPECIAL;
-    private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.SOLID;
-    private static final AbstractCard card = new CarbideHandBones();
-    private static final int creditCost = card.cost;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.CLINK;
+    private static final String card = makeID(CarbideHandBones.class.getSimpleName());
+    private static final int cost = CarbideHandBones.creditCost;
 
     public CarbideHandBonesRelic() {
-        super(ID, NAME, RARITY, SOUND, creditCost);
-        this.tips.add(new PowerTip(TipHelper.capitalize("cybernetic"), "Cybernetic relics can be unimplanted at #yRest #ySites to gain their respective card."));
+        super(ID, NAME, RARITY, SOUND, card, cost);
     }
 
     @Override

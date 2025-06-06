@@ -18,7 +18,7 @@ public class DeftThrowing extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2
+            1
     );
     private static final int DEX = 1;
     private static final int UPG_DEX = 1;

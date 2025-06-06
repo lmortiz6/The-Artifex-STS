@@ -17,8 +17,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.relics.BurningBlood;
-import com.megacrit.cardcrawl.relics.DataDisk;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theartifex.cards.attacks.Strike_Artifex;
 import theartifex.cards.skills.Defend_Artifex;

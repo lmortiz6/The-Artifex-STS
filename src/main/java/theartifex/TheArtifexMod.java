@@ -15,9 +15,11 @@ import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -25,14 +27,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 import theartifex.abstracts.AbstractCreditRelic;
+import theartifex.abstracts.AbstractCyberneticCard;
 import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.relics.BaseRelic;
+import theartifex.ui.CyberneticCampfireOption;
 import theartifex.util.CustomCardTags;
 import theartifex.util.GeneralUtils;
 import theartifex.util.KeywordInfo;
 import theartifex.util.TextureLoader;
+import theartifex.vfx.BecomingNookEffect;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -50,6 +55,10 @@ public class TheArtifexMod implements
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+    public static CyberneticCampfireOption cyberneticCampfireOption;
+    public static BecomingNookEffect currBecomingNookEffect = null;
+    public static boolean gridScreenForCyberRelics = false;
+    public static boolean gridScreenForCyberCards = false;
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -320,5 +329,34 @@ public class TheArtifexMod implements
             }
         }
         return hasCard;
+    }
+
+    public static CardGroup getCyberneticCards() {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();
+
+        while (var2.hasNext()) {
+            AbstractCard c = (AbstractCard) var2.next();
+            if (c instanceof AbstractCyberneticCard) {
+                retVal.group.add(c);
+            }
+        }
+
+        return retVal;
+    }
+
+    public static CardGroup getCyberneticRelicsAsCards() {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var2 = AbstractDungeon.player.relics.iterator();
+
+        while (var2.hasNext()) {
+            AbstractRelic r = (AbstractRelic) var2.next();
+            if (r instanceof AbstractCyberneticRelic) {
+                AbstractCyberneticRelic cy = (AbstractCyberneticRelic) r;
+                retVal.group.add(CardLibrary.getCard(cy.getCard()));
+            }
+        }
+
+        return retVal;
     }
 }

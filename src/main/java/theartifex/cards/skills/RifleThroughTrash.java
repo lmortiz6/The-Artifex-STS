@@ -3,6 +3,7 @@ package theartifex.cards.skills;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theartifex.actions.ModifyCostForCombatAction;
 import theartifex.actions.RifleThroughTrashAction;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
@@ -17,7 +18,7 @@ public class RifleThroughTrash extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
-            1
+            0
     );
     private static final int DRAW = 1;
     private static final int UPG_DRAW = 1;
@@ -32,7 +33,7 @@ public class RifleThroughTrash extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RifleThroughTrashAction(magicNumber));
-        this.modifyCostForCombat(1);
+        addToBot(new ModifyCostForCombatAction(this, 1));
     }
 
     @Override

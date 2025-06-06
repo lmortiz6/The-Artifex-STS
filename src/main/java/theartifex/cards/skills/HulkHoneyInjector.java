@@ -25,7 +25,7 @@ public class HulkHoneyInjector extends AbstractInjector {
     );
     private static final int BUFF = 2;
     private static final int UPG_BUFF = 1;
-    private static final int DEBUFF = 2;
+    private static final int DEBUFF = 1;
 
     public HulkHoneyInjector() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

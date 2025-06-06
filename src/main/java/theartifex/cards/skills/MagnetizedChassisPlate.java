@@ -22,7 +22,7 @@ public class MagnetizedChassisPlate extends BaseCard {
             1
     );
     private static final int BLOCK = 18;
-    private static final int UPG_BLOCK = 24;
+    private static final int UPG_BLOCK = 6;
     private static final int DEBUFF = 2;
 
     public MagnetizedChassisPlate() {

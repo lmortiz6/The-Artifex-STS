@@ -20,7 +20,7 @@ public class HighExplosiveGrenade extends BaseCard {
             CardTarget.SELF,
             1
     );
-    private static final int DAMAGE = 14;
+    private static final int DAMAGE = 11;
     private static final int UPG_DAMAGE = 4;
     private static final int TURNS = 2;
 

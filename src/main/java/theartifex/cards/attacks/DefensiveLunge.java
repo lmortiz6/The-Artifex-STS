@@ -25,8 +25,8 @@ public class DefensiveLunge extends BaseCard {
     );
     private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 4;
-    private static final int BLOCK = 4;
-    private static final int UPG_BLOCK = 2;
+    private static final int BLOCK = 3;
+    private static final int UPG_BLOCK = 3;
 
     public DefensiveLunge() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

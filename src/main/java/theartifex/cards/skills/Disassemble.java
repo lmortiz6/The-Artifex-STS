@@ -34,6 +34,7 @@ public class Disassemble extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         nonSkills = new ArrayList<AbstractCard>();
         setMagic(GOLD, UPG_GOLD); //Sets the card's damage and how much it changes when upgraded.
+        setExhaust(true);
     }
 
     @Override

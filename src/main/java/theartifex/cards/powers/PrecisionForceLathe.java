@@ -4,13 +4,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticCard;
-import theartifex.cards.BaseCard;
 import theartifex.cards.attacks.ForceKnife;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.PrecisionForceLathePower;
-import theartifex.relics.CarbideHandBonesRelic;
+import theartifex.relics.PrecisionForceLatheRelic;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
 
@@ -25,8 +23,9 @@ public class PrecisionForceLathe extends AbstractCyberneticCard {
             CardTarget.SELF,
             3
     );
+    public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;
-    private static final AbstractRelic cyberneticRelic = new CarbideHandBonesRelic();
+    private static final String cyberneticRelic = makeID(PrecisionForceLatheRelic.class.getSimpleName());
 
     public PrecisionForceLathe() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.

@@ -19,10 +19,10 @@ public class PyrokinesisField extends AbstractGun {
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ALL_ENEMY,
-            2
+            3
     );
-    private static final int DAMAGE = 21;
-    private static final int UPG_DAMAGE = 7;
+    private static final int DAMAGE = 25;
+    private static final int UPG_DAMAGE = 5;
 
     public PyrokinesisField() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

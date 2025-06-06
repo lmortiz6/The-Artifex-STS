@@ -19,7 +19,7 @@ public class PointDefenseDrone extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            2
+            1
     );
     private static final int BUFF = 1;
     private static final int UPG_BUFF = 0;
@@ -28,7 +28,7 @@ public class PointDefenseDrone extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         this.setMagic(BUFF, UPG_BUFF);
-        this.setCostUpgrade(1);
+        this.setCostUpgrade(0);
     }
 
     @Override
