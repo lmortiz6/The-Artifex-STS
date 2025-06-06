@@ -1,8 +1,5 @@
 package theartifex.relics;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.actions.GiantHandsAction;

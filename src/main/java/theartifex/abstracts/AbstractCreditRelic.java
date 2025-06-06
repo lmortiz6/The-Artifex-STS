@@ -2,7 +2,6 @@ package theartifex.abstracts;
 
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
-import theartifex.TheArtifexMod;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.relics.BaseRelic;
 

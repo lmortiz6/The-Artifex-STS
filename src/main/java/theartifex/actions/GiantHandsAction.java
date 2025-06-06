@@ -8,9 +8,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.GainPennyEffect;
-import theartifex.powers.GiantHandsPower;
-import theartifex.relics.GiantHandsRelic;
 
 public class GiantHandsAction extends AbstractGameAction {
     private final AbstractPlayer p;

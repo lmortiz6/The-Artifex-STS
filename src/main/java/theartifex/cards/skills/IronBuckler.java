@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theartifex.TheArtifexMod;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;

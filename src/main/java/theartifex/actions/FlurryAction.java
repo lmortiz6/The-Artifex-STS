@@ -9,8 +9,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theartifex.TheArtifexMod;
 
 public class FlurryAction extends AbstractGameAction {
 

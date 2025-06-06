@@ -6,13 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theartifex.actions.AddToHandAction;
 import theartifex.cards.BaseCard;
 import theartifex.powers.MedassistModulePower;
 import theartifex.relics.MedassistModuleRelic;
 import theartifex.util.CardStats;
-
-import java.util.ArrayList;
 
 public class AbstractInjector extends BaseCard {
 

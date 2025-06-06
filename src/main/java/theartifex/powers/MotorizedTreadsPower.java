@@ -2,12 +2,8 @@ package theartifex.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
-import theartifex.TheArtifexMod;
-import theartifex.actions.DebugLogAction;
 
 import static theartifex.TheArtifexMod.makeID;
 

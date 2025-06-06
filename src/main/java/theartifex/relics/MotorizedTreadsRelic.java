@@ -1,14 +1,11 @@
 package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractCyberneticRelic;
-import theartifex.actions.DebugLogAction;
 import theartifex.cards.powers.MotorizedTreads;
 
 import static theartifex.TheArtifexMod.makeID;
