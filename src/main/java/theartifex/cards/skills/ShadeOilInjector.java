@@ -19,7 +19,7 @@ public class ShadeOilInjector extends AbstractInjector {
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
             1
     );
@@ -43,6 +43,13 @@ public class ShadeOilInjector extends AbstractInjector {
         super.use(p, m);
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, BUFF)));
         addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, true)));
+    }
+
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        this.reaction = new Burn();
+        this.cardsToPreview = this.reaction;
     }
 
     @Override

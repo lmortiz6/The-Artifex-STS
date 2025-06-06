@@ -22,18 +22,19 @@ public class Sprint extends BaseCard {
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.NONE,
-            1
+            0
     );
     private static final int DRAW = 2;
+    private static final int UPG_DRAW = 1;
     private static final int DISCARD = 1;
 
     public Sprint() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
-        this.setMagic(DRAW);
+        this.setMagic(DRAW, UPG_DRAW);
         this.setExhaust(true);
-        this.setCostUpgrade(0);
         this.tags.add(CustomCardTags.SPRINT);
+        this.initializeDescription();
     }
 
     @Override
@@ -48,10 +49,15 @@ public class Sprint extends BaseCard {
         GlyphLayout gl = new GlyphLayout();
         gl.setText(FontHelper.cardDescFont_N, exhaustString);
         if (this.exhaust) {
-            description.add(new DescriptionLine(exhaustString, gl.width));
             if (!this.keywords.contains("exhaust"))
                 this.keywords.add("exhaust");
         } else {
+            for (int i = 0; i < description.size(); i++) {
+                if (description.get(i).text.contains("Exhaust.")) {
+                    description.remove(i);
+                    break;
+                }
+            }
             this.keywords.remove("exhaust");
         }
     }

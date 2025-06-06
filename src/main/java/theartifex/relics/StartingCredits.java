@@ -10,9 +10,14 @@ public class StartingCredits extends AbstractCreditRelic {
     public static final String ID = makeID(NAME);
     private static final AbstractRelic.RelicTier RARITY = RelicTier.STARTER;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
-    private static final int AMOUNT = 5;
+    private static final int AMOUNT = 4;
 
     public StartingCredits() {
         super(ID, NAME, RARITY, SOUND, AMOUNT);
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
     }
 }

@@ -1,10 +1,17 @@
 package theartifex.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theartifex.actions.FlurryAction;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
@@ -31,7 +38,24 @@ public class Flurry extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot((AbstractGameAction)new FlurryAction(p, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.upgraded));
+        int effect = EnergyPanel.totalCount;
+        if (this.energyOnUse != -1)
+            effect = this.energyOnUse;
+        if (p.hasRelic("Chemical X")) {
+            effect += 2;
+            p.getRelic("Chemical X").flash();
+        }
+        if (upgraded) {
+            effect++;
+        }
+        if (effect > 0) {
+            for (int i = 0; i < effect; i++){
+                addToBot((AbstractGameAction)new FlurryAction(p, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.upgraded));
+            }
+            if (!this.freeToPlayOnce)
+                p.energy.use(EnergyPanel.totalCount);
+        }
+
         if (this.upgraded) {
             addToBot((AbstractGameAction)new ExhaustAction(1, false));
         } else {

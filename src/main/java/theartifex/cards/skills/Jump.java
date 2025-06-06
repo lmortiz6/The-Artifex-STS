@@ -16,7 +16,7 @@ public class Jump extends BaseCard {
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.COMMON,
             CardTarget.NONE,
             1
     );

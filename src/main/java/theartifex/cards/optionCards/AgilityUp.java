@@ -30,7 +30,7 @@ public class AgilityUp extends BaseCard {
             -2
     );
     private static final int BUFF = 2;
-    private static final int UPG_BUFF = 2;
+    private static final int UPG_BUFF = 1;
 
     public AgilityUp() {
         super(ID, info);

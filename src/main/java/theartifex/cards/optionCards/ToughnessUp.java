@@ -30,7 +30,7 @@ public class ToughnessUp extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int BUFF = 4;
+    private static final int BUFF = 3;
     private static final int UPG_BUFF = 1;
 
     public ToughnessUp() {

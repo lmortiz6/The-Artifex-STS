@@ -20,10 +20,10 @@ public class ResonanceGrenade extends BaseCard {
             CardTarget.SELF,
             1
     );
-    private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 3;
-    private static final int VULN = 3;
-    private static final int UPG_VULN = 1;
+    private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 4;
+    private static final int VULN = 2;
+    private static final int UPG_VULN = 0;
     private static final int TURNS = 2;
 
     public ResonanceGrenade() {

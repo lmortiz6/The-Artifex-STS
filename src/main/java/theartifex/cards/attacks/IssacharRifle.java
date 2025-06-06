@@ -23,7 +23,7 @@ public class IssacharRifle extends AbstractGun {
             1
     );
     private static final int DAMAGE = 9;
-    private static final int UPG_DAMAGE = 4;
+    private static final int UPG_DAMAGE = 3;
 
     public IssacharRifle() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

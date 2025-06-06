@@ -25,10 +25,10 @@ public class PhaseCannon extends AbstractGun {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
-            5
+            4
     );
-    private static final int DAMAGE = 60;
-    private static final int UPG_DAMAGE = 15;
+    private static final int DAMAGE = 36;
+    private static final int UPG_DAMAGE = 8;
 
     public PhaseCannon() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
@@ -40,7 +40,7 @@ public class PhaseCannon extends AbstractGun {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustAction(2, false, false, false));
+        addToBot(new ExhaustAction(1, false, false, false));
         addToBot((AbstractGameAction)new SFXAction("ATTACK_HEAVY"));
         addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
@@ -49,8 +49,8 @@ public class PhaseCannon extends AbstractGun {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         super.canUse(p, m);
-        this.cantUseMessage = "I don't have enough cards to exhaust!";
-        return (p.hand.size() - 1 >= 2);
+        this.cantUseMessage = "I don't have a card to exhaust!";
+        return (p.hand.size() - 1 >= 1);
     }
 
     @Override

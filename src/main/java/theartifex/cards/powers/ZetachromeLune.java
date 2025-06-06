@@ -23,7 +23,7 @@ public class ZetachromeLune extends BaseCard {
     );
     private static final int BUFF = 10;
     private static final int UPG_BUFF = 2;
-    private static final int DEBUFF = 2;
+    private static final int DEBUFF = 1;
 
     public ZetachromeLune() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

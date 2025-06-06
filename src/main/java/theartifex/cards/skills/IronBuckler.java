@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theartifex.TheArtifexMod;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
@@ -23,33 +24,31 @@ public class IronBuckler extends BaseCard {
     private static final int BLOCK = 2;
     private static final int UPG_BLOCK = 1;
     private static final int UPG_COST = 1;
+    private static int count = 0;
 
     public IronBuckler() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setBlock(BLOCK, UPG_BLOCK);
-        this.setCustomVar("total", 0);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
-        for (int i = 0; i < this.magicNumber; i++) {
+        for (int i = 0; i < count; i++) {
             addToBot(new GainBlockAction(p, p, this.block));
         }
     }
 
     public void applyPowers() {
-        int count = 0;
+        count = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c != this)
                 count++;
         }
         count /= 2;
-        this.setMagic(count);
         super.applyPowers();
-        this.setCustomVar("total", block*count);
-
+        this.setMagic(block*count);
         initializeDescription();
     }
 

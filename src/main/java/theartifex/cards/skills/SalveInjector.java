@@ -22,7 +22,7 @@ public class SalveInjector extends AbstractInjector {
             1
     );
     private static final int BUFF = 4;
-    private static final int UPG_BUFF = 3;
+    private static final int UPG_BUFF = 2;
 
     public SalveInjector() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

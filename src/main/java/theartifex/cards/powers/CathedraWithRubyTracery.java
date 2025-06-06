@@ -4,13 +4,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticCard;
-import theartifex.cards.BaseCard;
 import theartifex.cards.attacks.PyrokinesisField;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.CathedraWithRubyTraceryPower;
-import theartifex.relics.CarbideHandBonesRelic;
+import theartifex.relics.CathedraWithRubyTraceryRelic;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
 
@@ -25,8 +23,9 @@ public class CathedraWithRubyTracery extends AbstractCyberneticCard {
             CardTarget.SELF,
             5
     );
+    public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;
-    private static final AbstractRelic cyberneticRelic = new CarbideHandBonesRelic();
+    private static final String cyberneticRelic = makeID(CathedraWithRubyTraceryRelic.class.getSimpleName());
 
     public CathedraWithRubyTracery() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.

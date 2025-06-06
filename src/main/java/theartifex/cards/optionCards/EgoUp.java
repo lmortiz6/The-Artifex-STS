@@ -28,8 +28,8 @@ public class EgoUp extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int BUFF = 17;
-    private static final int UPG_BUFF = 8;
+    private static final int BUFF = 15;
+    private static final int UPG_BUFF = 7;
 
     public EgoUp() {
         super(ID, info);
@@ -50,6 +50,6 @@ public class EgoUp extends BaseCard {
     }
 
     public AbstractCard makeCopy() {
-        return new StrengthUp();
+        return new EgoUp();
     }
 }

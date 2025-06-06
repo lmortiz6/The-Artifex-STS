@@ -19,6 +19,6 @@ public class StabilizerArmLocksPower extends BasePower{
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[]{2 * amount});
+        this.description = String.format(DESCRIPTIONS[0], new Object[]{amount});
     }
 }
