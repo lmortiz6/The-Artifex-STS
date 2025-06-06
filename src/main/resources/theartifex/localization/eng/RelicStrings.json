@@ -10,35 +10,106 @@
     "NAME": "Carbide Hand Bones",
     "FLAVOR": "Blue carbide merely dents where weak collagen would be smashed to bits.",
     "DESCRIPTIONS": [
-      "#yCybernetic. NL ALL Strikes deal 1.5x damage."
+      "#yCybernetic. ALL Strikes deal 1.5x damage."
     ]
   },
   "${modID}:ForceModulatorRelic": {
     "NAME": "Force Modulator",
     "FLAVOR": "The emitted frequencies of your tiniest bits are synchronized with the standardized band for force emission.",
     "DESCRIPTIONS": [
-      "#yCybernetic. NL Your first attack each turn deals damage regardless of the enemy's block."
+      "#yCybernetic. Your first attack each turn deals damage regardless of the enemy's block."
     ]
   },
   "${modID}:InflatableAxonsRelic": {
     "NAME": "Inflatable Axons",
     "FLAVOR": "Nanoscopic stents inflate the gossamer brain-threads that restrict the conduction of the will.",
     "DESCRIPTIONS": [
-      "#yCybernetic. NL On odd turns, draw 2 additional cards. NL On even turns, draw 1 less card."
+      "#yCybernetic. On odd turns, draw 2 additional cards. On even turns, draw 1 less card."
     ]
   },
   "${modID}:StabilizerArmLocksRelic": {
     "NAME": "Stabilizer Arm Locks",
     "FLAVOR": "Chrome clasps fasten arm joints to emulate the stillness of unlife.",
     "DESCRIPTIONS": [
-      "#yCybernetic. NL ALL ${modID}:Gun cards deal 2 additional damage."
+      "#yCybernetic. ALL ${modID}:Gun cards deal 2 additional damage."
     ]
   },
   "${modID}:StartingCredits": {
-    "NAME": "Cybernetic Credits Wedge 5¢",
+    "NAME": "Credits Wedge 4¢",
     "FLAVOR": "A tiny wedge of plastic.",
     "DESCRIPTIONS": [
-      "Grants 5¢ towards installing #yCybernetic cards."
+      "Grants 4¢ towards installing #yCybernetic cards."
+    ]
+  },
+  "${modID}:CathedraWithRubyTraceryRelic": {
+    "NAME": "Cathedra w/Ruby Tracery",
+    "FLAVOR": "Wavecrests of slag interrupt the plane geometry of the gigantic seat. The splats and claw feet are burned and disarranged; the ritual of transformation never ends.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. At the start of your turn, gain ",
+      ". At the start of combat, shuffle a #yPyrokinesis #yField into your draw pile."
+    ]
+  },
+  "${modID}:GiantHandsRelic": {
+    "NAME": "Giant Hands",
+    "FLAVOR": "For ages they dreamed, 'the hands must grow'. In the soft luster of a laboratory, the dream was realized.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. At the start of your turn, reduce the cost of a random attack in your hand by 1."
+    ]
+  },
+  "${modID}:HolographicVisageRelic": {
+    "NAME": "Holographic Visage",
+    "FLAVOR": "Emulsion slicks on the cheek and laser light evokes pareidolic warmth.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. Each combat, the first 2 times you end your turn without playing any attacks, gain 1 Buffer."
+    ]
+  },
+  "${modID}:HyperElasticAnkleTendonsRelic": {
+    "NAME": "Hyper-Elastic Ankle Tendons",
+    "FLAVOR": "Banded ropes of hydrogel are bundled into one.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. Your #ySprints draw 1 additional card and don't #yExhaust."
+    ]
+  },
+  "${modID}:MedassistModuleRelic": {
+    "NAME": "Medassist Module",
+    "FLAVOR": "Pneumatic applicators are hardwired to an intelligent control unit that dictates the injection of protean dyes into the veins.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. Your first played #yInjector card each turn costs 0."
+    ]
+  },
+  "${modID}:MotorizedTreadsRelic": {
+    "NAME": "Motorized Treads",
+    "FLAVOR": "Triangular treads swathe the teeth of giant gears that turn to locomote. Their human has escaped the confines of bipedal motion.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. Draw 2 additional cards at the start of each turn. You cannot draw additional cards after."
+    ]
+  },
+  "${modID}:PrecisionForceLatheRelic": {
+    "NAME": "Precision Force Lathe",
+    "FLAVOR": "A magnetically-shielded headstock holds space in kinetic suspension while a force spindle spins and sharpens it to a point.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. At the start of your turn, add a #yForce #yKnife+ to your hand."
+    ]
+  },
+  "${modID}:CommonCreditRelic": {
+    "NAME": "Credits Wedge 2¢",
+    "FLAVOR": "A tiny wedge of plastic.",
+    "DESCRIPTIONS": [
+      "Grants 2¢ towards installing #yCybernetic cards."
+    ]
+  },
+  "${modID}:UncommonCreditRelic": {
+    "NAME": "Credits Wedge 3¢",
+    "FLAVOR": "A tiny wedge of plastic.",
+    "DESCRIPTIONS": [
+      "Grants 3¢ towards installing #yCybernetic cards."
+    ]
+  },
+  "${modID}:RareCreditRelic": {
+    "NAME": "Credits Wedge 3¢",
+    "FLAVOR": "A tiny wedge of plastic.",
+    "DESCRIPTIONS": [
+      "Grants 3¢ towards installing #yCybernetic cards."
     ]
   }
 }

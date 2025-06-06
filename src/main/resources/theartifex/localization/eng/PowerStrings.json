@@ -64,7 +64,6 @@
   "${modID}:TimeDilationGrenadePower": {
     "NAME": "Time Dilation Grenade",
     "DESCRIPTIONS": [
-      "At the end of #b%1$s turns, draw #b%2$s cards.",
       "At the start of your next turn, draw #b%1$s cards."
     ]
   },
@@ -109,7 +108,7 @@
     ]
   },
   "${modID}:DeftThrowingPower": {
-    "NAME": "Draw Reduction",
+    "NAME": "Deft Throwing",
     "DESCRIPTIONS": [
       "At the start of your turn, gain #b%1$s temporary Dexterity for each active grenade."
     ]
@@ -156,7 +155,7 @@
     ]
   },
   "${modID}:HyperElasticAnkleTendonsPower": {
-    "NAME": "Hyper Elastic Ankle Tendons",
+    "NAME": "Hyper-Elastic Ankle Tendons",
     "DESCRIPTIONS": [
       "Your #ySprints draw #b%1$s additional cards and don't Exhaust.",
       "Your #ySprints draw #b%1$s additional card and don't Exhaust."
@@ -173,15 +172,15 @@
     "NAME": "Precision Force Lathe",
     "DESCRIPTIONS": [
       "At the start of your turn, add #b",
-      " #yForce #yKnife into your hand.",
-      " #yForce #yKnives into your hand."
+      " #yForce #yKnives into your hand.",
+      " #yForce #yKnife into your hand."
     ]
   },
   "${modID}:GiantHandsPower": {
     "NAME": "Giant Hands",
     "DESCRIPTIONS": [
-      "At the start of your turn, reduce the cost of #b%1$s random attacks in your hand to 1.",
-      "At the start of your turn, reduce the cost of a random attack in your hand to 1."
+      "At the start of your turn, reduce the cost of #b%1$s random attacks in your hand by 1.",
+      "At the start of your turn, reduce the cost of a random attack in your hand by 1."
     ]
   },
   "${modID}:MotorizedTreadsPower": {
