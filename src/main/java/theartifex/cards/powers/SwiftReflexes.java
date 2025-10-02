@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
-import theartifex.cards.skills.FulleriteAegis;
 import theartifex.cards.skills.SkulkInjector;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.SwiftReflexesPower;

@@ -11,8 +11,6 @@ import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.EMPGrenadePower;
 import theartifex.util.CardStats;
 
-import static theartifex.TheArtifexMod.makeID;
-
 public class EMPGrenade extends BaseCard implements OnObtainCard {
 
     public static final String ID = makeID(EMPGrenade.class.getSimpleName());

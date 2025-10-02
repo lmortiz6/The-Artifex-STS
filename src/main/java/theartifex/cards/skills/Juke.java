@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.actions.JukeAction;
 import theartifex.cards.BaseCard;
-import theartifex.cards.attacks.ShieldBash;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
 

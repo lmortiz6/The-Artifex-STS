@@ -10,8 +10,6 @@ import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
 
-import static theartifex.TheArtifexMod.makeID;
-
 public class WitchwoodBark extends BaseCard {
 
     public static final String ID = makeID(WitchwoodBark.class.getSimpleName());

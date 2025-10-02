@@ -1,11 +1,10 @@
 package theartifex.patches;
 
-import basemod.BaseMod;
-import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import javassist.CtBehavior;
 import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractCreditRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;

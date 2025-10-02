@@ -6,14 +6,11 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
-
-import static theartifex.TheArtifexMod.makeID;
 
 public class DefensiveLunge extends BaseCard {
 

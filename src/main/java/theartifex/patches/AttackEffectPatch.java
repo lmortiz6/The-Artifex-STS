@@ -1,7 +1,6 @@
 package theartifex.patches;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import theartifex.util.CustomAttackEffect;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import theartifex.util.CustomAttackEffect;
 
 import static theartifex.TheArtifexMod.makeID;
 

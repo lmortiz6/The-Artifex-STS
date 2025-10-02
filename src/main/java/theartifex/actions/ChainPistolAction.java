@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theartifex.util.CustomAttackEffect;
-import theartifex.util.CustomCardTags;
 
 public class ChainPistolAction extends AbstractGameAction {
 

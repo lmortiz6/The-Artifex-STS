@@ -16,8 +16,6 @@ import theartifex.powers.MedassistModulePower;
 import theartifex.relics.MedassistModuleRelic;
 import theartifex.util.CardStats;
 
-import static theartifex.TheArtifexMod.makeID;
-
 public class AbstractInjector extends BaseCard {
 
     protected AbstractCard reaction;

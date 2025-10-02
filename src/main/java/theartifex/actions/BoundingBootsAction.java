@@ -1,12 +1,10 @@
 package theartifex.actions;
 
-import basemod.devcommands.draw.Draw;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theartifex.TheArtifexMod;
 import theartifex.util.CustomCardTags;
 
 import static theartifex.TheArtifexMod.makeID;
