@@ -1,6 +1,5 @@
 package theartifex.cards.attacks;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 
 public class CeremonialVibrokhopesh extends BaseCard {
 
@@ -39,19 +39,8 @@ public class CeremonialVibrokhopesh extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RemoveAllBlockAction(m, p));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.VIBROKHOPESH));
         addToBot(new ReduceCostAction(this.uuid, this.magicNumber));
-    }
-
-    public void applyPowers() {
-        AbstractPower strength = AbstractDungeon.player.getPower("Strength");
-        if (strength != null) {
-            int originalStrength = strength.amount;
-            strength.amount -= strength.amount;
-            super.applyPowers();
-            strength.amount += originalStrength;
-        } else
-            super.applyPowers();
     }
 
     public void calculateCardDamage(AbstractMonster mo) {

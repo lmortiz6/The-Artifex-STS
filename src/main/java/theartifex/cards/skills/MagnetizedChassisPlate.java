@@ -19,11 +19,11 @@ public class MagnetizedChassisPlate extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
-    private static final int BLOCK = 18;
-    private static final int UPG_BLOCK = 6;
-    private static final int DEBUFF = 2;
+    private static final int BLOCK = 20;
+    private static final int UPG_BLOCK = 5;
+    private static final int DEBUFF = 1;
 
     public MagnetizedChassisPlate() {
         super(ID, info); //Pass the required information to the BaseCard constructor.

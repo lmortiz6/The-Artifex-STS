@@ -1,7 +1,7 @@
 package theartifex.cards.attacks;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.abstracts.AbstractGun;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 import theartifex.util.CustomCardTags;
 
 public class IssacharRifle extends AbstractGun {
@@ -29,12 +30,15 @@ public class IssacharRifle extends AbstractGun {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-        tags.add(CustomCardTags.GUN);
+        tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        if (isMultiDamage)
+            addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, CustomAttackEffect.ISSACHAR_RIFLE));
+        else
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.ISSACHAR_RIFLE));
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
@@ -18,12 +19,12 @@ public class Meditate extends BaseCard {
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            0
+            1
     );
-    private static final int BLOCK = 3;
-    private static final int UPG_BLOCK = 3;
+    private static final int BLOCK = 5;
+    private static final int UPG_BLOCK = 4;
     private static final int DRAW = 1;
     private static final int RETAIN = 1;
 
@@ -35,6 +36,7 @@ public class Meditate extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playV(makeID("MEDITATE"), 1.3f); // Sound Effect
         addToBot(new GainBlockAction(p, p, this.block));
         addToBot(new DrawCardAction(p, DRAW));
         addToBot(new RetainCardsAction(p, RETAIN));

@@ -1,17 +1,9 @@
 [
   {
-    "PROPER_NAME": "Multiword Keyword",
-    "NAMES": [
-      "multiword keyword",
-      "multiword_keyword",
-      "multiword_keywords"
-    ],
-    "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
-  },
-  {
     "PROPER_NAME" : "Gun",
     "NAMES": [
-      "gun"
+      "gun",
+      "guns"
     ],
     "DESCRIPTION": "The damage of Gun cards is affected by Dexterity rather than Strength."
   },
@@ -20,7 +12,7 @@
     "NAMES": [
       "cybernetic"
     ],
-    "DESCRIPTION": "Cybernetic cards can be implanted as permanent relics at #yRest #ySites. They cannot be upgraded."
+    "DESCRIPTION": "Cybernetic cards can be implanted as permanent relics at #yRest #ySites for a credit cost equal to their energy cost. They cannot be upgraded."
   },
   {
     "PROPER_NAME" : "CyberneticRelic",
@@ -28,5 +20,84 @@
       "cyberneticrelic"
     ],
     "DESCRIPTION": "Cybernetic relics can be unimplanted at #yRest #ySites to gain their respective card."
+  },
+  {
+    "PROPER_NAME" : "Card Mod",
+    "NAMES": [
+      "mod",
+      "modify"
+    ],
+    "DESCRIPTION": "Card mods grant additional effects when played. Cards can have a maximum of #b2 mods."
+  },
+  {
+    "PROPER_NAME" : "Jacked",
+    "NAMES": [
+      "jacked"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Jacked cards grant [E] when played."
+  },
+  {
+    "PROPER_NAME" : "Reinforced",
+    "NAMES": [
+      "reinforced"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Reinforced cards grant #b4 #yBlock when played."
+  },
+  {
+    "PROPER_NAME" : "Nulling",
+    "NAMES": [
+      "nulling"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Nulling cards grant #b1 #yArtifact and #yExhaust when played."
+  },
+  {
+    "PROPER_NAME" : "Beamsplitter",
+    "NAMES": [
+      "beamsplitter"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Beamsplitter cards target ALL enemies when played."
+  },
+  {
+    "PROPER_NAME" : "Flexiweaved",
+    "NAMES": [
+      "flexiweaved"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Flexiweaved cards grant #b2 temporary #yDexterity when played."
+  },
+  {
+    "PROPER_NAME" : "Sharp",
+    "NAMES": [
+      "sharp"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Sharp cards deal #b4 additional damage when played."
+  },
+  {
+    "PROPER_NAME" : "Springloaded",
+    "NAMES": [
+      "springloaded"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Springloaded cards draw #b1 card and discard #b1 card when played."
+  },
+  {
+    "PROPER_NAME" : "Adverse Reaction",
+    "NAMES": [
+      "adverse",
+      "reaction"
+    ],
+    "DESCRIPTION": "Injector cards have a #b1 #bin #b3 chance to have an additional negative effect when played."
+  },
+  {
+    "PROPER_NAME" : "Pulsed",
+    "NAMES": [
+      "pulsed"
+    ],
+    "DESCRIPTION": "Pulsed creatures have their next buff negated."
+  },
+  {
+    "PROPER_NAME" : "Lovesick",
+    "NAMES": [
+      "lovesick"
+    ],
+    "DESCRIPTION": "Lovesick creatures have their attacks and debuffs target a random enemy instead of the player."
   }
 ]

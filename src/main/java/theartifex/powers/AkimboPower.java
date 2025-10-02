@@ -27,7 +27,7 @@ public class AkimboPower extends BasePower{
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!used && card.hasTag(CustomCardTags.GUN)) {
+        if (!used && card.hasTag(CustomCardTags.THEARTIFEXGUN)) {
             addToBot(new DrawCardAction(this.amount));
             flash();
             this.used = true;

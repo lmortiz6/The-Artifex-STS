@@ -31,7 +31,7 @@ public class CarbideHandBones extends AbstractCyberneticCard {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
 
         this.cardsToPreview = new Strike_Artifex();
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

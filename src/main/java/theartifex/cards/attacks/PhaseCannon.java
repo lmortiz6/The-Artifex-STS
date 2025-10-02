@@ -35,7 +35,7 @@ public class PhaseCannon extends AbstractGun {
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         this.isMultiDamage = true;
-        tags.add(CustomCardTags.GUN);
+        tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override

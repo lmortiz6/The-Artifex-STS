@@ -28,7 +28,6 @@ public class CyberneticConfirmDisablePatch {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 cost += c.cost;
             }
-            //TheArtifexMod.logger.info("selected cards: " + AbstractDungeon.gridSelectScreen.selectedCards.size());
             if (!TheArtifexMod.currBecomingNookEffect.uninstalled && AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 ___confirmButton[0].isDisabled = true;
             } else

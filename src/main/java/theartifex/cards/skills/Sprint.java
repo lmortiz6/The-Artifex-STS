@@ -1,11 +1,10 @@
 package theartifex.cards.skills;
 
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
@@ -32,21 +31,22 @@ public class Sprint extends BaseCard {
 
         this.setMagic(DRAW, UPG_DRAW);
         this.setExhaust(true);
-        this.tags.add(CustomCardTags.SPRINT);
+        this.tags.add(CustomCardTags.THEARTIFEXSPRINT);
         this.initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playAV(makeID("SPRINT"), 0f, 1.0f); // Sound Effect
         addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new DiscardAction(p, p, DISCARD, false));
     }
 
     public void initializeDescription() {
         super.initializeDescription();
-        String exhaustString = "*Exhaust.";
-        GlyphLayout gl = new GlyphLayout();
-        gl.setText(FontHelper.cardDescFont_N, exhaustString);
+//        String exhaustString = "*Exhaust.";
+//        GlyphLayout gl = new GlyphLayout();
+//        gl.setText(FontHelper.cardDescFont_N, exhaustString);
         if (this.exhaust) {
             if (!this.keywords.contains("exhaust"))
                 this.keywords.add("exhaust");

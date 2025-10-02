@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -19,6 +20,8 @@ import theartifex.abstracts.AbstractCyberneticCard;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import static theartifex.TheArtifexMod.makeID;
 
 public class BecomingNookEffect extends AbstractGameEffect {
 
@@ -54,6 +57,7 @@ public class BecomingNookEffect extends AbstractGameEffect {
         this.duration = 1.5F;
         this.screenColor.a = 0.0F;
         AbstractDungeon.overlayMenu.proceedButton.hide();
+        CardCrawlGame.sound.playV(makeID("BECOMING_NOOK"), 1.3f); // Sound Effect
     }
 
     public void update() {
@@ -74,13 +78,14 @@ public class BecomingNookEffect extends AbstractGameEffect {
                     credits += c.cost;
                 }
             }
+            if (!relicsToRemove.isEmpty())
+                CardCrawlGame.sound.playV(makeID("UNIMPLANT"), 1.3f); // Sound Effect
             relicSelect = false;
             TheArtifexMod.gridScreenForCyberRelics = false;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             if (hasCyberneticCard) {
                 cardSelect = true;
                 TheArtifexMod.gridScreenForCyberCards = true;
-                TheArtifexMod.logger.info("ReliSelect hit");
                 AbstractDungeon.gridSelectScreen.open(cards, 10, true, "Select Cybernetics to install.\n(Credit Cost = Energy Cost)");
             } else {
                 confirmSelect = true;
@@ -96,6 +101,8 @@ public class BecomingNookEffect extends AbstractGameEffect {
                     relicsToAdd.add(c.getRelic());
                 }
             }
+            if (!cardsToRemove.isEmpty())
+                CardCrawlGame.sound.playV(makeID("IMPLANT"), 1.3f); // Sound Effect
             cardSelect = false;
             TheArtifexMod.gridScreenForCyberCards = false;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

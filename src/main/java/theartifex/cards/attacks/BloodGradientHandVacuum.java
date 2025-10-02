@@ -31,13 +31,13 @@ public class BloodGradientHandVacuum extends AbstractGun {
         setExhaust(true);
 
         tags.add(CardTags.HEALING);
-        tags.add(CustomCardTags.GUN);
+        tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL);
-        addToBot(new BloodGradientHandVacuumAction(m, info));
+        addToBot(new BloodGradientHandVacuumAction(m, info, this.isMultiDamage));
     }
 
     @Override

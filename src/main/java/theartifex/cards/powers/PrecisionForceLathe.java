@@ -33,7 +33,7 @@ public class PrecisionForceLathe extends AbstractCyberneticCard {
         AbstractCard card = new ForceKnife();
         card.upgrade();
         this.cardsToPreview = card;
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
 
     }
 

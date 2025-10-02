@@ -3,6 +3,7 @@ package theartifex.cards.skills;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import theartifex.cards.BaseCard;
@@ -20,7 +21,7 @@ public class WitchwoodBark extends BaseCard {
             CardTarget.SELF,
             0
     );
-    private static final int REGEN = 2;
+    private static final int REGEN = 3;
     private static final int UPG_REGEN = 1;
 
     public WitchwoodBark() {
@@ -34,6 +35,7 @@ public class WitchwoodBark extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playV(makeID("WITCHWOOD"), 1.3f); // Sound Effect
         addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
     }
 

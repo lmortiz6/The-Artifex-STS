@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class HyperElasticAnkleTendonsPower extends BasePower{
+public class HyperElasticAnkleTendonsPower extends BasePower {
 
     public static final String POWER_ID = makeID(HyperElasticAnkleTendonsPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -25,7 +25,7 @@ public class HyperElasticAnkleTendonsPower extends BasePower{
 
     private void updateExistingSprints() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -33,7 +33,7 @@ public class HyperElasticAnkleTendonsPower extends BasePower{
             }
         }
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -41,7 +41,7 @@ public class HyperElasticAnkleTendonsPower extends BasePower{
             }
         }
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -49,7 +49,7 @@ public class HyperElasticAnkleTendonsPower extends BasePower{
             }
         }
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -59,7 +59,12 @@ public class HyperElasticAnkleTendonsPower extends BasePower{
     }
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        // if a card spawns a sprint
+        updateExistingSprints();
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        updateExistingSprints();
     }
 
     public void updateDescription() {

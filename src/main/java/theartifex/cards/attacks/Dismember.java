@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 
 public class Dismember extends BaseCard {
 
@@ -23,10 +24,10 @@ public class Dismember extends BaseCard {
             CardTarget.ENEMY,
             2
     );
-    private static final int DAMAGE = 15;
-    private static final int UPG_DAMAGE = 5;
+    private static final int DAMAGE = 12;
+    private static final int UPG_DAMAGE = 4;
     private static final int DEBUFF = 2;
-    private static final int UPG_DEBUFF = 0;
+    private static final int UPG_DEBUFF = 1;
 
     public Dismember() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
@@ -38,7 +39,7 @@ public class Dismember extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.DISMEMBER));
         addToBot((AbstractGameAction)new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber), -this.magicNumber));
     }
 

@@ -1,6 +1,5 @@
 package theartifex.powers;
 
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import static theartifex.TheArtifexMod.makeID;
@@ -13,11 +12,6 @@ public class HookedPower extends BasePower{
 
     public HookedPower(AbstractCreature owner, AbstractCreature source, int amount){
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
-    }
-
-    @Override
-    public void atStartOfTurn(){
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
     @Override

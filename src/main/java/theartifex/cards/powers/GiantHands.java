@@ -28,7 +28,7 @@ public class GiantHands extends AbstractCyberneticCard {
 
     public GiantHands() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

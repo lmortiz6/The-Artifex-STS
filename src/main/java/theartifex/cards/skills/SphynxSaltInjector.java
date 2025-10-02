@@ -1,11 +1,13 @@
 package theartifex.cards.skills;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EntanglePower;
 import theartifex.abstracts.AbstractInjector;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
@@ -33,9 +35,7 @@ public class SphynxSaltInjector extends AbstractInjector {
         this.setMagic(SCRY, UPG_SCRY);
         this.setCustomVar("draw", DRAW, UPG_DRAW);
         this.setExhaust(true);
-        tags.add(CustomCardTags.INJECTOR);
-        this.reaction = new Dazed();
-        this.cardsToPreview = this.reaction;
+        tags.add(CustomCardTags.THEARTIFEXINJECTOR);
     }
 
     @Override
@@ -43,6 +43,12 @@ public class SphynxSaltInjector extends AbstractInjector {
         super.use(p, m);
         addToBot(new ScryAction(this.magicNumber));
         addToBot(new DrawCardAction(p, this.customVar("draw")));
+    }
+
+    @Override
+    public void adverseReaction() {
+        super.adverseReaction();
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EntanglePower(AbstractDungeon.player)));
     }
 
     @Override

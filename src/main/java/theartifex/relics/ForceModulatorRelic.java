@@ -29,7 +29,6 @@ public class ForceModulatorRelic extends AbstractCyberneticRelic {
     @Override
     public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
         if ( used > 0 && info.type == DamageInfo.DamageType.NORMAL) {
-            flash();
             info.type = DamageInfo.DamageType.HP_LOSS;
             used--;
             return info.base;

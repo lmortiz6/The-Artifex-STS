@@ -21,7 +21,7 @@ public class CathedraWithRubyTracery extends AbstractCyberneticCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            5
+            4
     );
     public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;
@@ -31,7 +31,7 @@ public class CathedraWithRubyTracery extends AbstractCyberneticCard {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
 
         this.cardsToPreview = new PyrokinesisField();
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

@@ -1,0 +1,132 @@
+package theartifex.patches;
+
+import com.evacipated.cardcrawl.modthespire.lib.ByRef;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.megacrit.cardcrawl.actions.common.DiscardAtEndOfTurnAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theartifex.TheArtifexMod;
+import theartifex.util.CustomCardTags;
+
+public class SwiftReflexesOnDiscardPatch {
+
+    @SpirePatch(
+            clz = CardGroup.class,
+            method = "moveToDiscardPile"
+    )
+    public static class CardGroupPatch {
+        @SpirePostfixPatch
+        public static void Postfix(CardGroup __instance, @ByRef AbstractCard[] c) {
+            if (AbstractDungeon.player.hasPower("theartifex:SwiftReflexesPower") && !TheArtifexMod.nonManualDiscard && ((CustomCardTags.getMods(c[0]).size() < 2 && c[0].cost != -2 && c[0].type != AbstractCard.CardType.CURSE && !c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED) && !c[0].tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)))) {
+                CustomCardTags.loadMod(c[0], CustomCardTags.THEARTIFEXFLEXIWEAVED, false);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = DiscardAtEndOfTurnAction.class,
+            method = "update"
+    )
+    public static class DiscardAtEndOfTurnActionPatch {
+        @SpirePrefixPatch
+        public static void Prefix(DiscardAtEndOfTurnAction __instance) {
+            TheArtifexMod.nonManualDiscard = true;
+        }
+    }
+
+    @SpirePatch(
+            clz = UseCardAction.class,
+            method = "update"
+    )
+    public static class UseCardActionPatch {
+        @SpirePrefixPatch
+        public static void Prefix(UseCardAction __instance) {
+            TheArtifexMod.nonManualDiscard = true;
+        }
+    }
+
+    /*@SpirePatch(
+            clz = DiscardAction.class,
+            method = "update"
+    )
+    public static class DiscardActionPatch {
+
+        @SpireInsertPatch(
+                locator = Locator1.class,
+                localvars = {"c"}
+        )
+        public static void EntireHand(DiscardAction __instance, @ByRef AbstractCard[] c) {
+            if (AbstractDungeon.player.hasPower("theartifex:SpryPower"))
+                CustomCardTags.loadMod(c[0], CustomCardTags.THEARTIFEXFLEXIWEAVED, false);
+        }
+
+        @SpireInsertPatch(
+                locator = Locator2.class,
+                localvars = {"c"}
+        )
+        public static void Random(DiscardAction __instance, @ByRef AbstractCard[] c) {
+            if (AbstractDungeon.player.hasPower("theartifex:SpryPower"))
+                CustomCardTags.loadMod(c[0], CustomCardTags.THEARTIFEXFLEXIWEAVED, false);
+        }
+
+        @SpireInsertPatch(
+                locator = Locator3.class,
+                localvars = {"c"}
+        )
+        public static void Choose(DiscardAction __instance, @ByRef AbstractCard[] c) {
+            if (AbstractDungeon.player.hasPower("theartifex:SpryPower"))
+                CustomCardTags.loadMod(c[0], CustomCardTags.THEARTIFEXFLEXIWEAVED, false);
+        }
+
+        public static class Locator1 extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "moveToDiscardPile");
+                int[] lineToReturn = LineFinder.findAllInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+                return new int[]{lineToReturn[0]};
+            }
+        }
+
+        public static class Locator2 extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "moveToDiscardPile");
+                int[] lineToReturn = LineFinder.findAllInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+                return new int[]{lineToReturn[1]};
+            }
+        }
+
+        public static class Locator3 extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "moveToDiscardPile");
+                int[] lineToReturn = LineFinder.findAllInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+                return new int[]{lineToReturn[2]};
+            }
+        }
+    }*/
+
+   /*@SpirePatch(
+            clz = DiscardSpecificCardAction.class,
+            method = "update"
+    )
+    public static class DiscardSpecificCardActionPatch {
+
+        @SpireInsertPatch(
+                locator = Locator1.class
+        )
+        public static void Discard(DiscardAction __instance) {
+            if (AbstractDungeon.player.hasPower("theartifex:SpryPower")) {
+                // CustomCardTags.loadMod(___targetCard[0], CustomCardTags.THEARTIFEXFLEXIWEAVED, false);
+                }
+        }
+
+        public static class Locator1 extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "moveToDiscardPile");
+                return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
+            }
+        }
+    }*/
+}

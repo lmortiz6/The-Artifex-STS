@@ -17,12 +17,13 @@ public class MetamorphicPolygel extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            1
+            0
     );
 
     public MetamorphicPolygel() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setSelfRetain(false, true);
+        this.setExhaust(true);
     }
 
     @Override

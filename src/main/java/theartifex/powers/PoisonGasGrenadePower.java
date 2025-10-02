@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class PoisonGasGrenadePower extends BasePower{
+public class PoisonGasGrenadePower extends BasePower {
 
     public static final String POWER_ID = makeID(PoisonGasGrenadePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -22,6 +22,7 @@ public class PoisonGasGrenadePower extends BasePower{
         this.ID = POWER_ID + bombIdOffset;
         bombIdOffset++;
         damage = magicNumber;
+        this.amount2 = magicNumber;
         this.amount = amount;
         this.updateDescription();
     }

@@ -69,7 +69,7 @@ public class TheArtifexCharacter extends CustomPlayer {
         private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
         //This is used to color *some* images, but NOT the actual cards. For that, edit the images in the cardback folder!
-        private static final Color cardColor = new Color(0f/255f, 128f/255f, 128f/255f, 1f);
+        private static final Color cardColor = new Color(38f/255f, 102f/255f, 101f/255f, 1f);
 
         //Methods that will be used in the main mod file
         public static void registerColor() {
@@ -144,8 +144,6 @@ public class TheArtifexCharacter extends CustomPlayer {
         retVal.add(Strike_Artifex.ID);
         retVal.add(Strike_Artifex.ID);
         retVal.add(Strike_Artifex.ID);
-        retVal.add(Strike_Artifex.ID);
-        retVal.add(Defend_Artifex.ID);
         retVal.add(Defend_Artifex.ID);
         retVal.add(Defend_Artifex.ID);
         retVal.add(Defend_Artifex.ID);

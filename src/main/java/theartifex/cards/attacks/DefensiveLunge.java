@@ -24,9 +24,9 @@ public class DefensiveLunge extends BaseCard {
             1
     );
     private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 4;
-    private static final int BLOCK = 3;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_DAMAGE = 3;
+    private static final int BLOCK = 4;
+    private static final int UPG_BLOCK = 2;
 
     public DefensiveLunge() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
@@ -37,7 +37,8 @@ public class DefensiveLunge extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        //CardCrawlGame.sound.playV(makeID("CARBIDE_AXE"), 1.2f); // Sound Effect
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block)));
     }
 

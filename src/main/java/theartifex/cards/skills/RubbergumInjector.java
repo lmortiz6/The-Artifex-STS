@@ -1,6 +1,7 @@
 package theartifex.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,7 +31,7 @@ public class RubbergumInjector extends AbstractInjector {
 
         this.setMagic(BUFF, UPG_BUFF);
         this.setExhaust(true);
-        tags.add(CustomCardTags.INJECTOR);
+        tags.add(CustomCardTags.THEARTIFEXINJECTOR);
         this.reaction = new Slimed();
         this.cardsToPreview = this.reaction;
     }
@@ -39,6 +40,12 @@ public class RubbergumInjector extends AbstractInjector {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         addToBot(new ApplyPowerAction(p, p, new RubbergumPower(p, p, magicNumber)));
+    }
+
+    @Override
+    public void adverseReaction() {
+        super.adverseReaction();
+        addToBot(new MakeTempCardInDrawPileAction(reaction, 1, true, true));
     }
 
     @Override

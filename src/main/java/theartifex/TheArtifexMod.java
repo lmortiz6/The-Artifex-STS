@@ -44,6 +44,7 @@ import java.util.*;
 
 @SpireInitializer
 public class TheArtifexMod implements
+        AddAudioSubscriber,
         EditCardsSubscriber,
         EditCharactersSubscriber,
         EditKeywordsSubscriber,
@@ -59,11 +60,49 @@ public class TheArtifexMod implements
     public static BecomingNookEffect currBecomingNookEffect = null;
     public static boolean gridScreenForCyberRelics = false;
     public static boolean gridScreenForCyberCards = false;
+    public static boolean nonManualDiscard = false;
+    public static ArrayList<Texture> cardModTextures = new ArrayList<>();
+
+    public static int availableCreditsFast = 0;
+    public static int maxCreditsFast = 0;
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
         return modID + ":" + id;
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio(makeID("SPRINT"), "theartifex/audio/Sprint.ogg");
+        BaseMod.addAudio(makeID("CHAIN_PISTOL"), "theartifex/audio/ChainPistol.ogg");
+        BaseMod.addAudio(makeID("BLOOD_GRADIENT"), "theartifex/audio/BloodGradient.ogg");
+        BaseMod.addAudio(makeID("VIBROKHOPESH"), "theartifex/audio/Vibrokhopesh.ogg");
+        BaseMod.addAudio(makeID("CHROME_REVOLVER"), "theartifex/audio/ChromeRevolver.ogg");
+        BaseMod.addAudio(makeID("ISSACHAR_RIFLE"), "theartifex/audio/IssacharRifle.ogg");
+        BaseMod.addAudio(makeID("CARBIDE_AXE"), "theartifex/audio/CarbideAxe.ogg");
+        BaseMod.addAudio(makeID("CONK"), "theartifex/audio/Conk.ogg");
+        BaseMod.addAudio(makeID("FORCE_KNIFE"), "theartifex/audio/ForceKnife.ogg");
+        BaseMod.addAudio(makeID("GRAPPLING_GUN"), "theartifex/audio/GrapplingGun.ogg");
+        BaseMod.addAudio(makeID("DRAG"), "theartifex/audio/Drag.ogg");
+        BaseMod.addAudio(makeID("SHANK"), "theartifex/audio/Shank.ogg");
+        BaseMod.addAudio(makeID("DISASSEMBLE"), "theartifex/audio/Disassemble.ogg");
+        BaseMod.addAudio(makeID("LEARN_SCHEMATIC"), "theartifex/audio/LearnSchematic.ogg");
+        BaseMod.addAudio(makeID("TINKER_BUILD"), "theartifex/audio/TinkerBuild.ogg");
+        BaseMod.addAudio(makeID("TINKER_MOD"), "theartifex/audio/TinkerMod.ogg");
+        BaseMod.addAudio(makeID("INJECTOR"), "theartifex/audio/Injector.ogg");
+        BaseMod.addAudio(makeID("GRENADE_THROW"), "theartifex/audio/GrenadeThrow.ogg");
+        BaseMod.addAudio(makeID("EXPLOSIVE"), "theartifex/audio/Explosive.ogg");
+        BaseMod.addAudio(makeID("EMP"), "theartifex/audio/Emp.ogg");
+        BaseMod.addAudio(makeID("GAS_EXPLOSIVE"), "theartifex/audio/GasExplosive.ogg");
+        BaseMod.addAudio(makeID("HAND_E_NUKE"), "theartifex/audio/HandENuke.ogg");
+        BaseMod.addAudio(makeID("MEDITATE"), "theartifex/audio/Meditate.ogg");
+        BaseMod.addAudio(makeID("WITCHWOOD"), "theartifex/audio/Witchwood.ogg");
+        BaseMod.addAudio(makeID("DISMEMBER"), "theartifex/audio/Dismember.ogg");
+        BaseMod.addAudio(makeID("BECOMING_NOOK"), "theartifex/audio/BecomingNook.ogg");
+        BaseMod.addAudio(makeID("UNIMPLANT"), "theartifex/audio/Unimplant.ogg");
+        BaseMod.addAudio(makeID("IMPLANT"), "theartifex/audio/Implant.ogg");
+        BaseMod.addAudio(makeID("CLEAVE"), "theartifex/audio/Cleave.ogg");
     }
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
@@ -88,6 +127,25 @@ public class TheArtifexMod implements
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+
+        initializeCardModTextures();
+    }
+
+    private void initializeCardModTextures() {
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Jacked.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Jacked2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Reinforced.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Reinforced2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Nulling.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Nulling2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Beamsplitter.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Beamsplitter2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Flexiweaved.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Flexiweaved2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Sharp.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Sharp2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Springloaded.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Springloaded2.png")));
     }
 
     /*----------Localization----------*/
@@ -322,7 +380,7 @@ public class TheArtifexMod implements
         AbstractPlayer p = AbstractDungeon.player;
         if (p != null) {
             for (AbstractCard c : p.masterDeck.group) {
-                if (c.hasTag(CustomCardTags.CYBERNETIC)) {
+                if (c.hasTag(CustomCardTags.THEARTIFEXCYBERNETIC)) {
                     hasCard = true;
                     break;
                 }

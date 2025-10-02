@@ -1,7 +1,7 @@
 package theartifex.cards.attacks;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.abstracts.AbstractGun;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 import theartifex.util.CustomCardTags;
 
 public class ChromeRevolver extends AbstractGun {
@@ -23,7 +24,7 @@ public class ChromeRevolver extends AbstractGun {
             CardTarget.ENEMY,
             0
     );
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 2;
     private static final int UPG_DAMAGE = 3;
     private static final int DRAW = 1;
 
@@ -32,12 +33,15 @@ public class ChromeRevolver extends AbstractGun {
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(DRAW);
-        tags.add(CustomCardTags.GUN);
+        tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        if (isMultiDamage)
+            addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, CustomAttackEffect.CHROME_REVOLVER));
+        else
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.CHROME_REVOLVER));
         addToBot(new DrawCardAction(p, magicNumber, false));
     }
 

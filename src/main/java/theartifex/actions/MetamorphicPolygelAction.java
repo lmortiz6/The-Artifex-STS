@@ -87,6 +87,6 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
     }
 
     private boolean isDualWieldable(AbstractCard card) {
-        return (!card.hasTag(CustomCardTags.CANNOTPOLYGEL));
+        return (!card.hasTag(CustomCardTags.THEARTIFEXCANNOTPOLYGEL));
     }
 }

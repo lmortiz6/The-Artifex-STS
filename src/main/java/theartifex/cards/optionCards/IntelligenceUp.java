@@ -33,7 +33,7 @@ public class IntelligenceUp extends BaseCard {
     public IntelligenceUp() {
         super(ID, info);
         this.setMagic(BUFF, UPG_BUFF);
-        tags.add(CustomCardTags.NECTAR);
+        tags.add(CustomCardTags.THEARTIFEXNECTAR);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

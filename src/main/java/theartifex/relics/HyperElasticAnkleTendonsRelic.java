@@ -29,7 +29,7 @@ public class HyperElasticAnkleTendonsRelic extends AbstractCyberneticRelic {
 
     private void updateExistingSprints() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -37,7 +37,7 @@ public class HyperElasticAnkleTendonsRelic extends AbstractCyberneticRelic {
             }
         }
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -45,7 +45,7 @@ public class HyperElasticAnkleTendonsRelic extends AbstractCyberneticRelic {
             }
         }
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -53,7 +53,7 @@ public class HyperElasticAnkleTendonsRelic extends AbstractCyberneticRelic {
             }
         }
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c.hasTag(CustomCardTags.SPRINT)) {
+            if (c.hasTag(CustomCardTags.THEARTIFEXSPRINT) && !c.isMagicNumberModified) {
                 c.exhaust = false;
                 c.magicNumber += 1;
                 c.isMagicNumberModified = true;
@@ -64,7 +64,12 @@ public class HyperElasticAnkleTendonsRelic extends AbstractCyberneticRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        // if a card spawns a sprint
+        updateExistingSprints();
+    }
+
+    @Override
+    public void atTurnStart() {
+        updateExistingSprints();
     }
 
     @Override
