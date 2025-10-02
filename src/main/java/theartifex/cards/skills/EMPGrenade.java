@@ -1,42 +1,52 @@
 package theartifex.cards.skills;
 
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
-import theartifex.powers.PoisonGasGrenadePower;
+import theartifex.powers.EMPGrenadePower;
 import theartifex.util.CardStats;
 
-public class PoisonGasGrenade extends BaseCard {
+import static theartifex.TheArtifexMod.makeID;
 
-    public static final String ID = makeID(PoisonGasGrenade.class.getSimpleName());
+public class EMPGrenade extends BaseCard implements OnObtainCard {
+
+    public static final String ID = makeID(EMPGrenade.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );
-    private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 3;
+    private static final int DEBUFF = 1;
+    private static final int UPG_DEBUFF = 1;
     private static final int TURNS = 2;
 
-    public PoisonGasGrenade() {
+    public EMPGrenade() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
-        this.setMagic(DAMAGE, UPG_DAMAGE);
+        this.setMagic(DEBUFF, UPG_DEBUFF);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PoisonGasGrenadePower(p, p, TURNS, this.magicNumber)));
+        CardCrawlGame.sound.playV(makeID("GRENADE_THROW"), 1.4f); // Sound Effect
+        addToBot(new ApplyPowerAction(p, p, new EMPGrenadePower(p, p, TURNS, this.magicNumber)));
     }
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new PoisonGasGrenade();
+        return new EMPGrenade();
+    }
+
+    @Override
+    public void onObtainCard() {
+        CardCrawlGame.sound.playV(makeID("TINKER_BUILD"), 1.3f); // Sound Effect
     }
 }

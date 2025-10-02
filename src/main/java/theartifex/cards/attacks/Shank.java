@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 
 public class Shank extends BaseCard {
 
@@ -22,7 +23,7 @@ public class Shank extends BaseCard {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 8;
     private static final int SCALING = 2;
     private static final int UPG_SCALING = 2;
 
@@ -35,7 +36,7 @@ public class Shank extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.SHANK));
     }
 
     public void calculateCardDamage(AbstractMonster m) {

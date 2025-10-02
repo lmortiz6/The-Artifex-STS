@@ -28,7 +28,7 @@ public class HolographicVisage extends AbstractCyberneticCard {
 
     public HolographicVisage() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

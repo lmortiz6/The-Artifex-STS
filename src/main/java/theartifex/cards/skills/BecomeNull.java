@@ -1,33 +1,35 @@
-package theartifex.cards.attacks;
+package theartifex.cards.skills;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theartifex.actions.FlurryAction;
+import theartifex.actions.BecomeNullAction;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
 
-public class Flurry extends BaseCard {
+public class BecomeNull extends BaseCard implements OnObtainCard {
 
-    public static final String ID = makeID(Flurry.class.getSimpleName());
+    public static final String ID = makeID(BecomeNull.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
-            CardType.ATTACK,
-            CardRarity.UNCOMMON,
-            CardTarget.ALL_ENEMY,
+            CardType.SKILL,
+            CardRarity.RARE,
+            CardTarget.NONE,
             -1
     );
-    private static final int DAMAGE = 5;
 
-    public Flurry() {
+    public BecomeNull() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-
-        setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        this.exhaust = true;
+        this.cardsToPreview = new VoidCard();
     }
 
     @Override
@@ -43,22 +45,29 @@ public class Flurry extends BaseCard {
             effect++;
         }
         if (effect > 0) {
-            for (int i = 0; i < effect; i++){
-                addToBot((AbstractGameAction)new FlurryAction(p, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.upgraded));
-            }
+            addToBot(new BecomeNullAction(this, effect));
+            addToBot(new WaitAction(0.2F));
             if (!this.freeToPlayOnce)
                 p.energy.use(EnergyPanel.totalCount);
         }
+        if (!upgraded)
+            addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
 
-        if (this.upgraded) {
-            addToBot((AbstractGameAction)new ExhaustAction(1, false));
-        } else {
-            addToBot((AbstractGameAction)new ExhaustAction(1, true, false, false));
-        }
+    }
+
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        this.cardsToPreview = null;
     }
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new Flurry();
+        return new BecomeNull();
+    }
+
+    @Override
+    public void onObtainCard() {
+        CardCrawlGame.sound.playV(makeID("LEARN_SCHEMATIC"), 1.6f); // Sound Effect
     }
 }

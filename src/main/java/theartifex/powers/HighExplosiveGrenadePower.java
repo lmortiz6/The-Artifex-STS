@@ -6,10 +6,11 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theartifex.util.CustomAttackEffect;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class HighExplosiveGrenadePower extends BasePower{
+public class HighExplosiveGrenadePower extends BasePower {
 
     public static final String POWER_ID = makeID(HighExplosiveGrenadePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -22,6 +23,7 @@ public class HighExplosiveGrenadePower extends BasePower{
         this.ID = POWER_ID + bombIdOffset;
         bombIdOffset++;
         damage = magicNumber;
+        this.amount2 = magicNumber;
         this.amount = amount;
         this.updateDescription();
     }
@@ -30,7 +32,7 @@ public class HighExplosiveGrenadePower extends BasePower{
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             addToBot((AbstractGameAction)new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.amount == 1)
-                addToBot((AbstractGameAction)new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                addToBot((AbstractGameAction)new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, CustomAttackEffect.EXPLOSIVE));
         }
     }
 

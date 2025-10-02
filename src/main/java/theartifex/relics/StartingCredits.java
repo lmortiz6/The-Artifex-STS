@@ -1,6 +1,7 @@
 package theartifex.relics;
 
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractCreditRelic;
 
 import static theartifex.TheArtifexMod.makeID;

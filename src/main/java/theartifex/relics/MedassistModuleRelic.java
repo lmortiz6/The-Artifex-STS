@@ -42,7 +42,7 @@ public class MedassistModuleRelic extends AbstractCyberneticRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (amount > 0 && c.hasTag(CustomCardTags.INJECTOR)) {
+        if (amount > 0 && c.hasTag(CustomCardTags.THEARTIFEXINJECTOR)) {
             amount--;
         }
     }

@@ -31,7 +31,7 @@ public class HyperElasticAnkleTendons extends AbstractCyberneticCard {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
 
         this.cardsToPreview = new Sprint();
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

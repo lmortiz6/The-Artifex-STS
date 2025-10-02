@@ -28,7 +28,7 @@ public class PrecisionForceLatheRelic extends AbstractCyberneticRelic {
             flash();
             AbstractCard card = new ForceKnife();
             card.upgrade();
-            addToBot(new MakeTempCardInHandAction(card, 1, false));
+            addToTop(new MakeTempCardInHandAction(card, 1, false));
         }
     }
 

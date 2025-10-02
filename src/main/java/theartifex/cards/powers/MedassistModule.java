@@ -28,7 +28,7 @@ public class MedassistModule extends AbstractCyberneticCard {
 
     public MedassistModule() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

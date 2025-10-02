@@ -7,10 +7,11 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theartifex.util.CustomAttackEffect;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class FreezeGrenadePower extends BasePower{
+public class FreezeGrenadePower extends BasePower {
 
     public static final String POWER_ID = makeID(FreezeGrenadePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -25,6 +26,7 @@ public class FreezeGrenadePower extends BasePower{
         bombIdOffset++;
         damage = magicNumber;
         block = magicNumber2;
+        this.amount2 = magicNumber;
         this.amount = amount;
         this.updateDescription();
     }
@@ -34,7 +36,7 @@ public class FreezeGrenadePower extends BasePower{
             addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.amount == 1) {
                 addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
-                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, CustomAttackEffect.EXPLOSIVE));
             }
         }
     }

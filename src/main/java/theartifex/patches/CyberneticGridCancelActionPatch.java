@@ -43,7 +43,6 @@ public class CyberneticGridCancelActionPatch {
                         if (TheArtifexMod.hasCyberneticRelic()) {
                             //TheArtifexMod.gridScreenForCyberRelics = true;
                             AbstractDungeon.gridSelectScreen.selectedCards.clear();
-                            //TheArtifexMod.logger.info("Relics count: " + relics.size());
                             //AbstractDungeon.gridSelectScreen.open(relics, 10, true, "Select any number of Cybernetics to uninstall.");
                         } else {
                             TheArtifexMod.gridScreenForCyberRelics = false;
@@ -60,7 +59,6 @@ public class CyberneticGridCancelActionPatch {
 
                 if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID && TheArtifexMod.gridScreenForCyberRelics) {
                     if (!AbstractDungeon.gridSelectScreen.confirmScreenUp) {
-                        TheArtifexMod.logger.info("Cyber Relic Cancel action hit");
                         TheArtifexMod.gridScreenForCyberRelics = false;
                         TheArtifexMod.gridScreenForCyberCards = false;
                         TheArtifexMod.currBecomingNookEffect.isDone = true;

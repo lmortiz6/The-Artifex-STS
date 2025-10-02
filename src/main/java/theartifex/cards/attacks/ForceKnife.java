@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 
 public class ForceKnife extends BaseCard {
 
@@ -48,7 +49,7 @@ public class ForceKnife extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.FORCE_KNIFE));
         addToBot(new MakeTempCardInHandAction(new ForceKnife(), 1, false));
     }
 

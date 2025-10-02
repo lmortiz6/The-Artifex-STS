@@ -10,7 +10,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.HookAndDragPower;
+import theartifex.powers.HookedPower;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 
 public class HookAndDrag extends BaseCard {
 
@@ -23,10 +25,10 @@ public class HookAndDrag extends BaseCard {
             CardTarget.ENEMY,
             2
     );
-    private static final int DAMAGE = 12;
-    private static final int UPG_DAMAGE = 2;
-    private static final int DEBUFF = 5;
-    private static final int UPG_DEBUFF = 2;
+    private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 0;
+    private static final int DEBUFF = 2;
+    private static final int UPG_DEBUFF = 1;
 
     public HookAndDrag() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
@@ -37,8 +39,9 @@ public class HookAndDrag extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot(new ApplyPowerAction(p, p, new HookAndDragPower(m, p, this.magicNumber)));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.CLEAVE));
+        addToBot(new ApplyPowerAction(m, p, new HookedPower(m, p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HookAndDragPower(p, p, -1), 0));
     }
 
     @Override

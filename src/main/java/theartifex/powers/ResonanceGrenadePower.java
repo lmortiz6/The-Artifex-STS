@@ -9,10 +9,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import theartifex.util.CustomAttackEffect;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class ResonanceGrenadePower extends BasePower{
+public class ResonanceGrenadePower extends BasePower {
 
     public static final String POWER_ID = makeID(ResonanceGrenadePower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -26,6 +27,7 @@ public class ResonanceGrenadePower extends BasePower{
         this.ID = POWER_ID + bombIdOffset;
         bombIdOffset++;
         damage = magicNumber;
+        this.amount2 = magicNumber;
         vuln = magicNumber2;
         this.amount = amount;
         this.updateDescription();
@@ -35,7 +37,7 @@ public class ResonanceGrenadePower extends BasePower{
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.amount == 1) {
-                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, CustomAttackEffect.EXPLOSIVE));
                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                     if (!monster.isDead && !monster.isDying) {
                         addToBot(new ApplyPowerAction(monster, source, new VulnerablePower(monster, this.vuln, false), this.vuln));

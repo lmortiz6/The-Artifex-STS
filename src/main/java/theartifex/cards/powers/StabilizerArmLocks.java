@@ -23,12 +23,12 @@ public class StabilizerArmLocks extends AbstractCyberneticCard {
             2
     );
     public static final int creditCost = info.baseCost;
-    private static final int BUFF = 2;
+    private static final int BUFF = 3;
     private static final String cyberneticRelic = makeID(StabilizerArmLocksRelic.class.getSimpleName());
 
     public StabilizerArmLocks() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
-        this.tags.add(CustomCardTags.CYBERNETIC);
+        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
     @Override

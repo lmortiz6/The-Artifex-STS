@@ -1,12 +1,18 @@
 package theartifex.cards.attacks;
 
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.sun.org.apache.bcel.internal.generic.DDIV;
 import theartifex.abstracts.AbstractGun;
 import theartifex.actions.ChainPistolAction;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomAttackEffect;
 import theartifex.util.CustomCardTags;
 
 public class ChainPistol extends AbstractGun {
@@ -29,13 +35,23 @@ public class ChainPistol extends AbstractGun {
 
         setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
         setMagic(TIMES, UPG_TIMES);
-        tags.add(CustomCardTags.GUN);
+        tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-                addToBot(new ChainPistolAction(p, this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.upgraded));
+        /*for (int i = 0; i < magicNumber; i++) {
+                addToBot(new ChainPistolAction(p, this.damage, this.multiDamage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.upgraded, this.isMultiDamage));
+        }*/
+        if (isMultiDamage) {
+            for (int i = 0; i < magicNumber; i++) {
+                addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, CustomAttackEffect.CHAIN_PISTOL, true));
+            }
+        }
+        else {
+            for (int i = 0; i < magicNumber; i++) {
+                addToBot(new AttackDamageRandomEnemyAction(this, CustomAttackEffect.CHAIN_PISTOL));
+            }
         }
     }
 

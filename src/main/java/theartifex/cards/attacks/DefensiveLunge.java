@@ -6,11 +6,14 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+
+import static theartifex.TheArtifexMod.makeID;
 
 public class DefensiveLunge extends BaseCard {
 
@@ -24,9 +27,9 @@ public class DefensiveLunge extends BaseCard {
             1
     );
     private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 4;
-    private static final int BLOCK = 3;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_DAMAGE = 3;
+    private static final int BLOCK = 4;
+    private static final int UPG_BLOCK = 2;
 
     public DefensiveLunge() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
@@ -37,7 +40,8 @@ public class DefensiveLunge extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        //CardCrawlGame.sound.playV(makeID("CARBIDE_AXE"), 1.2f); // Sound Effect
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block)));
     }
 

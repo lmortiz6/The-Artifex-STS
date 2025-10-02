@@ -2,9 +2,9 @@ package theartifex.cards.skills;
 
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,7 +25,7 @@ public class EatersNectarInjector extends AbstractInjector {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            2
+            1
     );
 
     public EatersNectarInjector() {
@@ -33,9 +33,7 @@ public class EatersNectarInjector extends AbstractInjector {
 
         this.setExhaust(true);
         tags.add(CardTags.HEALING);
-        tags.add(CustomCardTags.INJECTOR);
-        this.reaction = new VoidCard();
-        this.cardsToPreview = this.reaction;
+        tags.add(CustomCardTags.THEARTIFEXINJECTOR);
     }
 
     @Override
@@ -62,6 +60,11 @@ public class EatersNectarInjector extends AbstractInjector {
             }
         }
         return stanceChoices;
+    }
+
+    @Override
+    public void adverseReaction() {
+        addToBot(new GainEnergyAction(-1));
     }
 
     @Override

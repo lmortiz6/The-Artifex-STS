@@ -8,6 +8,7 @@ import theartifex.cards.BaseCard;
 import theartifex.powers.StabilizerArmLocksPower;
 import theartifex.relics.StabilizerArmLocksRelic;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
 public class AbstractGun extends BaseCard {
 
@@ -21,6 +22,9 @@ public class AbstractGun extends BaseCard {
 
     @Override
     public void applyPowers() {
+
+        if (!this.isMultiDamage && (this.tags.contains(CustomCardTags.THEARTIFEXBEAMSPLITTER) || this.tags.contains(CustomCardTags.THEARTIFEXPERMANENTBEAMSPLITTER)))
+            this.isMultiDamage = true;
 
         AbstractPower strength = AbstractDungeon.player.getPower("Strength");
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
@@ -37,7 +41,9 @@ public class AbstractGun extends BaseCard {
         if (armLocksPower != null)
             this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
-            this.baseDamage += 2 * armLocksRelic.amount;
+            this.baseDamage += 3 * armLocksRelic.amount;
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED))
+            this.baseDamage += 1;
 
         super.applyPowers();
 
@@ -53,11 +59,18 @@ public class AbstractGun extends BaseCard {
         }
         if (armLocksRelic != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 2 * armLocksRelic.amount;
+            this.baseDamage -= 3 * armLocksRelic.amount;
+        }
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)) {
+            this.isDamageModified = true;
+            this.baseDamage -= 1;
         }
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
+
+        if (!this.isMultiDamage && (this.tags.contains(CustomCardTags.THEARTIFEXBEAMSPLITTER) || this.tags.contains(CustomCardTags.THEARTIFEXPERMANENTBEAMSPLITTER)))
+            this.isMultiDamage = true;
 
         AbstractPower strength = AbstractDungeon.player.getPower("Strength");
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
@@ -74,7 +87,9 @@ public class AbstractGun extends BaseCard {
         if (armLocksPower != null)
             this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
-            this.baseDamage += 2 * armLocksRelic.amount;
+            this.baseDamage += 3 * armLocksRelic.amount;
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED))
+            this.baseDamage += 1;
 
         super.calculateCardDamage(mo);
 
@@ -90,7 +105,11 @@ public class AbstractGun extends BaseCard {
         }
         if (armLocksRelic != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 2 * armLocksRelic.amount;
+            this.baseDamage -= 3 * armLocksRelic.amount;
+        }
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)) {
+            this.isDamageModified = true;
+            this.baseDamage -= 1;
         }
     }
 }

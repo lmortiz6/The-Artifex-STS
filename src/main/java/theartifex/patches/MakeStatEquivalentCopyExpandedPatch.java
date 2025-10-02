@@ -1,0 +1,48 @@
+package theartifex.patches;
+
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theartifex.util.CustomCardTags;
+
+@SpirePatch(
+        clz = AbstractCard.class,
+        method = "makeStatEquivalentCopy"
+)
+public class MakeStatEquivalentCopyExpandedPatch {
+    @SpirePostfixPatch
+    public static AbstractCard Postfix(AbstractCard __result, AbstractCard __instance) {
+        // Copy permanent mods
+        for (AbstractCard.CardTags tag : __instance.tags) {
+            if (tag.toString().contains("THEARTIFEXPERMANENT")) {
+                __result.tags.add(tag);
+                String tagString = tag.toString().substring(19).toLowerCase();
+                __result.keywords.add(0, "theartifex:" + tagString);
+                /*String descString = tagString.toUpperCase().charAt(0) + tagString.substring(1) + ".";
+                GlyphLayout gl  = new GlyphLayout();
+                gl.setText(FontHelper.cardDescFont_N, descString);
+                DescriptionLine dl = new DescriptionLine("*" + descString, gl.width);
+                __result.description.add(0, dl);*/
+            }
+        }
+        // Copy mods in combat
+        try {
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (AbstractCard.CardTags tag : __instance.tags) {
+                    if (CustomCardTags.getTempModsList().contains(tag)) {
+                        __result.tags.add(tag);
+                        String tagString = tag.toString().substring(10).toLowerCase();
+                        __result.keywords.add(0, "theartifex:" + tagString);
+                        /*String descString = tagString.toUpperCase().charAt(0) + tagString.substring(1) + ".";
+                        GlyphLayout gl = new GlyphLayout();
+                        gl.setText(FontHelper.cardDescFont_N, descString);
+                        DescriptionLine dl = new DescriptionLine("*" + descString, gl.width);
+                        __result.description.add(0, dl);*/
+                    }
+                }
+            }
+        } catch (NullPointerException ignored) { }
+        return __result;
+    }
+}

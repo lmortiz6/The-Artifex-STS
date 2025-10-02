@@ -25,7 +25,7 @@ public class MedassistModulePower extends BasePower{
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (amount > 0 && card.hasTag(CustomCardTags.INJECTOR)) {
+        if (amount > 0 && card.hasTag(CustomCardTags.THEARTIFEXINJECTOR)) {
             amount--;
         }
     }

@@ -1,15 +1,19 @@
 package theartifex.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theartifex.actions.FulleriteAegisAction;
 import theartifex.cards.BaseCard;
+import theartifex.cards.attacks.ShieldBash;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
 
-public class FulleriteAegis extends BaseCard {
+public class FulleriteAegis extends BaseCard implements OnObtainCard {
 
     public static final String ID = makeID(FulleriteAegis.class.getSimpleName());
 
@@ -20,30 +24,36 @@ public class FulleriteAegis extends BaseCard {
             CardTarget.SELF,
             2
     );
-    private static final int BLOCK = 15;
-    private static final int UPG_BLOCK = 5;
+    private static final int BLOCK = 10;
+    private static final int UPG_BLOCK = 0;
+    private static final int BUFF = 1;
+    private static final int UPG_BUFF = 1;
 
     public FulleriteAegis() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setBlock(BLOCK, UPG_BLOCK);
+        setMagic(BUFF, UPG_BUFF);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustAction(1, false, false, false));
         addToBot(new GainBlockAction(p, p, this.block));
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        super.canUse(p, m);
-        this.cantUseMessage = "I don't have a card to exhaust!";
-        return (p.hand.size() - 1 >= 1);
+        addToBot(new FulleriteAegisAction(p, magicNumber, this));
     }
 
     @Override
     public AbstractCard makeCopy() { //Optional
         return new FulleriteAegis();
+    }
+
+    @Override
+    public void onObtainCard() {
+        for(AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if ((c.cardID.equals(this.cardID) && c.uuid != this.uuid) || c.cardID.equals(ShieldBash.ID)) {
+                return;
+            }
+        }
+        CardCrawlGame.sound.playV(makeID("LEARN_SCHEMATIC"), 1.6f); // Sound Effect
     }
 }
