@@ -3,7 +3,6 @@ package theartifex.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;

@@ -84,7 +84,7 @@ public class DisassembleAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startDuration) {
-            if (this.p.hand.size() == 0) {
+            if (this.p.hand.isEmpty()) {
                 this.isDone = true;
                 return;
             }
@@ -127,7 +127,7 @@ public class DisassembleAction extends AbstractGameAction {
     }
 
     private void gainGold(int amount) {
-        CardCrawlGame.sound.playV(makeID("DISASSEMBLE"), 1.0f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("DISASSEMBLE"), 1.0f);
         addToBot(new GoldEffectAction(amount));
         addToBot(new WaitAction(2F));
         addToBot(new GainGoldAction(amount));

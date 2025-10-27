@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import theartifex.TheArtifexMod;
 
 import static theartifex.TheArtifexMod.makeID;
 

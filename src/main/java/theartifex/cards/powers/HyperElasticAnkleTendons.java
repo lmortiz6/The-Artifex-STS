@@ -17,7 +17,7 @@ public class HyperElasticAnkleTendons extends AbstractCyberneticCard {
     public static final String ID = makeID(HyperElasticAnkleTendons.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -28,7 +28,7 @@ public class HyperElasticAnkleTendons extends AbstractCyberneticCard {
     private static final String cyberneticRelic = makeID(HyperElasticAnkleTendonsRelic.class.getSimpleName());
 
     public HyperElasticAnkleTendons() {
-        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic);
 
         this.cardsToPreview = new Sprint();
         this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
@@ -45,7 +45,7 @@ public class HyperElasticAnkleTendons extends AbstractCyberneticCard {
 
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new HyperElasticAnkleTendons();
     }
 }

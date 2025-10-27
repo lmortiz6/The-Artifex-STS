@@ -15,7 +15,7 @@ public class PyrokinesisField extends AbstractGun {
     public static final String ID = makeID(PyrokinesisField.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ALL_ENEMY,
@@ -25,9 +25,9 @@ public class PyrokinesisField extends AbstractGun {
     private static final int UPG_DAMAGE = 5;
 
     public PyrokinesisField() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
         this.cardsToPreview = new VoidCard();
     }

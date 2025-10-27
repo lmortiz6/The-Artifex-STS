@@ -3,7 +3,6 @@ package theartifex.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import javassist.CannotCompileException;

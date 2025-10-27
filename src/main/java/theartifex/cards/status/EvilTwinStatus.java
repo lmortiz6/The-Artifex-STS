@@ -15,7 +15,7 @@ public class EvilTwinStatus extends BaseCard {
     public static final String ID = makeID(EvilTwinStatus.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.STATUS,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -24,7 +24,7 @@ public class EvilTwinStatus extends BaseCard {
     private static final int DAMAGE = 4;
 
     public EvilTwinStatus() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(DAMAGE);
     }
 
@@ -49,7 +49,7 @@ public class EvilTwinStatus extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new EvilTwinStatus();
     }
 }

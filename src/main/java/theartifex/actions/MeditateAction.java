@@ -23,7 +23,7 @@ public class MeditateAction extends AbstractGameAction {
     private AbstractCard sourceCard;
 
     public MeditateAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
-        setValues((AbstractCreature)AbstractDungeon.player, source, amount);
+        setValues(AbstractDungeon.player, source, amount);
         this.actionType = AbstractGameAction.ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
@@ -44,7 +44,7 @@ public class MeditateAction extends AbstractGameAction {
                 for (AbstractCard c : this.p.hand.group) {
                     if (isTinkerable(c)) {
                         modCard(c);
-                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                         this.isDone = true;
                         return;
                     }
@@ -56,7 +56,7 @@ public class MeditateAction extends AbstractGameAction {
                 return;
             }
             if (this.p.hand.group.size() == 1) {
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                 modCard(this.p.hand.getTopCard());
                 returnCards();
                 this.isDone = true;
@@ -64,9 +64,9 @@ public class MeditateAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                addToTop((AbstractGameAction)new MakeTempCardInHandAction(getModdedCard(c)));
+                addToTop(new MakeTempCardInHandAction(getModdedCard(c)));
             }
-            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();

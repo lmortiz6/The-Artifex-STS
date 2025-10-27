@@ -1,14 +1,11 @@
 package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.cards.powers.BiodynamicPowerPlant;
-import theartifex.cards.powers.CarbideHandBones;
-import theartifex.powers.BiodynamicPowerPlantPower;
 
 import static theartifex.TheArtifexMod.makeID;
 

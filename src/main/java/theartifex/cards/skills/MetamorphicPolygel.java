@@ -13,7 +13,7 @@ public class MetamorphicPolygel extends BaseCard {
     public static final String ID = makeID(MetamorphicPolygel.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
@@ -21,7 +21,7 @@ public class MetamorphicPolygel extends BaseCard {
     );
 
     public MetamorphicPolygel() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setSelfRetain(false, true);
         this.setExhaust(true);
     }
@@ -32,7 +32,7 @@ public class MetamorphicPolygel extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new MetamorphicPolygel();
     }
 }

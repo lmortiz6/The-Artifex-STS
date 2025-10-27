@@ -22,7 +22,7 @@ public class EgoUp extends BaseCard {
     public static final String ID = makeID(EgoUp.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.POWER,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -44,9 +44,9 @@ public class EgoUp extends BaseCard {
     public void onChoseThisOption() {
         AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.valueOf("905ab7A3"), true)));
-        addToBot((AbstractGameAction)new GainGoldAction(this.magicNumber));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new DivinityParticleEffect(), 3.0F));
+        addToBot(new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.valueOf("905ab7A3"), true)));
+        addToBot(new GainGoldAction(this.magicNumber));
+        addToBot(new VFXAction(p, (AbstractGameEffect)new DivinityParticleEffect(), 3.0F));
     }
 
     public AbstractCard makeCopy() {

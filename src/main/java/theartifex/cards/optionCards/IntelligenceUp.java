@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -23,7 +22,7 @@ public class IntelligenceUp extends BaseCard {
     public static final String ID = makeID(IntelligenceUp.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.POWER,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -46,16 +45,8 @@ public class IntelligenceUp extends BaseCard {
         AbstractPlayer p = AbstractDungeon.player;
         BorderFlashEffect flash = new BorderFlashEffect(Color.valueOf("c2d3d32D"), false);
         flash.duration = 0.82F;
-        addToBot((AbstractGameAction)new VFXAction(flash));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new VerticalAuraEffect(Color.valueOf("c2d3d37D"), p.hb.cX, p.hb.cY), 1.0F));
-        /*for (int i = 0; i < magicNumber; i++) {
-            AbstractCard c = AbstractDungeon.returnTrulyRandomColorlessCardInCombat().makeCopy();
-            if (this.upgraded) {
-                c.upgrade();
-            }
-            c.setCostForTurn(0);
-            addToBot((AbstractGameAction)new MakeTempCardInHandAction(c, 1));
-        }*/
+        addToBot(new VFXAction(flash));
+        addToBot(new VFXAction(p, (AbstractGameEffect)new VerticalAuraEffect(Color.valueOf("c2d3d37D"), p.hb.cX, p.hb.cY), 1.0F));
         addToBot(new ApplyPowerAction(p, p, new TinkerPower(p, p, magicNumber)));
     }
 

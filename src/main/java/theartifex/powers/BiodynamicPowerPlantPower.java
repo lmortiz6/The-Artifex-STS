@@ -1,13 +1,9 @@
 package theartifex.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
-
-import java.util.ArrayList;
 
 import static theartifex.TheArtifexMod.makeID;
 

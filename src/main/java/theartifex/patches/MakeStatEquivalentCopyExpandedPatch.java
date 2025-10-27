@@ -19,11 +19,6 @@ public class MakeStatEquivalentCopyExpandedPatch {
                 __result.tags.add(tag);
                 String tagString = tag.toString().substring(19).toLowerCase();
                 __result.keywords.add(0, "theartifex:" + tagString);
-                /*String descString = tagString.toUpperCase().charAt(0) + tagString.substring(1) + ".";
-                GlyphLayout gl  = new GlyphLayout();
-                gl.setText(FontHelper.cardDescFont_N, descString);
-                DescriptionLine dl = new DescriptionLine("*" + descString, gl.width);
-                __result.description.add(0, dl);*/
             }
         }
         // Copy mods in combat
@@ -34,11 +29,6 @@ public class MakeStatEquivalentCopyExpandedPatch {
                         __result.tags.add(tag);
                         String tagString = tag.toString().substring(10).toLowerCase();
                         __result.keywords.add(0, "theartifex:" + tagString);
-                        /*String descString = tagString.toUpperCase().charAt(0) + tagString.substring(1) + ".";
-                        GlyphLayout gl = new GlyphLayout();
-                        gl.setText(FontHelper.cardDescFont_N, descString);
-                        DescriptionLine dl = new DescriptionLine("*" + descString, gl.width);
-                        __result.description.add(0, dl);*/
                     }
                 }
             }

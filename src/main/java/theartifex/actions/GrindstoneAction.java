@@ -23,7 +23,7 @@ public class GrindstoneAction extends AbstractGameAction {
 
     public GrindstoneAction(int amount) {
         this.p = AbstractDungeon.player;
-        setValues((AbstractCreature)this.p, (AbstractCreature)AbstractDungeon.player, amount);
+        setValues(this.p, AbstractDungeon.player, amount);
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_XFAST;
     }
@@ -44,7 +44,7 @@ public class GrindstoneAction extends AbstractGameAction {
                 for (AbstractCard card : tmp.group) {
                     modCard(card);
                 }
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                 this.isDone = true;
                 return;
             }
@@ -59,7 +59,7 @@ public class GrindstoneAction extends AbstractGameAction {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 modCard(c);
             }
-            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.isDone = true;
         }

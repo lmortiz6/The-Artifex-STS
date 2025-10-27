@@ -27,7 +27,7 @@ public class BoundingBootsAction extends AbstractGameAction {
             }
         }
         if (modded)
-            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
         this.isDone = true;
         tickDuration();
     }

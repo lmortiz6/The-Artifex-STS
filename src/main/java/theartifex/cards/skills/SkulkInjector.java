@@ -20,7 +20,7 @@ public class SkulkInjector extends AbstractInjector implements OnObtainCard {
     public static final String ID = makeID(SkulkInjector.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -30,7 +30,7 @@ public class SkulkInjector extends AbstractInjector implements OnObtainCard {
     private static final int UPG_BUFF = 1;
 
     public SkulkInjector() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(BUFF, UPG_BUFF);
         this.setExhaust(true);
@@ -50,7 +50,7 @@ public class SkulkInjector extends AbstractInjector implements OnObtainCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new SkulkInjector();
     }
 
@@ -61,6 +61,6 @@ public class SkulkInjector extends AbstractInjector implements OnObtainCard {
                 return;
             }
         }
-        CardCrawlGame.sound.playV(makeID("LEARN_SCHEMATIC"), 1.6f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("LEARN_SCHEMATIC"), 1.6f);
     }
 }

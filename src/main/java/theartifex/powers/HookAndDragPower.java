@@ -45,8 +45,8 @@ public class HookAndDragPower extends BasePower implements InvisiblePower{
         if (isActive) {
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
                 if (m.hasPower(makeID(HookedPower.class.getSimpleName()))) {
-                    //CardCrawlGame.sound.playV(makeID("DRAG"), 1.8f); // Sound Effect
-                    //addToTop(new LoseHPAction(m, owner, m.getPower(makeID(HookedPower.class.getSimpleName())).amount));
+
+
                     addToTop(new DamageAction(m, new DamageInfo(AbstractDungeon.player, m.getPower(makeID(HookedPower.class.getSimpleName())).amount, DamageInfo.DamageType.HP_LOSS), CustomAttackEffect.CARBIDE_AXE));
                 }
         }

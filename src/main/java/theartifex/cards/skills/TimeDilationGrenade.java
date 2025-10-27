@@ -16,7 +16,7 @@ public class TimeDilationGrenade extends BaseCard implements OnObtainCard {
     public static final String ID = makeID(TimeDilationGrenade.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
@@ -27,24 +27,24 @@ public class TimeDilationGrenade extends BaseCard implements OnObtainCard {
     private static final int TURNS = 1;
 
     public TimeDilationGrenade() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(DRAW, UPG_DRAW);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playV(makeID("GRENADE_THROW"), 1.4f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("GRENADE_THROW"), 1.4f);
         addToBot(new ApplyPowerAction(p, p, new TimeDilationGrenadePower(p, p, this.magicNumber)));
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new TimeDilationGrenade();
     }
 
     @Override
     public void onObtainCard() {
-        CardCrawlGame.sound.playV(makeID("TINKER_BUILD"), 1.3f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("TINKER_BUILD"), 1.3f);
     }
 }

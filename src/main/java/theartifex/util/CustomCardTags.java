@@ -187,13 +187,9 @@ public class CustomCardTags {
             tagString = tag.toString().substring(10).toLowerCase();
         if (!c.keywords.contains("theartifex:" + tagString))
             c.keywords.add(0, "theartifex:" + tagString);
-        /*String descString = tagString.toUpperCase().charAt(0) + tagString.substring(1) + ".";
-        GlyphLayout gl  = new GlyphLayout();
-        gl.setText(FontHelper.cardDescFont_N, descString);
-        DescriptionLine dl = new DescriptionLine("*" + descString, gl.width);
-        c.description.add(0, dl);*/
+
         c.tags.add(0, tag);
-        //c.name += "^";
+
         if (permanent)
             c.misc = tagsOriginal.indexOf(tags.get(i)) + 1;
     }

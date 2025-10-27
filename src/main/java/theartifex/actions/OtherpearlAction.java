@@ -18,7 +18,6 @@ public class OtherpearlAction extends AbstractGameAction {
     public void update() {
         AbstractCard disCard = generateCard().makeStatEquivalentCopy();
         if (disCard != null) {
-            //disCard.setCostForTurn(0);
             disCard.current_x = -1000.0F * Settings.xScale;
             if (AbstractDungeon.player.hand.size() < 10) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
@@ -39,15 +38,13 @@ public class OtherpearlAction extends AbstractGameAction {
         } else {
             cardRarity = AbstractCard.CardRarity.RARE;
         }
-        AbstractCard.CardType cardType;
+        AbstractCard.CardType cardType = AbstractCard.CardType.ATTACK;
         roll = AbstractDungeon.cardRandomRng.random(2);
-        if (roll == 0) {
-            cardType = AbstractCard.CardType.ATTACK;
-        } else if (roll == 1) {
+        if (roll == 1) {
             cardType = AbstractCard.CardType.SKILL;
         } else if (roll == 2) {
             cardType = AbstractCard.CardType.POWER;
         }
-        return CardLibrary.getAnyColorCard(AbstractCard.CardType.ATTACK, cardRarity);
+        return CardLibrary.getAnyColorCard(cardType, cardRarity);
     }
 }

@@ -16,7 +16,7 @@ public class HolographicVisage extends AbstractCyberneticCard {
     public static final String ID = makeID(HolographicVisage.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
@@ -27,7 +27,7 @@ public class HolographicVisage extends AbstractCyberneticCard {
     private static final String cyberneticRelic = makeID(HolographicVisageRelic.class.getSimpleName());
 
     public HolographicVisage() {
-        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic);
         this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
     }
 
@@ -40,7 +40,7 @@ public class HolographicVisage extends AbstractCyberneticCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new HolographicVisage();
     }
 }

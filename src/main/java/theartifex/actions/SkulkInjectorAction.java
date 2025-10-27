@@ -15,11 +15,11 @@ import static theartifex.TheArtifexMod.makeID;
 
 public class SkulkInjectorAction extends AbstractGameAction {
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
-    private AbstractCard sourceCard;
+    private final AbstractCard sourceCard;
 
     public SkulkInjectorAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
         setValues(AbstractDungeon.player, source, amount);
@@ -43,7 +43,7 @@ public class SkulkInjectorAction extends AbstractGameAction {
                 for (AbstractCard c : this.p.hand.group) {
                     if (isTinkerable(c)) {
                         modCard(c);
-                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                         this.isDone = true;
                         return;
                     }
@@ -60,7 +60,7 @@ public class SkulkInjectorAction extends AbstractGameAction {
                         group.remove(c);
                     }
                 }
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                 this.isDone = true;
                 return;
             }

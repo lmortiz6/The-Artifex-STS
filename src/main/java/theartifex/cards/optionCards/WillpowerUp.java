@@ -22,7 +22,7 @@ public class WillpowerUp extends BaseCard {
     public static final String ID = makeID(WillpowerUp.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.POWER,
             CardRarity.SPECIAL,
             CardTarget.NONE,

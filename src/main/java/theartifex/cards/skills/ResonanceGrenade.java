@@ -16,7 +16,7 @@ public class ResonanceGrenade extends BaseCard implements OnObtainCard {
     public static final String ID = makeID(ResonanceGrenade.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
@@ -29,7 +29,7 @@ public class ResonanceGrenade extends BaseCard implements OnObtainCard {
     private static final int TURNS = 2;
 
     public ResonanceGrenade() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(DAMAGE, UPG_DAMAGE);
         this.setCustomVar("vuln", VULN, UPG_VULN);
@@ -37,17 +37,17 @@ public class ResonanceGrenade extends BaseCard implements OnObtainCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playV(makeID("GRENADE_THROW"), 1.4f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("GRENADE_THROW"), 1.4f);
         addToBot(new ApplyPowerAction(p, p, new ResonanceGrenadePower(p, p, TURNS, this.magicNumber, this.customVar("vuln"))));
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new ResonanceGrenade();
     }
 
     @Override
     public void onObtainCard() {
-        CardCrawlGame.sound.playV(makeID("TINKER_BUILD"), 1.3f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("TINKER_BUILD"), 1.3f);
     }
 }

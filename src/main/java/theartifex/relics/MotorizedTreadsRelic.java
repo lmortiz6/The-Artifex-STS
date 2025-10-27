@@ -21,7 +21,7 @@ public class MotorizedTreadsRelic extends AbstractCyberneticRelic {
     private static final String card = makeID(MotorizedTreads.class.getSimpleName());
     private static final int cost = MotorizedTreads.creditCost;
     private final int DRAW;
-    //private int drawnCards;
+
 
     public MotorizedTreadsRelic() {
         super(ID, NAME, RARITY, SOUND, card, cost);

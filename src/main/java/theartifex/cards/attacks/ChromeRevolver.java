@@ -18,7 +18,7 @@ public class ChromeRevolver extends AbstractGun {
     public static final String ID = makeID(ChromeRevolver.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
@@ -29,9 +29,9 @@ public class ChromeRevolver extends AbstractGun {
     private static final int DRAW = 1;
 
     public ChromeRevolver() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(DRAW);
         tags.add(CustomCardTags.THEARTIFEXGUN);
     }

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theartifex.TheArtifexMod;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.relics.HyperElasticAnkleTendonsRelic;
@@ -20,7 +19,7 @@ public class Sprint extends BaseCard {
     public static final String ID = makeID(Sprint.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.NONE,
@@ -31,7 +30,7 @@ public class Sprint extends BaseCard {
     private static final int DISCARD = 1;
 
     public Sprint() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(DRAW, UPG_DRAW);
         this.setExhaust(true);
@@ -41,7 +40,7 @@ public class Sprint extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playAV(makeID("SPRINT"), 0f, 1.0f); // Sound Effect
+        CardCrawlGame.sound.playAV(makeID("SPRINT"), 0f, 1.0f);
         addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new DiscardAction(p, p, DISCARD, false));
     }
@@ -68,7 +67,7 @@ public class Sprint extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new Sprint();
     }
 }

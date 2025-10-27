@@ -16,7 +16,7 @@ public class StabilizerArmLocks extends AbstractCyberneticCard {
     public static final String ID = makeID(StabilizerArmLocks.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -27,7 +27,7 @@ public class StabilizerArmLocks extends AbstractCyberneticCard {
     private static final String cyberneticRelic = makeID(StabilizerArmLocksRelic.class.getSimpleName());
 
     public StabilizerArmLocks() {
-        super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
+        super(ID, info, cyberneticRelic);
         this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
         this.setMagic(BUFF);
     }
@@ -41,7 +41,7 @@ public class StabilizerArmLocks extends AbstractCyberneticCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new StabilizerArmLocks();
     }
 

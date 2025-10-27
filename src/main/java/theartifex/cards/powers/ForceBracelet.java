@@ -16,7 +16,7 @@ public class ForceBracelet extends BaseCard {
     public static final String ID = makeID(ForceBracelet.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
@@ -26,9 +26,9 @@ public class ForceBracelet extends BaseCard {
     private static final int DEBUFF = 3;
 
     public ForceBracelet() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setMagic(BUFF); //Sets the card's damage and how much it changes when upgraded.
+        setMagic(BUFF);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ForceBracelet extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new ForceBracelet();
     }
 }

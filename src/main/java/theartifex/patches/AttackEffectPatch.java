@@ -84,16 +84,16 @@ public class AttackEffectPatch {
         public static SpireReturn<Void> Prefix(FlashAtkImgEffect e, AbstractGameAction.AttackEffect effect) {
 
             if (effect == CustomAttackEffect.CHAIN_PISTOL) {
-                CardCrawlGame.sound.playV(makeID("CHAIN_PISTOL"), 1.4f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("CHAIN_PISTOL"), 1.4f);
             }
             else if (effect == CustomAttackEffect.BLOOD_GRADIENT) {
-                CardCrawlGame.sound.playV(makeID("BLOOD_GRADIENT"), 1.4f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("BLOOD_GRADIENT"), 1.4f);
             }
             else if (effect == CustomAttackEffect.VIBROKHOPESH) {
-                CardCrawlGame.sound.playV(makeID("VIBROKHOPESH"), 1.5f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("VIBROKHOPESH"), 1.5f);
             }
             else if (effect == CustomAttackEffect.CHROME_REVOLVER) {
-                CardCrawlGame.sound.playV(makeID("CHROME_REVOLVER"), 1.4f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("CHROME_REVOLVER"), 1.4f);
             }
             else if (effect == CustomAttackEffect.ISSACHAR_RIFLE) {
                 CardCrawlGame.sound.playV(makeID("ISSACHAR_RIFLE"), 1.4f); // Sound Effect

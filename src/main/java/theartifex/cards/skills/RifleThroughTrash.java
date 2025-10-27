@@ -14,7 +14,7 @@ public class RifleThroughTrash extends BaseCard {
     public static final String ID = makeID(RifleThroughTrash.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -24,7 +24,7 @@ public class RifleThroughTrash extends BaseCard {
     private static final int UPG_DRAW = 1;
 
     public RifleThroughTrash() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(DRAW, UPG_DRAW);
         this.setEthereal(true);
@@ -37,7 +37,7 @@ public class RifleThroughTrash extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new RifleThroughTrash();
     }
 }

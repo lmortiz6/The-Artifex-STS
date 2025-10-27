@@ -18,7 +18,7 @@ public class SwiftReflexes extends BaseCard implements OnObtainCard {
     public static final String ID = makeID(SwiftReflexes.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             AbstractCard.CardType.POWER,
             AbstractCard.CardRarity.RARE,
             AbstractCard.CardTarget.SELF,
@@ -26,7 +26,7 @@ public class SwiftReflexes extends BaseCard implements OnObtainCard {
     );
 
     public SwiftReflexes() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setInnate(false, true);
     }
@@ -37,7 +37,7 @@ public class SwiftReflexes extends BaseCard implements OnObtainCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new SwiftReflexes();
     }
 
@@ -48,6 +48,6 @@ public class SwiftReflexes extends BaseCard implements OnObtainCard {
                 return;
             }
         }
-        CardCrawlGame.sound.playV(makeID("LEARN_SCHEMATIC"), 1.6f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("LEARN_SCHEMATIC"), 1.6f);
     }
 }

@@ -23,7 +23,7 @@ public class StrengthUp extends BaseCard {
     public static final String ID = makeID(StrengthUp.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.POWER,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -45,8 +45,8 @@ public class StrengthUp extends BaseCard {
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.FIREBRICK, true)));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new InflameEffect((AbstractCreature)p), 1.0F));
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new StrengthPower((AbstractCreature)p, this.magicNumber), this.magicNumber));
+        addToBot((AbstractGameAction)new VFXAction(p, (AbstractGameEffect)new InflameEffect(p), 1.0F));
+        addToBot((AbstractGameAction)new ApplyPowerAction(p, p, (AbstractPower)new StrengthPower(p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

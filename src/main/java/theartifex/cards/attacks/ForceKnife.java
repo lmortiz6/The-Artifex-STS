@@ -15,7 +15,7 @@ public class ForceKnife extends BaseCard {
     public static final String ID = makeID(ForceKnife.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
@@ -25,7 +25,7 @@ public class ForceKnife extends BaseCard {
     private static final int UPG_COST = 0;
 
     public ForceKnife() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         setDamage(DAMAGE);
         setCostUpgrade(UPG_COST);
@@ -35,7 +35,7 @@ public class ForceKnife extends BaseCard {
     }
 
     public ForceKnife(boolean preview) {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         setDamage(DAMAGE);
         setCostUpgrade(UPG_COST);

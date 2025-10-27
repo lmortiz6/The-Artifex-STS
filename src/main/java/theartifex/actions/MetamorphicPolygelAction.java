@@ -20,14 +20,14 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
 
     private static final float DURATION_PER_CARD = 0.25F;
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
     private int dupeAmount = 1;
 
-    private ArrayList<AbstractCard> cannotDuplicate = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotDuplicate = new ArrayList<>();
 
     public MetamorphicPolygelAction(AbstractCreature source, int amount) {
-        setValues((AbstractCreature)AbstractDungeon.player, source, amount);
+        setValues(AbstractDungeon.player, source, amount);
         this.actionType = AbstractGameAction.ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
@@ -48,7 +48,7 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
                 for (AbstractCard c : this.p.hand.group) {
                     if (isDualWieldable(c)) {
                         for (int i = 0; i < this.dupeAmount; i++)
-                            addToTop((AbstractGameAction)new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                            addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
                         this.isDone = true;
                         return;
                     }
@@ -61,16 +61,16 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
             }
             if (this.p.hand.group.size() == 1) {
                 for (int i = 0; i < this.dupeAmount; i++)
-                    addToTop((AbstractGameAction)new MakeTempCardInHandAction(this.p.hand.getTopCard().makeStatEquivalentCopy()));
+                    addToTop(new MakeTempCardInHandAction(this.p.hand.getTopCard().makeStatEquivalentCopy()));
                 returnCards();
                 this.isDone = true;
             }
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                addToTop((AbstractGameAction)new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
                 for (int i = 0; i < this.dupeAmount; i++)
-                    addToTop((AbstractGameAction)new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                    addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
             }
             returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

@@ -15,14 +15,14 @@ import static theartifex.TheArtifexMod.makeID;
 
 public class ShieldBashAction extends AbstractGameAction {
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
-    private AbstractCard sourceCard;
+    private final AbstractCard sourceCard;
 
     public ShieldBashAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
-        setValues((AbstractCreature)AbstractDungeon.player, source, amount);
+        setValues(AbstractDungeon.player, source, amount);
         this.actionType = AbstractGameAction.ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
@@ -44,22 +44,10 @@ public class ShieldBashAction extends AbstractGameAction {
                     modCard(c);
                 }
             }
-            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             this.isDone = true;
         }
         tickDuration();
-    }
-
-    private void returnCards() {
-        for (AbstractCard c : this.cannotTinker)
-            this.p.hand.addToTop(c);
-        this.p.hand.refreshHandLayout();
-    }
-
-    private AbstractCard getModdedCard (AbstractCard c) {
-        AbstractCard card = c.makeStatEquivalentCopy();
-        modCard(card);
-        return card;
     }
 
     private void modCard(AbstractCard c) {

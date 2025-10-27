@@ -51,7 +51,7 @@ public class BecomeNullAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty())
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 CustomCardTags.loadMod(c, CustomCardTags.THEARTIFEXNULLING, false);
                 addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));

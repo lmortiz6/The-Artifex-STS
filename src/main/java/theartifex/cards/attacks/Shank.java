@@ -16,7 +16,7 @@ public class Shank extends BaseCard {
     public static final String ID = makeID(Shank.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
@@ -27,9 +27,9 @@ public class Shank extends BaseCard {
     private static final int UPG_SCALING = 2;
 
     public Shank() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE);
         setMagic(SCALING, UPG_SCALING);
     }
 
@@ -53,7 +53,7 @@ public class Shank extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new Shank();
     }
 }

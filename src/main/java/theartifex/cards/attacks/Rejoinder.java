@@ -16,7 +16,7 @@ public class Rejoinder extends BaseCard {
     public static final String ID = makeID(Rejoinder.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
@@ -26,9 +26,9 @@ public class Rejoinder extends BaseCard {
     private static final int UPG_DAMAGE = 1;
 
     public Rejoinder() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Defend_Artifex extends BaseCard {
     public static final String ID = makeID(Defend_Artifex.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
@@ -23,9 +23,9 @@ public class Defend_Artifex extends BaseCard {
     private static final int UPG_BLOCK = 3;
 
     public Defend_Artifex() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setBlock(BLOCK, UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
+        setBlock(BLOCK, UPG_BLOCK);
 
         tags.add(CardTags.STARTER_DEFEND);
     }
@@ -36,7 +36,7 @@ public class Defend_Artifex extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new Defend_Artifex();
     }
 }

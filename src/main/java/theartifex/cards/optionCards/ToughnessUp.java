@@ -24,7 +24,7 @@ public class ToughnessUp extends BaseCard {
     public static final String ID = makeID(ToughnessUp.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.POWER,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -46,8 +46,8 @@ public class ToughnessUp extends BaseCard {
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.valueOf("7ea49580"), false)));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new AdrenalineEffect(), 0.9F));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, new HealVerticalLineEffect(p.hb.cX, p.hb.cY), 0.7F));
+        addToBot((AbstractGameAction)new VFXAction(p, (AbstractGameEffect)new AdrenalineEffect(), 0.9F));
+        addToBot((AbstractGameAction)new VFXAction(p, new HealVerticalLineEffect(p.hb.cX, p.hb.cY), 0.7F));
         addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new RegenPower((AbstractCreature)p, this.magicNumber), this.magicNumber));
     }
 

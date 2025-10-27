@@ -19,7 +19,7 @@ public class CeremonialVibrokhopesh extends BaseCard {
     public static final String ID = makeID(CeremonialVibrokhopesh.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
@@ -30,9 +30,9 @@ public class CeremonialVibrokhopesh extends BaseCard {
     private static final int COST_REDUCE = 1;
 
     public CeremonialVibrokhopesh() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(COST_REDUCE);
     }
 

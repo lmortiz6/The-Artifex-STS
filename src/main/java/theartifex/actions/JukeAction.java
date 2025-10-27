@@ -44,7 +44,7 @@ public class JukeAction extends AbstractGameAction {
                 for (AbstractCard c : this.p.hand.group) {
                     if (isTinkerable(c)) {
                         modCard(c);
-                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                         this.isDone = true;
                         return;
                     }
@@ -58,13 +58,13 @@ public class JukeAction extends AbstractGameAction {
                     modCard(c);
                     handGroup.remove(c);
                 }
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                 this.isDone = true;
                 return;
             }
             if (handGroup.size() == 1) {
                 modCard(handGroup.get(0));
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                 this.isDone = true;
                 return;
             }

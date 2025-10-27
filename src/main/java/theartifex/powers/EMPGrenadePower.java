@@ -36,7 +36,7 @@ public class EMPGrenadePower extends BasePower {
                         addToBot(new ApplyPowerAction(monster, source, new PulsedPower(monster, source, this.damage), this.damage));
                     }
                 }
-                CardCrawlGame.sound.playV(makeID("EMP"), 1.4f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("EMP"), 1.4f);
             }
         }
     }

@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theartifex.cards.attacks.PyrokinesisField;
 
 import static theartifex.TheArtifexMod.makeID;

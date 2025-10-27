@@ -13,7 +13,7 @@ public class Calloused extends BaseCard {
     public static final String ID = makeID(Calloused.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
@@ -23,9 +23,9 @@ public class Calloused extends BaseCard {
     private static final int UPG_BLOCK = 3;
 
     public Calloused() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setBlock(BLOCK, UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
+        setBlock(BLOCK, UPG_BLOCK);
         this.setSelfRetain(true);
     }
 
@@ -39,7 +39,7 @@ public class Calloused extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new Calloused();
     }
 }

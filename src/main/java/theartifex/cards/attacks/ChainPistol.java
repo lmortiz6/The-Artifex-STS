@@ -16,7 +16,7 @@ public class ChainPistol extends AbstractGun {
     public static final String ID = makeID(ChainPistol.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ALL_ENEMY,
@@ -27,18 +27,15 @@ public class ChainPistol extends AbstractGun {
     private static final int UPG_TIMES = 1;
 
     public ChainPistol() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE);
         setMagic(TIMES, UPG_TIMES);
         tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        /*for (int i = 0; i < magicNumber; i++) {
-                addToBot(new ChainPistolAction(p, this.damage, this.multiDamage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.upgraded, this.isMultiDamage));
-        }*/
         if (isMultiDamage) {
             for (int i = 0; i < magicNumber; i++) {
                 addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, CustomAttackEffect.CHAIN_PISTOL, true));

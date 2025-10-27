@@ -49,7 +49,7 @@ public class IronBucklerAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            if (this.p.hand.size() == 0) {
+            if (this.p.hand.isEmpty()) {
                 this.isDone = true;
                 return;
             }

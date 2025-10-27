@@ -8,12 +8,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
-import theartifex.TheArtifexMod;
-import theartifex.cards.attacks.BloodGradientHandVacuum;
 import theartifex.util.CustomAttackEffect;
 
 import static java.lang.Math.min;

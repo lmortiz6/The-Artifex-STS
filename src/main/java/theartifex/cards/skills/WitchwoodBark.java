@@ -15,7 +15,7 @@ public class WitchwoodBark extends BaseCard {
     public static final String ID = makeID(WitchwoodBark.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
@@ -25,7 +25,7 @@ public class WitchwoodBark extends BaseCard {
     private static final int UPG_REGEN = 1;
 
     public WitchwoodBark() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(REGEN, UPG_REGEN);
         this.setExhaust(true);
@@ -35,12 +35,12 @@ public class WitchwoodBark extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playV(makeID("WITCHWOOD"), 1.2f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("WITCHWOOD"), 1.2f);
         addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new WitchwoodBark();
     }
 }

@@ -32,7 +32,7 @@ public class MotorizedTreadsPower extends BasePower implements InvisiblePower {
     @Override
     public void atStartOfTurnPostDraw() {
         super.atStartOfTurnPostDraw();
-        //addToBot(new DebugLogAction(POWER_ID));
+
         addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
         addToBot(new ApplyPowerAction(owner, owner, new NoDrawPower(owner)));
     }

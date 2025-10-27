@@ -34,7 +34,7 @@ public class NextTurnDrawReductionPower extends BasePower {
     }
 
     public void atEndOfRound() {
-        addToBot((AbstractGameAction)new RemoveSpecificPowerAction(owner, owner, this));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     public void onRemove() {

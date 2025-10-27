@@ -16,7 +16,7 @@ public class SalveInjector extends AbstractInjector {
     public static final String ID = makeID(SalveInjector.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -26,7 +26,7 @@ public class SalveInjector extends AbstractInjector {
     private static final int UPG_BUFF = 2;
 
     public SalveInjector() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setMagic(BUFF, UPG_BUFF);
         this.setExhaust(true);
@@ -49,7 +49,7 @@ public class SalveInjector extends AbstractInjector {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new SalveInjector();
     }
 }

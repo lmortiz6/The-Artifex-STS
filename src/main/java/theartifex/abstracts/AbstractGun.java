@@ -13,7 +13,7 @@ import theartifex.util.CustomCardTags;
 public class AbstractGun extends BaseCard {
 
     public AbstractGun(String ID, CardStats info) {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
     }
 
     @Override

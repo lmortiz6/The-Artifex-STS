@@ -18,12 +18,12 @@ public class JackInAction extends AbstractGameAction {
 
     private AbstractPlayer p;
 
-    private ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
-    private AbstractCard sourceCard;
+    private final AbstractCard sourceCard;
 
     public JackInAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
-        setValues((AbstractCreature)AbstractDungeon.player, source, amount);
+        setValues(AbstractDungeon.player, source, amount);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
@@ -46,7 +46,7 @@ public class JackInAction extends AbstractGameAction {
                         modCard(c);
                     }
                 }
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
                 this.isDone = true;
                 return;
             }
@@ -59,9 +59,9 @@ public class JackInAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                addToTop((AbstractGameAction)new MakeTempCardInHandAction(getModdedCard(c)));
+                addToTop(new MakeTempCardInHandAction(getModdedCard(c)));
             }
-            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+            CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();

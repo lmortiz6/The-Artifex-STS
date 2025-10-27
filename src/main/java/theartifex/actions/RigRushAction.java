@@ -12,11 +12,11 @@ import java.util.ArrayList;
 
 public class RigRushAction extends AbstractGameAction {
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
-    private AbstractCard sourceCard;
+    private final AbstractCard sourceCard;
 
     public RigRushAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
         setValues(AbstractDungeon.player, source, amount);

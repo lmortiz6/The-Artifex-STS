@@ -21,16 +21,13 @@ public class AbstractInjector extends BaseCard {
     protected AbstractCard reaction;
 
     public AbstractInjector(String ID, CardStats info) {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
-        //this.keywords.add(this.keywords.size()-1, "theartifex:adversereaction");
-        //this.keywords.add("theartifex:adversereaction");
+        super(ID, info);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playV(makeID("INJECTOR"), 1.5f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("INJECTOR"), 1.5f);
         if (AbstractDungeon.cardRandomRng.random(0, 2) == 0) {
-            //addToBot(new MakeTempCardInDrawPileAction(reaction, 1, true, true));
             this.adverseReaction();
             addToBot(new TextAboveCreatureAction(AbstractDungeon.player, "Adverse Reaction!"));
             for (AbstractPower power : p.powers)

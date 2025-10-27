@@ -6,11 +6,9 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractInjector;
 import theartifex.cards.optionCards.*;
 import theartifex.character.TheArtifexCharacter;
@@ -24,7 +22,7 @@ public class EatersNectarInjector extends AbstractInjector {
     public static final String ID = makeID(EatersNectarInjector.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
@@ -32,7 +30,7 @@ public class EatersNectarInjector extends AbstractInjector {
     );
 
     public EatersNectarInjector() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
         this.setExhaust(true);
         tags.add(CardTags.HEALING);
@@ -46,7 +44,7 @@ public class EatersNectarInjector extends AbstractInjector {
         if (this.upgraded)
             for (AbstractCard c : stanceChoices)
                 c.upgrade();
-        addToBot((AbstractGameAction)new ChooseOneAction(stanceChoices));
+        addToBot(new ChooseOneAction(stanceChoices));
     }
 
     private ArrayList<AbstractCard> getList() {
@@ -79,7 +77,7 @@ public class EatersNectarInjector extends AbstractInjector {
 
     private float rotationTimer;
     private int previewIndex;
-    private ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
+    private final ArrayList<AbstractCard> dupeListForPrev = new ArrayList<>();
 
     @Override
     public void update() {

@@ -1,7 +1,6 @@
 package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -23,12 +22,6 @@ public class ScrapCapeRelic extends BaseRelic{
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
-
-//    @Override
-//    public void onExhaust(AbstractCard card) {
-//        flash();
-//        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, ARMOR)));
-//    }
 
     public void onSpecificTrigger() {
         flash();

@@ -15,7 +15,7 @@ public class MagnetizedChassisPlate extends BaseCard {
     public static final String ID = makeID(MagnetizedChassisPlate.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -26,9 +26,9 @@ public class MagnetizedChassisPlate extends BaseCard {
     private static final int DEBUFF = 1;
 
     public MagnetizedChassisPlate() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setBlock(BLOCK, UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
+        setBlock(BLOCK, UPG_BLOCK);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class MagnetizedChassisPlate extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new MagnetizedChassisPlate();
     }
 }

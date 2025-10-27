@@ -57,7 +57,7 @@ public class BecomingNookEffect extends AbstractGameEffect {
         this.duration = 1.5F;
         this.screenColor.a = 0.0F;
         AbstractDungeon.overlayMenu.proceedButton.hide();
-        CardCrawlGame.sound.playV(makeID("BECOMING_NOOK"), 1.3f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("BECOMING_NOOK"), 1.3f);
     }
 
     public void update() {
@@ -79,7 +79,7 @@ public class BecomingNookEffect extends AbstractGameEffect {
                 }
             }
             if (!relicsToRemove.isEmpty())
-                CardCrawlGame.sound.playV(makeID("UNIMPLANT"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("UNIMPLANT"), 1.3f);
             relicSelect = false;
             TheArtifexMod.gridScreenForCyberRelics = false;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -102,7 +102,7 @@ public class BecomingNookEffect extends AbstractGameEffect {
                 }
             }
             if (!cardsToRemove.isEmpty())
-                CardCrawlGame.sound.playV(makeID("IMPLANT"), 1.3f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("IMPLANT"), 1.3f);
             cardSelect = false;
             TheArtifexMod.gridScreenForCyberCards = false;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -136,7 +136,7 @@ public class BecomingNookEffect extends AbstractGameEffect {
                 AbstractCard c = (AbstractCard) var1.next();
                 //AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c.makeCopy(), Settings.WIDTH / 2, Settings.HEIGHT / 2));
                 AbstractDungeon.player.masterDeck.addToTop(c.makeCopy());
-                //DeckAdd.execute(new String[] {c.cardID});
+
             }
             confirmSelect = false;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

@@ -2,13 +2,9 @@ package theartifex.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theartifex.util.CustomCardTags;
 
 public class MagneticCoreAction extends AbstractGameAction {
 

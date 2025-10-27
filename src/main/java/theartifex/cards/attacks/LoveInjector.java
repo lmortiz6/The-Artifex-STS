@@ -20,7 +20,7 @@ public class LoveInjector extends AbstractInjector {
     public static final String ID = makeID(LoveInjector.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ENEMY,
@@ -31,9 +31,9 @@ public class LoveInjector extends AbstractInjector {
     private static final int UPG_DEBUFF = 1;
 
     public LoveInjector() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE);
         setMagic(DEBUFF, UPG_DEBUFF);
         this.setExhaust(true);
         tags.add(CustomCardTags.THEARTIFEXINJECTOR);

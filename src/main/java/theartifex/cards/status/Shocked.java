@@ -14,7 +14,7 @@ public class Shocked extends BaseCard {
     public static final String ID = makeID(Shocked.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.STATUS,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -23,7 +23,7 @@ public class Shocked extends BaseCard {
     private static final int DEBUFF = 1;
 
     public Shocked() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
         setMagic(DEBUFF);
         setExhaust(true);
     }
@@ -46,7 +46,7 @@ public class Shocked extends BaseCard {
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new Shocked();
     }
 }

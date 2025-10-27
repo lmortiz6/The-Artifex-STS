@@ -17,7 +17,7 @@ public class FlumeDash extends BaseCard {
     public static final String ID = makeID(FlumeDash.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            CardColor.COLORLESS,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
@@ -29,9 +29,9 @@ public class FlumeDash extends BaseCard {
     private static final int UPG_DRAW = 1;
 
     public FlumeDash() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(DRAW, UPG_DRAW);
         setExhaust(true);
         setEthereal(true);
@@ -42,11 +42,11 @@ public class FlumeDash extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new DrawCardAction(p, magicNumber, false));
-        addToBot((AbstractGameAction)new MakeTempCardInDiscardAction((AbstractCard)new Burn(), 1));
+        addToBot(new MakeTempCardInDiscardAction(new Burn(), 1));
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
+    public AbstractCard makeCopy() {
         return new FlumeDash();
     }
 }

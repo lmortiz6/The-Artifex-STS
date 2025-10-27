@@ -17,7 +17,7 @@ public class DefensiveLunge extends BaseCard {
     public static final String ID = makeID(DefensiveLunge.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
-            TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
+            TheArtifexCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
@@ -29,15 +29,14 @@ public class DefensiveLunge extends BaseCard {
     private static final int UPG_BLOCK = 2;
 
     public DefensiveLunge() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
+        super(ID, info);
 
-        setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
+        setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //CardCrawlGame.sound.playV(makeID("CARBIDE_AXE"), 1.2f); // Sound Effect
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block)));
     }
