@@ -37,9 +37,8 @@ public class ForceBraceletPower extends BasePower{
     }
 
     public void updateDescription() {
-        String sb = String.format(DESCRIPTIONS[0], (this.amount)) +
+        this.description = String.format(DESCRIPTIONS[0], (this.amount)) +
                 "[E] " +
                 LocalizedStrings.PERIOD;
-        this.description = sb;
     }
 }

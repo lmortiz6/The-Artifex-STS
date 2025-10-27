@@ -7,13 +7,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theartifex.TheArtifexMod;
 
 public class DebugLogAction extends AbstractGameAction {
-    private final AbstractPlayer p;
     private final String log;
 
     public DebugLogAction(String log) {
-        this.p = AbstractDungeon.player;
+        AbstractPlayer p = AbstractDungeon.player;
         this.amount = 0;
-        setValues(this.p, this.p, this.amount);
+        setValues(p, p, this.amount);
         this.duration = Settings.ACTION_DUR_FAST;
         this.log = log;
     }
