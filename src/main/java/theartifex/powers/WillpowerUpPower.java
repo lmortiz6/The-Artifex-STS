@@ -1,7 +1,6 @@
 package theartifex.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;

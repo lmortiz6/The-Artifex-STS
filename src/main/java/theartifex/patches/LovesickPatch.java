@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import com.megacrit.cardcrawl.powers.HexPower;
-import theartifex.powers.LovesickPower;
 
 public class LovesickPatch {
     @SpirePatch(
