@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theartifex.actions.MagneticCoreAction;
 
 import static theartifex.TheArtifexMod.makeID;
 
@@ -28,6 +29,11 @@ public class MagneticCorePower extends BasePower {
             addToBot(new ApplyPowerAction(m, owner, new PulsedPower(m, owner, this.amount)));
             CardCrawlGame.sound.playV(makeID("EMP"), 1.4f);
         }
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        addToTop(new MagneticCoreAction(amount));
     }
 
     public void updateDescription() {
