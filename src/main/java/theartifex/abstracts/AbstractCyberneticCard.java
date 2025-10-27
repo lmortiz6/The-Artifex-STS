@@ -18,6 +18,9 @@ public class AbstractCyberneticCard extends BaseCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
     }
 
+    @Override
+    public void upgrade() {}
+
     public String getRelic() {
         return relicID;
     }

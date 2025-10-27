@@ -21,7 +21,7 @@ public class HandENuke extends BaseCard {
             CardTarget.SELF,
             1
     );
-    private static final int DAMAGE = 70;
+    private static final int DAMAGE = 60;
     private static final int UPG_DAMAGE = 20;
     private static final int TURNS = 2;
 

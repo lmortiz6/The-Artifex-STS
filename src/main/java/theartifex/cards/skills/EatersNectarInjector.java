@@ -6,8 +6,11 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractInjector;
 import theartifex.cards.optionCards.*;
 import theartifex.character.TheArtifexCharacter;
@@ -64,7 +67,8 @@ public class EatersNectarInjector extends AbstractInjector {
 
     @Override
     public void adverseReaction() {
-        addToBot(new GainEnergyAction(-1));
+        if (EnergyPanel.totalCount > this.costForTurn)
+            addToBot(new GainEnergyAction(-1));
     }
 
     @Override

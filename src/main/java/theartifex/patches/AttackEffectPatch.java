@@ -63,7 +63,7 @@ public class AttackEffectPatch {
                 return SpireReturn.Return(ImageMaster.ATK_SLASH_HEAVY);
             }
             else if (___effect == CustomAttackEffect.CARBIDE_AXE) {
-                return SpireReturn.Return(ImageMaster.ATK_SLASH_V);
+                return SpireReturn.Return(ImageMaster.ATK_SLASH_H);
             }
             else if (___effect == CustomAttackEffect.FORCE_KNIFE) {
                 return SpireReturn.Return(ImageMaster.ATK_SLASH_H);
@@ -99,7 +99,7 @@ public class AttackEffectPatch {
                 CardCrawlGame.sound.playV(makeID("ISSACHAR_RIFLE"), 1.4f); // Sound Effect
             }
             else if (effect == CustomAttackEffect.CONK) {
-                CardCrawlGame.sound.playV(makeID("CONK"), 1.5f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("CONK"), 1.4f); // Sound Effect
             }
             else if (effect == CustomAttackEffect.GRAPPLING_GUN) {
                 CardCrawlGame.sound.playV(makeID("GRAPPLING_GUN"), 1.4f); // Sound Effect
@@ -117,10 +117,10 @@ public class AttackEffectPatch {
                 CardCrawlGame.sound.playV(makeID("HAND_E_NUKE"), 1.4f); // Sound Effect
             }
             else if (effect == CustomAttackEffect.DISMEMBER) {
-                CardCrawlGame.sound.playV(makeID("DISMEMBER"), 1.7f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("DISMEMBER"), 1.5f); // Sound Effect
             }
             else if (effect == CustomAttackEffect.CLEAVE) {
-                CardCrawlGame.sound.playV(makeID("CLEAVE"), 1.6f); // Sound Effect
+                CardCrawlGame.sound.playV(makeID("CLEAVE"), 1.4f); // Sound Effect
             }
             else if (effect == CustomAttackEffect.CARBIDE_AXE) {
                 CardCrawlGame.sound.playV(makeID("CARBIDE_AXE"), 1.3f); // Sound Effect

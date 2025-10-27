@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import theartifex.cards.attacks.PyrokinesisField;
 
 import static theartifex.TheArtifexMod.makeID;
@@ -16,8 +17,18 @@ public class CathedraWithRubyTraceryPower extends BasePower{
 
     public CathedraWithRubyTraceryPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
-        addToBot(new MakeTempCardInDrawPileAction(new PyrokinesisField(), 1, true, true));
         updateDescription();
+    }
+
+    @Override
+    public void onInitialApplication() {
+        addToBot(new MakeTempCardInDrawPileAction(new PyrokinesisField(), amount, true, true));
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        addToBot(new MakeTempCardInDrawPileAction(new PyrokinesisField(), stackAmount, true, true));
     }
 
     public void atStartOfTurn() {

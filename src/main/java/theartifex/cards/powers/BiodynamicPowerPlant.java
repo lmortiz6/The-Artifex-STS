@@ -5,31 +5,33 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.abstracts.AbstractCyberneticCard;
+import theartifex.cards.attacks.Strike_Artifex;
 import theartifex.character.TheArtifexCharacter;
-import theartifex.powers.StabilizerArmLocksPower;
-import theartifex.relics.StabilizerArmLocksRelic;
+import theartifex.powers.BiodynamicPowerPlantPower;
+import theartifex.relics.BiodynamicPowerPlantRelic;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
 
-public class StabilizerArmLocks extends AbstractCyberneticCard {
+public class BiodynamicPowerPlant extends AbstractCyberneticCard {
 
-    public static final String ID = makeID(StabilizerArmLocks.class.getSimpleName());
+    public static final String ID = makeID(BiodynamicPowerPlant.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            3
     );
     public static final int creditCost = info.baseCost;
-    private static final int BUFF = 2;
-    private static final String cyberneticRelic = makeID(StabilizerArmLocksRelic.class.getSimpleName());
+    private static final int BUFF = 1;
+    private static final String cyberneticRelic = makeID(BiodynamicPowerPlantRelic.class.getSimpleName());
 
-    public StabilizerArmLocks() {
+    public BiodynamicPowerPlant() {
         super(ID, info, cyberneticRelic); //Pass the required information to the BaseCard constructor.
+
+        this.cardsToPreview = new Strike_Artifex();
         this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
-        this.setMagic(BUFF);
     }
 
     @Override
@@ -37,13 +39,11 @@ public class StabilizerArmLocks extends AbstractCyberneticCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StabilizerArmLocksPower(p, p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new BiodynamicPowerPlantPower(p, p, BUFF)));
     }
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new StabilizerArmLocks();
+        return new BiodynamicPowerPlant();
     }
-
-
 }

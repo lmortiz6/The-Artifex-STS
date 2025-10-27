@@ -1,5 +1,6 @@
 package theartifex.powers;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -9,7 +10,7 @@ import com.megacrit.cardcrawl.localization.LocalizedStrings;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class WillpowerUpPower extends BasePower{
+public class WillpowerUpPower extends BasePower implements InvisiblePower {
 
     public static final String POWER_ID = makeID(WillpowerUpPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;

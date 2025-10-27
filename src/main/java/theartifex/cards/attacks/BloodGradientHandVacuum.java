@@ -36,8 +36,11 @@ public class BloodGradientHandVacuum extends AbstractGun {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        DamageInfo info = new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL);
-        addToBot(new BloodGradientHandVacuumAction(m, info, this.isMultiDamage));
+        if (isMultiDamage) {
+            addToBot(new BloodGradientHandVacuumAction(m, p, this.multiDamage, this.damageTypeForTurn));
+        } else {
+            addToBot(new BloodGradientHandVacuumAction(m, p, damage, this.damageTypeForTurn));
+        }
     }
 
     @Override

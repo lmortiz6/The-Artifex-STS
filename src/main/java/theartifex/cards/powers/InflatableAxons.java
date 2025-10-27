@@ -20,7 +20,7 @@ public class InflatableAxons extends AbstractCyberneticCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2
+            1
     );
     public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;

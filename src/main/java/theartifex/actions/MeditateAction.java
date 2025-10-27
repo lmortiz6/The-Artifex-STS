@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class ImproviseAction extends AbstractGameAction {
+public class MeditateAction extends AbstractGameAction {
 
     private AbstractPlayer p;
 
@@ -22,7 +22,7 @@ public class ImproviseAction extends AbstractGameAction {
 
     private AbstractCard sourceCard;
 
-    public ImproviseAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
+    public MeditateAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
         setValues((AbstractCreature)AbstractDungeon.player, source, amount);
         this.actionType = AbstractGameAction.ActionType.DRAW;
         this.duration = 0.25F;
@@ -40,21 +40,26 @@ public class ImproviseAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            if (this.p.hand.group.size() - this.cannotTinker.size() <= amount) {
+            if (this.p.hand.group.size() - this.cannotTinker.size() == 1)
                 for (AbstractCard c : this.p.hand.group) {
                     if (isTinkerable(c)) {
                         modCard(c);
+                        CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                        this.isDone = true;
+                        return;
                     }
                 }
-                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
-                this.isDone = true;
-                return;
-            }
             this.p.hand.group.removeAll(this.cannotTinker);
-            if (this.p.hand.group.size() > amount) {
-                AbstractDungeon.handCardSelectScreen.open("Modify", amount, false, false, false, false);
+            if (this.p.hand.group.size() > 1) {
+                AbstractDungeon.handCardSelectScreen.open("Modify", 1, false, false, false, false);
                 tickDuration();
                 return;
+            }
+            if (this.p.hand.group.size() == 1) {
+                CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f); // Sound Effect
+                modCard(this.p.hand.getTopCard());
+                returnCards();
+                this.isDone = true;
             }
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {

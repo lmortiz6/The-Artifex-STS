@@ -39,7 +39,7 @@ public class ChromeRevolver extends AbstractGun {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (isMultiDamage)
-            addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, CustomAttackEffect.CHROME_REVOLVER));
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, CustomAttackEffect.CHROME_REVOLVER, true));
         else
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.CHROME_REVOLVER));
         addToBot(new DrawCardAction(p, magicNumber, false));

@@ -30,6 +30,9 @@ public class AbstractGun extends BaseCard {
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower armLocksPower = AbstractDungeon.player.getPower(makeID(StabilizerArmLocksPower.class.getSimpleName()));
         StabilizerArmLocksRelic armLocksRelic = (StabilizerArmLocksRelic) AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
+        int tinker = 0;
+        if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
+            tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
 
         int originalStrength = 0;
         if (strength != null) {
@@ -41,9 +44,9 @@ public class AbstractGun extends BaseCard {
         if (armLocksPower != null)
             this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
-            this.baseDamage += 3 * armLocksRelic.amount;
+            this.baseDamage += 2 * armLocksRelic.amount;
         if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED))
-            this.baseDamage += 1;
+            this.baseDamage += 1 + tinker;
 
         super.applyPowers();
 
@@ -59,11 +62,11 @@ public class AbstractGun extends BaseCard {
         }
         if (armLocksRelic != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 3 * armLocksRelic.amount;
+            this.baseDamage -= 2 * armLocksRelic.amount;
         }
         if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)) {
             this.isDamageModified = true;
-            this.baseDamage -= 1;
+            this.baseDamage -= (1 + tinker);
         }
     }
 
@@ -76,6 +79,9 @@ public class AbstractGun extends BaseCard {
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower armLocksPower = AbstractDungeon.player.getPower(makeID(StabilizerArmLocksPower.class.getSimpleName()));
         StabilizerArmLocksRelic armLocksRelic = (StabilizerArmLocksRelic) AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
+        int tinker = 0;
+        if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
+            tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
 
         int originalStrength = 0;
         if (strength != null) {
@@ -87,9 +93,9 @@ public class AbstractGun extends BaseCard {
         if (armLocksPower != null)
             this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
-            this.baseDamage += 3 * armLocksRelic.amount;
+            this.baseDamage += 2 * armLocksRelic.amount;
         if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED))
-            this.baseDamage += 1;
+            this.baseDamage += 1 + tinker;
 
         super.calculateCardDamage(mo);
 
@@ -105,11 +111,11 @@ public class AbstractGun extends BaseCard {
         }
         if (armLocksRelic != null) {
             this.isDamageModified = true;
-            this.baseDamage -= 3 * armLocksRelic.amount;
+            this.baseDamage -= 2 * armLocksRelic.amount;
         }
         if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)) {
             this.isDamageModified = true;
-            this.baseDamage -= 1;
+            this.baseDamage -= (1 + tinker);
         }
     }
 }

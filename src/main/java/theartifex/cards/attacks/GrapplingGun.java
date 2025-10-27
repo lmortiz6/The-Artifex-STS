@@ -46,7 +46,7 @@ public class GrapplingGun extends AbstractGun {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (isMultiDamage) {
-            addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, CustomAttackEffect.GRAPPLING_GUN));
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, CustomAttackEffect.GRAPPLING_GUN, true));
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false)));
             }

@@ -19,10 +19,15 @@ public class InflatableAxonsPower extends BasePower implements InvisiblePower {
     public InflatableAxonsPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
         updateDescription();
+    }
+
+    @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
         if ((GameActionManager.turn) % 2 == 1) {
             addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawReductionPower(owner, owner, amount)));
         } else {
-            addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, 2*amount)));
+            addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
         }
     }
 
@@ -30,7 +35,7 @@ public class InflatableAxonsPower extends BasePower implements InvisiblePower {
         if ((GameActionManager.turn + 1) % 2 == 1) {
             addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawReductionPower(owner, owner, amount)));
         } else {
-            addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, 2*amount)));
+            addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
         }
     }
 

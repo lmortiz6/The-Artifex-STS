@@ -23,7 +23,7 @@ public class MotorizedTreads extends AbstractCyberneticCard {
             3
     );
     public static final int creditCost = info.baseCost;
-    private static final int BUFF = 1;
+    public static final int BUFF = 2;
     private static final String cyberneticRelic = makeID(MotorizedTreadsRelic.class.getSimpleName());
 
     public MotorizedTreads() {

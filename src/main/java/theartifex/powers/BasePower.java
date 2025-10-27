@@ -14,7 +14,7 @@ import theartifex.util.GeneralUtils;
 import theartifex.util.TextureLoader;
 
 public abstract class BasePower extends AbstractPower {
-    private static PowerStrings getPowerStrings(String ID)
+    protected static PowerStrings getPowerStrings(String ID)
     {
         return CardCrawlGame.languagePack.getPowerStrings(ID);
     }

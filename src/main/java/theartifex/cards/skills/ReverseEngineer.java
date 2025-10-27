@@ -4,38 +4,42 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawReductionPower;
+import theartifex.actions.TransformHandAction;
 import theartifex.cards.BaseCard;
+import theartifex.cards.status.Shocked;
 import theartifex.character.TheArtifexCharacter;
+import theartifex.powers.TinkerPower;
 import theartifex.util.CardStats;
 
-public class ApplyDebuff extends BaseCard {
+public class ReverseEngineer extends BaseCard {
 
-    public static final String ID = makeID(ApplyDebuff.class.getSimpleName());
+    public static final String ID = makeID(ReverseEngineer.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL,
-            CardRarity.SPECIAL,
-            CardTarget.ENEMY,
-            0
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1
     );
-    private static final int DEBUFF = 1;
-    private static final int UPG_DEBUFF = 1;
+    private static final int BUFF = 2;
+    private static final int UPG_BUFF = 1;
 
-    public ApplyDebuff() {
+    public ReverseEngineer() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
-
-        this.setMagic(DEBUFF, UPG_DEBUFF);
+        setMagic(BUFF, UPG_BUFF);
+        setExhaust(true);
+        this.cardsToPreview = new Shocked();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new DrawReductionPower(m, 2)));
+        addToBot(new ApplyPowerAction(p, p, new TinkerPower(p, p, magicNumber)));
+        addToBot(new TransformHandAction(this.cardsToPreview.makeCopy()));
     }
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new ApplyDebuff();
+        return new ReverseEngineer();
     }
 }

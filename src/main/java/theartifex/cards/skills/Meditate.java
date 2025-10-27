@@ -21,25 +21,24 @@ public class Meditate extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            0
     );
-    private static final int BLOCK = 5;
-    private static final int UPG_BLOCK = 4;
     private static final int DRAW = 1;
+    private static final int UPG_DRAW = 1;
     private static final int RETAIN = 1;
+    private static final int UPG_RETAIN = 1;
 
     public Meditate() {
-        super(ID, info); //Pass the required information to the BaseCard constructor.
-
-        setBlock(BLOCK, UPG_BLOCK); //Sets the card's damage and how much it changes when upgraded.
+        super(ID, info);
+        setMagic(DRAW, UPG_DRAW);
+        setCustomVar("retain", RETAIN, UPG_RETAIN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         CardCrawlGame.sound.playV(makeID("MEDITATE"), 1.3f); // Sound Effect
-        addToBot(new GainBlockAction(p, p, this.block));
-        addToBot(new DrawCardAction(p, DRAW));
-        addToBot(new RetainCardsAction(p, RETAIN));
+        addToBot(new DrawCardAction(p, magicNumber));
+        addToBot(new RetainCardsAction(p, customVar("retain")));
         addToBot(new PressEndTurnButtonAction());
     }
 

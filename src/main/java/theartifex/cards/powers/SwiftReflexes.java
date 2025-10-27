@@ -22,7 +22,7 @@ public class SwiftReflexes extends BaseCard implements OnObtainCard {
             AbstractCard.CardType.POWER,
             AbstractCard.CardRarity.RARE,
             AbstractCard.CardTarget.SELF,
-            0
+            1
     );
 
     public SwiftReflexes() {
@@ -33,7 +33,7 @@ public class SwiftReflexes extends BaseCard implements OnObtainCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SwiftReflexesPower(p, p, -1), 0));
+        addToBot(new ApplyPowerAction(p, p, new SwiftReflexesPower(p, p, 1), 1));
     }
 
     @Override

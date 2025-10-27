@@ -33,8 +33,8 @@ public class HandENukePower extends BasePower {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             addToBot((AbstractGameAction)new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.amount == 1) {
-                addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.damage, DamageInfo.DamageType.THORNS)));
-                addToBot((AbstractGameAction) new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, CustomAttackEffect.HAND_E_NUKE));
+                addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.damage, DamageInfo.DamageType.THORNS), CustomAttackEffect.HAND_E_NUKE));
+                addToBot((AbstractGameAction) new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
         }
     }

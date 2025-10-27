@@ -20,29 +20,6 @@ public class GiantHandsRelic extends AbstractCyberneticRelic {
         super(ID, NAME, RARITY, SOUND, card, cost);
     }
 
-    /*@Override
-    public void atTurnStart() {
-        drawnCards = Math.min(AbstractDungeon.player.gameHandSize, 10 - AbstractDungeon.player.hand.size());
-    }
-
-    @Override
-    public void onDrawOrDiscard() {
-        drawnCards--;
-        if (drawnCards == 0) {
-            CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.type == AbstractCard.CardType.ATTACK && c.costForTurn > 0) {
-                    group.addToBottom(c);
-                }
-            }
-            if (!group.isEmpty()) {
-                flash();
-                group.getRandomCard(AbstractDungeon.cardRandomRng).costForTurn -= 1;
-            }
-            group.clear();
-        }
-    }*/
-
     @Override
     public void atTurnStartPostDraw() {
         super.atTurnStartPostDraw();

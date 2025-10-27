@@ -28,7 +28,7 @@ public class WillpowerUp extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int BUFF = 2;
+    private static final int BUFF = 3;
     private static final int UPG_BUFF = 1;
 
     public WillpowerUp() {

@@ -13,35 +13,31 @@ public class MotorizedTreadsPower extends BasePower implements InvisiblePower {
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
     private static final int DRAW = 2;
-    //private static int drawnCards;
 
     public MotorizedTreadsPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
         updateDescription();
-        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, DRAW*amount)));
     }
 
-    /*public void atStartOfTurn() {
-        drawnCards = Math.min(AbstractDungeon.player.gameHandSize, 10 - AbstractDungeon.player.hand.size());
+    @Override
+    public void onInitialApplication() {
+        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
     }
 
-    public void onCardDraw(AbstractCard card) {
-        drawnCards--;
-        if (drawnCards == 0) {
-            addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, DRAW*amount)));
-            addToBot(new ApplyPowerAction(owner, owner, new NoDrawPower(owner)));
-        }
-    }*/
+    @Override
+    public void stackPower(int stackAmount) {
+        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, stackAmount)));
+    }
 
     @Override
     public void atStartOfTurnPostDraw() {
         super.atStartOfTurnPostDraw();
         //addToBot(new DebugLogAction(POWER_ID));
-        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, DRAW*amount)));
+        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
         addToBot(new ApplyPowerAction(owner, owner, new NoDrawPower(owner)));
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[]{this.amount*DRAW});
+        this.description = String.format(DESCRIPTIONS[0], new Object[]{this.amount});
     }
 }

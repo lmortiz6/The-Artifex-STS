@@ -28,7 +28,7 @@ public class Improvise extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ImproviseAction(p, 1, this));
+        addToBot(new ImproviseAction(p, 2, this));
     }
 
     @Override

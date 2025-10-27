@@ -21,34 +21,6 @@ public class CarbideHandBonesRelic extends AbstractCyberneticRelic {
     }
 
     @Override
-    public void atBattleStart() {
-        updateExistingStrikes();
-    }
-
-    private void updateExistingStrikes() {
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                c.baseDamage *= 1.5F;
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                c.baseDamage *= 1.5F;
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                c.baseDamage *= 1.5F;
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                c.baseDamage *= 1.5F;
-            }
-        }
-    }
-
-    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }

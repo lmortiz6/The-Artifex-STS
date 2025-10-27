@@ -20,7 +20,6 @@ public class NextTurnDrawReductionPower extends BasePower {
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
         this.isTurnBased = true;
         updateDescription();
-        //loadRegion("lessdraw");
     }
 
     public void onInitialApplication() {

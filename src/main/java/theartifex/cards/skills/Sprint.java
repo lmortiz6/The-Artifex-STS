@@ -5,9 +5,13 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import theartifex.TheArtifexMod;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
+import theartifex.relics.HyperElasticAnkleTendonsRelic;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
 
@@ -42,22 +46,24 @@ public class Sprint extends BaseCard {
         addToBot(new DiscardAction(p, p, DISCARD, false));
     }
 
-    public void initializeDescription() {
-        super.initializeDescription();
-//        String exhaustString = "*Exhaust.";
-//        GlyphLayout gl = new GlyphLayout();
-//        gl.setText(FontHelper.cardDescFont_N, exhaustString);
-        if (this.exhaust) {
-            if (!this.keywords.contains("exhaust"))
-                this.keywords.add("exhaust");
-        } else {
-            for (int i = 0; i < description.size(); i++) {
-                if (description.get(i).text.contains("Exhaust.")) {
-                    description.remove(i);
-                    break;
+    @Override
+    public void applyPowers() {
+
+        super.applyPowers();
+
+        this.magicNumber = this.baseMagicNumber;
+
+        if (AbstractDungeon.player != null) {
+            if (AbstractDungeon.player.hasPower("theartifex:HyperElasticAnkleTendonsPower")) {
+                this.magicNumber += AbstractDungeon.player.getPower("theartifex:HyperElasticAnkleTendonsPower").amount;
+                this.isMagicNumberModified = true;
+            }
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                if (r instanceof HyperElasticAnkleTendonsRelic) {
+                    this.magicNumber += 1;
+                    this.isMagicNumberModified = true;
                 }
             }
-            this.keywords.remove("exhaust");
         }
     }
 

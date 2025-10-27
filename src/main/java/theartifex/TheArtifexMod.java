@@ -61,6 +61,7 @@ public class TheArtifexMod implements
     public static boolean gridScreenForCyberRelics = false;
     public static boolean gridScreenForCyberCards = false;
     public static boolean nonManualDiscard = false;
+    public static int cardsDrawnAtTurnStart = 5;
     public static ArrayList<Texture> cardModTextures = new ArrayList<>();
 
     public static int availableCreditsFast = 0;

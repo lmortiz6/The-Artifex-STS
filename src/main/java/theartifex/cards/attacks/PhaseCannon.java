@@ -1,16 +1,23 @@
 package theartifex.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
+import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractGun;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
@@ -24,37 +31,47 @@ public class PhaseCannon extends AbstractGun {
             TheArtifexCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.ATTACK,
             CardRarity.RARE,
-            CardTarget.ALL_ENEMY,
-            4
+            CardTarget.ENEMY,
+            9
     );
-    private static final int DAMAGE = 36;
+    private static final int DAMAGE = 30;
     private static final int UPG_DAMAGE = 8;
 
     public PhaseCannon() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-        this.isMultiDamage = true;
         tags.add(CustomCardTags.THEARTIFEXGUN);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustAction(1, false, false, false));
         addToBot((AbstractGameAction)new SFXAction("ATTACK_HEAVY"));
         addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        if (isMultiDamage)
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        else
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        super.canUse(p, m);
-        this.cantUseMessage = "I don't have a card to exhaust!";
-        return (p.hand.size() - 1 >= 1);
+    public void atTurnStart() {
+        resetAttributes();
+        applyPowers();
     }
 
     @Override
-    public AbstractCard makeCopy() { //Optional
-        return new PhaseCannon();
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        AbstractCard tmp = new PhaseCannon();
+        if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null &&
+                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+            setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        return tmp;
     }
 }

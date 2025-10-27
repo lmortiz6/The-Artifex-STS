@@ -24,8 +24,13 @@ public class ScrapCapeRelic extends BaseRelic{
         return this.DESCRIPTIONS[0];
     }
 
-    @Override
-    public void onExhaust(AbstractCard card) {
+//    @Override
+//    public void onExhaust(AbstractCard card) {
+//        flash();
+//        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, ARMOR)));
+//    }
+
+    public void onSpecificTrigger() {
         flash();
         addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, ARMOR)));
     }

@@ -3,6 +3,7 @@ package theartifex.cards.optionCards;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theartifex.cards.BaseCard;
+import theartifex.powers.TinkerPower;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
 
@@ -27,8 +29,8 @@ public class IntelligenceUp extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int BUFF = 2;
-    private static final int UPG_BUFF = 0;
+    private static final int BUFF = 1;
+    private static final int UPG_BUFF = 1;
 
     public IntelligenceUp() {
         super(ID, info);
@@ -46,14 +48,15 @@ public class IntelligenceUp extends BaseCard {
         flash.duration = 0.82F;
         addToBot((AbstractGameAction)new VFXAction(flash));
         addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new VerticalAuraEffect(Color.valueOf("c2d3d37D"), p.hb.cX, p.hb.cY), 1.0F));
-        for (int i = 0; i < magicNumber; i++) {
+        /*for (int i = 0; i < magicNumber; i++) {
             AbstractCard c = AbstractDungeon.returnTrulyRandomColorlessCardInCombat().makeCopy();
             if (this.upgraded) {
                 c.upgrade();
             }
             c.setCostForTurn(0);
             addToBot((AbstractGameAction)new MakeTempCardInHandAction(c, 1));
-        }
+        }*/
+        addToBot(new ApplyPowerAction(p, p, new TinkerPower(p, p, magicNumber)));
     }
 
     public AbstractCard makeCopy() {

@@ -23,8 +23,8 @@ public class PenetratingStrike extends BaseCard {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 6;
-    private static final int SCALING = 3;
+    private static final int DAMAGE = 7;
+    private static final int SCALING = 2;
     private static final int UPG_SCALING = 1;
 
     public PenetratingStrike() {

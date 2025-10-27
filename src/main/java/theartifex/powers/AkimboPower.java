@@ -18,19 +18,19 @@ public class AkimboPower extends BasePower{
     public AkimboPower(AbstractCreature owner, AbstractCreature source, int amount){
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
         this.amount = amount;
-        this.used = false;
+        used = false;
         this.updateDescription();
     }
 
     public void atStartOfTurn() {
-        this.used = false;
+        used = false;
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!used && card.hasTag(CustomCardTags.THEARTIFEXGUN)) {
             addToBot(new DrawCardAction(this.amount));
             flash();
-            this.used = true;
+            used = true;
         }
     }
 

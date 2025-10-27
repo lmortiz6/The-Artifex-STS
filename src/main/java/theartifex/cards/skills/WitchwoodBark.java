@@ -35,7 +35,7 @@ public class WitchwoodBark extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playV(makeID("WITCHWOOD"), 1.3f); // Sound Effect
+        CardCrawlGame.sound.playV(makeID("WITCHWOOD"), 1.2f); // Sound Effect
         addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
     }
 

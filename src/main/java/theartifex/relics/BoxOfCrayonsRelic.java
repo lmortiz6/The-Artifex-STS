@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import theartifex.TheArtifexMod;
 
 import static theartifex.TheArtifexMod.makeID;
 
@@ -17,7 +18,7 @@ public class BoxOfCrayonsRelic extends BaseRelic {
     private static final AbstractRelic.RelicTier RARITY = RelicTier.UNCOMMON;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
 
-    private boolean cardSelected;
+    private boolean cardSelected = true;
 
     public BoxOfCrayonsRelic() {
         super(ID, NAME, RARITY, SOUND);
@@ -56,9 +57,10 @@ public class BoxOfCrayonsRelic extends BaseRelic {
     public void update() {
         super.update();
         if (!cardSelected && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-            AbstractCard c = ((AbstractCard)AbstractDungeon.gridSelectScreen.selectedCards.get(0)).makeCopy();
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+            AbstractCard c = (AbstractDungeon.gridSelectScreen.selectedCards.get(0)).makeCopy();
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+            cardSelected = true;
         }
     }
 

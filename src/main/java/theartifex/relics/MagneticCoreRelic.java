@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;
+import theartifex.actions.MagneticCoreAction;
 import theartifex.cards.powers.MagneticCore;
 import theartifex.powers.PulsedPower;
 
@@ -29,12 +30,17 @@ public class MagneticCoreRelic extends AbstractCyberneticRelic {
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (targetCard.type == AbstractCard.CardType.POWER) {
             flash();
-            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new PulsedPower(m, AbstractDungeon.player, 1)));
-            }
+            AbstractMonster m = AbstractDungeon.getRandomMonster();
+            addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new PulsedPower(m, AbstractDungeon.player, 1)));
             CardCrawlGame.sound.playV(makeID("EMP"), 1.4f); // Sound Effect
         }
     }
+
+    /*@Override
+    public void atTurnStartPostDraw() {
+        super.atTurnStartPostDraw();
+        addToBot(new MagneticCoreAction(1));
+    }*/
 
     @Override
     public String getUpdatedDescription() {

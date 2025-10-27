@@ -36,7 +36,7 @@ public class IssacharRifle extends AbstractGun {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (isMultiDamage)
-            addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, CustomAttackEffect.ISSACHAR_RIFLE));
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, CustomAttackEffect.ISSACHAR_RIFLE));
         else
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), CustomAttackEffect.ISSACHAR_RIFLE));
     }
