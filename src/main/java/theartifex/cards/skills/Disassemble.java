@@ -8,8 +8,6 @@ import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
 
-import java.util.ArrayList;
-
 public class Disassemble extends BaseCard {
 
     public static final String ID = makeID(Disassemble.class.getSimpleName());
