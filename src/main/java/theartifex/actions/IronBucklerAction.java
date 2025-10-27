@@ -16,17 +16,15 @@ public class IronBucklerAction extends AbstractGameAction {
 
     public static final String[] TEXT = uiStrings.TEXT;
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private boolean isRandom;
-
-    private boolean endTurn;
+    private final boolean endTurn;
 
     public static int numDiscarded;
 
     private static final float DURATION = Settings.ACTION_DUR_XFAST;
 
-    private int block;
+    private final int block;
 
     public IronBucklerAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, int block) {
         this(target, source, amount, isRandom, false, block);
@@ -34,7 +32,6 @@ public class IronBucklerAction extends AbstractGameAction {
 
     public IronBucklerAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean endTurn, int block) {
         this.p = (AbstractPlayer)target;
-        this.isRandom = isRandom;
         setValues(target, source, amount);
         this.actionType = AbstractGameAction.ActionType.DISCARD;
         this.endTurn = endTurn;

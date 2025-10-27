@@ -18,7 +18,7 @@ public class StunGasGrenadePower extends BasePower{
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = true;
     private static int bombIdOffset;
-    private int weak;
+    private final int weak;
 
     public StunGasGrenadePower(AbstractCreature owner, AbstractCreature source, int amount, int damage, int weak){
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
@@ -46,9 +46,9 @@ public class StunGasGrenadePower extends BasePower{
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[] { Integer.valueOf(this.amount2), Integer.valueOf(this.weak) });
+            this.description = String.format(DESCRIPTIONS[1], (this.amount2), (this.weak));
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount), Integer.valueOf(this.amount2), Integer.valueOf(this.weak) });
+            this.description = String.format(DESCRIPTIONS[0], (this.amount), (this.amount2), (this.weak));
         }
     }
 }

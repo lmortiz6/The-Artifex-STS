@@ -24,7 +24,7 @@ public class WillpowerUpPower extends BasePower implements InvisiblePower {
 
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            addToBot((AbstractGameAction)new ReducePowerAction(this.owner, this.owner, this, 1));
+            addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.amount > 0)
                 addToBot(new GainEnergyAction(1));
         }
@@ -35,7 +35,7 @@ public class WillpowerUpPower extends BasePower implements InvisiblePower {
         if (this.amount == 1) {
             sb.append(DESCRIPTIONS[1]);
         } else {
-            sb.append(String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount) }));
+            sb.append(String.format(DESCRIPTIONS[0], (this.amount)));
         }
         sb.append("[E] ");
         sb.append(LocalizedStrings.PERIOD);

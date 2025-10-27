@@ -22,8 +22,8 @@ public class Grindstone extends BaseCard implements OnObtainCard {
             CardTarget.SELF,
             1
     );
-    private static int BUFF = 1;
-    private static int UPG_BUFF = 1;
+    private static final int BUFF = 1;
+    private static final int UPG_BUFF = 1;
 
     public Grindstone() {
         super(ID, info);

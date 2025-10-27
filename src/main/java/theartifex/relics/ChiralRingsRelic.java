@@ -20,7 +20,7 @@ public class ChiralRingsRelic extends BaseRelic {
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.RARE;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.MAGICAL;
 
-    private HashMap<AbstractCreature, Integer> creaturesToDebuff;
+    private final HashMap<AbstractCreature, Integer> creaturesToDebuff;
 
     public ChiralRingsRelic() {
         super(ID, NAME, RARITY, SOUND);

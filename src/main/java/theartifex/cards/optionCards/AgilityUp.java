@@ -42,9 +42,9 @@ public class AgilityUp extends BaseCard {
 
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.GREEN, true)));
-        addToBot(new VFXAction(p, (AbstractGameEffect)new BuffParticleEffect(p.hb.cX, p.hb.cY), 1.0F));
-        addToBot(new ApplyPowerAction(p, p, (AbstractPower)new DexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.GREEN, true)));
+        addToBot(new VFXAction(p, new BuffParticleEffect(p.hb.cX, p.hb.cY), 1.0F));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

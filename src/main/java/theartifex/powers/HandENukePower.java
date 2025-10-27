@@ -31,19 +31,19 @@ public class HandENukePower extends BasePower {
 
     public void atEndOfTurn(boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            addToBot((AbstractGameAction)new ReducePowerAction(this.owner, this.owner, this, 1));
+            addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (this.amount == 1) {
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.damage, DamageInfo.DamageType.THORNS), CustomAttackEffect.HAND_E_NUKE));
-                addToBot((AbstractGameAction) new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
         }
     }
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[] { Integer.valueOf(this.damage) });
+            this.description = String.format(DESCRIPTIONS[1], (this.damage));
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount), Integer.valueOf(this.damage) });
+            this.description = String.format(DESCRIPTIONS[0], (this.amount), (this.damage));
         }
     }
 }

@@ -34,7 +34,7 @@ public class MedassistModulePower extends BasePower{
         if (this.amount == 1) {
             this.description = DESCRIPTIONS[1];
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount) });
+            this.description = String.format(DESCRIPTIONS[0], (this.amount));
         }
     }
 }

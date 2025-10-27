@@ -13,7 +13,6 @@ public class NextTurnDrawReductionPower extends BasePower {
     public static final String POWER_ID = makeID(NextTurnDrawReductionPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = false;
-    private static int originalHandSize;
 
     public NextTurnDrawReductionPower(AbstractCreature owner, AbstractCreature source, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
@@ -22,7 +21,6 @@ public class NextTurnDrawReductionPower extends BasePower {
     }
 
     public void onInitialApplication() {
-        originalHandSize = AbstractDungeon.player.gameHandSize;
         AbstractDungeon.player.gameHandSize -= amount;
     }
 
@@ -44,7 +42,7 @@ public class NextTurnDrawReductionPower extends BasePower {
         if (this.amount == 1) {
             this.description = DESCRIPTIONS[1];
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount) });
+            this.description = String.format(DESCRIPTIONS[0], (this.amount));
         }
     }
 }

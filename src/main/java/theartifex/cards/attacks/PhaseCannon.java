@@ -44,7 +44,7 @@ public class PhaseCannon extends AbstractGun {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
-        addToBot(new VFXAction(p, (AbstractGameEffect)new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
+        addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         if (isMultiDamage)
             addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         else

@@ -22,7 +22,7 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
 
     private final AbstractPlayer p;
 
-    private int dupeAmount = 1;
+    private final int dupeAmount;
 
     private final ArrayList<AbstractCard> cannotDuplicate = new ArrayList<>();
 

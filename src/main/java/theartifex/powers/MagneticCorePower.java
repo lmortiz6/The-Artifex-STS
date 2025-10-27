@@ -31,6 +31,6 @@ public class MagneticCorePower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[]{this.amount});
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

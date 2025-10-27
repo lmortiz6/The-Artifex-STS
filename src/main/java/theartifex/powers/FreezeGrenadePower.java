@@ -42,9 +42,9 @@ public class FreezeGrenadePower extends BasePower {
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[] { Integer.valueOf(this.block), Integer.valueOf(this.damage) });
+            this.description = String.format(DESCRIPTIONS[1], (this.block), (this.damage));
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount), Integer.valueOf(this.block), Integer.valueOf(this.damage) });
+            this.description = String.format(DESCRIPTIONS[0], (this.amount), (this.block), (this.damage));
         }
     }
 }

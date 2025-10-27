@@ -16,7 +16,6 @@ public class TimeDilationGrenadePower extends BasePower{
     private static final boolean TURN_BASED = true;
 
     private static int bombIdOffset;
-    private static int originalHandSize;
 
     public TimeDilationGrenadePower(AbstractCreature owner, AbstractCreature source, int amount){
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
@@ -28,7 +27,6 @@ public class TimeDilationGrenadePower extends BasePower{
     }
 
     public void onInitialApplication() {
-        originalHandSize = AbstractDungeon.player.gameHandSize;
         AbstractDungeon.player.gameHandSize += amount;
     }
 
@@ -50,6 +48,6 @@ public class TimeDilationGrenadePower extends BasePower{
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount)});
+        this.description = String.format(DESCRIPTIONS[0], (this.amount));
     }
 }

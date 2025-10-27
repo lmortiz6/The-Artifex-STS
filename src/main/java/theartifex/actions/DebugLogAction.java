@@ -8,7 +8,7 @@ import theartifex.TheArtifexMod;
 
 public class DebugLogAction extends AbstractGameAction {
     private final AbstractPlayer p;
-    private String log;
+    private final String log;
 
     public DebugLogAction(String log) {
         this.p = AbstractDungeon.player;

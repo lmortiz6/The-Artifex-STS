@@ -30,17 +30,17 @@ public class BecomingNookEffect extends AbstractGameEffect {
     public boolean cardSelect = false;
     public boolean confirmSelect = false;
     public boolean uninstalled = false;
-    private Color screenColor;
+    private final Color screenColor;
 
-    private CardGroup cards;
-    private CardGroup relics;
+    private final CardGroup cards;
+    private final CardGroup relics;
     public ArrayList<AbstractCard> cardsToAdd;
     public ArrayList<AbstractCard> cardsToRemove;
     public ArrayList<String> relicsToAdd;
     public ArrayList<String> relicsToRemove;
     public int credits;
-    private boolean hasCyberneticRelic;
-    private boolean hasCyberneticCard;
+    private final boolean hasCyberneticRelic;
+    private final boolean hasCyberneticCard;
 
     public BecomingNookEffect() {
         cards = TheArtifexMod.getCyberneticCards();

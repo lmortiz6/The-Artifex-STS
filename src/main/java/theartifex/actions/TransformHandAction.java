@@ -7,11 +7,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class TransformHandAction extends AbstractGameAction {
-    private final AbstractPlayer p;
     private final AbstractCard replacement;
 
     public TransformHandAction(AbstractCard replacement) {
-        this.p = AbstractDungeon.player;
+        AbstractPlayer p = AbstractDungeon.player;
         this.replacement = replacement;
         this.startDuration = 0.05F;
         setValues(p, p, amount);

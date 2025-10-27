@@ -21,7 +21,7 @@ public class TinkerPower extends BasePower{
 
     public void updateDescription() {
         this.name = getPowerStrings(this.ID).NAME + " " + intToRoman(this.amount);
-        this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount)});
+        this.description = String.format(DESCRIPTIONS[0], (this.amount));
     }
 
     @Override

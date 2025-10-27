@@ -33,11 +33,10 @@ public class CathedraWithRubyTraceryRelic extends AbstractCyberneticRelic {
 
     @Override
     public String getUpdatedDescription() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(DESCRIPTIONS[0]);
-        sb.append("[E] ");
-        sb.append(DESCRIPTIONS[1]);
-        this.description = sb.toString();
+        String sb = DESCRIPTIONS[0] +
+                "[E] " +
+                DESCRIPTIONS[1];
+        this.description = sb;
         return description;
     }
 }

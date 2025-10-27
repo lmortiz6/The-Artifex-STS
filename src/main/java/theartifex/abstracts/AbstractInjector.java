@@ -51,12 +51,9 @@ public class AbstractInjector extends BaseCard {
             return true;
         }
         String medassistRelicID = makeID(MedassistModuleRelic.class.getSimpleName());
-        if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&
+        return AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&
                 (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
                 AbstractDungeon.player.hasRelic(medassistRelicID) &&
-                ((MedassistModuleRelic)AbstractDungeon.player.getRelic(medassistRelicID)).amount > 0) {
-            return true;
-        }
-        return false;
+                ((MedassistModuleRelic) AbstractDungeon.player.getRelic(medassistRelicID)).amount > 0;
     }
 }

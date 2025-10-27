@@ -17,11 +17,7 @@ public class CyberneticConfirmDisablePatch {
     @SpirePostfixPatch
     public static void Postfix(GridCardSelectScreen __instance, @ByRef GridSelectConfirmButton[] ___confirmButton) {
         if (TheArtifexMod.gridScreenForCyberRelics) {
-            if (!TheArtifexMod.hasCyberneticCard() && AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                ___confirmButton[0].isDisabled = true;
-            } else {
-                ___confirmButton[0].isDisabled = false;
-            }
+            ___confirmButton[0].isDisabled = !TheArtifexMod.hasCyberneticCard() && AbstractDungeon.gridSelectScreen.selectedCards.isEmpty();
         }
         if (TheArtifexMod.gridScreenForCyberCards) {
             int cost = 0;
@@ -31,11 +27,7 @@ public class CyberneticConfirmDisablePatch {
             if (!TheArtifexMod.currBecomingNookEffect.uninstalled && AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 ___confirmButton[0].isDisabled = true;
             } else
-            if (cost > TheArtifexMod.currBecomingNookEffect.credits) {
-                ___confirmButton[0].isDisabled = true;
-            }  else {
-                ___confirmButton[0].isDisabled = false;
-            }
+                ___confirmButton[0].isDisabled = cost > TheArtifexMod.currBecomingNookEffect.credits;
         }
     }
 }

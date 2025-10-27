@@ -16,7 +16,7 @@ import static theartifex.TheArtifexMod.makeID;
 
 public class ImproviseAction extends AbstractGameAction {
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
     private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 

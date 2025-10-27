@@ -44,7 +44,7 @@ public class IntelligenceUp extends BaseCard {
         BorderFlashEffect flash = new BorderFlashEffect(Color.valueOf("c2d3d32D"), false);
         flash.duration = 0.82F;
         addToBot(new VFXAction(flash));
-        addToBot(new VFXAction(p, (AbstractGameEffect)new VerticalAuraEffect(Color.valueOf("c2d3d37D"), p.hb.cX, p.hb.cY), 1.0F));
+        addToBot(new VFXAction(p, new VerticalAuraEffect(Color.valueOf("c2d3d37D"), p.hb.cX, p.hb.cY), 1.0F));
         addToBot(new ApplyPowerAction(p, p, new TinkerPower(p, p, magicNumber)));
     }
 

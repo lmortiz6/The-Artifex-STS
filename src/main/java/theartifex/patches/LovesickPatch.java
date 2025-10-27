@@ -26,7 +26,7 @@ public class LovesickPatch {
             if (___duration == ___startingDuration) {
                 if (__instance[0].source != null && __instance[0].source.hasPower("theartifex:LovesickPower") && ___powerToApply.type == AbstractPower.PowerType.DEBUFF) {
                     __instance[0].target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
-                    ((LovesickPower)__instance[0].source.getPower("theartifex:LovesickPower")).flash();
+                    __instance[0].source.getPower("theartifex:LovesickPower").flash();
                 }
             }
         }
@@ -42,7 +42,7 @@ public class LovesickPatch {
             if (___duration == 0.1F) {
                 if (__instance[0].source != null && __instance[0].source.hasPower("theartifex:LovesickPower")) {
                     __instance[0].target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
-                    ((LovesickPower)__instance[0].source.getPower("theartifex:LovesickPower")).flash();
+                    __instance[0].source.getPower("theartifex:LovesickPower").flash();
                 }
             }
         }

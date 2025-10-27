@@ -30,9 +30,9 @@ public class LovesickPower extends BasePower{
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[] { Integer.valueOf(this.amount) });
+            this.description = String.format(DESCRIPTIONS[1], (this.amount));
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount)});
+            this.description = String.format(DESCRIPTIONS[0], (this.amount));
         }
     }
 }

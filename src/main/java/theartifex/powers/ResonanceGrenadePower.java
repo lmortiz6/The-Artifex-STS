@@ -48,9 +48,9 @@ public class ResonanceGrenadePower extends BasePower {
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[] { Integer.valueOf(this.damage), Integer.valueOf(this.vuln) });
+            this.description = String.format(DESCRIPTIONS[1], (this.damage), (this.vuln));
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount), Integer.valueOf(this.damage), Integer.valueOf(this.vuln) });
+            this.description = String.format(DESCRIPTIONS[0], (this.amount), (this.damage), (this.vuln));
         }
     }
 }

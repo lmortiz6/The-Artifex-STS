@@ -26,7 +26,7 @@ public class CardModRenderPatch {
             for (AbstractCard.CardTags tag : CustomCardTags.getMods(__instance)) {
                 Texture modTexture = null;
                 if (tag == CustomCardTags.THEARTIFEXJACKED || tag == CustomCardTags.THEARTIFEXPERMANENTJACKED)
-                    modTexture = TheArtifexMod.cardModTextures.get(0 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(i);
                 if (tag == CustomCardTags.THEARTIFEXREINFORCED || tag == CustomCardTags.THEARTIFEXPERMANENTREINFORCED)
                     modTexture = TheArtifexMod.cardModTextures.get(2 + i);
                 if (tag == CustomCardTags.THEARTIFEXNULLING || tag == CustomCardTags.THEARTIFEXPERMANENTNULLING)

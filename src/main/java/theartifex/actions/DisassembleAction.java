@@ -18,13 +18,13 @@ public class DisassembleAction extends AbstractGameAction {
 
     public static final String[] TEXT = uiStrings.TEXT;
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private boolean isRandom;
+    private final boolean isRandom;
 
-    private boolean anyNumber;
+    private final boolean anyNumber;
 
-    private boolean canPickZero;
+    private final boolean canPickZero;
 
     public static int numExhausted;
 

@@ -20,8 +20,8 @@ public class NachamsRibbonRelic extends BaseRelic{
     private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
     private static final int CHANCE = 15;
 
-    private ArrayList<AbstractCard> doNotMod = new ArrayList<>();
-    private ArrayList<AbstractCard> isModded = new ArrayList<>();
+    private final ArrayList<AbstractCard> doNotMod = new ArrayList<>();
+    private final ArrayList<AbstractCard> isModded = new ArrayList<>();
 
     public NachamsRibbonRelic() {
         super(ID, NAME, TheArtifexCharacter.Meta.CARD_COLOR, RARITY, SOUND);

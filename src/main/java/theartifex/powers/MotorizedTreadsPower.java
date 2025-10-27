@@ -38,6 +38,6 @@ public class MotorizedTreadsPower extends BasePower implements InvisiblePower {
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[]{this.amount});
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

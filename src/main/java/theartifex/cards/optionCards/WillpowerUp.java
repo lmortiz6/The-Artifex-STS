@@ -43,9 +43,9 @@ public class WillpowerUp extends BaseCard {
 
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.GOLDENROD, true)));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new MiracleEffect(), 1.0F));
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, new WillpowerUpPower(p, p, this.magicNumber), this.magicNumber));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.GOLDENROD, true)));
+        addToBot(new VFXAction(p, new MiracleEffect(), 1.0F));
+        addToBot(new ApplyPowerAction(p, p, new WillpowerUpPower(p, p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

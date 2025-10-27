@@ -36,7 +36,7 @@ public class CathedraWithRubyTraceryPower extends BasePower{
 
     public void updateDescription() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount) }));
+        sb.append(String.format(DESCRIPTIONS[0], (this.amount)));
         for (int i = 0; i < amount; i++)
             sb.append("[E] ");
         sb.append(LocalizedStrings.PERIOD);

@@ -18,7 +18,7 @@ public class GrindstoneAction extends AbstractGameAction {
             "Choose Cards to Modify with Sharp."
     };
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
     public GrindstoneAction(int amount) {
         this.p = AbstractDungeon.player;
@@ -76,6 +76,6 @@ public class GrindstoneAction extends AbstractGameAction {
     }
 
     private boolean isTinkerable(AbstractCard card) {
-        return (CustomCardTags.getMods(card).size() < 2 && card.type == AbstractCard.CardType.ATTACK && !(card instanceof AbstractGun) && card.cost != -2 && card.type != AbstractCard.CardType.CURSE && !card.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP) && !card.tags.contains(CustomCardTags.THEARTIFEXSHARP));
+        return (CustomCardTags.getMods(card).size() < 2 && card.type == AbstractCard.CardType.ATTACK && !(card instanceof AbstractGun) && card.cost != -2 && !card.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP) && !card.tags.contains(CustomCardTags.THEARTIFEXSHARP));
     }
 }

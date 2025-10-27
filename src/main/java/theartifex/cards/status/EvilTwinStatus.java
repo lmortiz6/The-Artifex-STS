@@ -34,7 +34,7 @@ public class EvilTwinStatus extends BaseCard {
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         if (c.type == CardType.ATTACK) {
-            addToTop((AbstractGameAction)new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
 

@@ -32,13 +32,13 @@ public class DeftThrowingPower extends BasePower{
             flash();
             AbstractCreature p = AbstractDungeon.player;
             for (int i = 0; i < count; i++) {
-                addToBot(new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new DexterityPower((AbstractCreature) p, amount), amount));
-                addToBot(new ApplyPowerAction((AbstractCreature) p, (AbstractCreature) p, (AbstractPower) new LoseDexterityPower((AbstractCreature) p, amount), amount));
+                addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
+                addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, amount), amount));
             }
         }
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount) });
+        this.description = String.format(DESCRIPTIONS[0], (this.amount));
     }
 }

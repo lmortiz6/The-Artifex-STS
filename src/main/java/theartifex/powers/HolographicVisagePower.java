@@ -41,9 +41,9 @@ public class HolographicVisagePower extends BasePower {
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[]{this.amount, this.amount});
+            this.description = String.format(DESCRIPTIONS[1], this.amount, this.amount);
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[]{this.amount, this.amount});
+            this.description = String.format(DESCRIPTIONS[0], this.amount, this.amount);
         }
     }
 }

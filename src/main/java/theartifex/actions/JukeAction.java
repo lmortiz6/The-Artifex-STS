@@ -16,7 +16,7 @@ import static theartifex.TheArtifexMod.makeID;
 
 public class JukeAction extends AbstractGameAction {
     
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
     private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
@@ -77,6 +77,6 @@ public class JukeAction extends AbstractGameAction {
     }
 
     private boolean isTinkerable(AbstractCard card) {
-        return (card != sourceCard && CustomCardTags.getMods(card).size() < 2 && card.type == AbstractCard.CardType.ATTACK && !(card instanceof AbstractGun) && card.cost != -2 && card.type != AbstractCard.CardType.CURSE && !card.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP) && !card.tags.contains(CustomCardTags.THEARTIFEXSHARP));
+        return (card != sourceCard && CustomCardTags.getMods(card).size() < 2 && card.type == AbstractCard.CardType.ATTACK && !(card instanceof AbstractGun) && card.cost != -2 && !card.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP) && !card.tags.contains(CustomCardTags.THEARTIFEXSHARP));
     }
 }

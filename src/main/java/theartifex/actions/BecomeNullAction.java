@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import static theartifex.TheArtifexMod.makeID;
 
 public class BecomeNullAction extends AbstractGameAction {
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
     public static final String[] TEXT = {"Modify"};
 

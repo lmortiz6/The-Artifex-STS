@@ -16,11 +16,11 @@ import static theartifex.TheArtifexMod.makeID;
 
 public class MeditateAction extends AbstractGameAction {
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
+    private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
 
-    private AbstractCard sourceCard;
+    private final AbstractCard sourceCard;
 
     public MeditateAction(AbstractCreature source, int amount, AbstractCard sourceCard) {
         setValues(AbstractDungeon.player, source, amount);

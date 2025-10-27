@@ -45,10 +45,10 @@ public class ToughnessUp extends BaseCard {
 
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.valueOf("7ea49580"), false)));
-        addToBot((AbstractGameAction)new VFXAction(p, (AbstractGameEffect)new AdrenalineEffect(), 0.9F));
-        addToBot((AbstractGameAction)new VFXAction(p, new HealVerticalLineEffect(p.hb.cX, p.hb.cY), 0.7F));
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)p, (AbstractCreature)p, (AbstractPower)new RegenPower((AbstractCreature)p, this.magicNumber), this.magicNumber));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.valueOf("7ea49580"), false)));
+        addToBot(new VFXAction(p, new AdrenalineEffect(), 0.9F));
+        addToBot(new VFXAction(p, new HealVerticalLineEffect(p.hb.cX, p.hb.cY), 0.7F));
+        addToBot(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

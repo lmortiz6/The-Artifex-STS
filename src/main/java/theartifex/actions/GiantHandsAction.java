@@ -10,10 +10,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class GiantHandsAction extends AbstractGameAction {
-    private final AbstractPlayer p;
     private boolean used;
-    private AbstractPower power;
-    private AbstractRelic relic;
+    private final AbstractPower power;
+    private final AbstractRelic relic;
 
     public GiantHandsAction(int amount) {
         this(amount, null, null);
@@ -28,8 +27,8 @@ public class GiantHandsAction extends AbstractGameAction {
     }
 
     private GiantHandsAction(int amount, AbstractPower power, AbstractRelic relic) {
-        this.p = AbstractDungeon.player;
-        setValues(this.p, AbstractDungeon.player, amount);
+        AbstractPlayer p = AbstractDungeon.player;
+        setValues(p, AbstractDungeon.player, amount);
         this.duration = Settings.ACTION_DUR_FAST;
         this.used = false;
         this.power = power;

@@ -17,9 +17,9 @@ public class CarbideHandBonesPower extends BasePower{
 
     public void updateDescription() {
         if (this.amount == 1) {
-            this.description = String.format(DESCRIPTIONS[1], new Object[]{this.amount});
+            this.description = String.format(DESCRIPTIONS[1], this.amount);
         } else {
-            this.description = String.format(DESCRIPTIONS[0], new Object[]{Math.round(Math.pow(1.3, amount) * 100.0) / 100.0});
+            this.description = String.format(DESCRIPTIONS[0], Math.round(Math.pow(1.3, amount) * 100.0) / 100.0);
         }
     }
 }

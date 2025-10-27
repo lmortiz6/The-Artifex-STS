@@ -29,6 +29,6 @@ public class LoseMetallicizePower extends BasePower{
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], new Object[] { Integer.valueOf(this.amount) });
+        this.description = String.format(DESCRIPTIONS[0], (this.amount));
     }
 }

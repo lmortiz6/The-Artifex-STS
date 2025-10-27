@@ -43,9 +43,9 @@ public class StrengthUp extends BaseCard {
 
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.FIREBRICK, true)));
-        addToBot((AbstractGameAction)new VFXAction(p, (AbstractGameEffect)new InflameEffect(p), 1.0F));
-        addToBot((AbstractGameAction)new ApplyPowerAction(p, p, (AbstractPower)new StrengthPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
+        addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

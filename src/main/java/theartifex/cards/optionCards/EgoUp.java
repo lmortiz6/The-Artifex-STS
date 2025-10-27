@@ -42,9 +42,9 @@ public class EgoUp extends BaseCard {
     public void onChoseThisOption() {
         AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new VFXAction((AbstractGameEffect)new BorderLongFlashEffect(Color.valueOf("905ab7A3"), true)));
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.valueOf("905ab7A3"), true)));
         addToBot(new GainGoldAction(this.magicNumber));
-        addToBot(new VFXAction(p, (AbstractGameEffect)new DivinityParticleEffect(), 3.0F));
+        addToBot(new VFXAction(p, new DivinityParticleEffect(), 3.0F));
     }
 
     public AbstractCard makeCopy() {
