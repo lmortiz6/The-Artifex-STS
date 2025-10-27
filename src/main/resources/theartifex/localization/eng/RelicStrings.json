@@ -123,7 +123,7 @@
     "NAME": "Magnetic Core",
     "FLAVOR": "Laminated metal is bound as concentric spheres, softening magnetic eddies and powering near-field orbits.",
     "DESCRIPTIONS": [
-      "#yCybernetic. Reduce the cost of Powers by #b1. Whenever you play a #yPower, apply #b1 #yPulsed to a random enemy."
+      "#yCybernetic. Reduce the cost of #yPowers by #b1. Whenever you play a #yPower, apply #b1 #yPulsed to a random enemy."
     ]
   },
   "${modID}:PrecisionNanonFingersRelic": {

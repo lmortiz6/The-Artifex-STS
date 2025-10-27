@@ -235,7 +235,7 @@
   "${modID}:MagneticCorePower": {
     "NAME": "Magnetic Core",
     "DESCRIPTIONS": [
-      "Reduce the cost of Powers by 1. Whenever you play a #yPower, apply #b%1$s #yPulsed to a random enemy."
+      "Reduce the cost of #yPowers by 1. Whenever you play a #yPower, apply #b%1$s #yPulsed to a random enemy."
     ]
   },
   "${modID}:LovesickPower": {
