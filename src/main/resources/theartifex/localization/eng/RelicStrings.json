@@ -10,7 +10,7 @@
     "NAME": "Carbide Hand Bones",
     "FLAVOR": "Blue carbide merely dents where weak collagen would be smashed to bits.",
     "DESCRIPTIONS": [
-      "#yCybernetic. ALL #yStrikes deal #b1.5x damage."
+      "#yCybernetic. ALL #yStrikes deal #b1.3x damage."
     ]
   },
   "${modID}:ForceModulatorRelic": {
@@ -24,14 +24,14 @@
     "NAME": "Inflatable Axons",
     "FLAVOR": "Nanoscopic stents inflate the gossamer brain-threads that restrict the conduction of the will.",
     "DESCRIPTIONS": [
-      "#yCybernetic. On odd turns, draw #b2 additional cards. On even turns, draw #b1 less card."
+      "#yCybernetic. On odd turns, draw #b1 additional cards. On even turns, draw #b1 less card."
     ]
   },
   "${modID}:StabilizerArmLocksRelic": {
     "NAME": "Stabilizer Arm Locks",
     "FLAVOR": "Chrome clasps fasten arm joints to emulate the stillness of unlife.",
     "DESCRIPTIONS": [
-      "#yCybernetic. ALL ${modID}:Gun cards deal #b3 additional damage."
+      "#yCybernetic. ALL ${modID}:Gun cards deal #b2 additional damage."
     ]
   },
   "${modID}:StartingCredits": {
@@ -67,7 +67,7 @@
     "NAME": "Hyper-Elastic Ankle Tendons",
     "FLAVOR": "Banded ropes of hydrogel are bundled into one.",
     "DESCRIPTIONS": [
-      "#yCybernetic. Your #ySprints draw #b1 additional card and don't #yExhaust."
+      "#yCybernetic. Your #ySprints draw #b1 additional card."
     ]
   },
   "${modID}:MedassistModuleRelic": {
@@ -123,7 +123,7 @@
     "NAME": "Magnetic Core",
     "FLAVOR": "Laminated metal is bound as concentric spheres, softening magnetic eddies and powering near-field orbits.",
     "DESCRIPTIONS": [
-      "#yCybernetic. Whenever you play a #yPower card, apply #b1 #yPulsed to ALL enemies."
+      "#yCybernetic. Reduce the cost of Powers by #b1. Whenever you play a #yPower, apply #b1 #yPulsed to ALL enemies."
     ]
   },
   "${modID}:PrecisionNanonFingersRelic": {
@@ -158,7 +158,7 @@
     "NAME": "Scrap Cape",
     "FLAVOR": "From deep as stratum 29, this cape was knit from trash; a thousand years of history now draped across the ass.",
     "DESCRIPTIONS": [
-      "Whenever you #yExhaust a card, gain #b1 #yPlated #yArmor."
+      "Whenever a card is #yExhausted when played, gain #b1 #yPlated #yArmor."
     ]
   },
   "${modID}:BoxOfCrayonsRelic": {
@@ -173,6 +173,13 @@
     "FLAVOR": "A miniature plastic kite proves an aristocrat scion.",
     "DESCRIPTIONS": [
       "Grants #b3¢ towards installing #yCybernetic cards. Upon pickup, install a random #yCybernetic of cost 3 or more."
+    ]
+  },
+  "${modID}:BiodynamicPowerPlantRelic": {
+    "NAME": "Biodynamic Power Plant",
+    "FLAVOR": "A microturbine skims hemopower off the circulation of blood and the chemical reactions therein.",
+    "DESCRIPTIONS": [
+      "#yCybernetic. Whenever you gain HP, gain [E] next turn."
     ]
   }
 }

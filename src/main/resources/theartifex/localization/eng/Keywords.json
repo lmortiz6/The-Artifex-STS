@@ -25,7 +25,9 @@
     "PROPER_NAME" : "Card Mod",
     "NAMES": [
       "mod",
-      "modify"
+      "modify",
+      "modified",
+      "mods"
     ],
     "DESCRIPTION": "Card mods grant additional effects when played. Cards can have a maximum of #b2 mods."
   },
@@ -62,7 +64,7 @@
     "NAMES": [
       "flexiweaved"
     ],
-    "DESCRIPTION": "#yCard #yMod: Flexiweaved cards grant #b2 temporary #yDexterity when played."
+    "DESCRIPTION": "#yCard #yMod: Flexiweaved cards grant #b1 temporary #yDexterity when played."
   },
   {
     "PROPER_NAME" : "Sharp",
@@ -81,8 +83,7 @@
   {
     "PROPER_NAME" : "Adverse Reaction",
     "NAMES": [
-      "adverse",
-      "reaction"
+      "adverse"
     ],
     "DESCRIPTION": "Injector cards have a #b1 #bin #b3 chance to have an additional negative effect when played."
   },
@@ -99,5 +100,12 @@
       "lovesick"
     ],
     "DESCRIPTION": "Lovesick creatures have their attacks and debuffs target a random enemy instead of the player."
+  },
+  {
+    "PROPER_NAME" : "Tinker",
+    "NAMES": [
+      "tinker"
+    ],
+    "DESCRIPTION": "Tinker increases the effects of #yCard #yMods."
   }
 ]

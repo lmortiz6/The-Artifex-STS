@@ -93,7 +93,7 @@
   },
   "${modID}:PhaseCannon": {
     "NAME": "Phase Cannon",
-    "DESCRIPTION": "${modID}:Gun. NL Exhaust a card to deal !D! damage to ALL enemies."
+    "DESCRIPTION": "${modID}:Gun. NL Costs 1 less [E] for each card drawn at the start of your turn. NL Deal !D! damage."
   },
   "${modID}:HighExplosiveGrenade": {
     "NAME": "Explosive Grenade",
@@ -141,8 +141,7 @@
   },
   "${modID}:IntelligenceUp": {
     "NAME": "Intelligence",
-    "DESCRIPTION": "Add !M! random Colorless cards to your hand. They cost 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Add !M! random upgraded Colorless cards to your hand. They cost 0 this turn."
+    "DESCRIPTION": "Gain !M! ${modID}:Tinker."
   },
   "${modID}:EgoUp": {
     "NAME": "Ego",
@@ -193,7 +192,8 @@
   },
   "${modID}:Meditate": {
     "NAME": "Meditate",
-    "DESCRIPTION": "Gain !B! Block. NL Draw a card. NL Retain a card and end your turn."
+    "DESCRIPTION": "Draw a card. NL Retain a card. NL End your turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Retain !${modID}:retain! cards. NL End your turn."
   },
   "${modID}:FulleriteAegis": {
     "NAME": "Fullerite Aegis",
@@ -202,12 +202,12 @@
   },
   "${modID}:ForceBracelet": {
     "NAME": "Force Bracelet",
-    "DESCRIPTION": "Gain !M! Metallicize NL X times. NL If you have no [E] at the end of your turn, lose 3 Metallicize.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Metallicize NL X+1 times. NL If you have no [E] at the end of your turn, lose 3 Metallicize."
+    "DESCRIPTION": "Gain !M! Metallicize NL X times. NL When you end your turn with no [E] , lose 3 Metallicize.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Metallicize NL X+1 times. NL When you end your turn with no [E] , lose 3 Metallicize."
   },
   "${modID}:Juke": {
     "NAME": "Juke",
-    "DESCRIPTION": "Draw !M! card. NL ${modID}:Modify a random Attack in your hand with ${modID}:Sharp. NL ${modID}:Guns excluded.",
+    "DESCRIPTION": "Draw a card. NL ${modID}:Modify a random Attack in your hand with ${modID}:Sharp. NL ${modID}:Guns excluded.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL ${modID}:Modify !M! random Attacks in your hand with ${modID}:Sharp. NL ${modID}:Guns excluded."
   },
   "${modID}:MagnetizedChassisPlate": {
@@ -224,11 +224,11 @@
   },
   "${modID}:SolarCell": {
     "NAME": "Solar Cell",
-    "DESCRIPTION": "Unplayable. NL When you draw this card, gain !M! [E] and reduce this amount by 1."
+    "DESCRIPTION": "Unplayable. NL When you draw this card, gain !M! [E]. NL At the end of your turn, reduce this amount by 1."
   },
   "${modID}:Disassemble": {
     "NAME": "Disassemble",
-    "DESCRIPTION": "Exhaust a card. NL Gain 6 Gold if you exhausted card.",
+    "DESCRIPTION": "Exhaust a card to gain 6 Gold.",
     "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Gain 6 Gold for each exhausted card."
   },
   "${modID}:BoundingBoots": {
@@ -258,7 +258,7 @@
   },
   "${modID}:CarbideHandBones": {
     "NAME": "Carbide Hand Bones",
-    "DESCRIPTION": "${modID}:Cybernetic. NL ALL *Strikes deal 1.5x damage."
+    "DESCRIPTION": "${modID}:Cybernetic. NL ALL *Strikes deal 1.3x damage."
   },
   "${modID}:ForceModulator": {
     "NAME": "Force Modulator",
@@ -266,15 +266,15 @@
   },
   "${modID}:InflatableAxons": {
     "NAME": "Inflatable Axons",
-    "DESCRIPTION": "${modID}:Cybernetic. NL On odd turns, draw 2 additional cards. NL On even turns, draw 1 less card."
+    "DESCRIPTION": "${modID}:Cybernetic. NL On odd turns, draw 1 additional card. NL On even turns, draw 1 less card."
   },
   "${modID}:StabilizerArmLocks": {
     "NAME": "Stabilizer Arm Locks",
-    "DESCRIPTION": "${modID}:Cybernetic. NL ALL ${modID}:Gun cards deal 3 additional damage."
+    "DESCRIPTION": "${modID}:Cybernetic. NL ALL ${modID}:Gun cards deal !M! additional damage."
   },
   "${modID}:HyperElasticAnkleTendons": {
     "NAME": "Hyper-Elastic Ankle Tendons",
-    "DESCRIPTION": "${modID}:Cybernetic. NL Your *Sprints draw 1 additional card and don't Exhaust."
+    "DESCRIPTION": "${modID}:Cybernetic. NL Your *Sprints draw 1 additional card."
   },
   "${modID}:MedassistModule": {
     "NAME": "Medassist Module",
@@ -310,7 +310,7 @@
   },
   "${modID}:Improvise": {
     "NAME": "Improvise",
-    "DESCRIPTION": "*Modify a card in your hand with a random ${modID}:Mod. NL Exhaust."
+    "DESCRIPTION": "*Modify 2 cards in your hand with random ${modID}:Mods. NL Exhaust."
   },
   "${modID}:SlingAndRun": {
     "NAME": "Sling and Run",
@@ -342,8 +342,8 @@
   },
   "${modID}:SwiftReflexes": {
     "NAME": "Swift Reflexes",
-    "DESCRIPTION": "Whenever you discard a card, ${modID}:Modify it with ${modID}:Flexiweaved.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you discard a card, ${modID}:Modify it with ${modID}:Flexiweaved."
+    "DESCRIPTION": "The first card you discard each turn is returned to your hand and ${modID}:Modified with ${modID}:Flexiweaved.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first card you discard each turn is returned to your hand and ${modID}:Modified with ${modID}:Flexiweaved."
   },
   "${modID}:Grindstone": {
     "NAME": "Grindstone",
@@ -356,7 +356,7 @@
   },
   "${modID}:MagneticCore": {
     "NAME": "Magnetic Core",
-    "DESCRIPTION":  "${modID}:Cybernetic. NL Whenever you play a Power card, apply 1 ${modID}:Pulsed to a random enemy."
+    "DESCRIPTION":  "${modID}:Cybernetic. NL Reduce the cost of Powers by 1. NL Whenever you play a Power, apply 1 ${modID}:Pulsed to a random enemy."
   },
   "${modID}:EvilTwinStatus": {
     "NAME": "Evil Twin",
@@ -369,5 +369,17 @@
   "${modID}:SkulkInjector": {
     "NAME": "Skulk Injector",
     "DESCRIPTION": "${modID}:Modify !M! random cards in your hand with ${modID}:Flexiweaved. NL ${modID}:Adverse *Reaction: NL You cannot see enemy intents for 2 turns. NL Exhaust."
+  },
+  "${modID}:Shocked": {
+    "NAME": "Shocked",
+    "DESCRIPTION": "Whenever this card is drawn, draw !M! less card next turn. NL Exhaust."
+  },
+  "${modID}:ReverseEngineer": {
+    "NAME": "Reverse Engineer",
+    "DESCRIPTION": "Gain !M! ${modID}:Tinker. NL Transform all cards in your hand into *Shocked. NL Exhaust."
+  },
+  "${modID}:BiodynamicPowerPlant": {
+    "NAME": "Biodynamic Power Plant",
+    "DESCRIPTION":  "${modID}:Cybernetic. NL Whenever you gain HP, gain [E] next turn."
   }
 }

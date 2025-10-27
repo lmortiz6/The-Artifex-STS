@@ -125,7 +125,7 @@
     "NAME": "Carbide Hand Bones",
     "DESCRIPTIONS": [
       "ALL #yStrikes deal #b%1$sx damage.",
-      "ALL #yStrikes deal #b1.5x damage."
+      "ALL #yStrikes deal #b1.3x damage."
     ]
   },
   "${modID}:ForceModulatorPower": {
@@ -138,8 +138,8 @@
   "${modID}:InflatableAxonsPower": {
     "NAME": "Inflatable Axons",
     "DESCRIPTIONS": [
-      "At the start of each odd turn, draw #b%1$s additional cards. At the start of each even turn, draw #b%2$s fewer cards.",
-      "At the start of each odd turn, draw 2 additional cards. At the start of each even turn, draw 1 less card."
+      "At the start of each odd turn, draw #b%1$s additional cards. At the start of each even turn, draw #b%2$s less cards.",
+      "At the start of each odd turn, draw 1 additional card. At the start of each even turn, draw 1 less card."
     ]
   },
   "${modID}:StabilizerArmLocksPower": {
@@ -151,8 +151,8 @@
   "${modID}:HyperElasticAnkleTendonsPower": {
     "NAME": "Hyper-Elastic Ankle Tendons",
     "DESCRIPTIONS": [
-      "Your #ySprints draw #b%1$s additional cards and don't Exhaust.",
-      "Your #ySprints draw #b%1$s additional card and don't Exhaust."
+      "Your #ySprints draw #b%1$s additional cards.",
+      "Your #ySprints draw #b%1$s additional card."
     ]
   },
   "${modID}:MedassistModulePower": {
@@ -180,7 +180,7 @@
   "${modID}:MotorizedTreadsPower": {
     "NAME": "Motorized Treads",
     "DESCRIPTIONS": [
-      "Draw 3 additional cards at the start of each turn. You cannot draw additional cards after."
+      "Draw #b%1$s additional cards at the start of each turn. You cannot draw additional cards after."
     ]
   },
   "${modID}:HolographicVisagePower": {
@@ -193,7 +193,7 @@
   "${modID}:CathedraWithRubyTraceryPower": {
     "NAME": "Ruby Cathedra",
     "DESCRIPTIONS": [
-      "At the start of your next turn, gain "
+      "At the start of your turn, gain "
     ]
   },
   "${modID}:LongstriderPower": {
@@ -208,13 +208,14 @@
   "${modID}:JuicerPower": {
     "NAME": "Juicer",
     "DESCRIPTIONS": [
-      "Whenever you play an injector, gain #b%1$s temporary #yStrength. NL Whenever you trigger an adverse reaction, gain #b%1$s #yStrength."
+      "Whenever you play an injector, gain #b%1$s temporary #yStrength. NL Whenever you trigger an #yAdverse #yReaction, gain #b%1$s #yStrength."
     ]
   },
   "${modID}:SwiftReflexesPower": {
     "NAME": "Swift Reflexes",
     "DESCRIPTIONS": [
-      "Whenever you discard a card, modify it with #yFlexiweaved for the rest of combat."
+      "The first #b%1$s cards you discard each turn are returned to your hand and #yModified with #yFlexiweaved.",
+      "The first card you discard each turn is returned to your hand and #yModified with #yFlexiweaved."
     ]
   },
   "${modID}:PulsedPower": {
@@ -234,7 +235,7 @@
   "${modID}:MagneticCorePower": {
     "NAME": "Magnetic Core",
     "DESCRIPTIONS": [
-      "Whenever you play a #yPower card, apply #b%1$s #yPulsed to ALL enemies."
+      "Reduce the cost of Powers by 1. Whenever you play a #yPower, apply #b%1$s #yPulsed to ALL enemies."
     ]
   },
   "${modID}:LovesickPower": {
@@ -249,6 +250,19 @@
     "DESCRIPTIONS": [
       "You cannot see enemy intents for the next #b%1$s turns.",
       "You cannot see enemy intents this turn."
+    ]
+  },
+  "${modID}:TinkerPower": {
+    "NAME": "Tinker",
+    "DESCRIPTIONS": [
+      "Increases the effects of #yCard #yMods by #b%1$s."
+    ]
+  },
+  "${modID}:BiodynamicPowerPlantPower": {
+    "NAME": "Biodynamic Power Plant",
+    "DESCRIPTIONS": [
+      "Whenever you gain HP, gain ",
+      "next turn."
     ]
   }
 }
