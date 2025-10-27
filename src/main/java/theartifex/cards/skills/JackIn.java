@@ -25,7 +25,7 @@ public class JackIn extends BaseCard implements OnObtainCard {
     private static final int UPG_BUFF = 0;
 
     public JackIn() {
-        super(ID, info);\
+        super(ID, info);
 
         this.setMagic(BUFF, UPG_BUFF);
         this.setEthereal(true);
