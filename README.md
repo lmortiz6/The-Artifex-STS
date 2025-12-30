@@ -1,4 +1,4 @@
-# Basic Mod
+# The Artifex | Slay the Spire
 
 This is a Slay the Spire mod based on the game Caves of Qud.
 
