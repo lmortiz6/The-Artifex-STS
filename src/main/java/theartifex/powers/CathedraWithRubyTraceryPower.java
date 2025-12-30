@@ -2,8 +2,10 @@ package theartifex.powers;
 
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
+import theartifex.actions.TransformCardInHandAction;
 import theartifex.cards.attacks.PyrokinesisField;
 
 import static theartifex.TheArtifexMod.makeID;
@@ -32,6 +34,11 @@ public class CathedraWithRubyTraceryPower extends BasePower{
 
     public void atStartOfTurn() {
         addToBot(new GainEnergyAction(amount));
+    }
+
+    @Override
+    public void atStartOfTurnPostDraw() {
+        addToBot(new TransformCardInHandAction(amount, new Burn()));
     }
 
     public void updateDescription() {

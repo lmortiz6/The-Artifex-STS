@@ -2,8 +2,11 @@ package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.status.Burn;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;
+import theartifex.actions.TransformCardInHandAction;
 import theartifex.cards.attacks.PyrokinesisField;
 import theartifex.cards.powers.CathedraWithRubyTracery;
 
@@ -17,6 +20,8 @@ public class CathedraWithRubyTraceryRelic extends AbstractCyberneticRelic {
     private static final String card = makeID(CathedraWithRubyTracery.class.getSimpleName());
     private static final int cost = CathedraWithRubyTracery.creditCost;
 
+    private static boolean transformed = false;
+
     public CathedraWithRubyTraceryRelic() {
         super(ID, NAME, RARITY, SOUND, card, cost);
     }
@@ -28,7 +33,22 @@ public class CathedraWithRubyTraceryRelic extends AbstractCyberneticRelic {
 
     @Override
     public void atTurnStart() {
+        transformed = false;
         addToBot(new GainEnergyAction(1));
+    }
+
+    @Override
+    public void atTurnStartPostDraw() {
+        if (!transformed) {
+            int installed = 0;
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                if (r instanceof CathedraWithRubyTraceryRelic) {
+                    installed++;
+                }
+            }
+            addToBot(new TransformCardInHandAction(installed, new Burn()));
+            transformed = true;
+        }
     }
 
     @Override

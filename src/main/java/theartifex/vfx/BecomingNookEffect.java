@@ -86,7 +86,7 @@ public class BecomingNookEffect extends AbstractGameEffect {
             if (hasCyberneticCard) {
                 cardSelect = true;
                 TheArtifexMod.gridScreenForCyberCards = true;
-                AbstractDungeon.gridSelectScreen.open(cards, 10, true, "Select Cybernetics to install.\n(Credit Cost = Energy Cost)");
+                AbstractDungeon.gridSelectScreen.open(cards, 10, true, CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[1]);
             } else {
                 confirmSelect = true;
             }
@@ -147,11 +147,11 @@ public class BecomingNookEffect extends AbstractGameEffect {
             if (hasCyberneticRelic) {
                 this.relicSelect = true;
                 TheArtifexMod.gridScreenForCyberRelics = true;
-                AbstractDungeon.gridSelectScreen.open(relics, 10, true, "Select Cybernetics to uninstall.");
+                AbstractDungeon.gridSelectScreen.open(relics, 10, true, CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[0]);
             } else if (hasCyberneticCard) {
                 this.cardSelect = true;
                 TheArtifexMod.gridScreenForCyberCards = true;
-                AbstractDungeon.gridSelectScreen.open(cards, 10, true, "Select Cybernetics to install.\n(Credit Cost = Energy Cost)");
+                AbstractDungeon.gridSelectScreen.open(cards, 10, true, CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[1]);
             }
         }
 

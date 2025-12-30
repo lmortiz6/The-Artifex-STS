@@ -20,7 +20,7 @@ public class DeftThrowing extends BaseCard {
             CardTarget.SELF,
             1
     );
-    private static final int DEX = 2;
+    private static final int DEX = 1;
     private static final int UPG_DEX = 1;
 
     public DeftThrowing() {

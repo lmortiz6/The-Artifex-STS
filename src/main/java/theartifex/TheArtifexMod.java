@@ -61,11 +61,35 @@ public class TheArtifexMod implements
     public static boolean gridScreenForCyberRelics = false;
     public static boolean gridScreenForCyberCards = false;
     public static boolean nonManualDiscard = false;
-    public static int cardsDrawnAtTurnStart = 5;
+    public static int cardsDrawnAtTurnStart = 0;
     public static ArrayList<Texture> cardModTextures = new ArrayList<>();
 
     public static int availableCreditsFast = 0;
     public static int maxCreditsFast = 0;
+    //public static PowerTip creditTip = new PowerTip(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[0], CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[0]);
+
+    public static boolean haveAttacked = false;
+
+    public static ArrayList<String> extraSmallTitleFont = new ArrayList<>(Arrays.asList(
+            makeID("TimeDilationGrenade"),
+            makeID("BiodynamicPowerPlant"),
+            makeID("MagnetizedChassisPlate"),
+            makeID("BloodGradientHandVacuum"),
+            makeID("EatersNectarInjector")
+    ));
+    public static ArrayList<String> smallTitleFont = new ArrayList<>(Arrays.asList(
+            makeID("ResonanceGrenade"),
+            makeID("RubbergumInjector"),
+            makeID("HulkHoneyInjector"),
+            makeID("HyperElasticAnkleTendons"),
+            makeID("PointDefenseDrone"),
+            makeID("PrecisionForceLathe"),
+            makeID("RifleThroughTrash"),
+            makeID("SphynxSaltInjector"),
+            makeID("StabilizerArmLocks"),
+            makeID("MetamorphicPolygel")
+    ));
+
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -104,6 +128,8 @@ public class TheArtifexMod implements
         BaseMod.addAudio(makeID("UNIMPLANT"), "theartifex/audio/Unimplant.ogg");
         BaseMod.addAudio(makeID("IMPLANT"), "theartifex/audio/Implant.ogg");
         BaseMod.addAudio(makeID("CLEAVE"), "theartifex/audio/Cleave.ogg");
+        BaseMod.addAudio(makeID("EMBARK"), "theartifex/audio/Embark.ogg");
+        BaseMod.addAudio(makeID("SHOTGUN"), "theartifex/audio/Shotgun.ogg");
     }
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
@@ -133,20 +159,38 @@ public class TheArtifexMod implements
     }
 
     private void initializeCardModTextures() {
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Jacked.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Jacked2.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Reinforced.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Reinforced2.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Nulling.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Nulling2.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Beamsplitter.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Beamsplitter2.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Flexiweaved.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Flexiweaved2.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Sharp.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Sharp2.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Springloaded.png")));
-        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/Springloaded2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_jacked.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_jacked2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_reinforced.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_reinforced2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_nulling.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_nulling2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_beamsplitter.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_beamsplitter2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_flexiweaved.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_flexiweaved2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_sharp.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_sharp2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_springloaded.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_springloaded2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_broken.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/eng_broken2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_jacked.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_jacked2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_reinforced.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_reinforced2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_nulling.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_nulling2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_beamsplitter.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_beamsplitter2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_flexiweaved.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_flexiweaved2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_sharp.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_sharp2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_springloaded.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_springloaded2.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_broken.png")));
+        cardModTextures.add(TextureLoader.getTexture(imagePath("modicons/zhs_broken2.png")));
     }
 
     /*----------Localization----------*/

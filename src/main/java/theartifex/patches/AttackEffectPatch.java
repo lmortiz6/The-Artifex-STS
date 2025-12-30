@@ -68,6 +68,9 @@ public class AttackEffectPatch {
             else if (___effect == CustomAttackEffect.FORCE_KNIFE) {
                 return SpireReturn.Return(ImageMaster.ATK_SLASH_H);
             }
+            else if (___effect == CustomAttackEffect.SHOTGUN) {
+                return SpireReturn.Return(ImageMaster.ATK_BLUNT_LIGHT);
+            }
 
             return SpireReturn.Continue();
         }
@@ -127,6 +130,9 @@ public class AttackEffectPatch {
             }
             else if (effect == CustomAttackEffect.FORCE_KNIFE) {
                 CardCrawlGame.sound.playV(makeID("FORCE_KNIFE"), 1.5f); // Sound Effect
+            }
+            else if (effect == CustomAttackEffect.SHOTGUN) {
+                CardCrawlGame.sound.playV(makeID("SHOTGUN"), 1.25f); // Sound Effect
             }
             else {
                 return SpireReturn.Continue();

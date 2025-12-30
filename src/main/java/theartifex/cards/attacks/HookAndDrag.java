@@ -24,7 +24,7 @@ public class HookAndDrag extends BaseCard {
             CardTarget.ENEMY,
             2
     );
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 0;
     private static final int DEBUFF = 2;
     private static final int UPG_DEBUFF = 1;

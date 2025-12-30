@@ -2,6 +2,7 @@ package theartifex.ui;
 
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MathHelper;
@@ -11,11 +12,12 @@ import theartifex.util.TextureLoader;
 import theartifex.vfx.BecomingNookEffect;
 
 import static theartifex.TheArtifexMod.imagePath;
+import static theartifex.TheArtifexMod.makeID;
 
 public class CyberneticCampfireOption extends AbstractCampfireOption {
 
     public CyberneticCampfireOption(boolean active) {
-        this.label = "Becoming Nook";
+        this.label = CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[2];
 
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             c.update();
@@ -23,10 +25,10 @@ public class CyberneticCampfireOption extends AbstractCampfireOption {
 
         this.usable = active;
         if (active) {
-            this.description = "Install and uninstall Cybernetics.";
+            this.description = CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[3];
             this.img = TextureLoader.getTexture(imagePath("ui/cyberCampfire.png"));
         } else {
-            this.description = "Requires a Cybernetic card or relic.";
+            this.description = CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[4];
             this.img = TextureLoader.getTexture(imagePath("ui/cyberCampfireDisabled.png"));
         }
 
@@ -43,10 +45,10 @@ public class CyberneticCampfireOption extends AbstractCampfireOption {
     public void reCheck() {
         usable = TheArtifexMod.hasCyberneticRelic() || TheArtifexMod.hasCyberneticCard();
         if (this.usable) {
-            this.description = "Install and uninstall Cybernetics.";
+            this.description = CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[3];
             this.img = TextureLoader.getTexture("images/ui/cyberCampfire.png");
         } else {
-            this.description = "Requires a Cybernetic card or relic.";
+            this.description = CardCrawlGame.languagePack.getUIString(makeID("UI")).TEXT[4];
             this.img = TextureLoader.getTexture("images/ui/cyberCampfireDisabled.png");
         }
     }

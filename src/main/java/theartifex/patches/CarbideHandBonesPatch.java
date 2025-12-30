@@ -33,10 +33,10 @@ public class CarbideHandBonesPatch {
                         if (r instanceof CarbideHandBonesRelic) {
                             tmp *= 1.3f;
                         }
-                        if (__instance[0].baseDamage != MathUtils.floor(tmp))
-                            __instance[0].isDamageModified = true;
-                        __instance[0].damage = MathUtils.floor(tmp);
                     }
+                    if (__instance[0].baseDamage != MathUtils.round(tmp))
+                        __instance[0].isDamageModified = true;
+                    __instance[0].damage = MathUtils.round(tmp);
                 }
 
             }
@@ -66,10 +66,10 @@ public class CarbideHandBonesPatch {
                         if (r instanceof CarbideHandBonesRelic) {
                             tmp *= 1.3f;
                         }
-                        if (__instance[0].baseDamage != MathUtils.floor(tmp))
-                            __instance[0].isDamageModified = true;
-                        __instance[0].damage = MathUtils.floor(tmp);
                     }
+                    if (__instance[0].baseDamage != MathUtils.round(tmp))
+                        __instance[0].isDamageModified = true;
+                    __instance[0].damage = MathUtils.round(tmp);
                 }
 
             }

@@ -5,27 +5,53 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theartifex.cards.attacks.LoveInjector;
+import theartifex.cards.skills.*;
+import theartifex.util.CustomCardTags;
 
-public class TransformHandAction extends AbstractGameAction {
-    private final AbstractCard replacement;
+import java.util.ArrayList;
 
-    public TransformHandAction(AbstractCard replacement) {
+public class NostrumAction extends AbstractGameAction {
+    private final boolean isBroken;
+
+    public NostrumAction(boolean isBroken) {
         AbstractPlayer p = AbstractDungeon.player;
-        this.replacement = replacement;
+        this.isBroken = isBroken;
         this.startDuration = 0.05F;
         setValues(p, p, amount);
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration;
-
-        if (this.replacement.type != AbstractCard.CardType.CURSE && this.replacement.type != AbstractCard.CardType.STATUS && AbstractDungeon.player.hasPower("MasterRealityPower"))
-            this.replacement.upgrade();
     }
 
     public void update() {
-        if (duration == startDuration) {
+        if (duration == startDuration && !AbstractDungeon.player.hand.isEmpty()) {
+
+            ArrayList<AbstractCard> injectors = new ArrayList<>();
+            injectors.add(new EatersNectarInjector());
+            injectors.add(new HulkHoneyInjector());
+            injectors.add(new RubbergumInjector());
+            injectors.add(new SalveInjector());
+            injectors.add(new ShadeOilInjector());
+            injectors.add(new SkulkInjector());
+            injectors.add(new SphynxSaltInjector());
+            injectors.add(new LoveInjector());
+
+            if (AbstractDungeon.player.hasPower("MasterRealityPower")) {
+                for (AbstractCard c : injectors) {
+                    c.upgrade();
+                }
+            }
+
+            if (isBroken) {
+                for (AbstractCard c : injectors) {
+                    c.keywords.add(0, "theartifex:broken");
+                    c.tags.add(CustomCardTags.THEARTIFEXBROKEN);
+                }
+            }
+
             for (int i = 0; i < AbstractDungeon.player.hand.size(); i++) {
                 AbstractCard target = AbstractDungeon.player.hand.group.get(i);
-                AbstractCard replacementCopy = replacement.makeCopy();
+                AbstractCard replacementCopy = injectors.get(AbstractDungeon.cardRandomRng.random(0, injectors.size() - 1)).makeStatEquivalentCopy();
                 replacementCopy.current_x = target.current_x;
                 replacementCopy.current_y = target.current_y;
                 replacementCopy.target_x = target.target_x;

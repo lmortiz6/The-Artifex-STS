@@ -34,7 +34,7 @@ public class TinkerUsePatch {
                 AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1 + tinker));
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXREINFORCED) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTREINFORCED)) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 4 + tinker));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3 + tinker));
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXNULLING) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTNULLING)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, 1 + tinker)));
@@ -46,7 +46,7 @@ public class TinkerUsePatch {
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXSPRINGLOADED) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTSPRINGLOADED)) {
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1 + tinker));
-                AbstractDungeon.actionManager.addToBottom(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player,1 + tinker, false));
+                AbstractDungeon.actionManager.addToBottom(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player,1, true));
             }
         }
     }

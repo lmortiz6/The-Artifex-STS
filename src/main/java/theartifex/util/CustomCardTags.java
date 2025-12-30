@@ -39,6 +39,7 @@ public class CustomCardTags {
     @SpireEnum public static AbstractCard.CardTags THEARTIFEXPERMANENTFLEXIWEAVED;
     @SpireEnum public static AbstractCard.CardTags THEARTIFEXPERMANENTSHARP;
     @SpireEnum public static AbstractCard.CardTags THEARTIFEXPERMANENTSPRINGLOADED;
+    @SpireEnum public static AbstractCard.CardTags THEARTIFEXBROKEN;
 
     public static ArrayList<AbstractCard.CardTags> getMods (AbstractCard card) {
         ArrayList<AbstractCard.CardTags> ModTags = new ArrayList<>();
@@ -56,6 +57,7 @@ public class CustomCardTags {
         ModTags.add(THEARTIFEXPERMANENTFLEXIWEAVED);
         ModTags.add(THEARTIFEXPERMANENTSHARP);
         ModTags.add(THEARTIFEXPERMANENTSPRINGLOADED);
+        ModTags.add(THEARTIFEXBROKEN);
         ArrayList<AbstractCard.CardTags> cardMods = new ArrayList<>();
         for (AbstractCard.CardTags tag : card.tags) {
             if (ModTags.contains(tag)) {
@@ -174,8 +176,12 @@ public class CustomCardTags {
         }
 
         int i;
-        if (random)
-            i = AbstractDungeon.relicRng.random(0, tags.size() - 1);
+        if (random) {
+            if (permanent)
+                i = AbstractDungeon.relicRng.random(0, tags.size() - 1);
+            else
+                i = AbstractDungeon.cardRng.random(0, tags.size() - 1);
+        }
         else
             i = tagsOriginal.indexOf(tagToLoad);
 
@@ -185,10 +191,14 @@ public class CustomCardTags {
             tagString = tag.toString().substring(19).toLowerCase();
         else
             tagString = tag.toString().substring(10).toLowerCase();
-        if (!c.keywords.contains("theartifex:" + tagString))
-            c.keywords.add(0, "theartifex:" + tagString);
 
-        c.tags.add(0, tag);
+        if (Settings.language == Settings.GameLanguage.ZHS)
+            tagString = getZHS(tagString);
+        if (!c.keywords.contains("theartifex:" + tagString)) {
+            c.keywords.add(getMods(c).size(), "theartifex:" + tagString);
+        }
+
+        c.tags.add(tag);
 
         if (permanent)
             c.misc = tagsOriginal.indexOf(tags.get(i)) + 1;
@@ -203,6 +213,29 @@ public class CustomCardTags {
         tags.add(CustomCardTags.THEARTIFEXFLEXIWEAVED);
         tags.add(CustomCardTags.THEARTIFEXSHARP);
         tags.add(CustomCardTags.THEARTIFEXSPRINGLOADED);
+        tags.add(CustomCardTags.THEARTIFEXBROKEN);
         return tags;
+    }
+
+    public static String getZHS (String ENG) {
+        switch (ENG) {
+            case "jacked":
+                return "直连";
+            case "reinforced":
+                return "加固";
+            case "nulling":
+                return "归常";
+            case "beamsplitter":
+                return "分束";
+            case "flexiweaved":
+                return "弹织";
+            case "sharp":
+                return "锋锐";
+            case "springloaded":
+                return "簧载";
+            case "broken":
+                return "损坏";
+        }
+        return "损坏";
     }
 }

@@ -30,7 +30,7 @@ public class PhaseCannon extends AbstractGun {
             CardTarget.ENEMY,
             9
     );
-    private static final int DAMAGE = 30;
+    private static final int DAMAGE = 32;
     private static final int UPG_DAMAGE = 8;
 
     public PhaseCannon() {
@@ -54,6 +54,12 @@ public class PhaseCannon extends AbstractGun {
     public void atTurnStart() {
         resetAttributes();
         applyPowers();
+        setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+    }
+
+    @Override
+    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+        setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package theartifex.abstracts;
 
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import theartifex.relics.BaseRelic;
+
+import static theartifex.TheArtifexMod.makeID;
 
 public class AbstractCyberneticRelic extends BaseRelic {
     private final int cost;
@@ -11,7 +13,9 @@ public class AbstractCyberneticRelic extends BaseRelic {
         super(id, imageName, tier, sfx);
         this.cardID = cardID;
         this.cost = cost;
-        this.tips.add(new PowerTip(TipHelper.capitalize("cybernetic"), "Cybernetic relics can be unimplanted at #yRest #ySites to gain their respective card."));
+        String header = CardCrawlGame.languagePack.getRelicStrings(makeID("AbstractCyberRelic")).NAME;
+        String body = CardCrawlGame.languagePack.getRelicStrings(makeID("AbstractCyberRelic")).DESCRIPTIONS[0];
+        this.tips.add(new PowerTip(header, body));
     }
 
     public int getCost() {

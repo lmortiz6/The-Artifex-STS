@@ -3,13 +3,13 @@ package theartifex.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theartifex.abstracts.AbstractInjector;
+import theartifex.actions.TransformHandAction;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.powers.LovesickPower;
 import theartifex.util.CardStats;
@@ -26,8 +26,8 @@ public class LoveInjector extends AbstractInjector {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 3;
-    private static final int DEBUFF = 1;
+    private static final int DAMAGE = 2;
+    private static final int DEBUFF = 2;
     private static final int UPG_DEBUFF = 1;
 
     public LoveInjector() {
@@ -49,7 +49,7 @@ public class LoveInjector extends AbstractInjector {
 
     @Override
     public void adverseReaction() {
-        addToBot(new MakeTempCardInHandAction(new Burn(), 2));
+        addToBot(new TransformHandAction(new Burn()));
     }
 
     @Override

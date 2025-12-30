@@ -21,7 +21,7 @@ public class BiodynamicPowerPlant extends AbstractCyberneticCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            3
+            2
     );
     public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;

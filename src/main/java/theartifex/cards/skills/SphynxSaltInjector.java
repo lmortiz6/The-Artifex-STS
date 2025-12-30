@@ -24,10 +24,10 @@ public class SphynxSaltInjector extends AbstractInjector {
             CardTarget.NONE,
             1
     );
-    private static final int SCRY = 4;
+    private static final int SCRY = 5;
     private static final int UPG_SCRY = 2;
-    private static final int DRAW = 1;
-    private static final int UPG_DRAW = 1;
+    private static final int DRAW = 2;
+    private static final int UPG_DRAW = 0;
 
     public SphynxSaltInjector() {
         super(ID, info);

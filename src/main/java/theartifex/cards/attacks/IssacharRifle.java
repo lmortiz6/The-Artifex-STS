@@ -23,8 +23,8 @@ public class IssacharRifle extends AbstractGun {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 9;
-    private static final int UPG_DAMAGE = 3;
+    private static final int DAMAGE = 10;
+    private static final int UPG_DAMAGE = 4;
 
     public IssacharRifle() {
         super(ID, info);

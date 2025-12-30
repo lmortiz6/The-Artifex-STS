@@ -3,8 +3,11 @@ package theartifex.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theartifex.util.CustomCardTags;
+
+import static theartifex.util.CustomCardTags.getZHS;
 
 @SpirePatch(
         clz = AbstractCard.class,
@@ -18,6 +21,8 @@ public class MakeStatEquivalentCopyExpandedPatch {
             if (tag.toString().contains("THEARTIFEXPERMANENT")) {
                 __result.tags.add(tag);
                 String tagString = tag.toString().substring(19).toLowerCase();
+                if (Settings.language == Settings.GameLanguage.ZHS)
+                    tagString = getZHS(tagString);
                 __result.keywords.add(0, "theartifex:" + tagString);
             }
         }
@@ -28,6 +33,8 @@ public class MakeStatEquivalentCopyExpandedPatch {
                     if (CustomCardTags.getTempModsList().contains(tag)) {
                         __result.tags.add(tag);
                         String tagString = tag.toString().substring(10).toLowerCase();
+                        if (Settings.language == Settings.GameLanguage.ZHS)
+                            tagString = getZHS(tagString);
                         __result.keywords.add(0, "theartifex:" + tagString);
                     }
                 }

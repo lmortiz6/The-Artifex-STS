@@ -51,7 +51,7 @@ public class MeditateAction extends AbstractGameAction {
                 }
             this.p.hand.group.removeAll(this.cannotTinker);
             if (this.p.hand.group.size() > 1) {
-                AbstractDungeon.handCardSelectScreen.open("Modify", 1, false, false, false, false);
+                AbstractDungeon.handCardSelectScreen.open(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[2], 1, false, false, false, false);
                 tickDuration();
                 return;
             }

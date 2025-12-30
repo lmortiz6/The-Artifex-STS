@@ -2,7 +2,6 @@ package theartifex.powers;
 
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static theartifex.TheArtifexMod.makeID;
@@ -37,8 +36,10 @@ public class ForceBraceletPower extends BasePower{
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], (this.amount)) +
-                "[E] " +
-                LocalizedStrings.PERIOD;
+        StringBuilder sb = new StringBuilder();
+        sb.append(DESCRIPTIONS[0]);
+        sb.append("[E] ");
+        sb.append(DESCRIPTIONS[1]);
+        this.description = String.format(sb.toString(), this.amount);
     }
 }

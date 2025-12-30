@@ -22,14 +22,14 @@ public class Grindstone extends BaseCard implements OnObtainCard {
             CardTarget.SELF,
             1
     );
-    private static final int BUFF = 1;
-    private static final int UPG_BUFF = 1;
+    private static final int BUFF = 2;
+    //private static final int UPG_BUFF = 1;
 
     public Grindstone() {
         super(ID, info);
 
-        this.setMagic(BUFF, UPG_BUFF);
-        this.setExhaust(true);
+        this.setMagic(BUFF);
+        this.setExhaust(true, false);
     }
 
     @Override

@@ -23,12 +23,13 @@ public class ForceBracelet extends BaseCard {
             -1
     );
     private static final int BUFF = 3;
-    private static final int DEBUFF = 3;
+    private static final int DEBUFF = 4;
+    private static final int UPG_DEBUFF = -1;
 
     public ForceBracelet() {
         super(ID, info);
 
-        setMagic(BUFF);
+        setMagic(DEBUFF, UPG_DEBUFF);
     }
 
     @Override
@@ -40,13 +41,13 @@ public class ForceBracelet extends BaseCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
-        if (upgraded) {
+        /*if (upgraded) {
             effect++;
-        }
+        }*/
         if (effect > 0) {
-            int metallicizeAmount = magicNumber * effect;
+            int metallicizeAmount = BUFF * effect;
             addToBot(new ApplyPowerAction(p, m, new MetallicizePower(p, metallicizeAmount), metallicizeAmount, true));
-            addToBot(new ApplyPowerAction(p, m, new ForceBraceletPower(p, p, DEBUFF)));
+            addToBot(new ApplyPowerAction(p, m, new ForceBraceletPower(p, p, magicNumber)));
             if (!this.freeToPlayOnce)
                 p.energy.use(EnergyPanel.totalCount);
         }

@@ -45,7 +45,11 @@ public class GiantHandsAction extends AbstractGameAction {
             }
             if (!group.isEmpty()) {
                 this.used = true;
-                AbstractCard c = group.getRandomCard(AbstractDungeon.cardRandomRng);
+                AbstractCard c;
+                if (this.relic != null)
+                    c = group.getRandomCard(AbstractDungeon.relicRng);
+                else
+                    c = group.getRandomCard(AbstractDungeon.cardRandomRng);
                 c.costForTurn -= 1;
                 c.isCostModifiedForTurn = true;
             }

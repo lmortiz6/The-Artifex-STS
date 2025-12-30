@@ -20,7 +20,7 @@ public class ReverseEngineer extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            2
     );
     private static final int BUFF = 2;
     private static final int UPG_BUFF = 1;

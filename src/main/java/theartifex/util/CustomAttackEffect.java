@@ -35,5 +35,7 @@ public class CustomAttackEffect {
     public static AbstractGameAction.AttackEffect CARBIDE_AXE;
     @SpireEnum
     public static AbstractGameAction.AttackEffect FORCE_KNIFE;
+    @SpireEnum
+    public static AbstractGameAction.AttackEffect SHOTGUN;
 
 }

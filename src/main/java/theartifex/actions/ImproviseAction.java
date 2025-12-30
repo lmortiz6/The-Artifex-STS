@@ -1,7 +1,6 @@
 package theartifex.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -52,14 +51,15 @@ public class ImproviseAction extends AbstractGameAction {
             }
             this.p.hand.group.removeAll(this.cannotTinker);
             if (this.p.hand.group.size() > amount) {
-                AbstractDungeon.handCardSelectScreen.open("Modify", amount, false, false, false, false);
+                AbstractDungeon.handCardSelectScreen.open(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[2], amount, false, false, false, false);
                 tickDuration();
                 return;
             }
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                addToTop(new MakeTempCardInHandAction(getModdedCard(c)));
+                //addToTop(new MakeTempCardInHandAction(getModdedCard(c)));
+                AbstractDungeon.player.hand.addToHand(getModdedCard(c));
             }
             CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             returnCards();

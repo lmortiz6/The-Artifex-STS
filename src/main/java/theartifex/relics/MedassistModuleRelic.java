@@ -1,12 +1,9 @@
 package theartifex.relics;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCyberneticRelic;
+import theartifex.actions.MedassistModuleAction;
 import theartifex.cards.powers.MedassistModule;
-import theartifex.util.CustomCardTags;
 
 import static theartifex.TheArtifexMod.makeID;
 
@@ -18,7 +15,6 @@ public class MedassistModuleRelic extends AbstractCyberneticRelic {
     private static final String card = makeID(MedassistModule.class.getSimpleName());
     private static final int cost = MedassistModule.creditCost;
     public int amount;
-    private int amountOwned;
 
     public MedassistModuleRelic() {
         super(ID, NAME, RARITY, SOUND, card, cost);
@@ -26,25 +22,13 @@ public class MedassistModuleRelic extends AbstractCyberneticRelic {
     }
 
     @Override
-    public void atBattleStart() {
-        super.atBattleStart();
-        amountOwned = 0;
-        for (AbstractRelic r : AbstractDungeon.player.relics) {
-            if (r.relicId.equals(ID))
-                amountOwned++;
-        }
-    }
-
-    @Override
     public void atTurnStart() {
-        amount = amountOwned;
+        addToTop(new MedassistModuleAction(1, true));
     }
 
     @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (amount > 0 && c.hasTag(CustomCardTags.THEARTIFEXINJECTOR)) {
-            amount--;
-        }
+    public void onPlayerEndTurn() {
+        MedassistModuleAction.modded = false;
     }
 
     @Override

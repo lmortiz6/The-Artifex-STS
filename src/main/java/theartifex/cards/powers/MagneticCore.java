@@ -20,7 +20,7 @@ public class MagneticCore extends AbstractCyberneticCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            4
+            3
     );
     public static final int creditCost = info.baseCost;
     private static final int BUFF = 1;

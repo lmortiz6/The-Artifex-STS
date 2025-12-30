@@ -1,55 +1,50 @@
-package theartifex.cards.powers;
+package theartifex.cards.skills;
 
 import com.badlogic.gdx.Gdx;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theartifex.abstracts.AbstractCyberneticCard;
-import theartifex.cards.attacks.PyrokinesisField;
+import theartifex.actions.NostrumAction;
+import theartifex.cards.BaseCard;
+import theartifex.cards.attacks.LoveInjector;
 import theartifex.character.TheArtifexCharacter;
-import theartifex.powers.CathedraWithRubyTraceryPower;
-import theartifex.relics.CathedraWithRubyTraceryRelic;
 import theartifex.util.CardStats;
-import theartifex.util.CustomCardTags;
 
 import java.util.ArrayList;
 
-public class CathedraWithRubyTracery extends AbstractCyberneticCard {
+public class Nostrum extends BaseCard {
 
-    public static final String ID = makeID(CathedraWithRubyTracery.class.getSimpleName());
+    public static final String ID = makeID(Nostrum.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR,
-            CardType.POWER,
-            CardRarity.RARE,
-            CardTarget.SELF,
-            3
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.NONE,
+            0
     );
-    public static final int creditCost = info.baseCost;
-    private static final int BUFF = 1;
-    private static final String cyberneticRelic = makeID(CathedraWithRubyTraceryRelic.class.getSimpleName());
 
-    public CathedraWithRubyTracery() {
-        super(ID, info, cyberneticRelic);
-
-        this.tags.add(CustomCardTags.THEARTIFEXCYBERNETIC);
+    public Nostrum() {
+        super(ID, info);
+        setExhaust(true);
     }
 
     @Override
-    public boolean canUpgrade() { return false; }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CathedraWithRubyTraceryPower(p, p, BUFF)));
+        addToBot(new NostrumAction(!this.upgraded));
     }
 
     private ArrayList<AbstractCard> getList() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        stanceChoices.add(new PyrokinesisField());
-        stanceChoices.add(new Burn());
+        stanceChoices.add(new RubbergumInjector());
+        stanceChoices.add(new SalveInjector());
+        stanceChoices.add(new HulkHoneyInjector());
+        stanceChoices.add(new SkulkInjector());
+        stanceChoices.add(new SphynxSaltInjector());
+        stanceChoices.add(new EatersNectarInjector());
+        stanceChoices.add(new LoveInjector());
+        stanceChoices.add(new ShadeOilInjector());
         return stanceChoices;
     }
 
@@ -84,6 +79,6 @@ public class CathedraWithRubyTracery extends AbstractCyberneticCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new CathedraWithRubyTracery();
+        return new Nostrum();
     }
 }

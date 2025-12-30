@@ -25,8 +25,8 @@ public class ShieldBash extends BaseCard implements OnObtainCard {
             CardTarget.ENEMY,
             2
     );
-    private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 4;
+    private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 6;
 
     public ShieldBash() {
         super(ID, info);

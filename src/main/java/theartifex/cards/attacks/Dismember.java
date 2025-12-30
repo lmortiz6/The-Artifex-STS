@@ -24,7 +24,7 @@ public class Dismember extends BaseCard {
             2
     );
     private static final int DAMAGE = 12;
-    private static final int UPG_DAMAGE = 4;
+    private static final int UPG_DAMAGE = 3;
     private static final int DEBUFF = 2;
     private static final int UPG_DEBUFF = 1;
 

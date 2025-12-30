@@ -20,7 +20,7 @@ public class MotorizedTreads extends AbstractCyberneticCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            3
+            2
     );
     public static final int creditCost = info.baseCost;
     public static final int BUFF = 2;

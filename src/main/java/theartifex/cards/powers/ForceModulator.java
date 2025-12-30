@@ -23,7 +23,7 @@ public class ForceModulator extends AbstractCyberneticCard {
             3
     );
     public static final int creditCost = info.baseCost;
-    private static final int BUFF = 1;
+    private static final int BUFF = -1;
     private static final String cyberneticRelic = makeID(ForceModulatorRelic.class.getSimpleName());
 
     public ForceModulator() {
@@ -36,7 +36,7 @@ public class ForceModulator extends AbstractCyberneticCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ForceModulatorPower(p, p, BUFF)));
+        addToBot(new ApplyPowerAction(p, p, new ForceModulatorPower(p, p, BUFF), 0));
     }
 
     @Override

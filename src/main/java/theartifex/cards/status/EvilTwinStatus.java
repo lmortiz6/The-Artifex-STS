@@ -21,11 +21,12 @@ public class EvilTwinStatus extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 3;
 
     public EvilTwinStatus() {
         super(ID, info);
         setMagic(DAMAGE);
+        //setEthereal(true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

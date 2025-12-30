@@ -25,7 +25,7 @@ public class FreezeGrenadePower extends BasePower {
         bombIdOffset++;
         damage = magicNumber;
         block = magicNumber2;
-        this.amount2 = magicNumber;
+        this.amount2 = magicNumber2;
         this.amount = amount;
         this.updateDescription();
     }

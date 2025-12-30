@@ -23,22 +23,27 @@ public class CardModRenderPatch {
     public static void Postfix(AbstractCard __instance, @ByRef SpriteBatch[] sb) {
         if (!Settings.hideCards && !__instance.isFlipped) {
             int i = 0;
+            int j = 0;
+            if (Settings.language == Settings.GameLanguage.ZHS)
+                j = 16;
             for (AbstractCard.CardTags tag : CustomCardTags.getMods(__instance)) {
                 Texture modTexture = null;
                 if (tag == CustomCardTags.THEARTIFEXJACKED || tag == CustomCardTags.THEARTIFEXPERMANENTJACKED)
-                    modTexture = TheArtifexMod.cardModTextures.get(i);
+                    modTexture = TheArtifexMod.cardModTextures.get(i + j);
                 if (tag == CustomCardTags.THEARTIFEXREINFORCED || tag == CustomCardTags.THEARTIFEXPERMANENTREINFORCED)
-                    modTexture = TheArtifexMod.cardModTextures.get(2 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(2 + j + i);
                 if (tag == CustomCardTags.THEARTIFEXNULLING || tag == CustomCardTags.THEARTIFEXPERMANENTNULLING)
-                    modTexture = TheArtifexMod.cardModTextures.get(4 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(4 + j + i);
                 if (tag == CustomCardTags.THEARTIFEXBEAMSPLITTER || tag == CustomCardTags.THEARTIFEXPERMANENTBEAMSPLITTER)
-                    modTexture = TheArtifexMod.cardModTextures.get(6 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(6 + j + i);
                 if (tag == CustomCardTags.THEARTIFEXFLEXIWEAVED || tag == CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED)
-                    modTexture = TheArtifexMod.cardModTextures.get(8 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(8 + j + i);
                 if (tag == CustomCardTags.THEARTIFEXSHARP || tag == CustomCardTags.THEARTIFEXPERMANENTSHARP)
-                    modTexture = TheArtifexMod.cardModTextures.get(10 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(10 + j + i);
                 if (tag == CustomCardTags.THEARTIFEXSPRINGLOADED || tag == CustomCardTags.THEARTIFEXPERMANENTSPRINGLOADED)
-                    modTexture = TheArtifexMod.cardModTextures.get(12 + i);
+                    modTexture = TheArtifexMod.cardModTextures.get(12 + j + i);
+                if (tag == CustomCardTags.THEARTIFEXBROKEN)
+                    modTexture = TheArtifexMod.cardModTextures.get(14 + j + i);
                 if (modTexture != null) {
                     float scale = __instance.drawScale * Settings.scale;
                     float drawX = __instance.current_x - 256.0F;

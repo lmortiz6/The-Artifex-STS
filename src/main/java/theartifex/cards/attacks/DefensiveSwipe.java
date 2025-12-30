@@ -12,9 +12,9 @@ import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
 
-public class DefensiveLunge extends BaseCard {
+public class DefensiveSwipe extends BaseCard {
 
-    public static final String ID = makeID(DefensiveLunge.class.getSimpleName());
+    public static final String ID = makeID(DefensiveSwipe.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             TheArtifexCharacter.Meta.CARD_COLOR,
@@ -24,11 +24,11 @@ public class DefensiveLunge extends BaseCard {
             1
     );
     private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 3;
+    private static final int UPG_DAMAGE = 2;
     private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 2;
 
-    public DefensiveLunge() {
+    public DefensiveSwipe() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
@@ -43,6 +43,6 @@ public class DefensiveLunge extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new DefensiveLunge();
+        return new DefensiveSwipe();
     }
 }

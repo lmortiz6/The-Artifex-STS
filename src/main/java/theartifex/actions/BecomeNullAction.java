@@ -1,7 +1,6 @@
 package theartifex.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,8 +16,6 @@ public class BecomeNullAction extends AbstractGameAction {
     private final AbstractPlayer p;
 
     private final ArrayList<AbstractCard> cannotTinker = new ArrayList<>();
-
-    public static final String[] TEXT = {"Modify"};
 
     private final AbstractCard sourceCard;
 
@@ -45,7 +42,7 @@ public class BecomeNullAction extends AbstractGameAction {
                 return;
             }
             this.p.hand.group.removeAll(this.cannotTinker);
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0], amount, true, true);
+            AbstractDungeon.handCardSelectScreen.open(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[2], amount, true, true);
             tickDuration();
             return;
         }
@@ -54,7 +51,7 @@ public class BecomeNullAction extends AbstractGameAction {
                 CardCrawlGame.sound.playV(makeID("TINKER_MOD"), 1.3f);
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 CustomCardTags.loadMod(c, CustomCardTags.THEARTIFEXNULLING, false);
-                addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                AbstractDungeon.player.hand.addToHand(c.makeStatEquivalentCopy());
             }
             returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

@@ -1,10 +1,12 @@
 package theartifex.abstracts;
 
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import theartifex.TheArtifexMod;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.relics.BaseRelic;
+
+import static theartifex.TheArtifexMod.makeID;
 
 public class AbstractCreditRelic extends BaseRelic {
 
@@ -13,7 +15,9 @@ public class AbstractCreditRelic extends BaseRelic {
     public AbstractCreditRelic(String id, String imageName, RelicTier tier, LandingSound sfx, int amount) {
         super(id, imageName, TheArtifexCharacter.Meta.CARD_COLOR, tier, sfx);
         this.amount = amount;
-        this.tips.add(new PowerTip(TipHelper.capitalize("cybernetic"), "Cybernetic cards can be implanted as permanent relics at #yRest #ySites. They cannot be upgraded."));
+        String header = CardCrawlGame.languagePack.getRelicStrings(makeID("AbstractCredRelic")).NAME;
+        String body = CardCrawlGame.languagePack.getRelicStrings(makeID("AbstractCredRelic")).DESCRIPTIONS[0];
+        this.tips.add(new PowerTip(header, body));
     }
 
     @Override

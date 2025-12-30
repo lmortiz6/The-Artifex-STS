@@ -23,7 +23,7 @@ public class HolographicVisage extends AbstractCyberneticCard {
             3
     );
     public static final int creditCost = info.baseCost;
-    private static final int BUFF = 2;
+    private static final int BUFF = 3;
     private static final String cyberneticRelic = makeID(HolographicVisageRelic.class.getSimpleName());
 
     public HolographicVisage() {

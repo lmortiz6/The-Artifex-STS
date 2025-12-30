@@ -22,7 +22,7 @@ public class Rejoinder extends BaseCard {
             CardTarget.ENEMY,
             0
     );
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 1;
 
     public Rejoinder() {

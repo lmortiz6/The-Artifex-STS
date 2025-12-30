@@ -21,7 +21,7 @@ public class ForceKnife extends BaseCard {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 4;
     private static final int UPG_COST = 0;
 
     public ForceKnife() {

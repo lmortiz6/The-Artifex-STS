@@ -41,9 +41,6 @@ public class BecomeNull extends BaseCard implements OnObtainCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
-        if (upgraded) {
-            effect++;
-        }
         if (effect > 0) {
             addToBot(new BecomeNullAction(this, effect));
             addToBot(new WaitAction(0.2F));

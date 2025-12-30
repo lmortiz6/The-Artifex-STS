@@ -2,12 +2,9 @@ package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theartifex.TheArtifexMod;
 import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.cards.powers.MotorizedTreads;
 
@@ -32,10 +29,10 @@ public class MotorizedTreadsRelic extends AbstractCyberneticRelic {
     public void atBattleStartPreDraw() {
         AbstractDungeon.player.gameHandSize += DRAW;
 
-        if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+        /*if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             int maxDraw = Math.min(AbstractDungeon.player.gameHandSize, AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
             TheArtifexMod.cardsDrawnAtTurnStart = Math.min(maxDraw, 10 - AbstractDungeon.player.hand.size());
-        }
+        }*/
     }
 
     @Override

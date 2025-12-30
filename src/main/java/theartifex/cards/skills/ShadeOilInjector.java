@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theartifex.abstracts.AbstractInjector;
 import theartifex.cards.status.EvilTwinStatus;
 import theartifex.character.TheArtifexCharacter;
@@ -42,7 +41,7 @@ public class ShadeOilInjector extends AbstractInjector {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, DEBUFF, true)));
+        //addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, DEBUFF, true)));
     }
 
     @Override
