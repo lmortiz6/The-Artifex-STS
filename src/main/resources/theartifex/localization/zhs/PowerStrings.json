@@ -1,0 +1,242 @@
+{
+  "${modID}:HookAndDragPower": {
+    "NAME": "Hook and Drag",
+    "DESCRIPTIONS": [
+      "Hidden power"
+    ]
+  },
+  "${modID}:HookedPower": {
+    "NAME": "被钩住",
+    "DESCRIPTIONS": [
+      "在你的下回合开始时，每抽一张牌，失去 #b%1$s 点生命值。"
+    ]
+  },
+  "${modID}:HighExplosiveGrenadePower": {
+    "NAME": "高爆手雷",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，对 所有敌人 造成 #b%2$s 点伤害。",
+      "在本回合结束时，对 所有敌人 造成 #b%1$s 点伤害。"
+    ]
+  },
+  "${modID}:PoisonGasGrenadePower": {
+    "NAME": "毒气手雷",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，对 所有敌人 施加 #b%2$s 层 #y中毒 。",
+      "在本回合结束时，对 所有敌人 施加 #b%1$s 层 #y中毒 。"
+    ]
+  },
+  "${modID}:ResonanceGrenadePower": {
+    "NAME": "共振手雷",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，对 所有敌人 造成 #b%2$s 点伤害，并施加 #b%3$s 层 #y易伤 。",
+      "在本回合结束时，对 所有敌人 造成 #b%1$s 点伤害，并施加 #b%2$s 层 #y易伤 。"
+    ]
+  },
+  "${modID}:StunGasGrenadePower": {
+    "NAME": "眩晕气体手雷",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，对 所有敌人 造成 #b%2$s 点伤害，并施加 #b%3$s 层 #y虚弱 。",
+      "在本回合结束时，对 所有敌人 造成 #b%1$s 点伤害，并施加 #b%2$s 层 #y虚弱 。"
+    ]
+  },
+  "${modID}:HandENukePower": {
+    "NAME": "手持核弹",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，对 所有人 造成 #b%2$s 点伤害。",
+      "在本回合结束时，对 所有人 造成 #b%1$s 点伤害。"
+    ]
+  },
+  "${modID}:FreezeGrenadePower": {
+    "NAME": "冻结手雷",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，获得 #b%2$s 点 #y格挡 ，并对 所有敌人 造成 #b%3$s 点伤害。",
+      "在本回合结束时，获得 #b%1$s 点 #y格挡 ，并对 所有敌人 造成 #b%2$s 点伤害。"
+    ]
+  },
+  "${modID}:TimeDilationGrenadePower": {
+    "NAME": "时间膨胀手雷",
+    "DESCRIPTIONS": [
+      "在你的下回合开始时，抽 #b%1$s 张牌。"
+    ]
+  },
+  "${modID}:WillpowerUpPower": {
+    "NAME": "意志强化",
+    "DESCRIPTIONS": [
+      "在接下来的 #b%1$s 个回合开始时，获得 ",
+      "在你的下回合开始时，获得 "
+    ]
+  },
+  "${modID}:AkimboPower": {
+    "NAME": "双持",
+    "DESCRIPTIONS": [
+      "每回合你首次打出一张 #y枪械 牌时，抽 #b%1$s 张牌。",
+      "每回合你首次打出一张 #y枪械 牌时，抽 #b1 张牌。"
+    ]
+  },
+  "${modID}:ForceBraceletPower": {
+    "NAME": "力场手环",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，若你没有 ",
+      " ，失去 #b%1$s 层 #y金属化 。"
+    ]
+  },
+  "${modID}:NextTurnDrawReductionPower": {
+    "NAME": "抽牌减少",
+    "DESCRIPTIONS": [
+      "下回合少抽 #b%1$s 张牌。",
+      "下回合少抽 #b1 张牌。"
+    ]
+  },
+  "${modID}:NextTurnDrawPower": {
+    "NAME": "下回合抽牌",
+    "DESCRIPTIONS": [
+      "下回合多抽 #b%1$s 张牌。",
+      "下回合多抽 #b1 张牌。"
+    ]
+  },
+  "${modID}:DeftThrowingPower": {
+    "NAME": "巧掷",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，每存在一枚手雷，获得 #b%1$s 点 临时 #y敏捷 。"
+    ]
+  },
+  "${modID}:LoseMetallicizePower": {
+    "NAME": "失去金属化",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，失去 #b%1$s 层 金属化 。"
+    ]
+  },
+  "${modID}:CarbideHandBonesPower": {
+    "NAME": "碳化手骨",
+    "DESCRIPTIONS": [
+      "所有 #y打击 牌造成 #b%1$s 倍伤害。",
+      "所有 #y打击 牌造成 #b1.3 倍伤害。"
+    ]
+  },
+  "${modID}:ForceModulatorPower": {
+    "NAME": "力场调制器",
+    "DESCRIPTIONS": [
+      "你的 #y攻击 视为生命值流失，忽略敌人的 #y格挡 。"
+    ]
+  },
+  "${modID}:InflatableAxonsPower": {
+    "NAME": "膨胀轴突",
+    "DESCRIPTIONS": [
+      "在每个奇数回合开始时，额外抽 #b%1$s 张牌。在每个偶数回合开始时，少抽 #b%2$s 张牌。",
+      "在每个奇数回合开始时，额外抽 1 张牌。在每个偶数回合开始时，少抽 1 张牌。"
+    ]
+  },
+  "${modID}:StabilizerArmLocksPower": {
+    "NAME": "稳定臂锁",
+    "DESCRIPTIONS": [
+      "所有 #y枪械 牌额外造成 #b%1$s 点伤害。"
+    ]
+  },
+  "${modID}:HyperElasticAnkleTendonsPower": {
+    "NAME": "高弹性踝腱",
+    "DESCRIPTIONS": [
+      "你的 #y冲刺 牌额外抽 #b%1$s 张牌。",
+      "你的 #y冲刺 牌额外抽 #b1 张牌。"
+    ]
+  },
+  "${modID}:MedassistModulePower": {
+    "NAME": "医疗辅助模块",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，将 #b%1$s 张随机 注射器 从你的抽牌堆置入手牌，并 #y改造 为 #y弹簧加载 。",
+      "在你的回合开始时，将 #b1 张随机 注射器 从你的抽牌堆置入手牌，并 #y改造 为 #y弹簧加载 。"
+    ]
+  },
+  "${modID}:PrecisionForceLathePower": {
+    "NAME": "力场精车",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，将 #b%1$s 张 #y力场 #y刀 加入你的手牌。",
+      "在你的回合开始时，将 #b1 张 #y力场 #y刀 加入你的手牌。"
+    ]
+  },
+  "${modID}:GiantHandsPower": {
+    "NAME": "巨型之手",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，使你手牌中 #b%1$s 张随机 攻击 牌的费用降低 1。",
+      "在你的回合开始时，使你手牌中一张随机 攻击 牌的费用降低 1。"
+    ]
+  },
+  "${modID}:MotorizedTreadsPower": {
+    "NAME": "机动履带",
+    "DESCRIPTIONS": [
+      "在每个回合开始时，额外抽 #b%1$s 张牌。此后你无法再抽取额外的牌。"
+    ]
+  },
+  "${modID}:HolographicVisagePower": {
+    "NAME": "全息面容",
+    "DESCRIPTIONS": [
+      "接下来 #b%1$s 次你在未打出任何 攻击 牌的情况下结束回合时，获得 1 层 #y缓冲 。",
+      "下一次你在未打出任何 攻击 牌的情况下结束回合时，获得 1 层 #y缓冲 。"
+    ]
+  },
+  "${modID}:CathedraWithRubyTraceryPower": {
+    "NAME": "红宝石座椅",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，获得 "
+    ]
+  },
+  "${modID}:JuicerPower": {
+    "NAME": "打药者",
+    "DESCRIPTIONS": [
+      "每当你打出一张 注射器 ，获得 #b%1$s 点 临时 #y力量 。 NL 每当你触发一次 #y不良反应 ，获得 #b%1$s 点 #y力量 。"
+    ]
+  },
+  "${modID}:SwiftReflexesPower": {
+    "NAME": "迅捷反射",
+    "DESCRIPTIONS": [
+      "每回合你弃掉的前 #b%1$s 张牌会返回你的手牌，并被 #y改造 为 #y柔织 。",
+      "每回合你弃掉的第一张牌会返回你的手牌，并被 #y改造 为 #y柔织 。"
+    ]
+  },
+  "${modID}:PulsedPower": {
+    "NAME": "脉冲",
+    "DESCRIPTIONS": [
+      "抵消 #b%1$s 个增益。",
+      "抵消 #b%1$s 个增益。"
+    ]
+  },
+  "${modID}:EMPGrenadePower": {
+    "NAME": "EMP 手雷",
+    "DESCRIPTIONS": [
+      "在 #b%1$s 回合后，对 所有敌人 施加 #b%2$s 层 #y脉冲 。",
+      "在本回合结束时，对 所有敌人 施加 #b%1$s 层 #y脉冲 。"
+    ]
+  },
+  "${modID}:MagneticCorePower": {
+    "NAME": "磁性核心",
+    "DESCRIPTIONS": [
+      "每当你抽到一张 #y能力 牌时，对 所有敌人 施加 #b%1$s 层 #y脉冲 。"
+    ]
+  },
+  "${modID}:LovesickPower": {
+    "NAME": "相思",
+    "DESCRIPTIONS": [
+      "攻击和负面效果在接下来的 #b%1$s 回合中会随机以一名敌人为目标。",
+      "攻击和负面效果在接下来的 #b1 回合中会随机以一名敌人为目标。"
+    ]
+  },
+  "${modID}:AmnesiaPower": {
+    "NAME": "致盲",
+    "DESCRIPTIONS": [
+      "在接下来的 #b%1$s 回合中，你无法查看敌人的行动意图。",
+      "在接下来的 #b1 回合中，你无法查看敌人的行动意图。"
+    ]
+  },
+  "${modID}:TinkerPower": {
+    "NAME": "调校",
+    "DESCRIPTIONS": [
+      "使 #y卡牌 #y改造 的效果提高 #b%1$s 。"
+    ]
+  },
+  "${modID}:BiodynamicPowerPlantPower": {
+    "NAME": "生物动力核心",
+    "DESCRIPTIONS": [
+      "每当你回复生命时，下回合获得 ",
+      ""
+    ]
+  }
+}

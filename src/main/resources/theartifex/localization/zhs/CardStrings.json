@@ -1,0 +1,358 @@
+{
+  "${modID}:Strike_Artifex": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "${modID}:Defend_Artifex": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "${modID}:Sprint": {
+    "NAME": "冲刺",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 丢弃 1 张牌。 NL 消耗 。"
+  },
+  "${modID}:WitchwoodBark": {
+    "NAME": "巫木树皮",
+    "DESCRIPTION": "获得 !M! 点 回复 。 NL 消耗 。"
+  },
+  "${modID}:CleaveArmor": {
+    "NAME": "破甲斩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 易伤 。"
+  },
+  "${modID}:PenetratingStrike": {
+    "NAME": "贯穿打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 在 打击 上发挥 !M! 倍效果。"
+  },
+  "${modID}:Rejoinder": {
+    "NAME": "反击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若敌人意图攻击，则再次造成 !D! 点伤害。"
+  },
+  "${modID}:Shank": {
+    "NAME": "捅刺",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人每有一个 负面 NL 状态 ，额外造成 !M! 点伤害。"
+  },
+  "${modID}:Conk": {
+    "NAME": "重击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若敌人拥有 2 层或以上 虚弱 ，使其 昏迷 并移除所有 虚弱 。 NL 否则，施加 !M! 层 虚弱 。"
+  },
+  "${modID}:DefensiveSwipe": {
+    "NAME": "防御横扫",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在下一回合获得 !B! 点 格挡 。"
+  },
+  "${modID}:ShieldBash": {
+    "NAME": "盾击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL ${modID}:为你手牌中 的所有 技能 牌施加 ${modID}:加固 。 NL 消耗 。"
+  },
+  "${modID}:CeremonialVibrokhopesh": {
+    "NAME": "振动弯刃",
+    "DESCRIPTION": "去除一名敌人的所有 格挡 值。 NL 造成 !D! 点伤害。 NL 这张牌每被打出一次，它在本场战斗中的耗能减少 !M! 。"
+  },
+  "${modID}:Dismember": {
+    "NAME": "肢解",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 使敌人失去 !M! 点 力量 。 NL 消耗 。"
+  },
+  "${modID}:HookAndDrag": {
+    "NAME": "钩拽",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在你下回合开始时，敌人每抽一张牌失去 !M! 点生命。"
+  },
+  "${modID}:IssacharRifle": {
+    "NAME": "以萨迦步枪",
+    "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。"
+  },
+  "${modID}:ChromeRevolver": {
+    "NAME": "铬合金左轮",
+    "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 抽 !M! 张牌。"
+  },
+  "${modID}:GrapplingGun": {
+    "NAME": "抓钩枪",
+    "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 施加 !M! 层 易伤 。 NL 抽 !${modID}:draw! 张牌。",
+    "UPGRADE_DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 施加 !M! 层 易伤 。 NL 抽 !${modID}:draw! 张牌。"
+  },
+  "${modID}:ChainPistol": {
+    "NAME": "链式手枪",
+    "DESCRIPTION": "${modID}:枪械 。 NL 随机对一个敌人造成 !D! 点伤害，共 !M! 次。"
+  },
+  "${modID}:BloodGradientHandVacuum": {
+    "NAME": "血梯吸取器",
+    "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 未被 格挡 的伤害将回复你的生命。 NL 消耗 。"
+  },
+  "${modID}:PhaseCannon": {
+    "NAME": "相位炮",
+    "DESCRIPTION": "${modID}:枪械 。 NL 在你回合开始时，每抽一张牌，此牌费用减少 1 点 [E] 。 NL 造成 !D! 点伤害。"
+  },
+  "${modID}:HighExplosiveGrenade": {
+    "NAME": "高爆手雷",
+    "DESCRIPTION": "在你下回合结束时，对所有敌人造成 !M! 点伤害。"
+  },
+  "${modID}:ResonanceGrenade": {
+    "NAME": "共振手雷",
+    "DESCRIPTION": "在你下回合结束时，造成 !M! 点伤害并对所有敌人施加 !${modID}:vuln! 层 易伤 。"
+  },
+  "${modID}:StunGasGrenade": {
+    "NAME": "眩晕毒气弹",
+    "DESCRIPTION": "在你下回合结束时，造成 5 点伤害并对所有敌人施加 !M! 层 虚弱 。"
+  },
+  "${modID}:HandENuke": {
+    "NAME": "手持核弹",
+    "DESCRIPTION": "在你下回合结束时，对 所有人 造成 !M! 点伤害。"
+  },
+  "${modID}:FreezeGrenade": {
+    "NAME": "冻结手雷",
+    "DESCRIPTION": "在你下回合结束时，获得 !B! 点 格挡 并对所有敌人造成 !M! 点伤害。"
+  },
+  "${modID}:TimeDilationGrenade": {
+    "NAME": "时间膨胀手雷",
+    "DESCRIPTION": "在你下回合开始时，额外抽 !M! 张牌。"
+  },
+  "${modID}:StrengthUp": {
+    "NAME": "力量",
+    "DESCRIPTION": "获得 !M! 点 力量 。"
+  },
+  "${modID}:AgilityUp": {
+    "NAME": "敏捷",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。"
+  },
+  "${modID}:ToughnessUp": {
+    "NAME": "韧性",
+    "DESCRIPTION": "获得 !M! 点 回复 。"
+  },
+  "${modID}:WillpowerUp": {
+    "NAME": "意志力",
+    "DESCRIPTION": "在接下来的 !M! 个回合开始时，获得 [E] 。"
+  },
+  "${modID}:IntelligenceUp": {
+    "NAME": "智力",
+    "DESCRIPTION": "获得 !M! 层 ${modID}:调校 。"
+  },
+  "${modID}:EgoUp": {
+    "NAME": "自我",
+    "DESCRIPTION": "获得 !M! 金币 。"
+  },
+  "${modID}:EatersNectarInjector": {
+    "NAME": "吞噬者花蜜注射器",
+    "DESCRIPTION": "选择一项属性以提升。 NL ${modID}:不良反应 ： NL 失去 [E] NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "选择一项属性以大幅提升。 NL ${modID}:不良反应 ： NL 失去 [E] NL 消耗 。"
+  },
+  "${modID}:HulkHoneyInjector": {
+    "NAME": "巨力蜂蜜注射器",
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL ${modID}:不良反应 ： NL 本回合你无法从牌中获得 格挡 。 NL 消耗 。"
+  },
+  "${modID}:Akimbo": {
+    "NAME": "双持",
+    "DESCRIPTION": "每回合首次打出一张 ${modID}:枪械 时，抽 !M! 张牌。"
+  },
+  "${modID}:RubbergumInjector": {
+    "NAME": "橡胶胶质注射器",
+    "DESCRIPTION": "获得 !M! ${modID}:柔韧 。 NL ${modID}:不良反应 ： NL 将一张 *黏液 洗入你的抽牌堆。 NL 消耗 。"
+  },
+  "${modID}:SalveInjector": {
+    "NAME": "药膏注射器",
+    "DESCRIPTION": "回复 !M! 点生命。 NL ${modID}:不良反应 ： NL 将一张 *晕眩 洗入你的抽牌堆。 NL 消耗 。"
+  },
+  "${modID}:ShadeOilInjector": {
+    "NAME": "暗影油注射器",
+    "DESCRIPTION": "获得 !M! 回合 无实体 。 NL ${modID}:不良反应 ： NL 将一张 *邪恶 *双生 洗入你的抽牌堆。 NL 消耗 。"
+  },
+  "${modID}:SphynxSaltInjector": {
+    "NAME": "斯芬克斯盐注射器",
+    "DESCRIPTION": "预见 !M! 。 NL 抽 !${modID}:draw! 张牌。 NL ${modID}:不良反应 ： NL 获得 ${modID}:缠身 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "预见 !M! 。 NL 抽 !${modID}:draw! 张牌。 NL ${modID}:不良反应 ： NL 获得 ${modID}:纠缠 。 NL 消耗 。"
+  },
+  "${modID}:RifleThroughTrash": {
+    "NAME": "翻找残骸",
+    "DESCRIPTION": "虚无 。 NL 将消耗堆中 !M! 张随机牌放入你的手牌。 NL 在本场战斗中此牌费用增加 1 。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 将消耗堆中 !M! 张随机牌放入你的手牌。 NL 在本场战斗中此牌费用增加 1 。"
+  },
+  "${modID}:Calloused": {
+    "NAME": "老茧",
+    "DESCRIPTION": "保留 。 NL 获得 !B! 点 格挡 。 NL 每次被 保留 时，本场战斗中其 格挡 减少 1 。"
+  },
+  "${modID}:IronBuckler": {
+    "NAME": "铁圆盾",
+    "DESCRIPTION": "最多丢弃 !M! 张牌。 NL 每丢弃一张牌，获得 !B! 点 格挡 。"
+  },
+  "${modID}:Meditate": {
+    "NAME": "冥想",
+    "DESCRIPTION": "抽 1 张牌。 NL 保留 1 张牌。 NL 结束你的回合。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 保留 !${modID}:retain! 张牌。 NL 结束你的回合。"
+  },
+  "${modID}:FulleriteAegis": {
+    "NAME": "富勒烯神盾",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL ${modID}:为你手牌中 一张随机牌施加 ${modID}:加固 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL ${modID}:为你手牌中 !M! 张随机牌施加 ${modID}:加固 。"
+  },
+  "${modID}:ForceBracelet": {
+    "NAME": "力场手环",
+    "DESCRIPTION": "获得 3 层 金属化 ， NL 共 X 次。 NL 当你在回合结束时没有 [E] ，失去 !M! 层 金属化 。"
+  },
+  "${modID}:Juke": {
+    "NAME": "虚步",
+    "DESCRIPTION": "抽 1 张牌。 NL ${modID}:为你手牌中 一张随机 攻击 牌施加 ${modID}:锋锐 。 NL 不包括 ${modID}:枪械 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL ${modID}:为你手牌中 !M! 张随机 攻击 牌施加 ${modID}:锋锐 。 NL 不包括 ${modID}:枪械 。"
+  },
+  "${modID}:MagnetizedChassisPlate": {
+    "NAME": "磁化装甲板",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 下回合少抽 1 张牌。"
+  },
+  "${modID}:PointDefenseDrone": {
+    "NAME": "点防御无人机",
+    "DESCRIPTION": "若敌人意图攻击，获得 !M! 点 敏捷 。"
+  },
+  "${modID}:VaamsLens": {
+    "NAME": "瓦阿姆之镜",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 1 层 人工制品 。 NL 消耗 。"
+  },
+  "${modID}:SolarCell": {
+    "NAME": "太阳能电池",
+    "DESCRIPTION": "不能被打出 。 NL 每当你抽到此牌时，获得 [E] 。 NL 若它在回合结束时仍在手牌中，降低该数值。",
+    "UPGRADE_DESCRIPTION": "不能被打出 。 NL 每当你抽到此牌时，获得 [E] [E] 。 NL 若它在回合结束时仍在手牌中，降低该数值。"
+  },
+  "${modID}:Disassemble": {
+    "NAME": "拆解",
+    "DESCRIPTION": "消耗 1 张牌以获得 6 金币。",
+    "UPGRADE_DESCRIPTION": "最多 消耗 !M! 张牌。 NL 每消耗一张牌，获得 6 金币。"
+  },
+  "${modID}:BoundingBoots": {
+    "NAME": "弹跃战靴",
+    "DESCRIPTION": "抽 !M! 张牌，并将它们 ${modID}:施加 ${modID}:簧载 。"
+  },
+  "${modID}:MetamorphicPolygel": {
+    "NAME": "多态凝胶",
+    "DESCRIPTION": "选择一张牌。 NL 将该牌的一张复制加入你的手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 选择一张牌。 NL 将该牌的一张复制加入你的手牌。 NL 消耗 。"
+  },
+  "${modID}:DeftThrowing": {
+    "NAME": "灵巧投掷",
+    "DESCRIPTION": "在你的回合开始时，每有一个已激活的手雷，获得 !M! 点 临时 敏捷 。"
+  },
+  "${modID}:CarbideHandBones": {
+    "NAME": "碳化手骨",
+    "DESCRIPTION": "${modID}:义体 。 NL 所有 *打击 造成 1.3 倍伤害。"
+  },
+  "${modID}:ForceModulator": {
+    "NAME": "力场调制器",
+    "DESCRIPTION": "${modID}:义体 。 NL 你的所有 攻击 被视为 生命流失 ，无视敌人的 格挡 。"
+  },
+  "${modID}:InflatableAxons": {
+    "NAME": "膨胀轴突",
+    "DESCRIPTION": "${modID}:义体 。 NL 奇数回合额外抽 1 张牌。 NL 偶数回合少抽 1 张牌。"
+  },
+  "${modID}:StabilizerArmLocks": {
+    "NAME": "稳定臂锁",
+    "DESCRIPTION": "${modID}:义体 。 NL 所有 ${modID}:枪械 牌额外造成 !M! 点伤害。"
+  },
+  "${modID}:HyperElasticAnkleTendons": {
+    "NAME": "高弹性踝腱",
+    "DESCRIPTION": "${modID}:义体 。 NL 你的所有 *冲刺 额外抽 1 张牌。"
+  },
+  "${modID}:MedassistModule": {
+    "NAME": "医疗辅助模块",
+    "DESCRIPTION": "${modID}:义体 。 NL 在你的回合开始时，将抽牌堆中 1 张随机 注射器 置入你的手牌，并将其 ${modID}:施加 ${modID}:弹簧加载 。"
+  },
+  "${modID}:ForceKnife": {
+    "NAME": "力场刀",
+    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。 NL 将一张 *力场 *刀 加入你的手牌。 NL 消耗 。"
+  },
+  "${modID}:PrecisionForceLathe": {
+    "NAME": "力场精车",
+    "DESCRIPTION": "${modID}:义体 。 NL 在你的回合开始时，将一张 *力场 *刀+ 加入你的手牌。"
+  },
+  "${modID}:GiantHands": {
+    "NAME": "巨型手掌",
+    "DESCRIPTION": "${modID}:义体 。 NL 在你的回合开始时，使你手牌中一张随机 攻击 牌的费用降低 1 。"
+  },
+  "${modID}:MotorizedTreads": {
+    "NAME": "机动履带",
+    "DESCRIPTION": "${modID}:义体 。 NL 每个回合开始时额外抽 2 张牌。 NL 之后你不能再抽取额外牌。"
+  },
+  "${modID}:HolographicVisage": {
+    "NAME": "全息面容",
+    "DESCRIPTION": "${modID}:义体 。 NL 接下来 3 次在你结束回合时未打出任何 攻击 牌，获得 1 层 缓冲 。"
+  },
+  "${modID}:CathedraWithRubyTracery": {
+    "NAME": "红宝石刻纹座椅",
+    "DESCRIPTION": "${modID}:义体 。 NL 将一张 *念动力 *领域 洗入你的抽牌堆。 NL 在你的回合开始时，获得 [E] 并将 1 张牌 转化 为 *灼伤 。"
+  },
+  "${modID}:PyrokinesisField": {
+    "NAME": "念动力领域",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+  },
+  "${modID}:Improvise": {
+    "NAME": "即兴改造",
+    "DESCRIPTION": "用随机改造 ${modID}:为你手牌中 的 2 张牌进行改造。 NL 消耗 。"
+  },
+  "${modID}:SlingAndRun": {
+    "NAME": "射击脱身",
+    "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 将一张 *冲刺 洗入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 将一张 *冲刺+ 洗入你的抽牌堆。"
+  },
+  "${modID}:Juicer": {
+    "NAME": "打药者",
+    "DESCRIPTION": "打出的 注射器 给予 !M! 点 临时 力量 。 NL ${modID}:不良反应 给予 !M! 点 力量 。"
+  },
+  "${modID}:JackIn": {
+    "NAME": "接入",
+    "DESCRIPTION": "虚无 。 NL ${modID}:为你手牌中 的 !M! 张牌施加 ${modID}:直连 。"
+  },
+  "${modID}:BecomeNull": {
+    "NAME": "归于虚常",
+    "DESCRIPTION": "${modID}:为你手牌中 的最多 X 张牌施加 ${modID}:归常 。 NL 将一张 *虚空 洗入你的抽牌堆。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "${modID}:为你手牌中 的最多 X 张牌施加 ${modID}:归常 。 NL 消耗 。"
+  },
+  "${modID}:SpreadShot": {
+    "NAME": "散射射击",
+    "DESCRIPTION": "保留 。 NL ${modID}:为你手牌中 的一张 ${modID}:枪械 牌施加 ${modID}:分束 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL ${modID}:为你手牌中 的 !M! 张 ${modID}:枪械 牌施加 ${modID}:分束 。 NL 消耗 。"
+  },
+  "${modID}:SwiftReflexes": {
+    "NAME": "迅捷反射",
+    "DESCRIPTION": "每回合你首次丢弃的牌会返回你的手牌，并被 ${modID}:施加 ${modID}:弹织 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合你首次丢弃的牌会返回你的手牌，并被 ${modID}:施加 ${modID}:弹织 。"
+  },
+  "${modID}:Grindstone": {
+    "NAME": "磨石",
+    "DESCRIPTION": "${modID}:为你抽牌堆中的 !M! 张 攻击 牌施加 ${modID}:锋锐 。 NL 不包括 ${modID}:枪械 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "${modID}:为你抽牌堆中的 !M! 张 攻击 牌施加 ${modID}:锋锐 。 NL 不包括 ${modID}:枪械 。"
+  },
+  "${modID}:EMPGrenade": {
+    "NAME": "EMP 手雷",
+    "DESCRIPTION": "在你下回合结束时，对所有敌人施加 !M! 层 ${modID}:脉冲 。"
+  },
+  "${modID}:MagneticCore": {
+    "NAME": "磁性核心",
+    "DESCRIPTION": "${modID}:义体 。 NL 每当你抽到一张 能力 牌时，对所有敌人施加 1 层 ${modID}:脉冲 。"
+  },
+  "${modID}:EvilTwinStatus": {
+    "NAME": "邪恶双生",
+    "DESCRIPTION": "不能被打出 。 NL 当此牌在手牌中时，每当打出 攻击 牌，受到 !M! 点伤害。"
+  },
+  "${modID}:LoveInjector": {
+    "NAME": "爱意注射器",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 ${modID}:相思 。 NL ${modID}:不良反应 ： NL 将你手牌中的所有牌 转化 为 *灼伤 。 NL 消耗 。"
+  },
+  "${modID}:SkulkInjector": {
+    "NAME": "潜行注射器",
+    "DESCRIPTION": "${modID}:为你手牌中 的 !M! 张随机牌施加 ${modID}:弹织 。 NL ${modID}:不良反应 ： NL 获得 2 层 ${modID}:致盲 。 NL 消耗 。"
+  },
+  "${modID}:Shocked": {
+    "NAME": "震击",
+    "DESCRIPTION": "每当抽到此牌时，下回合少抽 !M! 张牌。 NL 消耗 。"
+  },
+  "${modID}:ReverseEngineer": {
+    "NAME": "逆向工程",
+    "DESCRIPTION": "获得 !M! 层 ${modID}:调校 。 NL 将你手牌中的所有牌 转化 为 *震击 。 NL 消耗 。"
+  },
+  "${modID}:BiodynamicPowerPlant": {
+    "NAME": "生物动力核心",
+    "DESCRIPTION": "${modID}:义体 。 NL 每当你回复生命时，下回合获得 [E] 。"
+  },
+  "${modID}:Nostrum": {
+    "NAME": "秘药",
+    "DESCRIPTION": "将你手牌中的所有牌 转化 为随机 ${modID}:损坏 注射器 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将你手牌中的所有牌 转化 为随机 注射器 。 NL 消耗 。"
+  },
+  "${modID}:PumpShotgun": {
+    "NAME": "泵动霰弹枪",
+    "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 再次对所有敌人造成 !D! 点伤害。 NL 丢弃一张随机手牌。"
+  }
+}

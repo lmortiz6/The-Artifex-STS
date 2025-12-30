@@ -1,0 +1,193 @@
+{
+  "${modID}:AbstractCredRelic": {
+    "NAME": "义体",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "义体 牌可以在 #y休息 #y地点 以等同于其能量消耗的信用点数植入为永久遗物。它们无法升级。"
+    ]
+  },
+  "${modID}:AbstractCyberRelic": {
+    "NAME": "义体遗物",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "义体遗物可以在 #y休息 #y地点 解除植入，以获得对应的卡牌。"
+    ]
+  },
+  "${modID}:CarbideHandBonesRelic": {
+    "NAME": "碳化物手骨",
+    "FLAVOR": "蓝色碳化物只会凹陷，而脆弱的胶原早已粉碎。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。所有 #y打击 造成 #b1.3 倍伤害。"
+    ]
+  },
+  "${modID}:ForceModulatorRelic": {
+    "NAME": "力场调制器",
+    "FLAVOR": "你最微小的组成部分所发射的频率，被同步至标准化的力场输出波段。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。你的 #y攻击 被视为生命值流失，忽略敌人的 #y格挡。"
+    ]
+  },
+  "${modID}:InflatableAxonsRelic": {
+    "NAME": "膨胀轴突",
+    "FLAVOR": "纳米级支架膨胀起蛛丝般的脑神经，解除意志传导的束缚。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。奇数回合额外抽 #b1 张牌；偶数回合少抽 #b1 张牌。"
+    ]
+  },
+  "${modID}:StabilizerArmLocksRelic": {
+    "NAME": "稳定臂锁",
+    "FLAVOR": "镀铬扣具固定关节，模拟无生命体的绝对静止。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。所有 #y枪械 牌额外造成 #b2 点伤害。"
+    ]
+  },
+  "${modID}:StartingCredits": {
+    "NAME": "信用楔 4¢",
+    "FLAVOR": "一小块塑料楔片。",
+    "DESCRIPTIONS": [
+      "提供 #b4¢ ，用于安装 #y赛博义体 卡牌。"
+    ]
+  },
+  "${modID}:CathedraWithRubyTraceryRelic": {
+    "NAME": "红宝石圣座",
+    "FLAVOR": "熔渣的浪脊打断了巨大座椅的平面几何，溅痕与爪足被灼烧、错位。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每回合开始时，获得 ",
+      "。战斗开始时，将一张 #y念动力 #y力场 洗入抽牌堆。"
+    ]
+  },
+  "${modID}:GiantHandsRelic": {
+    "NAME": "巨手",
+    "FLAVOR": "他们曾经梦想——“双手必须变得更大”。在实验室柔和的光泽中，梦想成真。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每回合开始时，使你手牌中一张随机攻击牌的费用降低 #b1。"
+    ]
+  },
+  "${modID}:HolographicVisageRelic": {
+    "NAME": "全息面容",
+    "FLAVOR": "脸颊上的乳化薄膜与激光光线，共同唤起似是而非的温暖。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每场战斗中，前 #b3 次在未打出任何攻击牌的情况下结束回合时，获得 #b1 层 #y缓冲。"
+    ]
+  },
+  "${modID}:HyperElasticAnkleTendonsRelic": {
+    "NAME": "超弹性踝腱",
+    "FLAVOR": "成束的水凝胶绳索被并合为一。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。你的 #y冲刺 额外抽 #b1 张牌。"
+    ]
+  },
+  "${modID}:MedassistModuleRelic": {
+    "NAME": "医疗辅助模块",
+    "FLAVOR": "气动注射器被硬连至智能控制单元，决定将变色染剂注入哪条静脉。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每回合开始时，从抽牌堆中将 #b1 张随机 #y注射器 置入手牌，并以 #y弹簧加载 对其进行改造。"
+    ]
+  },
+  "${modID}:MotorizedTreadsRelic": {
+    "NAME": "机动履带",
+    "FLAVOR": "三角履带包覆着巨齿轮旋转前行；其人类已逃离双足行走的桎梏。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每回合开始时额外抽 #b2 张牌。此后你无法再额外抽牌。"
+    ]
+  },
+  "${modID}:PrecisionForceLatheRelic": {
+    "NAME": "力场精车",
+    "FLAVOR": "磁屏蔽的主轴箱将空间悬置于动能之中，力场主轴旋转，将其削磨成尖。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每回合开始时，将一张 #y力场 #y飞刀+ 加入手牌。"
+    ]
+  },
+  "${modID}:CommonCreditRelic": {
+    "NAME": "信用楔 2¢",
+    "FLAVOR": "一小块塑料楔片。",
+    "DESCRIPTIONS": [
+      "提供 #b2¢ ，用于安装 #y赛博义体 卡牌。"
+    ]
+  },
+  "${modID}:UncommonCreditRelic": {
+    "NAME": "信用楔 3¢",
+    "FLAVOR": "一小块塑料楔片。",
+    "DESCRIPTIONS": [
+      "提供 #b3¢ ，用于安装 #y赛博义体 卡牌。"
+    ]
+  },
+  "${modID}:RareCreditRelic": {
+    "NAME": "信用楔 3¢",
+    "FLAVOR": "一小块塑料楔片。",
+    "DESCRIPTIONS": [
+      "提供 #b3¢ ，用于安装 #y赛博义体 卡牌。"
+    ]
+  },
+  "${modID}:NachamsRibbonRelic": {
+    "NAME": "纳哈姆之缎",
+    "FLAVOR": "一幕嗡鸣的缆线帷幕，披覆在佝偻的双肩之上。",
+    "DESCRIPTIONS": [
+      "小概率对任何加入牌组的卡牌施加一次 #y改造。"
+    ]
+  },
+  "${modID}:MagneticCoreRelic": {
+    "NAME": "磁化核心",
+    "FLAVOR": "层压金属被束缚为同心球体，驯服磁涡并为近场轨道供能。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。#y能力 牌费用降低 #b1。每当你打出一张 #y能力，对一名随机敌人施加 #b1 层 #y脉冲。"
+    ]
+  },
+  "${modID}:PrecisionNanonFingersRelic": {
+    "NAME": "精密纳子手指",
+    "FLAVOR": "富勒烯指骨如宫廷长甲般张开，其粗细由指蹼中嵌入的微型伺服器随任务调节。",
+    "DESCRIPTIONS": [
+      "每当你对敌人施加一个减益时，额外施加 #b1 层该减益。"
+    ]
+  },
+  "${modID}:ChiralRingsRelic": {
+    "NAME": "手性环",
+    "FLAVOR": "巨大而扁平的超冷晶钢环将佩戴者与天体相关联，充当天球赤道、赤纬与子午线。",
+    "DESCRIPTIONS": [
+      "对你造成未被格挡的攻击伤害的敌人，会在你回合开始时暂时失去 #b2 点 #y力量。"
+    ]
+  },
+  "${modID}:AmaranthinePrismRelic": {
+    "NAME": "不凋棱镜",
+    "FLAVOR": "一枚无星的黑玻璃三棱柱，静止不动。",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 [E] [E]。每当你攀升 #b10 层楼层时，该数值减少 #b1（可为负）。"
+    ]
+  },
+  "${modID}:OtherpearlRelic": {
+    "NAME": "异珠",
+    "FLAVOR": "全色珠母被硬化为本体论上完美的形态；球体数学不过是近似。",
+    "DESCRIPTIONS": [
+      "每当一张卡牌 #y改造 了一张或多张其他卡牌时，将一张任意颜色的随机卡牌加入你的手牌。"
+    ]
+  },
+  "${modID}:ScrapCapeRelic": {
+    "NAME": "废料斗篷",
+    "FLAVOR": "自第29地层深处编织而成的垃圾斗篷，千年的历史如今披在屁股上。",
+    "DESCRIPTIONS": [
+      "每当一张卡牌在打出后被 #y消耗 时，获得 #b1 层 #y镀层装甲。"
+    ]
+  },
+  "${modID}:BoxOfCrayonsRelic": {
+    "NAME": "蜡笔盒",
+    "FLAVOR": "蜡与染料混合，塑造成书写棒的形状；它们一同采样世界的虹彩，并赋予扩展世界的工具。",
+    "DESCRIPTIONS": [
+      "拾取时，从 20 张牌中选择 1 张加入你的牌组。"
+    ]
+  },
+  "${modID}:EatersCrestRelic": {
+    "NAME": "噬者纹章",
+    "FLAVOR": "一只微型塑料风筝，证明贵族血统。",
+    "DESCRIPTIONS": [
+      "提供 #b3¢，用于安装 #y赛博义体 卡牌。拾取时，安装一项费用为 3 或以上的随机 #y赛博义体。"
+    ]
+  },
+  "${modID}:BiodynamicPowerPlantRelic": {
+    "NAME": "生物动力核心",
+    "FLAVOR": "微型涡轮从血液循环及其化学反应中汲取血能。",
+    "DESCRIPTIONS": [
+      "#y赛博义体。每当你获得生命值时，下回合获得 ",
+      " "
+    ]
+  }
+}

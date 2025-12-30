@@ -1,0 +1,137 @@
+[
+  {
+    "PROPER_NAME": "枪械",
+    "NAMES": [
+      "枪械"
+    ],
+    "DESCRIPTION": "枪械 牌的伤害受 敏捷 而非 力量 影响。"
+  },
+  {
+    "PROPER_NAME": "义体",
+    "NAMES": [
+      "义体"
+    ],
+    "DESCRIPTION": "义体 牌可以在 #y休息 #y地点 以等同于其能量消耗的信用点数植入为永久遗物。它们无法升级。"
+  },
+  {
+    "PROPER_NAME": "义体遗物",
+    "NAMES": [
+      "义体遗物"
+    ],
+    "DESCRIPTION": "义体遗物可以在 #y休息 #y地点 解除植入，以获得对应的卡牌。"
+  },
+  {
+    "PROPER_NAME": "卡牌改造",
+    "NAMES": [
+      "为你手牌中",
+      "施加",
+      "为你抽牌堆中的"
+    ],
+    "DESCRIPTION": "卡牌改造 在打出时赋予额外效果。每张牌最多可以拥有 #b2 个改造。"
+  },
+  {
+    "PROPER_NAME": "直连",
+    "NAMES": [
+      "直连"
+    ],
+    "DESCRIPTION": "#y卡牌改造：直连 的牌在打出时获得 [E] 。"
+  },
+  {
+    "PROPER_NAME": "加固",
+    "NAMES": [
+      "加固"
+    ],
+    "DESCRIPTION": "#y卡牌改造：加固 的牌在打出时获得 #b3 点 #y格挡 。"
+  },
+  {
+    "PROPER_NAME": "归常",
+    "NAMES": [
+      "归常"
+    ],
+    "DESCRIPTION": "#y卡牌改造：归常 的牌在打出时获得 #b1 层 #y神器 ，并 #y消耗 。"
+  },
+  {
+    "PROPER_NAME": "分束",
+    "NAMES": [
+      "分束"
+    ],
+    "DESCRIPTION": "#y卡牌改造：分束 的牌在打出时以 所有敌人 为目标。"
+  },
+  {
+    "PROPER_NAME": "弹织",
+    "NAMES": [
+      "弹织"
+    ],
+    "DESCRIPTION": "#y卡牌改造：弹织 的牌在打出时获得 #b1 点 临时 #y敏捷 。"
+  },
+  {
+    "PROPER_NAME": "锋锐",
+    "NAMES": [
+      "锋锐"
+    ],
+    "DESCRIPTION": "#y卡牌改造：锋锐 的牌在打出时额外造成 #b4 点伤害。"
+  },
+  {
+    "PROPER_NAME": "簧载",
+    "NAMES": [
+      "簧载"
+    ],
+    "DESCRIPTION": "#y卡牌改造：簧载 的牌在打出时抽 #b1 张牌，并随机弃 #b1 张牌。"
+  },
+  {
+    "PROPER_NAME": "不良反应",
+    "NAMES": [
+      "不良反应"
+    ],
+    "DESCRIPTION": "注射器 牌在打出时有 #b1 #b/ #b3 的几率触发额外的负面效果。"
+  },
+  {
+    "PROPER_NAME": "脉冲",
+    "NAMES": [
+      "脉冲"
+    ],
+    "DESCRIPTION": "脉冲 状态下的生物，其下一次获得的增益会被抵消。"
+  },
+  {
+    "PROPER_NAME": "相思",
+    "NAMES": [
+      "相思"
+    ],
+    "DESCRIPTION": "相思 状态下的生物，其攻击和负面效果将随机以一名敌人为目标，而非玩家。"
+  },
+  {
+    "PROPER_NAME": "调校",
+    "NAMES": [
+      "调校"
+    ],
+    "DESCRIPTION": "调校 会提升 #y卡牌 #y改造 的效果。"
+  },
+  {
+    "PROPER_NAME": "损坏",
+    "NAMES": [
+      "损坏"
+    ],
+    "DESCRIPTION": "#y卡牌 #y改造：损坏 的注射器 牌触发 #y不良反应 的几率翻倍。"
+  },
+  {
+    "PROPER_NAME": "致盲",
+    "NAMES": [
+      "致盲"
+    ],
+    "DESCRIPTION": "处于 致盲 状态时，你无法查看敌人的行动意图。"
+  },
+  {
+    "PROPER_NAME": "缠身",
+    "NAMES": [
+      "缠身"
+    ],
+    "DESCRIPTION": "你在这个回合不能打出 #y攻击牌 。"
+  },
+  {
+    "PROPER_NAME": "柔韧",
+    "NAMES": [
+      "柔韧"
+    ],
+    "DESCRIPTION": "每当你受到攻击伤害时，获得等同于 柔韧 数值的 #y格挡 。每次 柔韧 触发时，获得的 #y格挡 提高 #b1 点。在你的回合开始时重置为初始数值。"
+  }
+]

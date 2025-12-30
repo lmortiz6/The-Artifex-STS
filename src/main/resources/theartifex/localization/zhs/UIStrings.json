@@ -1,0 +1,32 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+  "${modID}:UI": {
+    "TEXT":[
+      "选择要卸除的赛博义体。",
+      "选择要安装的赛博义体。\n（信用点消耗 = 能量消耗）",
+      "转换巢",
+      "安装或卸除赛博义体。",
+      "需要一张赛博义体卡牌或遗物。"
+    ],
+    "EXTRA_TEXT": [
+      "赛博义体信用点",
+      "-已用/可用- NL 在休息点安装或卸除 #y赛博义体。",
+      "施加",
+      "转换"
+    ]
+  }
+
+}
