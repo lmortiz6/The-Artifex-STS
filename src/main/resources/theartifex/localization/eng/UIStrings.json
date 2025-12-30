@@ -12,5 +12,20 @@
       "This": "Contains pairs of Strings, used to get values based on keys.",
       "This is a key": "This is a value."
     }
+  },
+  "${modID}:UI": {
+    "TEXT":[
+      "Select Cybernetics to uninstall.",
+      "Select Cybernetics to install.\n(Credit Cost = Energy Cost)",
+      "Becoming Nook",
+      "Install and uninstall Cybernetics.",
+      "Requires a Cybernetic card or relic."
+    ],
+    "EXTRA_TEXT": [
+      "Cybernetic Credits",
+      "-Used/Available- NL Install and uninstall #yCybernetics at Rest Sites.",
+      "Modify",
+      "Transform"
+    ]
   }
 }

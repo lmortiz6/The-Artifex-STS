@@ -1,16 +1,14 @@
 {
   "${modID}:HookAndDragPower": {
-    "NAME": "Hooked",
+    "NAME": "Hook and Drag",
     "DESCRIPTIONS": [
-      "Whenever you draw a card this turn, loses #b",
-      " HP."
+      "Hidden power"
     ]
   },
   "${modID}:HookedPower": {
     "NAME": "Hooked",
     "DESCRIPTIONS": [
-      "At the start of your next turn, loses #b",
-      " HP for each card drawn."
+      "At the start of your next turn, loses #b%1$s HP for each card drawn."
     ]
   },
   "${modID}:HighExplosiveGrenadePower": {
@@ -71,34 +69,29 @@
   "${modID}:AkimboPower": {
     "NAME": "Akimbo",
     "DESCRIPTIONS": [
-      "The first time you play a Gun each turn, draw #b%1$s cards.",
-      "The first time you play a Gun each turn, draw #b1 card."
-    ]
-  },
-  "${modID}:RubbergumPower": {
-    "NAME": "Rubbergum",
-    "DESCRIPTIONS": [
-      "Whenever you lose HP this turn, gain #b%1$s block next turn."
+      "The first time you play a #yGun each turn, draw #b%1$s cards.",
+      "The first time you play a #yGun each turn, draw #b1 card."
     ]
   },
   "${modID}:ForceBraceletPower": {
     "NAME": "Force Bracelet",
     "DESCRIPTIONS": [
-      "At the end of your turn, lose #b%1$s #yMetallicize if you have no "
+      "At the end of your turn, lose #b%1$s #yMetallicize if you have no ",
+      "."
     ]
   },
   "${modID}:NextTurnDrawReductionPower": {
     "NAME": "Draw Reduction",
     "DESCRIPTIONS": [
-      "Draw #b%1$s fewer cards next turn.",
-      "Draw 1 less card next turn."
+      "Draw #b%1$s less cards next turn.",
+      "Draw #b1 less card next turn."
     ]
   },
   "${modID}:NextTurnDrawPower": {
     "NAME": "Draw Next Turn",
     "DESCRIPTIONS": [
       "Draw #b%1$s more cards next turn.",
-      "Draw 1 more card next turn."
+      "Draw #b1 more card next turn."
     ]
   },
   "${modID}:DeftThrowingPower": {
@@ -113,14 +106,6 @@
       "At the start of your turn, lose #b%1$s Metallicize."
     ]
   },
-  "${modID}:FlumeFlierPower": {
-    "NAME": "Flume Flier",
-    "DESCRIPTIONS": [
-      "At the start of your turn, add #b",
-      " #yFlume #yDashes into your hand.",
-      " #yFlume #yDash into your hand."
-    ]
-  },
   "${modID}:CarbideHandBonesPower": {
     "NAME": "Carbide Hand Bones",
     "DESCRIPTIONS": [
@@ -131,8 +116,7 @@
   "${modID}:ForceModulatorPower": {
     "NAME": "Force Modulator",
     "DESCRIPTIONS": [
-      "Your first #b%1$s attacks each turn deal damage regardless of the enemy's #yBlock.",
-      "Your first attack each turn deals damage regardless of the enemy's #yBlock."
+      "Your #yAttacks are treated as HP Loss, ignoring enemy #yBlock."
     ]
   },
   "${modID}:InflatableAxonsPower": {
@@ -152,22 +136,21 @@
     "NAME": "Hyper-Elastic Ankle Tendons",
     "DESCRIPTIONS": [
       "Your #ySprints draw #b%1$s additional cards.",
-      "Your #ySprints draw #b%1$s additional card."
+      "Your #ySprints draw #b1 additional card."
     ]
   },
   "${modID}:MedassistModulePower": {
     "NAME": "Medassist Module",
     "DESCRIPTIONS": [
-      "Your next #b%1$s played #yInjector cards cost 0.",
-      "Your next played #yInjector card costs 0."
+      "At the start of your turn, put #b%1$s random Injectors from your draw pile in your hand and #yModify them with #ySpringloaded.",
+      "At the start of your turn, put #b1 random Injector from your draw pile in your hand and #yModify it with #ySpringloaded."
     ]
   },
   "${modID}:PrecisionForceLathePower": {
     "NAME": "Precision Force Lathe",
     "DESCRIPTIONS": [
-      "At the start of your turn, add #b",
-      " #yForce #yKnives into your hand.",
-      " #yForce #yKnife into your hand."
+      "At the start of your turn, add #b%1$s #yForce #yKnives into your hand.",
+      "At the start of your turn, add #b1 #yForce #yKnife into your hand."
     ]
   },
   "${modID}:GiantHandsPower": {
@@ -194,15 +177,6 @@
     "NAME": "Ruby Cathedra",
     "DESCRIPTIONS": [
       "At the start of your turn, gain "
-    ]
-  },
-  "${modID}:LongstriderPower": {
-    "NAME": "Longstrider",
-    "DESCRIPTIONS": [
-      "At the end of your turn, shuffle #b%1$s #ySprints into your draw pile.",
-      "At the end of your turn, shuffle a #ySprint into your draw pile.",
-      "At the end of your turn, shuffle #b%1$s #ySprints+ into your draw pile.",
-      "At the end of your turn, shuffle a #ySprint+ into your draw pile."
     ]
   },
   "${modID}:JuicerPower": {
@@ -235,21 +209,21 @@
   "${modID}:MagneticCorePower": {
     "NAME": "Magnetic Core",
     "DESCRIPTIONS": [
-      "Reduce the cost of #yPowers by 1. Whenever you play a #yPower, apply #b%1$s #yPulsed to a random enemy."
+      "Whenever you draw a #yPower, apply #b%1$s #yPulsed to ALL enemies."
     ]
   },
   "${modID}:LovesickPower": {
     "NAME": "Lovesick",
     "DESCRIPTIONS": [
       "Attacks and debuffs target a random enemy for #b%1$s turns.",
-      "Attacks and debuffs target a random enemy for #b%1$s turn."
+      "Attacks and debuffs target a random enemy for #b1 turn."
     ]
   },
   "${modID}:AmnesiaPower": {
     "NAME": "Blind",
     "DESCRIPTIONS": [
-      "You cannot see enemy intents for the next #b%1$s turns.",
-      "You cannot see enemy intents this turn."
+      "You cannot see enemy intents for #b%1$s turns.",
+      "You cannot see enemy intents for #b1 turn."
     ]
   },
   "${modID}:TinkerPower": {

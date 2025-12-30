@@ -43,7 +43,7 @@
     "NAMES": [
       "reinforced"
     ],
-    "DESCRIPTION": "#yCard #yMod: Reinforced cards grant #b4 #yBlock when played."
+    "DESCRIPTION": "#yCard #yMod: Reinforced cards grant #b3 #yBlock when played."
   },
   {
     "PROPER_NAME" : "Nulling",
@@ -78,7 +78,7 @@
     "NAMES": [
       "springloaded"
     ],
-    "DESCRIPTION": "#yCard #yMod: Springloaded cards draw #b1 card and discard #b1 card when played."
+    "DESCRIPTION": "#yCard #yMod: Springloaded cards draw #b1 card and discard #b1 random card when played."
   },
   {
     "PROPER_NAME" : "Adverse Reaction",
@@ -107,5 +107,33 @@
       "tinker"
     ],
     "DESCRIPTION": "Tinker increases the effects of #yCard #yMods."
+  },
+  {
+    "PROPER_NAME" : "Broken",
+    "NAMES": [
+      "broken"
+    ],
+    "DESCRIPTION": "#yCard #yMod: Broken injector cards have double the chance to trigger an #yAdverse #yReaction."
+  },
+  {
+    "PROPER_NAME" : "Blind",
+    "NAMES": [
+      "blind"
+    ],
+    "DESCRIPTION": "While Blind, you cannot see enemy intents."
+  },
+  {
+    "PROPER_NAME" : "Entangled",
+    "NAMES": [
+      "entangled"
+    ],
+    "DESCRIPTION": "While Entangled, you cannot play #yAttacks this turn."
+  },
+  {
+    "PROPER_NAME" : "Malleable",
+    "NAMES": [
+      "malleable"
+    ],
+    "DESCRIPTION": "Upon receiving attack damage, gain #yBlock equal to your Malleable. #yBlock gain increases by #b1 each time Malleable is triggered. Resets to its original value at the start of your turn."
   }
 ]

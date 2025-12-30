@@ -1,14 +1,4 @@
 {
-  "${modID}:ExampleCard": {
-    "NAME": "Name",
-    "DESCRIPTION": "Description. NL Second line.",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
-    "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
-    ]
-  },
   "${modID}:Strike_Artifex": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
@@ -45,14 +35,9 @@
     "NAME": "Conk",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy has 2 or more Weak, stun them and remove all Weak. NL Otherwise, apply !M! Weak."
   },
-  "${modID}:DefensiveLunge": {
-    "NAME": "Defensive Lunge",
+  "${modID}:DefensiveSwipe": {
+    "NAME": "Defensive Swipe",
     "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! Block."
-  },
-  "${modID}:Flurry": {
-    "NAME": "Flurry",
-    "DESCRIPTION": "Deal !D! damage and apply 1 Weak to a random enemy X times. NL Exhaust 1 card at random.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and apply 1 Weak to a random enemy X+1 times. NL Exhaust 1 card."
   },
   "${modID}:ShieldBash": {
     "NAME": "Shield Bash",
@@ -99,10 +84,6 @@
     "NAME": "Explosive Grenade",
     "DESCRIPTION": "At the end of your next turn, deal !M! damage to ALL enemies."
   },
-  "${modID}:PoisonGasGrenade": {
-    "NAME": "Poison Gas Grenade",
-    "DESCRIPTION": "At the end of your next turn, apply !M! Poison to ALL enemies."
-  },
   "${modID}:ResonanceGrenade": {
     "NAME": "Resonance Grenade",
     "DESCRIPTION": "At the end of your next turn, deal !M! damage and apply !${modID}:vuln! Vulnerable to ALL enemies."
@@ -121,7 +102,7 @@
   },
   "${modID}:TimeDilationGrenade": {
     "NAME": "Time Dilation Grenade",
-    "DESCRIPTION": "At the start of your next turn, draw !M! cards."
+    "DESCRIPTION": "At the start of your next turn, draw !M! additional cards."
   },
   "${modID}:StrengthUp": {
     "NAME": "Strength",
@@ -162,7 +143,7 @@
   },
   "${modID}:RubbergumInjector": {
     "NAME": "Rubbergum Injector",
-    "DESCRIPTION": "Whenever you lose HP this turn, gain !M! Block next turn. NL ${modID}:Adverse *Reaction: NL Shuffle a *Slimed into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Gain !M! ${modID}:Malleable. NL ${modID}:Adverse *Reaction: NL Shuffle a *Slimed into your draw pile. NL Exhaust."
   },
   "${modID}:SalveInjector": {
     "NAME": "Salve Injector",
@@ -170,12 +151,12 @@
   },
   "${modID}:ShadeOilInjector": {
     "NAME": "Shade Oil Injector",
-    "DESCRIPTION": "Gain !M! Intangible. NL Gain 2 Vulnerable. NL ${modID}:Adverse *Reaction: NL Shuffle an *Evil *Twin into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Intangible. NL ${modID}:Adverse *Reaction: NL Shuffle an *Evil *Twin into your draw pile. NL Exhaust."
   },
   "${modID}:SphynxSaltInjector": {
     "NAME": "Sphynx Salt Injector",
-    "DESCRIPTION": "Scry !M!. Draw !${modID}:draw! card. NL ${modID}:Adverse *Reaction: NL Gain *Entangled NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Scry !M!. Draw !${modID}:draw! cards. NL ${modID}:Adverse *Reaction: NL Gain *Entangled NL Exhaust."
+    "DESCRIPTION": "Scry !M!. NL Draw !${modID}:draw! cards. NL ${modID}:Adverse *Reaction: NL Gain ${modID}:Entangled NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Scry !M!. NL Draw !${modID}:draw! cards. NL ${modID}:Adverse *Reaction: NL Gain ${modID}:Entangled NL Exhaust."
   },
   "${modID}:RifleThroughTrash": {
     "NAME": "Rifle Through Trash",
@@ -202,8 +183,7 @@
   },
   "${modID}:ForceBracelet": {
     "NAME": "Force Bracelet",
-    "DESCRIPTION": "Gain !M! Metallicize NL X times. NL When you end your turn with no [E] , lose 3 Metallicize.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Metallicize NL X+1 times. NL When you end your turn with no [E] , lose 3 Metallicize."
+    "DESCRIPTION": "Gain 3 Metallicize NL X times. NL When you end your turn with no [E] , lose !M! Metallicize."
   },
   "${modID}:Juke": {
     "NAME": "Juke",
@@ -224,7 +204,8 @@
   },
   "${modID}:SolarCell": {
     "NAME": "Solar Cell",
-    "DESCRIPTION": "Unplayable. NL When you draw this card, gain !M! [E]. NL At the end of your turn, reduce this amount by 1."
+    "DESCRIPTION": "Unplayable. NL Whenever you draw this, gain [E]. NL If it's in hand at the end of your turn, reduce this amount.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever you draw this, gain [E] [E]. NL If it's in hand at the end of your turn, reduce this amount."
   },
   "${modID}:Disassemble": {
     "NAME": "Disassemble",
@@ -244,25 +225,13 @@
     "NAME": "Deft Throwing",
     "DESCRIPTION": "At the start of your turn, gain !M! temporary Dexterity for each active grenade."
   },
-  "${modID}:ZetachromeLune": {
-    "NAME": "Zetachrome Lune",
-    "DESCRIPTION": "Ethereal. NL Gain !M! Metallicize. NL At the start of each turn, lose 1 Metallicize."
-  },
-  "${modID}:FlumeFlier": {
-    "NAME": "Flume Flier",
-    "DESCRIPTION": "At the start of your turn, add a *Flume *Dash into your hand."
-  },
-  "${modID}:FlumeDash": {
-    "NAME": "Flume Dash",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards. NL Add a *Burn into your discard pile. NL Exhaust."
-  },
   "${modID}:CarbideHandBones": {
     "NAME": "Carbide Hand Bones",
     "DESCRIPTION": "${modID}:Cybernetic. NL ALL *Strikes deal 1.3x damage."
   },
   "${modID}:ForceModulator": {
     "NAME": "Force Modulator",
-    "DESCRIPTION": "${modID}:Cybernetic. NL Your first Attack each turn deals damage regardless of the enemy's block."
+    "DESCRIPTION": "${modID}:Cybernetic. NL Your Attacks are treated as HP Loss, ignoring enemy Block."
   },
   "${modID}:InflatableAxons": {
     "NAME": "Inflatable Axons",
@@ -273,12 +242,12 @@
     "DESCRIPTION": "${modID}:Cybernetic. NL ALL ${modID}:Gun cards deal !M! additional damage."
   },
   "${modID}:HyperElasticAnkleTendons": {
-    "NAME": "Hyper-Elastic Ankle Tendons",
+    "NAME": "Elastic Ankle Tendons",
     "DESCRIPTION": "${modID}:Cybernetic. NL Your *Sprints draw 1 additional card."
   },
   "${modID}:MedassistModule": {
     "NAME": "Medassist Module",
-    "DESCRIPTION": "${modID}:Cybernetic. NL Your first played *Injector card each turn costs 0."
+    "DESCRIPTION": "${modID}:Cybernetic. NL At the start of your turn, put 1 random Injector from your draw pile in your hand and ${modID}:Modify it with ${modID}:Springloaded."
   },
   "${modID}:ForceKnife": {
     "NAME": "Force Knife",
@@ -298,15 +267,15 @@
   },
   "${modID}:HolographicVisage": {
     "NAME": "Holographic Visage",
-    "DESCRIPTION": "${modID}:Cybernetic. NL The next 2 times you end your turn without playing any Attacks, gain 1 Buffer."
+    "DESCRIPTION": "${modID}:Cybernetic. NL The next 3 times you end your turn without playing any Attacks, gain 1 Buffer."
   },
   "${modID}:CathedraWithRubyTracery": {
     "NAME": "Ruby Cathedra",
-    "DESCRIPTION": "${modID}:Cybernetic. NL At the start of your turn, gain [E]. NL Shuffle a *Pyrokinesis *Field into your draw pile."
+    "DESCRIPTION": "${modID}:Cybernetic. NL Shuffle a *Pyrokinesis *Field into your draw pile. NL At the start of your turn, gain [E] and Transform 1 card into a *Burn."
   },
   "${modID}:PyrokinesisField": {
     "NAME": "Pyrokinesis Field",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *Void into your discard pile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "${modID}:Improvise": {
     "NAME": "Improvise",
@@ -317,14 +286,9 @@
     "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Shuffle a *Sprint into your draw pile.",
     "UPGRADE_DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Shuffle a *Sprint+ into your draw pile."
   },
-  "${modID}:Longstrider": {
-    "NAME": "Longstrider",
-    "DESCRIPTION": "At the end of your turn, shuffle a *Sprint into your draw pile.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, shuffle a *Sprint+ into your draw pile."
-  },
   "${modID}:Juicer": {
     "NAME": "Juicer",
-    "DESCRIPTION": "Whenever you play an injector, gain !M! temporary Strength. NL Whenever you trigger an ${modID}:Adverse *Reaction, gain !M! Strength."
+    "DESCRIPTION": "Played injectors grant !M! temporary Strength. NL ${modID}:Adverse *Reactions grant !M! Strength."
   },
   "${modID}:JackIn": {
     "NAME": "Jack In",
@@ -347,8 +311,8 @@
   },
   "${modID}:Grindstone": {
     "NAME": "Grindstone",
-    "DESCRIPTION": "${modID}:Modify an Attack in your draw pile with ${modID}:Sharp. NL ${modID}:Guns excluded. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Modify !M! Attacks in your draw pile with ${modID}:Sharp. NL Exhaust."
+    "DESCRIPTION": "${modID}:Modify !M! Attacks in your draw pile with ${modID}:Sharp. NL ${modID}:Guns excluded. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Modify !M! Attacks in your draw pile with ${modID}:Sharp. NL ${modID}:Guns excluded."
   },
   "${modID}:EMPGrenade": {
     "NAME": "EMP Grenade",
@@ -356,7 +320,7 @@
   },
   "${modID}:MagneticCore": {
     "NAME": "Magnetic Core",
-    "DESCRIPTION":  "${modID}:Cybernetic. NL Reduce the cost of Powers by 1. NL Whenever you play a Power, apply 1 ${modID}:Pulsed to a random enemy."
+    "DESCRIPTION":  "${modID}:Cybernetic. NL Whenever you draw a Power, apply 1 ${modID}:Pulsed to ALL enemies."
   },
   "${modID}:EvilTwinStatus": {
     "NAME": "Evil Twin",
@@ -364,11 +328,11 @@
   },
   "${modID}:LoveInjector": {
     "NAME": "Love Injector",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Lovesick. NL ${modID}:Adverse *Reaction: NL Add 2 *Burns into your hand. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Lovesick. NL ${modID}:Adverse *Reaction: NL Transform ALL cards in your hand into *Burns. NL Exhaust."
   },
   "${modID}:SkulkInjector": {
     "NAME": "Skulk Injector",
-    "DESCRIPTION": "${modID}:Modify !M! random cards in your hand with ${modID}:Flexiweaved. NL ${modID}:Adverse *Reaction: NL You cannot see enemy intents for 2 turns. NL Exhaust."
+    "DESCRIPTION": "${modID}:Modify !M! random cards in your hand with ${modID}:Flexiweaved. NL ${modID}:Adverse *Reaction: NL Gain 2 ${modID}:Blind. NL Exhaust."
   },
   "${modID}:Shocked": {
     "NAME": "Shocked",
@@ -376,10 +340,19 @@
   },
   "${modID}:ReverseEngineer": {
     "NAME": "Reverse Engineer",
-    "DESCRIPTION": "Gain !M! ${modID}:Tinker. NL Transform all cards in your hand into *Shocked. NL Exhaust."
+    "DESCRIPTION": "Gain !M! ${modID}:Tinker. NL Transform ALL cards in your hand into *Shocked. NL Exhaust."
   },
   "${modID}:BiodynamicPowerPlant": {
     "NAME": "Biodynamic Power Plant",
     "DESCRIPTION":  "${modID}:Cybernetic. NL Whenever you gain HP, gain [E] next turn."
+  },
+  "${modID}:Nostrum": {
+    "NAME": "Nostrum",
+    "DESCRIPTION": "Transform ALL cards in your hand into random ${modID}:Broken injectors. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Transform ALL cards in your hand into random injectors. NL Exhaust."
+  },
+  "${modID}:PumpShotgun": {
+    "NAME": "Pump Shotgun",
+    "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Deal !D! damage again to ALL enemies. NL Discard 1 card at random."
   }
 }

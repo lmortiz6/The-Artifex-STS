@@ -1,9 +1,16 @@
 {
-  "${modID}:RelicID": {
-    "NAME": "Good Relic",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+  "${modID}:AbstractCredRelic": {
+    "NAME": "Cybernetic",
+    "FLAVOR": "",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "Cybernetic cards can be implanted as permanent relics at #yRest #ySites for a credit cost equal to their energy cost. They cannot be upgraded."
+    ]
+  },
+  "${modID}:AbstractCyberRelic": {
+    "NAME": "Cybernetic Relic",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Cybernetic relics can be unimplanted at #yRest #ySites to gain their respective card."
     ]
   },
   "${modID}:CarbideHandBonesRelic": {
@@ -17,7 +24,7 @@
     "NAME": "Force Modulator",
     "FLAVOR": "The emitted frequencies of your tiniest bits are synchronized with the standardized band for force emission.",
     "DESCRIPTIONS": [
-      "#yCybernetic. Your first attack each turn deals damage regardless of the enemy's #yBlock."
+      "#yCybernetic. Your #yAttacks are treated as HP Loss, ignoring enemy #yBlock."
     ]
   },
   "${modID}:InflatableAxonsRelic": {
@@ -31,7 +38,7 @@
     "NAME": "Stabilizer Arm Locks",
     "FLAVOR": "Chrome clasps fasten arm joints to emulate the stillness of unlife.",
     "DESCRIPTIONS": [
-      "#yCybernetic. ALL ${modID}:Gun cards deal #b2 additional damage."
+      "#yCybernetic. ALL #yGun cards deal #b2 additional damage."
     ]
   },
   "${modID}:StartingCredits": {
@@ -43,7 +50,7 @@
   },
   "${modID}:CathedraWithRubyTraceryRelic": {
     "NAME": "Ruby Cathedra",
-    "FLAVOR": "Wavecrests of slag interrupt the plane geometry of the gigantic seat. The splats and claw feet are burned and disarranged; the ritual of transformation never ends.",
+    "FLAVOR": "Wavecrests of slag interrupt the plane geometry of the gigantic seat. The splats and claw feet are burned and disarranged.",
     "DESCRIPTIONS": [
       "#yCybernetic. At the start of your turn, gain ",
       ". At the start of combat, shuffle a #yPyrokinesis #yField into your draw pile."
@@ -60,7 +67,7 @@
     "NAME": "Holographic Visage",
     "FLAVOR": "Emulsion slicks on the cheek and laser light evokes pareidolic warmth.",
     "DESCRIPTIONS": [
-      "#yCybernetic. Each combat, the first #b2 times you end your turn without playing any attacks, gain #b1 #yBuffer."
+      "#yCybernetic. Each combat, the first #b3 times you end your turn without playing any attacks, gain #b1 #yBuffer."
     ]
   },
   "${modID}:HyperElasticAnkleTendonsRelic": {
@@ -74,7 +81,7 @@
     "NAME": "Medassist Module",
     "FLAVOR": "Pneumatic applicators are hardwired to an intelligent control unit that dictates the injection of protean dyes into the veins.",
     "DESCRIPTIONS": [
-      "#yCybernetic. Your first played #yInjector card each turn costs #b0."
+      "#yCybernetic. At the start of your turn, put #b1 random Injector from your draw pile in your hand and #yModify it with #ySpringloaded."
     ]
   },
   "${modID}:MotorizedTreadsRelic": {
@@ -137,14 +144,14 @@
     "NAME": "Chiral Rings",
     "FLAVOR": "Giant, flattened rings of hypercooled crysteel correlate their wearer to an astronomical body and serve as celestial equator, declination, and meridian.",
     "DESCRIPTIONS": [
-      "Whenever you receive unblocked attack damage, enemy temporarily loses #b2 #yStrength at the start of your next turn."
+      "Enemies that deal you unblocked attack damage temporarily lose #b2 #yStrength at the start of your turn."
     ]
   },
   "${modID}:AmaranthinePrismRelic": {
     "NAME": "Amaranthine Prism",
     "FLAVOR": "A starless, triangular prism of black glass holds still.",
     "DESCRIPTIONS": [
-      "Gain [E] [E] at the start of your turn. Reduce this amount by #b1 at the end of every #b6th combat. If your starting [E] is reduced to #b0, instantly die."
+      "Gain [E] [E] at the start of your turn. Reduce this amount by #b1 whenever you climb #b10 floors (can be negative)."
     ]
   },
   "${modID}:OtherpearlRelic": {
