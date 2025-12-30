@@ -31,10 +31,10 @@ public class InflatableAxonsRelic extends AbstractCyberneticRelic {
     public void atBattleStartPreDraw() {
         AbstractDungeon.player.gameHandSize += 1;
 
-        if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+        /*if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             //int maxDraw = Math.min(AbstractDungeon.player.gameHandSize, AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
             //TheArtifexMod.cardsDrawnAtTurnStart = Math.min(maxDraw, 10 - AbstractDungeon.player.hand.size());
-        }
+        }*/
     }
 
     @Override
