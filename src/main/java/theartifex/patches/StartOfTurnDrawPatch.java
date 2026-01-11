@@ -22,9 +22,9 @@ public class StartOfTurnDrawPatch {
                 locator = Locator.class
         )
         public static void Insert(GameActionManager __instance) {
-            int maxDraw = Math.min(AbstractDungeon.player.gameHandSize, AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
+            int maxDraw = Math.min(AbstractDungeon.player.gameHandSize + (3 * Boolean.compare(AbstractDungeon.player.hasRelic("Pocketwatch") && AbstractDungeon.player.getRelic("Pocketwatch").counter <= 3, false)), AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
             TheArtifexMod.cardsDrawnAtTurnStart = Math.min(maxDraw, 10 - AbstractDungeon.player.hand.size());
-            TheArtifexMod.logger.info("cardsDrawnAtTurnStart: " + TheArtifexMod.cardsDrawnAtTurnStart);
+            TheArtifexMod.logger.info("turn | cardsDrawnAtTurnStart: " + GameActionManager.turn + " | " + TheArtifexMod.cardsDrawnAtTurnStart);
         }
     }
 
@@ -37,9 +37,9 @@ public class StartOfTurnDrawPatch {
                 locator = Locator.class
         )
         public static void Insert(AbstractRoom __instance) {
-            int maxDraw = Math.min(AbstractDungeon.player.gameHandSize, AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
+            int maxDraw = Math.min(AbstractDungeon.player.gameHandSize + (2 * Boolean.compare(AbstractDungeon.player.hasRelic("Bag of Preparation"), false)) + (2 * Boolean.compare(AbstractDungeon.player.hasRelic("Ring of the Snake"), false)), AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
             TheArtifexMod.cardsDrawnAtTurnStart = Math.min(maxDraw, 10 - AbstractDungeon.player.hand.size());
-            TheArtifexMod.logger.info("cardsDrawnAtTurnStart: " + TheArtifexMod.cardsDrawnAtTurnStart);
+            TheArtifexMod.logger.info("turn | cardsDrawnAtTurnStart: " + GameActionManager.turn + " | " + TheArtifexMod.cardsDrawnAtTurnStart);
         }
     }
 
