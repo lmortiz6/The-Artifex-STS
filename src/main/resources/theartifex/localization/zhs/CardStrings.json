@@ -37,7 +37,7 @@
   },
   "${modID}:DefensiveSwipe": {
     "NAME": "防御横扫",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 在下一回合获得 !B! 点 格挡 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 在下一回合获得 !B! 点 格挡 。"
   },
   "${modID}:ShieldBash": {
     "NAME": "盾击",
@@ -90,7 +90,7 @@
   },
   "${modID}:StunGasGrenade": {
     "NAME": "眩晕毒气弹",
-    "DESCRIPTION": "在你下回合结束时，造成 5 点伤害并对所有敌人施加 !M! 层 虚弱 。"
+    "DESCRIPTION": "在你下回合结束时，造成 !${modID}:dam! 点伤害并对所有敌人施加 !M! 层 虚弱 。"
   },
   "${modID}:HandENuke": {
     "NAME": "手持核弹",
@@ -209,8 +209,8 @@
   },
   "${modID}:Disassemble": {
     "NAME": "拆解",
-    "DESCRIPTION": "消耗 1 张牌以获得 6 金币。",
-    "UPGRADE_DESCRIPTION": "最多 消耗 !M! 张牌。 NL 每消耗一张牌，获得 6 金币。"
+    "DESCRIPTION": "消耗一张卡牌，获得 !M! 金币。 NL 在本场战斗中，此牌获得的金币数减少 2。",
+    "UPGRADE_DESCRIPTION": "消耗至多 2 张卡牌。 NL 每消耗一张卡牌，获得 !M! 金币。 NL 在本场战斗中，此牌获得的金币数减少 2。"
   },
   "${modID}:BoundingBoots": {
     "NAME": "弹跃战靴",
@@ -218,8 +218,8 @@
   },
   "${modID}:MetamorphicPolygel": {
     "NAME": "多态凝胶",
-    "DESCRIPTION": "选择一张牌。 NL 将该牌的一张复制加入你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 选择一张牌。 NL 将该牌的一张复制加入你的手牌。 NL 消耗 。"
+    "DESCRIPTION": "选择一张卡牌。 NL 将此牌 变化 为该卡牌，并将其置入你的手牌。",
+    "UPGRADE_DESCRIPTION": "保留。 NL 选择一张卡牌。 NL 将此牌 变化 为该卡牌，并将其置入你的手牌。"
   },
   "${modID}:DeftThrowing": {
     "NAME": "灵巧投掷",
@@ -270,11 +270,11 @@
     "DESCRIPTION": "${modID}:义体 。 NL 接下来 3 次在你结束回合时未打出任何 攻击 牌，获得 1 层 缓冲 。"
   },
   "${modID}:CathedraWithRubyTracery": {
-    "NAME": "红宝石刻纹座椅",
-    "DESCRIPTION": "${modID}:义体 。 NL 将一张 *念动力 *领域 洗入你的抽牌堆。 NL 在你的回合开始时，获得 [E] 并将 1 张牌 转化 为 *灼伤 。"
+    "NAME": "红宝石圣座",
+    "DESCRIPTION": "${modID}:义体 。 NL 将一张 *念动烈焰领域 洗入你的抽牌堆。 NL 在你回合开始时，获得 [E] ，额外抽 1 张牌，并将 1 张卡牌 变化 为一张 *灼伤。"
   },
   "${modID}:PyrokinesisField": {
-    "NAME": "念动力领域",
+    "NAME": "念动烈焰领域",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
   },
   "${modID}:Improvise": {
@@ -284,7 +284,7 @@
   "${modID}:SlingAndRun": {
     "NAME": "射击脱身",
     "DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 将一张 *冲刺 洗入你的抽牌堆。",
-    "UPGRADE_DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 将一张 *冲刺+ 洗入你的抽牌堆。"
+    "UPGRADE_DESCRIPTION": "${modID}:枪械 。 NL 造成 !D! 点伤害。 NL 将一张 *冲刺 洗入你的抽牌堆。"
   },
   "${modID}:Juicer": {
     "NAME": "打药者",
@@ -328,7 +328,7 @@
   },
   "${modID}:LoveInjector": {
     "NAME": "爱意注射器",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 ${modID}:相思 。 NL ${modID}:不良反应 ： NL 将你手牌中的所有牌 转化 为 *灼伤 。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 ${modID}:相思 。 NL ${modID}:不良反应 ： NL 将你手牌中的所有牌 变化 为 *灼伤 。 NL 消耗 。"
   },
   "${modID}:SkulkInjector": {
     "NAME": "潜行注射器",
@@ -340,7 +340,7 @@
   },
   "${modID}:ReverseEngineer": {
     "NAME": "逆向工程",
-    "DESCRIPTION": "获得 !M! 层 ${modID}:调校 。 NL 将你手牌中的所有牌 转化 为 *震击 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !M! 层 ${modID}:调校 。 NL 将你手牌中的所有牌 变化 为 *震击 。 NL 消耗 。"
   },
   "${modID}:BiodynamicPowerPlant": {
     "NAME": "生物动力核心",
@@ -348,8 +348,8 @@
   },
   "${modID}:Nostrum": {
     "NAME": "秘药",
-    "DESCRIPTION": "将你手牌中的所有牌 转化 为随机 ${modID}:损坏 注射器 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "将你手牌中的所有牌 转化 为随机 注射器 。 NL 消耗 。"
+    "DESCRIPTION": "将你手牌中的所有牌 变化 为随机 ${modID}:损坏 注射器 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将你手牌中的所有牌 变化 为随机 注射器 。 NL 消耗 。"
   },
   "${modID}:PumpShotgun": {
     "NAME": "泵动霰弹枪",
