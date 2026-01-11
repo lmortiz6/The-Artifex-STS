@@ -22,7 +22,7 @@ public class SalveInjector extends AbstractInjector {
             CardTarget.SELF,
             1
     );
-    private static final int BUFF = 5;
+    private static final int BUFF = 6;
     private static final int UPG_BUFF = 2;
 
     public SalveInjector() {

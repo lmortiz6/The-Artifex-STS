@@ -30,7 +30,7 @@ public class PhaseCannon extends AbstractGun {
             CardTarget.ENEMY,
             9
     );
-    private static final int DAMAGE = 32;
+    private static final int DAMAGE = 30;
     private static final int UPG_DAMAGE = 8;
 
     public PhaseCannon() {
@@ -52,28 +52,37 @@ public class PhaseCannon extends AbstractGun {
 
     @Override
     public void atTurnStart() {
-        resetAttributes();
-        applyPowers();
-        setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        super.atTurnStart();
+        if (!AbstractDungeon.player.hasPower("Confusion")) {
+            resetAttributes();
+            applyPowers();
+            setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        }
     }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        if (!AbstractDungeon.player.hasPower("Confusion") && this.costForTurn > this.cost - TheArtifexMod.cardsDrawnAtTurnStart) {
+            setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        }
     }
 
     @Override
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
+        if (!AbstractDungeon.player.hasPower("Confusion") && this.costForTurn > this.cost - TheArtifexMod.cardsDrawnAtTurnStart) {
         setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
         AbstractCard tmp = new PhaseCannon();
-        if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null &&
-                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
-            setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        if (AbstractDungeon.player != null && !AbstractDungeon.player.hasPower("Confusion")) {
+            if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null &&
+                    (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+                setCostForTurn(this.cost - TheArtifexMod.cardsDrawnAtTurnStart);
+        }
         return tmp;
     }
 }

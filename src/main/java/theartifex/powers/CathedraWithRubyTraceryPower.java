@@ -4,9 +4,11 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.actions.TransformCardInHandAction;
 import theartifex.cards.attacks.PyrokinesisField;
+import theartifex.relics.CathedraWithRubyTraceryRelic;
 
 import static theartifex.TheArtifexMod.makeID;
 
@@ -23,22 +25,34 @@ public class CathedraWithRubyTraceryPower extends BasePower{
 
     @Override
     public void onInitialApplication() {
+        AbstractDungeon.player.gameHandSize += amount;
         addToBot(new MakeTempCardInDrawPileAction(new PyrokinesisField(), amount, true, true));
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
+        AbstractDungeon.player.gameHandSize += stackAmount;
         addToBot(new MakeTempCardInDrawPileAction(new PyrokinesisField(), stackAmount, true, true));
     }
 
     public void atStartOfTurn() {
-        addToBot(new GainEnergyAction(amount));
+        CathedraWithRubyTraceryRelic.transformed = false;
+    addToBot(new GainEnergyAction(amount));
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
-        addToBot(new TransformCardInHandAction(amount, new Burn()));
+        if (!CathedraWithRubyTraceryRelic.transformed) {
+            int installed = 0;
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                if (r instanceof CathedraWithRubyTraceryRelic) {
+                    installed++;
+                }
+            }
+            addToBot(new TransformCardInHandAction(amount + installed, new Burn()));
+            CathedraWithRubyTraceryRelic.transformed = true;
+        }
     }
 
     public void updateDescription() {
@@ -46,7 +60,7 @@ public class CathedraWithRubyTraceryPower extends BasePower{
         sb.append(String.format(DESCRIPTIONS[0], (this.amount)));
         for (int i = 0; i < amount; i++)
             sb.append("[E] ");
-        sb.append(LocalizedStrings.PERIOD);
+        sb.append(String.format(DESCRIPTIONS[1], (this.amount)));
         this.description = sb.toString();
     }
 }

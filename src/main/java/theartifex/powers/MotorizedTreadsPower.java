@@ -1,13 +1,13 @@
 package theartifex.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class MotorizedTreadsPower extends BasePower implements InvisiblePower {
+public class MotorizedTreadsPower extends BasePower {
 
     public static final String POWER_ID = makeID(MotorizedTreadsPower.class.getSimpleName());
     private static final PowerType TYPE = PowerType.BUFF;
@@ -21,19 +21,19 @@ public class MotorizedTreadsPower extends BasePower implements InvisiblePower {
 
     @Override
     public void onInitialApplication() {
-        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
+        AbstractDungeon.player.gameHandSize += amount;
     }
 
     @Override
     public void stackPower(int stackAmount) {
-        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, stackAmount)));
+        AbstractDungeon.player.gameHandSize += stackAmount;
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
         super.atStartOfTurnPostDraw();
 
-        addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
+        //addToBot(new ApplyPowerAction(owner, owner, new NextTurnDrawPower(owner, owner, amount)));
         addToBot(new ApplyPowerAction(owner, owner, new NoDrawPower(owner)));
     }
 
