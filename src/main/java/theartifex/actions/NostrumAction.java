@@ -2,7 +2,9 @@ package theartifex.actions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theartifex.cards.attacks.LoveInjector;
@@ -49,22 +51,33 @@ public class NostrumAction extends AbstractGameAction {
                 }
             }
 
+            boolean transformed = false;
             for (int i = 0; i < AbstractDungeon.player.hand.size(); i++) {
                 AbstractCard target = AbstractDungeon.player.hand.group.get(i);
-                AbstractCard replacementCopy = injectors.get(AbstractDungeon.cardRandomRng.random(0, injectors.size() - 1)).makeStatEquivalentCopy();
-                replacementCopy.current_x = target.current_x;
-                replacementCopy.current_y = target.current_y;
-                replacementCopy.target_x = target.target_x;
-                replacementCopy.target_y = target.target_y;
-                replacementCopy.drawScale = 1.0F;
-                replacementCopy.targetDrawScale = target.targetDrawScale;
-                replacementCopy.angle = target.angle;
-                replacementCopy.targetAngle = target.targetAngle;
-                replacementCopy.superFlash(Color.WHITE.cpy());
-                AbstractDungeon.player.hand.group.set(i, replacementCopy);
+                if (isTransformable(target)) {
+                    transformed = true;
+                    AbstractCard replacementCopy = injectors.get(AbstractDungeon.cardRandomRng.random(0, injectors.size() - 1)).makeStatEquivalentCopy();
+                    replacementCopy.current_x = target.current_x;
+                    replacementCopy.current_y = target.current_y;
+                    replacementCopy.target_x = target.target_x;
+                    replacementCopy.target_y = target.target_y;
+                    replacementCopy.drawScale = 1.0F;
+                    replacementCopy.targetDrawScale = target.targetDrawScale;
+                    replacementCopy.angle = target.angle;
+                    replacementCopy.targetAngle = target.targetAngle;
+                    replacementCopy.superFlash(Color.WHITE.cpy());
+                    AbstractDungeon.player.hand.group.set(i, replacementCopy);
+                }
+            }
+            if (transformed) {
+                addToTop(new SFXAction("POTION_DROP_2"));
             }
             AbstractDungeon.player.hand.glowCheck();
         }
         tickDuration();
+    }
+
+    private boolean isTransformable(AbstractCard card) {
+        return (!(card instanceof Necronomicurse));
     }
 }
