@@ -7,9 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theartifex.abstracts.AbstractGun;
 import theartifex.relics.AdvancedToolkitRelic;
-import theartifex.relics.BasicToolkitRelic;
 import theartifex.util.CustomCardTags;
 
 import java.util.ArrayList;

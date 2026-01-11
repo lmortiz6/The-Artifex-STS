@@ -1,19 +1,11 @@
 package theartifex.relics;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theartifex.TheArtifexMod;
-import theartifex.abstracts.AbstractGun;
 import theartifex.actions.AdvancedToolkitAction;
-import theartifex.actions.ToolkitAction;
 import theartifex.character.TheArtifexCharacter;
-import theartifex.util.CustomCardTags;
-
-import java.util.ArrayList;
 
 import static theartifex.TheArtifexMod.makeID;
 
