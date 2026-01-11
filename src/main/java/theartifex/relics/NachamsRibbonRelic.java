@@ -1,9 +1,9 @@
 package theartifex.relics;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.TheArtifexMod;
 import theartifex.character.TheArtifexCharacter;
@@ -25,7 +25,7 @@ public class NachamsRibbonRelic extends BaseRelic{
 
     public NachamsRibbonRelic() {
         super(ID, NAME, TheArtifexCharacter.Meta.CARD_COLOR, RARITY, SOUND);
-        this.tips.add(new PowerTip(TipHelper.capitalize("Card Mod"), "Card mods grant additional effects when played. Cards can have a maximum of 2 mods."));
+        this.tips.add(new PowerTip(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[4], CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[5]));
     }
 
     public String getUpdatedDescription() {
@@ -62,7 +62,7 @@ public class NachamsRibbonRelic extends BaseRelic{
     }
 
     private void modCard(AbstractCard c) {
-        if (!CustomCardTags.getMods(c).isEmpty() || c.cost == -2  || c.color != TheArtifexCharacter.Meta.CARD_COLOR)
+        if (CustomCardTags.getMods(c).size() > 1 || c.cost == -2  || c.color != TheArtifexCharacter.Meta.CARD_COLOR)
             return;
         CustomCardTags.loadRandomMod(c, true);
         isModded.add(c);

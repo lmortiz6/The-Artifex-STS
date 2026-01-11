@@ -2,8 +2,8 @@ package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.actions.OtherpearlAction;
 import theartifex.character.TheArtifexCharacter;
@@ -21,7 +21,7 @@ public class OtherpearlRelic extends BaseRelic{
     public OtherpearlRelic() {
         super(ID, NAME, TheArtifexCharacter.Meta.CARD_COLOR, RARITY, SOUND);
         active = false;
-        this.tips.add(new PowerTip(TipHelper.capitalize("Card Mod"), "Card mods grant additional effects when played. Cards can have a maximum of 2 mods."));
+        this.tips.add(new PowerTip(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[4], CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[5]));
     }
 
     @Override
