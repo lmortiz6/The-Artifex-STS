@@ -1,5 +1,6 @@
 package theartifex.actions;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -26,12 +27,16 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
 
     private final ArrayList<AbstractCard> cannotDuplicate = new ArrayList<>();
 
-    public MetamorphicPolygelAction(AbstractCreature source, int amount) {
+    private final AbstractCard original;
+
+    public MetamorphicPolygelAction(AbstractCreature source, AbstractCard original) {
         setValues(AbstractDungeon.player, source, amount);
         this.actionType = AbstractGameAction.ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
-        this.dupeAmount = amount;
+        this.amount = 1;
+        this.dupeAmount = 1;
+        this.original = original;
     }
 
     public void update() {
@@ -48,7 +53,7 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
                 for (AbstractCard c : this.p.hand.group) {
                     if (isDualWieldable(c)) {
                         for (int i = 0; i < this.dupeAmount; i++)
-                            addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                            transformCard(original, c);
                         this.isDone = true;
                         return;
                     }
@@ -60,24 +65,37 @@ public class MetamorphicPolygelAction extends AbstractGameAction {
                 return;
             }
             if (this.p.hand.group.size() == 1) {
-                for (int i = 0; i < this.dupeAmount; i++)
-                    addToTop(new MakeTempCardInHandAction(this.p.hand.getTopCard().makeStatEquivalentCopy()));
+                transformCard(original, this.p.hand.getTopCard());
                 returnCards();
                 this.isDone = true;
             }
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
-                for (int i = 0; i < this.dupeAmount; i++)
-                    addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
-            }
+            AbstractCard c = AbstractDungeon.handCardSelectScreen.selectedCards.getTopCard();
+            addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+            transformCard(original, c);
             returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
             this.isDone = true;
         }
         tickDuration();
+    }
+
+    private void transformCard(AbstractCard target, AbstractCard replacement) {
+        AbstractCard replacementCopy = replacement.makeStatEquivalentCopy();
+        replacementCopy.current_x = target.current_x;
+        replacementCopy.current_y = target.current_y;
+        replacementCopy.target_x = target.target_x;
+        replacementCopy.target_y = target.target_y;
+        replacementCopy.drawScale = 1.0F;
+        replacementCopy.targetDrawScale = target.targetDrawScale;
+        replacementCopy.angle = target.angle;
+        replacementCopy.targetAngle = target.targetAngle;
+        replacementCopy.superFlash(Color.WHITE.cpy());
+
+        this.p.hand.addToHand(target);
+        this.p.hand.group.set(this.p.hand.group.size() - 1, replacementCopy);
     }
 
     private void returnCards() {

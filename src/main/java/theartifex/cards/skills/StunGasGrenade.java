@@ -24,18 +24,20 @@ public class StunGasGrenade extends BaseCard implements OnObtainCard {
     );
     private static final int TURNS = 2;
     private static final int DAMAGE = 5;
+    private static final int UPG_DAMAGE = 2;
     private static final int WEAK = 2;
-    private static final int UPG_WEAK = 2;
+    private static final int UPG_WEAK = 1;
 
     public StunGasGrenade() {
         super(ID, info);
         this.setMagic(WEAK, UPG_WEAK);
+        this.setCustomVar("dam", DAMAGE, UPG_DAMAGE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         CardCrawlGame.sound.playV(makeID("GRENADE_THROW"), 1.4f);
-        addToBot(new ApplyPowerAction(p, p, new StunGasGrenadePower(p, p, TURNS, DAMAGE, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StunGasGrenadePower(p, p, TURNS, this.customVar("dam"), magicNumber)));
     }
 
     @Override

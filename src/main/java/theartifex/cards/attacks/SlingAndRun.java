@@ -26,7 +26,7 @@ public class SlingAndRun extends AbstractGun {
             1
     );
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_DAMAGE = 3;
     private static final int BUFF = 1;
     //private static final int UPG_BUFF = 1;
     private final AbstractCard cardToMake;
@@ -51,12 +51,12 @@ public class SlingAndRun extends AbstractGun {
         addToBot(new MakeTempCardInDrawPileAction(cardToMake, 1, true, true, false));
     }
 
-    @Override
+    /*@Override
     public void upgrade() {
         super.upgrade();
         this.cardToMake.upgrade();
         this.cardsToPreview = this.cardToMake;
-    }
+    }*/
 
     @Override
     public AbstractCard makeCopy() { //Optional

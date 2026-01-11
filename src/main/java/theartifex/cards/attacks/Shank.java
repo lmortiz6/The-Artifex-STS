@@ -23,13 +23,14 @@ public class Shank extends BaseCard {
             1
     );
     private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 1;
     private static final int SCALING = 2;
     private static final int UPG_SCALING = 2;
 
     public Shank() {
         super(ID, info);
 
-        setDamage(DAMAGE);
+        setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(SCALING, UPG_SCALING);
     }
 

@@ -3,6 +3,7 @@ package theartifex.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,10 +24,10 @@ public class DefensiveSwipe extends BaseCard {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 2;
-    private static final int BLOCK = 4;
-    private static final int UPG_BLOCK = 2;
+    private static final int BLOCK = 3;
+    private static final int UPG_BLOCK = 1;
 
     public DefensiveSwipe() {
         super(ID, info);
@@ -38,6 +39,7 @@ public class DefensiveSwipe extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new GainBlockAction(p, block));
         addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block)));
     }
 

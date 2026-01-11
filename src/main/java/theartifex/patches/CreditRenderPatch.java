@@ -36,7 +36,7 @@ public class CreditRenderPatch {
                 hb.update(TopPanel.potionX + 51.0F * Settings.scale * AbstractDungeon.player.potionSlots, ___INFO_TEXT_Y - 30 * Settings.scale);
                 if (hb.hovered) {
                     ArrayList<PowerTip> tip = new ArrayList<>();
-                    PowerTip creditTip = new PowerTip(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[0], CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[0]);
+                    PowerTip creditTip = new PowerTip(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[0], CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[1]);
                     tip.add(creditTip);
                     TipHelper.queuePowerTips(InputHelper.mX - ___TIP_OFF_X, ___TIP_Y,  tip);
                 }

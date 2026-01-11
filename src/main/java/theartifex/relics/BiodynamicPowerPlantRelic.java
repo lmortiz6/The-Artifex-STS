@@ -1,9 +1,11 @@
 package theartifex.relics;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.cards.powers.BiodynamicPowerPlant;
 
@@ -23,8 +25,11 @@ public class BiodynamicPowerPlantRelic extends AbstractCyberneticRelic {
 
     @Override
     public int onPlayerHeal(int healAmount) {
-        flash();
-        addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EnergizedPower(AbstractDungeon.player, 1)));
+        if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null &&
+                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+            flash();
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EnergizedPower(AbstractDungeon.player, 1)));
+        }
         return super.onPlayerHeal(healAmount);
     }
 

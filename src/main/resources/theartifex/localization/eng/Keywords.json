@@ -71,7 +71,7 @@
     "NAMES": [
       "sharp"
     ],
-    "DESCRIPTION": "#yCard #yMod: Sharp cards deal #b4 additional damage when played."
+    "DESCRIPTION": "#yCard #yMod: Sharp cards deal #b3 additional damage when played."
   },
   {
     "PROPER_NAME" : "Springloaded",
@@ -106,7 +106,7 @@
     "NAMES": [
       "tinker"
     ],
-    "DESCRIPTION": "Tinker increases the effects of #yCard #yMods."
+    "DESCRIPTION": "Tinker doubles the effects of #yCard #yMods. Tinker reduces by #b1 whenever you play a #yModified card."
   },
   {
     "PROPER_NAME" : "Broken",

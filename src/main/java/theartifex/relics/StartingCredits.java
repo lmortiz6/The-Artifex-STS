@@ -1,5 +1,6 @@
 package theartifex.relics;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theartifex.abstracts.AbstractCreditRelic;
 
@@ -10,10 +11,16 @@ public class StartingCredits extends AbstractCreditRelic {
     public static final String ID = makeID(NAME);
     private static final AbstractRelic.RelicTier RARITY = RelicTier.STARTER;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
-    private static final int AMOUNT = 4;
+    private static final int AMOUNT = 3;
 
     public StartingCredits() {
         super(ID, NAME, RARITY, SOUND, AMOUNT);
+    }
+
+    public void onChestOpen(boolean bossChest) {
+        if (!bossChest && AbstractDungeon.relicRng.random(0, 3) == 0) {
+            AbstractDungeon.getCurrRoom().addRelicToRewards(new RareCreditRelic());
+        }
     }
 
     @Override

@@ -18,9 +18,9 @@ public class Juicer extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1
+            0
     );
-    private static final int BUFF = 2;
+    private static final int BUFF = 1;
     private static final int UPG_BUFF = 1;
 
     public Juicer() {

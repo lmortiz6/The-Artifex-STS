@@ -42,18 +42,17 @@
     ]
   },
   "${modID}:StartingCredits": {
-    "NAME": "Credits Wedge 4¢",
+    "NAME": "Credits Wedge 3¢",
     "FLAVOR": "A tiny wedge of plastic.",
     "DESCRIPTIONS": [
-      "Grants #b4¢ towards installing #yCybernetic cards."
+      "Grants #b3¢ towards installing #yCybernetic cards."
     ]
   },
   "${modID}:CathedraWithRubyTraceryRelic": {
     "NAME": "Ruby Cathedra",
     "FLAVOR": "Wavecrests of slag interrupt the plane geometry of the gigantic seat. The splats and claw feet are burned and disarranged.",
     "DESCRIPTIONS": [
-      "#yCybernetic. At the start of your turn, gain ",
-      ". At the start of combat, shuffle a #yPyrokinesis #yField into your draw pile."
+      "#yCybernetic. At the start of combat, shuffle a #yPyrokinesis #yField into your draw pile. At the start of your turn, gain [E] draw #b1 additional card, and #yTransform #b1 card into a #yBurn."
     ]
   },
   "${modID}:GiantHandsRelic": {
@@ -113,10 +112,10 @@
     ]
   },
   "${modID}:RareCreditRelic": {
-    "NAME": "Credits Wedge 3¢",
+    "NAME": "Credits Wedge 1¢",
     "FLAVOR": "A tiny wedge of plastic.",
     "DESCRIPTIONS": [
-      "Grants #b3¢ towards installing #yCybernetic cards."
+      "Grants #b1¢ towards installing #yCybernetic cards."
     ]
   },
   "${modID}:NachamsRibbonRelic": {
@@ -179,7 +178,7 @@
     "NAME": "Eater's Crest",
     "FLAVOR": "A miniature plastic kite proves an aristocrat scion.",
     "DESCRIPTIONS": [
-      "Grants #b3¢ towards installing #yCybernetic cards. Upon pickup, install a random #yCybernetic of cost 3 or more."
+      "Grants #b3¢ towards installing #yCybernetic cards. Upon pickup, add a random rare #yCybernetic card to your deck."
     ]
   },
   "${modID}:BiodynamicPowerPlantRelic": {
@@ -187,6 +186,20 @@
     "FLAVOR": "A microturbine skims hemopower off the circulation of blood and the chemical reactions therein.",
     "DESCRIPTIONS": [
       "#yCybernetic. Whenever you gain HP, gain [E] next turn."
+    ]
+  },
+  "${modID}:BasicToolkitRelic": {
+    "NAME": "Basic Toolkit",
+    "FLAVOR": "An array of tinkering utensils clang against tin: tweezers, a tiny hammer, pliers, inverted pliers, glass marbles, and three wrenches.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, randomly #yModify #b3 cards in hand to be #ySharp or #yReinforced."
+    ]
+  },
+  "${modID}:AdvancedToolkitRelic": {
+    "NAME": "Advanced Toolkit",
+    "FLAVOR": "An array of tinkering utensils clang against carbide: voltmeter, polyjack, soldering knife, ion shield, circuitboard, and three spare vacuum tubes.",
+    "DESCRIPTIONS": [
+      "Replaces #yBasic #yToolkit. At the start of each turn, #yModify #b2 random cards in hand with random #yMods."
     ]
   }
 }

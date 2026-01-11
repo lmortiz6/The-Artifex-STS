@@ -25,12 +25,17 @@ public class Disassemble extends BaseCard {
 
     public Disassemble() {
         super(ID, info);
-        setMagic(BUFF, UPG_BUFF);
+        setMagic(GOLD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DisassembleAction(p, p, this.magicNumber, GOLD));
+        int buff = this.upgraded ? BUFF + UPG_BUFF : BUFF;
+        addToBot(new DisassembleAction(p, p, buff, magicNumber));
+        if (this.baseMagicNumber > 0)
+            this.baseMagicNumber -= 2;
+        if (this.baseMagicNumber < 0)
+            this.baseMagicNumber = 0;
     }
 
     @Override

@@ -7,6 +7,7 @@ import theartifex.actions.MetamorphicPolygelAction;
 import theartifex.cards.BaseCard;
 import theartifex.character.TheArtifexCharacter;
 import theartifex.util.CardStats;
+import theartifex.util.CustomCardTags;
 
 public class MetamorphicPolygel extends BaseCard {
 
@@ -23,12 +24,13 @@ public class MetamorphicPolygel extends BaseCard {
     public MetamorphicPolygel() {
         super(ID, info);
         setSelfRetain(false, true);
-        this.setExhaust(true);
+        this.tags.add(CustomCardTags.THEARTIFEXCANNOTPOLYGEL);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MetamorphicPolygelAction(p, 1));
+        this.tags.add(CustomCardTags.THEARTIFEXTRANSFORMONPLAY);
+        addToBot(new MetamorphicPolygelAction(p, this));
     }
 
     @Override

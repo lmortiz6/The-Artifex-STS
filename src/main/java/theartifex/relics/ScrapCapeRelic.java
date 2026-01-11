@@ -11,7 +11,7 @@ import static theartifex.TheArtifexMod.makeID;
 public class ScrapCapeRelic extends BaseRelic{
     private static final String NAME = ScrapCapeRelic.class.getSimpleName();
     public static final String ID = makeID(NAME);
-    private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.COMMON;
+    private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.UNCOMMON;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.CLINK;
     private static final int ARMOR = 1;
 

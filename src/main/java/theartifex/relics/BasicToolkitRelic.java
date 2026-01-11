@@ -1,29 +1,27 @@
 package theartifex.relics;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import theartifex.TheArtifexMod;
+import theartifex.actions.ToolkitAction;
 import theartifex.character.TheArtifexCharacter;
-import theartifex.util.CustomCardTags;
-
-import java.util.ArrayList;
 
 import static theartifex.TheArtifexMod.makeID;
 
-public class NachamsRibbonRelic extends BaseRelic{
-    private static final String NAME = NachamsRibbonRelic.class.getSimpleName();
+public class BasicToolkitRelic extends BaseRelic{
+    private static final String NAME = BasicToolkitRelic.class.getSimpleName();
     public static final String ID = makeID(NAME);
-    private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.UNCOMMON;
-    private static final AbstractRelic.LandingSound SOUND = LandingSound.FLAT;
-    private static final int CHANCE = 15;
+    private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.STARTER;
+    private static final AbstractRelic.LandingSound SOUND = LandingSound.HEAVY;
+    private static final int AMOUNT_MODDED = 2;
+    /*private static final int CHANCE = 16;
 
     private final ArrayList<AbstractCard> doNotMod = new ArrayList<>();
     private final ArrayList<AbstractCard> isModded = new ArrayList<>();
+    */
 
-    public NachamsRibbonRelic() {
+    public BasicToolkitRelic() {
         super(ID, NAME, TheArtifexCharacter.Meta.CARD_COLOR, RARITY, SOUND);
         this.tips.add(new PowerTip(CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[4], CardCrawlGame.languagePack.getUIString(makeID("UI")).EXTRA_TEXT[5]));
     }
@@ -32,14 +30,14 @@ public class NachamsRibbonRelic extends BaseRelic{
         return this.DESCRIPTIONS[0];
     }
 
-    public void onPreviewObtainCard(AbstractCard c) {
+    /*public void onPreviewObtainCard(AbstractCard c) {
         int roll = AbstractDungeon.relicRng.random(0, CHANCE - 1);
         if (roll == 0) {
-            modCard(c);
-            TheArtifexMod.logger.info("Nachams Hit : " + roll);
+            modCard(c, true);
+            TheArtifexMod.logger.info("Toolbox Hit : " + roll);
         } else {
             doNotMod.add(c);
-            TheArtifexMod.logger.info("Nachams Miss : " + roll);
+            TheArtifexMod.logger.info("Toolbox Miss : " + roll);
         }
     }
 
@@ -48,27 +46,20 @@ public class NachamsRibbonRelic extends BaseRelic{
             return;
         int roll = AbstractDungeon.relicRng.random(0, CHANCE - 1);
         if (roll == 0) {
-            modCard(c);
-            TheArtifexMod.logger.info("Nachams Hit : " + roll);
+            modCard(c, true);
+            TheArtifexMod.logger.info("Toolbox Hit : " + roll);
         } else {
-            TheArtifexMod.logger.info("Nachams Miss : " + roll);
+            TheArtifexMod.logger.info("Toolbox Miss : " + roll);
         }
-    }
+    }*/
 
     @Override
     public void atBattleStart() {
-        doNotMod.clear();
-        isModded.clear();
+        //doNotMod.clear();
+        //isModded.clear();
+        addToBot(new ToolkitAction(AbstractDungeon.player, 3));
     }
-
-    private void modCard(AbstractCard c) {
-        if (CustomCardTags.getMods(c).size() > 1 || c.cost == -2  || c.color != TheArtifexCharacter.Meta.CARD_COLOR)
-            return;
-        CustomCardTags.loadRandomMod(c, true);
-        isModded.add(c);
-    }
-
     public AbstractRelic makeCopy() {
-        return new NachamsRibbonRelic();
+        return new BasicToolkitRelic();
     }
 }

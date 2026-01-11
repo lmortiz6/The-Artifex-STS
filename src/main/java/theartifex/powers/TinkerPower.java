@@ -2,6 +2,8 @@ package theartifex.powers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -12,16 +14,30 @@ public class TinkerPower extends BasePower{
 
     public static final String POWER_ID = makeID(TinkerPower.class.getSimpleName());
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
-    private static final boolean TURN_BASED = false;
+    private static final boolean TURN_BASED = true;
 
     public TinkerPower(AbstractCreature owner, AbstractCreature source, int amount){
         super(POWER_ID, TYPE, TURN_BASED, owner, source, amount);
         this.updateDescription();
     }
 
+    @Override
+    public void onSpecificTrigger() {
+        flash();
+        if (this.amount == 0) {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        } else {
+            addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+        }
+    }
+
     public void updateDescription() {
         this.name = getPowerStrings(this.ID).NAME + " " + intToRoman(this.amount);
-        this.description = String.format(DESCRIPTIONS[0], (this.amount));
+        if (amount > 1) {
+            this.description = String.format(DESCRIPTIONS[0], (this.amount));
+        } else {
+            this.description = String.format(DESCRIPTIONS[1], (this.amount));
+        }
     }
 
     @Override

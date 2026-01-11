@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import com.megacrit.cardcrawl.powers.HexPower;
@@ -21,10 +22,12 @@ public class LovesickPatch {
     )
     public static class DebuffPatch {
         @SpirePrefixPatch
-        public static void Prefix (@ByRef ApplyPowerAction[] __instance, float ___duration, float ___startingDuration, AbstractPower ___powerToApply) {
+        public static void Prefix (@ByRef ApplyPowerAction[] __instance, float ___duration, float ___startingDuration, @ByRef AbstractPower[] ___powerToApply) {
             if (___duration == ___startingDuration) {
-                if (__instance[0].source != null && __instance[0].source.hasPower("theartifex:LovesickPower") && ___powerToApply.type == AbstractPower.PowerType.DEBUFF) {
-                    __instance[0].target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
+                if (__instance[0].source != null && __instance[0].source.hasPower("theartifex:LovesickPower") && ___powerToApply[0].type == AbstractPower.PowerType.DEBUFF) {
+                    AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
+                    ___powerToApply[0].owner = m;
+                    __instance[0].target = m;
                     __instance[0].source.getPower("theartifex:LovesickPower").flash();
                 }
             }

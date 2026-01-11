@@ -19,6 +19,7 @@ public class CustomCardTags {
 
     private static final float TITLE_BOX_WIDTH_NO_COST = IMG_WIDTH * 0.7F;
 
+    @SpireEnum public static AbstractCard.CardTags THEARTIFEXTRANSFORMONPLAY;
     @SpireEnum public static AbstractCard.CardTags THEARTIFEXNECTAR;
     @SpireEnum public static AbstractCard.CardTags THEARTIFEXINJECTOR;
     @SpireEnum public static AbstractCard.CardTags THEARTIFEXGUN;
@@ -202,6 +203,8 @@ public class CustomCardTags {
 
         if (permanent)
             c.misc = tagsOriginal.indexOf(tags.get(i)) + 1;
+
+        c.applyPowers();
     }
 
     public static ArrayList<AbstractCard.CardTags> getTempModsList() {

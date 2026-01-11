@@ -176,7 +176,8 @@
   "${modID}:CathedraWithRubyTraceryPower": {
     "NAME": "Ruby Cathedra",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain "
+      "At the start of your turn, gain ",
+      ", draw #b%1$s additional card, and #yTransform #b%1$s card into a #yBurn."
     ]
   },
   "${modID}:JuicerPower": {
@@ -229,7 +230,8 @@
   "${modID}:TinkerPower": {
     "NAME": "Tinker",
     "DESCRIPTIONS": [
-      "Increases the effects of #yCard #yMods by #b%1$s."
+      "The effects of #yCard #yMods are doubled for the next #b%1$s #yModified cards played.",
+      "The effects of #yCard #yMods are doubled for the next #yModified card played."
     ]
   },
   "${modID}:BiodynamicPowerPlantPower": {

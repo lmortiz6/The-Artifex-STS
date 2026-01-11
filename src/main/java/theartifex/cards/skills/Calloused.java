@@ -35,7 +35,7 @@ public class Calloused extends BaseCard {
     }
 
     public void onRetained() {
-        upgradeBlock(-1);
+        this.baseBlock -= 1;
     }
 
     @Override

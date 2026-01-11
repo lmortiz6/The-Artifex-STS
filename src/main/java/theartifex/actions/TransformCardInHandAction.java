@@ -2,7 +2,9 @@ package theartifex.actions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -51,7 +53,10 @@ public class TransformCardInHandAction extends AbstractGameAction {
                 for (AbstractCard c : toRemove) {
                     transformCard(c);
                 }
-                AbstractDungeon.player.hand.glowCheck();
+                if (replacement instanceof Burn) {
+                    addToTop(new SFXAction("CARD_BURN"));
+                }
+                this.p.hand.glowCheck();
                 this.isDone = true;
                 return;
             }
@@ -69,6 +74,9 @@ public class TransformCardInHandAction extends AbstractGameAction {
             returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
+            if (replacement instanceof Burn) {
+                addToTop(new SFXAction("CARD_BURN"));
+            }
             this.p.hand.glowCheck();
             this.isDone = true;
         }
@@ -92,10 +100,12 @@ public class TransformCardInHandAction extends AbstractGameAction {
         replacementCopy.angle = target.angle;
         replacementCopy.targetAngle = target.targetAngle;
         replacementCopy.superFlash(Color.WHITE.cpy());
+        if (target instanceof Burn && replacement instanceof Burn)
+            replacementCopy.upgrade();
         this.p.hand.addToHand(replacementCopy);
     }
 
     private boolean isTransformable(AbstractCard card) {
-        return (!(card instanceof Burn));
+        return (!(card instanceof Necronomicurse));
     }
 }

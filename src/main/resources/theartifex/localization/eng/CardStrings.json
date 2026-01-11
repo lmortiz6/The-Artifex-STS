@@ -37,7 +37,7 @@
   },
   "${modID}:DefensiveSwipe": {
     "NAME": "Defensive Swipe",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! Block."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Next turn, gain !B! Block."
   },
   "${modID}:ShieldBash": {
     "NAME": "Shield Bash",
@@ -90,7 +90,7 @@
   },
   "${modID}:StunGasGrenade": {
     "NAME": "Stun Gas Grenade",
-    "DESCRIPTION": "At the end of your next turn, deal 5 damage and apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "At the end of your next turn, deal !${modID}:dam! damage and apply !M! Weak to ALL enemies."
   },
   "${modID}:HandENuke": {
     "NAME": "Hand-E-Nuke",
@@ -209,8 +209,8 @@
   },
   "${modID}:Disassemble": {
     "NAME": "Disassemble",
-    "DESCRIPTION": "Exhaust a card to gain 6 Gold.",
-    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Gain 6 Gold for each exhausted card."
+    "DESCRIPTION": "Exhaust a card to gain !M! Gold. NL Reduce this card's Gold gained by 2 this combat.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to 2 cards. NL Gain !M! Gold for each exhausted card. NL Reduce this card's Gold gained by 2 this combat."
   },
   "${modID}:BoundingBoots": {
     "NAME": "Bounding Boots",
@@ -218,8 +218,8 @@
   },
   "${modID}:MetamorphicPolygel": {
     "NAME": "Metamorphic Polygel",
-    "DESCRIPTION": "Choose a card. NL Add a copy of that card into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card. NL Add a copy of that card into your hand. NL Exhaust."
+    "DESCRIPTION": "Choose a card. NL Transform this into that card and put it in your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card. NL Transform this into that card and put it in your hand."
   },
   "${modID}:DeftThrowing": {
     "NAME": "Deft Throwing",
@@ -271,7 +271,7 @@
   },
   "${modID}:CathedraWithRubyTracery": {
     "NAME": "Ruby Cathedra",
-    "DESCRIPTION": "${modID}:Cybernetic. NL Shuffle a *Pyrokinesis *Field into your draw pile. NL At the start of your turn, gain [E] and Transform 1 card into a *Burn."
+    "DESCRIPTION": "${modID}:Cybernetic. NL Shuffle a *Pyrokinesis *Field into your draw pile. NL At the start of your turn, gain [E] , draw 1 additional card, and Transform 1 card into a *Burn."
   },
   "${modID}:PyrokinesisField": {
     "NAME": "Pyrokinesis Field",
@@ -284,7 +284,7 @@
   "${modID}:SlingAndRun": {
     "NAME": "Sling and Run",
     "DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Shuffle a *Sprint into your draw pile.",
-    "UPGRADE_DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Shuffle a *Sprint+ into your draw pile."
+    "UPGRADE_DESCRIPTION": "${modID}:Gun. NL Deal !D! damage. NL Shuffle a *Sprint into your draw pile."
   },
   "${modID}:Juicer": {
     "NAME": "Juicer",

@@ -24,7 +24,7 @@ public class ChromeRevolver extends AbstractGun {
             CardTarget.ENEMY,
             0
     );
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 3;
     private static final int UPG_DAMAGE = 2;
     private static final int DRAW = 1;
 

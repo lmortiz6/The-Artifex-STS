@@ -174,9 +174,10 @@
     ]
   },
   "${modID}:CathedraWithRubyTraceryPower": {
-    "NAME": "红宝石座椅",
+    "NAME": "红宝石圣座",
     "DESCRIPTIONS": [
-      "在你的回合开始时，获得 "
+      "在你回合开始时，获得 ",
+      " ，额外抽 #b%1$s 张牌，并将 #b%1$s 张卡牌 #y变化 为 #y灼伤。"
     ]
   },
   "${modID}:JuicerPower": {
@@ -229,7 +230,8 @@
   "${modID}:TinkerPower": {
     "NAME": "调校",
     "DESCRIPTIONS": [
-      "使 #y卡牌 #y改造 的效果提高 #b%1$s 。"
+      "接下来你打出的 #b%1$s 张被 #y改造 的卡牌，其 #y卡牌 #y改造 的效果翻倍。",
+      "接下来你打出的 #b1 张被 #y改造 的卡牌，其 #y卡牌 #y改造 的效果翻倍。"
     ]
   },
   "${modID}:BiodynamicPowerPlantPower": {

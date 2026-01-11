@@ -25,8 +25,8 @@ public class IntelligenceUp extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int BUFF = 1;
-    private static final int UPG_BUFF = 1;
+    private static final int BUFF = 5;
+    private static final int UPG_BUFF = 4;
 
     public IntelligenceUp() {
         super(ID, info);
