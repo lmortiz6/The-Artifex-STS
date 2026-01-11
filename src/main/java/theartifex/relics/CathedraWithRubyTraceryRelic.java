@@ -9,6 +9,7 @@ import theartifex.abstracts.AbstractCyberneticRelic;
 import theartifex.actions.TransformCardInHandAction;
 import theartifex.cards.attacks.PyrokinesisField;
 import theartifex.cards.powers.CathedraWithRubyTracery;
+import theartifex.powers.CathedraWithRubyTraceryPower;
 
 import static theartifex.TheArtifexMod.makeID;
 
@@ -19,8 +20,9 @@ public class CathedraWithRubyTraceryRelic extends AbstractCyberneticRelic {
     private static final AbstractRelic.LandingSound SOUND = LandingSound.HEAVY;
     private static final String card = makeID(CathedraWithRubyTracery.class.getSimpleName());
     private static final int cost = CathedraWithRubyTracery.creditCost;
+    public static boolean transformed = false;
 
-    private static boolean transformed = false;
+    private final int DRAW = 1;
 
     public CathedraWithRubyTraceryRelic() {
         super(ID, NAME, RARITY, SOUND, card, cost);
@@ -28,6 +30,7 @@ public class CathedraWithRubyTraceryRelic extends AbstractCyberneticRelic {
 
     @Override
     public void atBattleStartPreDraw() {
+        AbstractDungeon.player.gameHandSize += DRAW;
         addToBot(new MakeTempCardInDrawPileAction(new PyrokinesisField(), 1, true, true));
     }
 
@@ -40,22 +43,27 @@ public class CathedraWithRubyTraceryRelic extends AbstractCyberneticRelic {
     @Override
     public void atTurnStartPostDraw() {
         if (!transformed) {
+            int powerAmount = 0;
+            if (AbstractDungeon.player.hasPower(makeID(CathedraWithRubyTraceryPower.class.getSimpleName())))
+                powerAmount = AbstractDungeon.player.getPower(makeID(CathedraWithRubyTraceryPower.class.getSimpleName())).amount;
             int installed = 0;
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 if (r instanceof CathedraWithRubyTraceryRelic) {
                     installed++;
                 }
             }
-            addToBot(new TransformCardInHandAction(installed, new Burn()));
+            addToBot(new TransformCardInHandAction(installed + powerAmount, new Burn()));
             transformed = true;
         }
     }
 
     @Override
+    public void onVictory() {
+        AbstractDungeon.player.gameHandSize -= DRAW;
+    }
+
+    @Override
     public String getUpdatedDescription() {
-        this.description = DESCRIPTIONS[0] +
-                "[E] " +
-                DESCRIPTIONS[1];
-        return description;
+        return DESCRIPTIONS[0];
     }
 }
