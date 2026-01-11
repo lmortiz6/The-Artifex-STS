@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theartifex.cards.BaseCard;
 import theartifex.powers.StabilizerArmLocksPower;
+import theartifex.powers.TinkerPower;
 import theartifex.relics.StabilizerArmLocksRelic;
 import theartifex.util.CardStats;
 import theartifex.util.CustomCardTags;
@@ -30,9 +31,7 @@ public class AbstractGun extends BaseCard {
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower armLocksPower = AbstractDungeon.player.getPower(makeID(StabilizerArmLocksPower.class.getSimpleName()));
         StabilizerArmLocksRelic armLocksRelic = (StabilizerArmLocksRelic) AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
-        int tinker = 0;
-        if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-            tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
+        int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
 
         int originalStrength = 0;
         if (strength != null) {
@@ -45,8 +44,8 @@ public class AbstractGun extends BaseCard {
             this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
             this.baseDamage += 2 * armLocksRelic.amount;
-        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED))
-            this.baseDamage += 1 + tinker;
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED) || this.tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED))
+            this.baseDamage += tinker;
 
         super.applyPowers();
 
@@ -64,9 +63,9 @@ public class AbstractGun extends BaseCard {
             this.isDamageModified = true;
             this.baseDamage -= 2 * armLocksRelic.amount;
         }
-        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)) {
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED) || this.tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED)) {
             this.isDamageModified = true;
-            this.baseDamage -= (1 + tinker);
+            this.baseDamage -= tinker;
         }
     }
 
@@ -79,9 +78,7 @@ public class AbstractGun extends BaseCard {
         AbstractPower dex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower armLocksPower = AbstractDungeon.player.getPower(makeID(StabilizerArmLocksPower.class.getSimpleName()));
         StabilizerArmLocksRelic armLocksRelic = (StabilizerArmLocksRelic) AbstractDungeon.player.getRelic(makeID(StabilizerArmLocksRelic.class.getSimpleName()));
-        int tinker = 0;
-        if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-            tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
+        int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
 
         int originalStrength = 0;
         if (strength != null) {
@@ -94,8 +91,8 @@ public class AbstractGun extends BaseCard {
             this.baseDamage += armLocksPower.amount;
         if (armLocksRelic != null)
             this.baseDamage += 2 * armLocksRelic.amount;
-        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED))
-            this.baseDamage += 1 + tinker;
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED) || this.tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED))
+            this.baseDamage += tinker;
 
         super.calculateCardDamage(mo);
 
@@ -113,9 +110,9 @@ public class AbstractGun extends BaseCard {
             this.isDamageModified = true;
             this.baseDamage -= 2 * armLocksRelic.amount;
         }
-        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED)) {
+        if (this.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED) || this.tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED)) {
             this.isDamageModified = true;
-            this.baseDamage -= (1 + tinker);
+            this.baseDamage -= tinker;
         }
     }
 }

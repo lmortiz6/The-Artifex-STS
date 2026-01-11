@@ -12,9 +12,12 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import theartifex.powers.TinkerPower;
 import theartifex.util.CustomCardTags;
 
 import java.util.ArrayList;
+
+import static theartifex.TheArtifexMod.makeID;
 
 public class TinkerUsePatch {
     @SpirePatch(
@@ -26,27 +29,29 @@ public class TinkerUsePatch {
         @SpirePrefixPatch
         public static void Prefix(AbstractPlayer __instance, @ByRef AbstractCard[] c, AbstractMonster monster, int energyOnUse) {
 
-            int tinker = 0;
-            if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-                tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
+            int tinker = 1;
+            if (AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) && !CustomCardTags.getMods(c[0]).isEmpty()) {
+                tinker = 2;
+                AbstractDungeon.player.getPower(makeID(TinkerPower.class.getSimpleName())).onSpecificTrigger();
+            }
 
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXJACKED) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTJACKED)) {
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1 + tinker));
+                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(tinker));
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXREINFORCED) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTREINFORCED)) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3 + tinker));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3 * tinker));
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXNULLING) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTNULLING)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, 1 + tinker)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, tinker)));
                 c[0].exhaust = true;
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 1 + tinker)));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseDexterityPower(AbstractDungeon.player, 1 + tinker)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, tinker)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseDexterityPower(AbstractDungeon.player, tinker)));
             }
             if (c[0].tags.contains(CustomCardTags.THEARTIFEXSPRINGLOADED) || c[0].tags.contains(CustomCardTags.THEARTIFEXPERMANENTSPRINGLOADED)) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1 + tinker));
-                AbstractDungeon.actionManager.addToBottom(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player,1, true));
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(tinker));
+                AbstractDungeon.actionManager.addToBottom(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player,tinker, true));
             }
         }
     }
@@ -66,10 +71,8 @@ public class TinkerUsePatch {
         public static void Insert(AbstractCard __instance, @ByRef float[] tmp) {
 
             if (__instance.tags.contains(CustomCardTags.THEARTIFEXFLEXIWEAVED) || __instance.tags.contains(CustomCardTags.THEARTIFEXPERMANENTFLEXIWEAVED)) {
-                int tinker = 0;
-                if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-                    tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
-                tmp[0] += DEX + tinker;
+                int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
+                tmp[0] += DEX * tinker;
             }
         }
 
@@ -91,7 +94,7 @@ public class TinkerUsePatch {
     )
     public static class CardApplyPowersPatch {
 
-        private static final int DAMAGE = 4;
+        private static final int DAMAGE = 3;
 
         @SpireInsertPatch(
                 locator = Locator1.class,
@@ -100,10 +103,8 @@ public class TinkerUsePatch {
         public static void Insert1(AbstractCard __instance, @ByRef float[] tmp) {
 
             if (__instance.tags.contains(CustomCardTags.THEARTIFEXSHARP) || __instance.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP)) {
-                int tinker = 0;
-                if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-                    tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
-                tmp[0] += DAMAGE + tinker;
+                int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
+                tmp[0] += DAMAGE * tinker;
             }
         }
 
@@ -114,11 +115,9 @@ public class TinkerUsePatch {
         public static void Insert2(AbstractCard __instance, @ByRef float[][] tmp) {
 
             if (__instance.tags.contains(CustomCardTags.THEARTIFEXSHARP) || __instance.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP)) {
-                int tinker = 0;
-                if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-                    tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
+                int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
                 for (int i = 0; i < tmp[0].length; i++) {
-                    tmp[0][i] += DAMAGE + tinker;
+                    tmp[0][i] += DAMAGE * tinker;
                 }
             }
         }
@@ -154,7 +153,7 @@ public class TinkerUsePatch {
     )
     public static class CardCalculateDamagePatch {
 
-        private static final int DAMAGE = 4;
+        private static final int DAMAGE = 3;
 
         @SpireInsertPatch(
                 locator = CardApplyPowersPatch.Locator1.class,
@@ -164,10 +163,8 @@ public class TinkerUsePatch {
 
 
             if (__instance.tags.contains(CustomCardTags.THEARTIFEXSHARP) || __instance.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP)) {
-                int tinker = 0;
-                if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-                    tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
-                tmp[0] += DAMAGE + tinker;
+                int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
+                tmp[0] += DAMAGE * tinker;
             }
         }
 
@@ -178,11 +175,9 @@ public class TinkerUsePatch {
         public static void Insert2(AbstractCard __instance, AbstractMonster mo, @ByRef float[][] tmp) {
 
             if (__instance.tags.contains(CustomCardTags.THEARTIFEXSHARP) || __instance.tags.contains(CustomCardTags.THEARTIFEXPERMANENTSHARP)) {
-                int tinker = 0;
-                if (AbstractDungeon.player.hasPower("theartifex:TinkerPower"))
-                    tinker += AbstractDungeon.player.getPower("theartifex:TinkerPower").amount;
+                int tinker = AbstractDungeon.player.hasPower(makeID(TinkerPower.class.getSimpleName())) ? 2 : 1;
                 for (int i = 0; i < tmp[0].length; i++) {
-                    tmp[0][i] += DAMAGE + tinker;
+                    tmp[0][i] += DAMAGE * tinker;
                 }
             }
         }
