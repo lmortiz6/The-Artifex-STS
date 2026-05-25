@@ -17,15 +17,17 @@ public class MakeStatEquivalentCopyExpandedPatch {
     @SpirePostfixPatch
     public static AbstractCard Postfix(AbstractCard __result, AbstractCard __instance) {
         // Copy permanent mods
-        for (AbstractCard.CardTags tag : __instance.tags) {
-            if (tag.toString().contains("THEARTIFEXPERMANENT")) {
-                __result.tags.add(tag);
-                String tagString = tag.toString().substring(19).toLowerCase();
-                if (Settings.language == Settings.GameLanguage.ZHS)
-                    tagString = getZHS(tagString);
-                __result.keywords.add(0, "theartifex:" + tagString);
+        try {
+            for (AbstractCard.CardTags tag : __instance.tags) {
+                if (tag.toString().contains("THEARTIFEXPERMANENT")) {
+                    __result.tags.add(tag);
+                    String tagString = tag.toString().substring(19).toLowerCase();
+                    if (Settings.language == Settings.GameLanguage.ZHS)
+                        tagString = getZHS(tagString);
+                    __result.keywords.add(0, "theartifex:" + tagString);
+                }
             }
-        }
+        } catch (NullPointerException ignored) { }
         // Copy mods in combat
         try {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
